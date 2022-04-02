@@ -32,7 +32,7 @@ Route::post('verification', [UserController::class, 'verification']);
 
 Route::middleware('auth:sanctum')->group(function() {
     Route::resource('/category-monitoring', CategoryController::class);
-    Route::resource('/object', ObjectDataController::class);
+    Route::resource('/object', (ObjectDataController::class);
     Route::resource('/monitoring', MonitoringController::class);
     Route::resource('input-monitoring', InputController::class);
     Route::resource('/option-input-monitoring', OptionController::class);
