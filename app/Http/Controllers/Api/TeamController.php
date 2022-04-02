@@ -7,6 +7,7 @@ use App\Jobs\Team\CreateData;
 use App\Jobs\Team\EditData;
 use App\Models\Team;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class TeamController extends Controller
 {
@@ -34,13 +35,21 @@ class TeamController extends Controller
      */
     public function store(Request $request)
     {
+        $rules = [
+            'name' => 'required',
+        ];
         $data = [
             'name' => $request->name,
             'goals' => $request->goals,
             'note' => $request->note,
             'description' => $request->description,
         ];
-        CreateData::dispatch($data);
+        $validator = Validator::make($data, $rules);
+        if($validator->fails()) {
+            return $this->jsonResponse([
+                'messages' => $validator->errors(),
+            ], 400, 'FAILED');
+        }
         $team = Team::query()->create($data);
         return $this->jsonResponse($team);
     }
@@ -53,7 +62,7 @@ class TeamController extends Controller
      */
     public function show($id)
     {
-        $team = Team::query()->with('team', 'monitoring')->find($id);
+        $team = Team::query()->with('employee', 'monitoring')->find($id);
         return $this->jsonResponse($team);
     }
 
@@ -66,14 +75,23 @@ class TeamController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $rules = [
+            'name' => 'required',
+        ];
         $data = [
             'name' => $request->name,
             'goals' => $request->goals,
             'note' => $request->note,
             'description' => $request->description,
         ];
-        EditData::dispatch($data);
-        $team = Team::query()->where('id', $id)->update($data);
+        $validator = Validator::make($data, $rules);
+        if($validator->fails()) {
+            return $this->jsonResponse([
+                'messages' => $validator->errors(),
+            ], 400, 'FAILED');
+        }
+        Team::query()->where('id', $id)->update($data);
+        $team = Team::query()->find($id);
         return $this->jsonResponse($team);
     }
 
@@ -92,15 +110,33 @@ class TeamController extends Controller
 
     public function addEmployee(Request $request, $id)
     {
+        $rules = [
+            'employeeId' => 'required',
+        ];
+        $validator = Validator::make($request->all(), $rules);
+        if($validator->fails()) {
+            return $this->jsonResponse([
+                'messages' => $validator->errors(),
+            ], 400, 'FAILED');
+        }
+        Team::query()->find($id)->employee()->attach($request->employeeId);
         $team = Team::query()->with('employee')->find($id);
-        $team->employee()->attach($request->employeeId);
         return $this->jsonResponse($team);
     }
 
     public function removeEmployee(Request $request, $id)
     {
+        $rules = [
+            'employeeId' => 'required',
+        ];
+        $validator = Validator::make($request->all(), $rules);
+        if($validator->fails()) {
+            return $this->jsonResponse([
+                'messages' => $validator->errors(),
+            ], 400, 'FAILED');
+        }
+        Team::query()->find($id)->employee()->detach($request->employeeId);
         $team = Team::query()->with('employee')->find($id);
-        $team->employee()->detach($request->employeeId);
         return $this->jsonResponse($team);
     }
 }

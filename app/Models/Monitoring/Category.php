@@ -21,10 +21,10 @@ class Category extends Model
 
     public function object(): BelongsToMany
     {
-        return $this->belongsToMany(Category::class,
-            'monitoring_category_subject',
+        return $this->belongsToMany(ObjectData::class,
+            'monitoring_category_objects',
+            'monitoring_object_id',
             'monitoring_category_id',
-            'monitoring_object_id'
         );
     }
 

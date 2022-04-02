@@ -7,6 +7,7 @@ use App\Jobs\Employee\CreateData;
 use App\Jobs\Employee\EditData;
 use App\Models\Employee;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 use PhpParser\Node\Expr\Empty_;
 
 class EmployeeController extends Controller
@@ -35,6 +36,13 @@ class EmployeeController extends Controller
      */
     public function store(Request $request)
     {
+        $rules = [
+            'name' => 'required',
+            'email' => 'required',
+            'phone_number' => 'required',
+            'position' => 'required',
+            'profession' => 'required',
+        ];
         $data = [
             'name' => $request->name,
             'email' => $request->email,
@@ -44,7 +52,12 @@ class EmployeeController extends Controller
             'position' => $request->position,
             'profession' => $request->profession,
         ];
-        CreateData::dispatch($data);
+        $validator = Validator::make($data, $rules);
+        if($validator->fails()) {
+            return $this->jsonResponse([
+                'messages' => $validator->errors(),
+            ], 400, 'FAILED');
+        }
         $employee = Employee::query()->create($data);
         return $this->jsonResponse($employee);
     }
@@ -70,6 +83,13 @@ class EmployeeController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $rules = [
+            'name' => 'required',
+            'email' => 'required',
+            'phone_number' => 'required',
+            'position' => 'required',
+            'profession' => 'required',
+        ];
         $data = [
             'name' => $request->name,
             'email' => $request->email,
@@ -79,8 +99,14 @@ class EmployeeController extends Controller
             'position' => $request->position,
             'profession' => $request->profession,
         ];
-        EditData::dispatch($data);
-        $employee = Employee::query()->where('id', $id)->update($data);
+        $validator = Validator::make($data, $rules);
+        if($validator->fails()) {
+            return $this->jsonResponse([
+                'messages' => $validator->errors(),
+            ], 400, 'FAILED');
+        }
+        Employee::query()->where('id', $id)->update($data);
+        $employee = Employee::query()->find($id);
         return $this->jsonResponse($employee);
     }
 

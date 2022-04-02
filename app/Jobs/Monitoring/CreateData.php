@@ -15,7 +15,7 @@ class CreateData implements ShouldQueue
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
     protected array $rules = [
-        'monitoring_category_subject_id' => 'required',
+        'monitoring_category_object_id' => 'required',
         'name' => 'required',
         'employee_id' => 'required',
         'team_id' => 'required',

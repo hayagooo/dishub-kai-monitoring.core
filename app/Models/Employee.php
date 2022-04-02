@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Monitoring\Monitoring;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
@@ -25,7 +26,7 @@ class Employee extends Model
 
     public function team(): BelongsToMany
     {
-        return $this->belongsToMany(Team::class, 'employee_teams', 'employee_id', 'team_id');
+        return $this->belongsToMany(Team::class, 'employee_teams', 'team_id', 'employee_id');
     }
 
     public function monitoring(): HasMany

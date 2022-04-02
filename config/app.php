@@ -15,7 +15,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Laravel'),
+    'name' => env('APP_NAME', 'Emon'),
 
     /*
     |--------------------------------------------------------------------------
@@ -82,7 +82,7 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => 'id',
 
     /*
     |--------------------------------------------------------------------------
@@ -108,7 +108,7 @@ return [
     |
     */
 
-    'faker_locale' => 'en_US',
+    'faker_locale' => 'id_ID',
 
     /*
     |--------------------------------------------------------------------------
@@ -179,6 +179,7 @@ return [
         App\Providers\FortifyServiceProvider::class,
         App\Providers\JetstreamServiceProvider::class,
 
+        \Maatwebsite\Excel\ExcelServiceProvider::class,
     ],
 
     /*
@@ -194,6 +195,7 @@ return [
 
     'aliases' => Facade::defaultAliases()->merge([
         // ...
+        'Excel' => \Maatwebsite\Excel\Facades\Excel::class,
     ])->toArray(),
 
 ];

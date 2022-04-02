@@ -16,7 +16,7 @@ class Monitoring extends Model
     protected $table = 'monitorings';
 
     protected $fillable = [
-        'monitoring_category_subject_id',
+        'monitoring_category_object_id',
         'name',
         'employee_id',
         'team_id',
@@ -26,7 +26,7 @@ class Monitoring extends Model
 
     public function categoryObject(): BelongsTo
     {
-        return $this->belongsTo(CategoryObject::class, 'monitoring_category_subject_id', 'id');
+        return $this->belongsTo(CategoryObject::class, 'monitoring_category_object_id', 'id');
     }
 
     public function input(): HasMany

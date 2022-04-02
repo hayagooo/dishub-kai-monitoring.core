@@ -7,6 +7,7 @@ use App\Jobs\Monitoring\CreateData;
 use App\Jobs\Monitoring\EditData;
 use App\Models\Monitoring\Monitoring;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class MonitoringController extends Controller
 {
@@ -33,15 +34,27 @@ class MonitoringController extends Controller
      */
     public function store(Request $request)
     {
+        $rules = [
+            'monitoring_category_object_id' => 'required',
+            'name' => 'required',
+            'employee_id' => 'required',
+            'team_id' => 'required',
+            'data' => 'required',
+        ];
         $data = [
-            'monitoring_category_subject_id' => $request->category_subject_id,
+            'monitoring_category_object_id' => $request->category_object_id,
             'name' => $request->name,
             'employee_id' => $request->employee_id,
             'team_id' => $request->team_id,
             'description' => $request->description,
             'data' => $request->data,
         ];
-        CreateData::dispatch($data);
+        $validator = Validator::make($data, $rules);
+        if($validator->fails()) {
+            return $this->jsonResponse([
+                'messages' => $validator->errors(),
+            ], 400, 'FAILED');
+        }
         $monitoring = Monitoring::query()->create($data);
         return $this->jsonResponse($monitoring);
     }
@@ -69,16 +82,29 @@ class MonitoringController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $rules = [
+            'monitoring_category_object_id' => 'required',
+            'name' => 'required',
+            'employee_id' => 'required',
+            'team_id' => 'required',
+            'data' => 'required',
+        ];
         $data = [
-            'monitoring_category_subject_id' => $request->category_subject_id,
+            'monitoring_category_object_id' => $request->category_object_id,
             'name' => $request->name,
             'employee_id' => $request->employee_id,
             'team_id' => $request->team_id,
             'description' => $request->description,
             'data' => $request->data,
         ];
-        EditData::dispatch($data);
-        $monitoring = Monitoring::query()->where('id', $id)->update($data);
+        $validator = Validator::make($data, $rules);
+        if($validator->fails()) {
+            return $this->jsonResponse([
+                'messages' => $validator->errors(),
+            ], 400, 'FAILED');
+        }
+        Monitoring::query()->where('id', $id)->update($data);
+        $monitoring = Monitoring::query()->find($id);
         return $this->jsonResponse($monitoring);
     }
 

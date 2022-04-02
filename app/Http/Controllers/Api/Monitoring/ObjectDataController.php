@@ -7,6 +7,7 @@ use App\Jobs\Monitoring\Object\CreateData;
 use App\Models\Monitoring\ObjectData;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
 
 class ObjectDataController extends Controller
@@ -35,18 +36,30 @@ class ObjectDataController extends Controller
      */
     public function store(Request $request)
     {
+        $rules =  [
+            'name' => 'required',
+            'icon' => 'mimes:jpg,png,jpeg|max:1024'
+        ];
         $data = [
             'name' => $request->name,
             'icon' => $request->file('icon'),
             'description' => $request->description,
         ];
-        CreateData::dispatch($data);
         if($request->hasFile('icon')) {
             $icon = $request->file('icon');
             $iconName = 'object-'.Str::slug($request->name).'-'.uniqid().'.'.$icon->extension();
             $this->checkDirectory('/monitoring/icon');
             $icon->move(public_path('/monitoring/icon/'), $iconName);
             $data['icon'] = $iconName;
+        } else {
+            unset($data['icon']);
+            unset($rules['icon']);
+        }
+        $validator = Validator::make($data, $rules);
+        if($validator->fails()) {
+            return $this->jsonResponse([
+                'messages' => $validator->errors(),
+            ], 400, 'FAILED');
         }
         $object = ObjectData::query()->create($data);
         return $this->jsonResponse($object);
@@ -61,20 +74,37 @@ class ObjectDataController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $rules =  [
+            'name' => 'required',
+            'icon' => 'mimes:jpg,png,jpeg|max:1024'
+        ];
         $data = [
             'name' => $request->name,
             'icon' => $request->file('icon'),
             'description' => $request->description,
         ];
-        CreateData::dispatch($data);
         if($request->hasFile('icon')) {
             $icon = $request->file('icon');
+            $object = ObjectData::query()->find($id);
             $iconName = 'object-'.Str::slug($request->name).'-'.uniqid().'.'.$icon->extension();
             $this->checkDirectory('/monitoring/icon');
+            if(File::exists(public_path('/monitoring/icon/').$object->icon)) {
+                File::delete(public_path('/monitoring/icon/').$object->icon);
+            }
             $icon->move(public_path('/monitoring/icon/'), $iconName);
             $data['icon'] = $iconName;
+        } else {
+            unset($data['icon']);
+            unset($rules['icon']);
         }
-        $object = ObjectData::query()->where('id', $id)->update($data);
+        $validator = Validator::make($data, $rules);
+        if($validator->fails()) {
+            return $this->jsonResponse([
+                'messages' => $validator->errors(),
+            ], 400, 'FAILED');
+        }
+        ObjectData::query()->where('id', $id)->update($data);
+        $object = ObjectData::query()->find($id);
         return $this->jsonResponse($object);
     }
 

@@ -8,6 +8,7 @@ use App\Jobs\Monitoring\Image\EditData;
 use App\Models\Monitoring\Image;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
 
 class ImageController extends Controller
@@ -31,20 +32,28 @@ class ImageController extends Controller
      */
     public function store(Request $request)
     {
+        $rules = [
+            'monitoring_id' => 'required',
+            'image' => 'required|mimes:jpg,png,jpeg|max:2048',
+            'label' => 'required',
+        ];
         $data = [
             'monitoring_id' => $request->monitoring_id,
             'name' => $request->file('image'),
             'label' => $request->label,
             'description' => $request->description,
         ];
-        if($request->hasFile('image')) {
-            $file = $request->file('image');
-            $fileName = 'monitoring-'.Str::slug($request->label).'-'.uniqid().'.'.$file->extension();
-            $this->checkDirectory('/monitoring/image/');
-            $file->move(public_path('/monitoring/image/'), $fileName);
-            $data['name'] = $fileName;
+        $validator = Validator::make($data, $rules);
+        if($validator->fails()) {
+            return $this->jsonResponse([
+                'messages' => $validator->errors(),
+            ], 400, 'FAILED');
         }
-        CreateData::dispatch($data);
+        $file = $request->file('image');
+        $fileName = 'monitoring-'.Str::slug($request->label).'-'.uniqid().'.'.$file->extension();
+        $this->checkDirectory('/monitoring/image/');
+        $file->move(public_path('/monitoring/image/'), $fileName);
+        $data['name'] = $fileName;
         $image = Image::query()->create($data);
         return $this->jsonResponse($image);
     }
@@ -70,6 +79,11 @@ class ImageController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $rules = [
+            'monitoring_id' => 'required',
+            'image' => 'required|mimes:jpg,png,jpeg|max:2048',
+            'label' => 'required',
+        ];
         $data = [
             'monitoring_id' => $request->monitoring_id,
             'name' => $request->file('image'),
@@ -80,13 +94,24 @@ class ImageController extends Controller
             $file = $request->file('image');
             $fileName = 'monitoring-'.Str::slug($request->label).'-'.uniqid().'.'.$file->extension();
             $this->checkDirectory('/monitoring/image/');
+            $image = Image::query()->find($id);
+            if(File::exists(public_path('/monitoring/image/').$image->name)) {
+                File::delete(public_path('/monitoring/image/').$image->name);
+            }
             $file->move(public_path('/monitoring/image/'), $fileName);
             $data['name'] = $fileName;
         } else {
+            unset($rules['image']);
             unset($data['name']);
         }
-        EditData::dispatch($data);
-        $image = Image::query()->where('id', $id)->update($data);
+        $validator = Validator::make($data, $rules);
+        if($validator->fails()) {
+            return $this->jsonResponse([
+                'messages' => $validator->errors(),
+            ], 400, 'FAILED');
+        }
+        Image::query()->where('id', $id)->update($data);
+        $image = Image::query()->find($id);
         return $this->jsonResponse($image);
     }
 

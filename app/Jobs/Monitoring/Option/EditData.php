@@ -17,7 +17,6 @@ class EditData implements ShouldQueue
     protected array $rules = [
         'monitoring_input_id' => 'required',
         'value' => 'required',
-        'is_checked' => 'required',
     ];
 
     /**

@@ -7,6 +7,7 @@ use App\Jobs\Monitoring\Category\EditData;
 use App\Jobs\Monitoring\Option\CreateData;
 use App\Models\Monitoring\InputOption;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class OptionController extends Controller
 {
@@ -29,12 +30,21 @@ class OptionController extends Controller
      */
     public function store(Request $request)
     {
+        $rules = [
+            'monitoring_input_id' => 'required',
+            'value' => 'required',
+        ];
         $data = [
             'monitoring_input_id' => $request->input_id,
             'value' => $request->value,
-            'is_checked' => $request->value,
+            'is_checked' => $request->is_checked,
         ];
-        CreateData::dispatch($data);
+        $validator = Validator::make($data, $rules);
+        if($validator->fails()) {
+            return $this->jsonResponse([
+                'messages' => $validator->errors(),
+            ], 400, 'FAILED');
+        }
         $option = InputOption::query()->create($data);
         return $this->jsonResponse($option);
     }
@@ -60,13 +70,23 @@ class OptionController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $rules = [
+            'monitoring_input_id' => 'required',
+            'value' => 'required',
+        ];
         $data = [
             'monitoring_input_id' => $request->input_id,
             'value' => $request->value,
-            'is_checked' => $request->value,
+            'is_checked' => $request->is_checked,
         ];
-        EditData::dispatch($data);
-        $option = InputOption::query()->where('id', $id)->update($data);
+        $validator = Validator::make($data, $rules);
+        if($validator->fails()) {
+            return $this->jsonResponse([
+                'messages' => $validator->errors(),
+            ], 400, 'FAILED');
+        }
+        InputOption::query()->where('id', $id)->update($data);
+        $option = InputOption::query()->find($id);
         return $this->jsonResponse($option);
     }
 

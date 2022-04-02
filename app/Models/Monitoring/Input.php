@@ -26,6 +26,8 @@ class Input extends Model
         'placeholder',
         'text',
         'number',
+        'description',
+        'is_required',
     ];
 
     public static function getAvailableType(): array

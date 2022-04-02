@@ -7,6 +7,7 @@ use App\Jobs\Monitoring\Input\CreateData;
 use App\Jobs\Monitoring\Input\EditData;
 use App\Models\Monitoring\Input;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class InputController extends Controller
 {
@@ -29,6 +30,11 @@ class InputController extends Controller
      */
     public function store(Request $request)
     {
+        $rules = [
+            'monitoring_id' => 'required',
+            'label' => 'required',
+            'type' => 'required',
+        ];
         $data = [
             'monitoring_id' => $request->monitoring_id,
             'label' => $request->label,
@@ -36,8 +42,15 @@ class InputController extends Controller
             'placeholder' => $request->placeholder,
             'text' => $request->text,
             'number' => $request->number,
+            'description' => $request->description,
+            'is_required' => $request->is_required,
         ];
-        CreateData::dispatch($data);
+        $validator = Validator::make($data, $rules);
+        if($validator->fails()) {
+            return $this->jsonResponse([
+                'messages' => $validator->errors(),
+            ], 400, 'FAILED');
+        }
         $input = Input::query()->create($data);
         return $this->jsonResponse($input);
     }
@@ -63,6 +76,11 @@ class InputController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $rules = [
+            'monitoring_id' => 'required',
+            'label' => 'required',
+            'type' => 'required',
+        ];
         $data = [
             'monitoring_id' => $request->monitoring_id,
             'label' => $request->label,
@@ -70,9 +88,17 @@ class InputController extends Controller
             'placeholder' => $request->placeholder,
             'text' => $request->text,
             'number' => $request->number,
+            'description' => $request->description,
+            'is_required' => $request->is_required,
         ];
-        EditData::dispatch($data);
-        $input = Input::query()->where('id', $id)->update($data);
+        $validator = Validator::make($data, $rules);
+        if($validator->fails()) {
+            return $this->jsonResponse([
+                'messages' => $validator->errors(),
+            ], 400, 'FAILED');
+        }
+        Input::query()->where('id', $id)->update($data);
+        $input = Input::query()->find($id);
         return $this->jsonResponse($input);
     }
 

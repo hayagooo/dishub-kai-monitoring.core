@@ -13,12 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('monitoring_input_options', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('monitoring_input_id')->constrained('monitoring_inputs');
-            $table->string('value');
-            $table->boolean('is_checked')->default(0);
-            $table->timestamps();
+        Schema::table('monitoring_inputs', function (Blueprint $table) {
+            $table->text('description')->nullable()->after('number');
+            $table->boolean('is_required')->default(false)->after('number');
         });
     }
 
@@ -29,6 +26,8 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('monitoring_input_options');
+        Schema::table('inputs', function (Blueprint $table) {
+            //
+        });
     }
 };

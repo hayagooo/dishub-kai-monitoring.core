@@ -11,7 +11,7 @@ class CategoryObject extends Model
 {
     use HasFactory;
 
-    protected $table = 'monitoring_category_subject';
+    protected $table = 'monitoring_category_objects';
 
     protected $fillable = [
         'monitoring_category_id',
@@ -30,6 +30,6 @@ class CategoryObject extends Model
 
     public function monitoring(): HasMany
     {
-        return $this->hasMany(Monitoring::class, 'monitoring_category_subject_id', 'id');
+        return $this->hasMany(Monitoring::class, 'monitoring_category_object_id', 'id');
     }
 }

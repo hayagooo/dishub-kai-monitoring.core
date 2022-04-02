@@ -21,7 +21,7 @@ class ObjectData extends Model
     public function category(): BelongsToMany
     {
         return $this->belongsToMany(Category::class,
-            'monitoring_category_subject',
+            'monitoring_category_objects',
             'monitoring_category_id',
             'monitoring_object_id'
         );

@@ -16,7 +16,7 @@ class CreateData implements ShouldQueue
 
     protected array $rules = [
         'montiroing_id' => 'required',
-        'name' => 'required|mimes:jpg,png,jpeg|max:2048',
+        'image' => 'required|mimes:jpg,png,jpeg|max:2048',
         'label' => 'required',
     ];
 

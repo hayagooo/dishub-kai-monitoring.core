@@ -8,6 +8,7 @@ use App\Jobs\User\EditData;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Validator;
 
 class UserController extends Controller
 {
@@ -34,6 +35,13 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
+        $rules = [
+            'code' => 'required',
+            'name' => 'required',
+            'email' => 'required',
+            'password' => 'required',
+            'level' => 'required',
+        ];
         $data = [
             'code' => $request->code,
             'name' => $request->name,
@@ -41,7 +49,12 @@ class UserController extends Controller
             'password' => $request->password,
             'level' => $request->level,
         ];
-        CreateData::dispatch($data);
+        $validator = Validator::make($data, $rules);
+        if($validator->fails()) {
+            return $this->jsonResponse([
+                'messages' => $validator->errors(),
+            ], 400, 'FAILED');
+        }
         $user = User::query()->create($data);
         return $this->jsonResponse($user);
 
@@ -68,6 +81,13 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $rules = [
+            'code' => 'required',
+            'name' => 'required',
+            'email' => 'required',
+            'password' => 'required',
+            'level' => 'required',
+        ];
         $data = [
             'code' => $request->code,
             'name' => $request->name,
@@ -75,8 +95,15 @@ class UserController extends Controller
             'password' => $request->password,
             'level' => $request->level,
         ];
+        $validator = Validator::make($data, $rules);
+        if($validator->fails()) {
+            return $this->jsonResponse([
+                'messages' => $validator->errors(),
+            ], 400, 'FAILED');
+        }
         EditData::dispatch($data);
-        $user = User::query()->where('id', $id)->update($data);
+        User::query()->where('id', $id)->update($data);
+        $user = User::query()->find($id);
         return $this->jsonResponse($user);
     }
 
@@ -95,9 +122,27 @@ class UserController extends Controller
 
     public function login(Request $request)
     {
-        if(Auth::guard('users-api')->attempt($request->only('email', 'password'))) {
-            $user = Auth::guard('users-api')->user();
-            return $this->jsonResponse($user);
+        $data = [
+            'email' => $request->email,
+            'password' => $request->password,
+        ];
+        $validator = Validator::make($data, [
+            'email' => 'required|email',
+            'password' => 'required'
+        ]);
+        if($validator->fails()) {
+            return $this->jsonResponse([
+                'messages' => $validator->errors(),
+            ], 400, 'FAILED');
+        }
+        if(Auth::attempt($data, $request->remember != null ? $request->remember : false)) {
+            $user = Auth::guard('api')->user();
+            $token = User::find(Auth::guard('api')->id())->createToken('authentification')->plainTextToken;
+            $response = [
+                'user' => $user,
+                'token' => $token,
+            ];
+            return $this->jsonResponse($response);
         } else {
             return $this->jsonResponse([
                 'message' => 'Login Tidak Berhasil',
@@ -107,11 +152,23 @@ class UserController extends Controller
 
     public function verification(Request $request)
     {
-        if(Auth::guard('user-api')->user()->code == $request->code) {
-            $user = Auth::guard('users-api')->user();
-            return $this->jsonResponse($user);
+        $validator = Validator::make($request->all(), [
+            'code' => 'required',
+        ]);
+        if($validator->fails()) {
+            return $this->jsonResponse([
+                'messages' => $validator->errors(),
+            ], 400, 'FAILED');
+        }
+        if(Auth::guard('api')->check() && (Auth::guard('api')->user()->code == $request->code)) {
+            $user = Auth::guard('api')->user();
+            $token = User::find(Auth::guard('api')->id())->createToken('authentification')->plainTextToken;
+            $response = [
+                'user' => $user,
+                'token' => $token,
+            ];
+            return $this->jsonResponse($response);
         } else {
-            Auth::guard('users-api')->logout();
             return $this->jsonResponse([
                 'message' => 'Verifikasi gagal: kode tidak cocok',
             ], 200, 'FAILED');
@@ -120,7 +177,6 @@ class UserController extends Controller
 
     public function logout()
     {
-        Auth::guard('users-api')->logout();
         return $this->jsonResponse([
             'message' => 'Logout Berhasil'
         ], 200, 'FAILED');
