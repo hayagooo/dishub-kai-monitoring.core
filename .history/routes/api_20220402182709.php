@@ -27,9 +27,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::post('login', [UserController::class, 'login']);
-Route::post('verification', [UserController::class, 'verification']);
-
 Route::middleware('auth:sanctum')->group(function() {
     Route::resource(CategoryController::class);
     Route::resource(ObjectDataController::class);
@@ -40,8 +37,4 @@ Route::middleware('auth:sanctum')->group(function() {
     Route::resource(EmployeeController::class);
     Route::resource(UserController::class);
     Route::resource(TeamController::class);
-    Route::post('team/{id}/add/employee', [TeamController::class, 'addEmployee']);
-    Route::post('team/{id}/remove/employee', [TeamController::class, 'removeEmployee']);
-    Route::post('category/{id}/add/object', [CategoryController::class, 'addObject']);
-    Route::post('category/{id}/remove/object', [CategoryController::class, 'removeObject']);
 });

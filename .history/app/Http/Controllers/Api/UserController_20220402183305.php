@@ -35,7 +35,6 @@ class UserController extends Controller
     public function store(Request $request)
     {
         $data = [
-            'code' => $request->code,
             'name' => $request->name,
             'email' => $request->email,
             'password' => $request->password,
@@ -69,7 +68,6 @@ class UserController extends Controller
     public function update(Request $request, $id)
     {
         $data = [
-            'code' => $request->code,
             'name' => $request->name,
             'email' => $request->email,
             'password' => $request->password,

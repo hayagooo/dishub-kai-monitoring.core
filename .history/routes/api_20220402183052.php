@@ -28,7 +28,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::post('login', [UserController::class, 'login']);
-Route::post('verification', [UserController::class, 'verification']);
 
 Route::middleware('auth:sanctum')->group(function() {
     Route::resource(CategoryController::class);
