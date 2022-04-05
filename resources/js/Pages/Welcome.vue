@@ -1,42 +1,114 @@
 <template>
-    <Head title="Welcome" />
-
-    <div class="relative py-16 bg-white">
-        <div class="hidden absolute top-0 inset-x-0 h-1/2 bg-gray-50 lg:block" aria-hidden="true" />
-        <div class="max-w-7xl mx-auto bg-indigo-600 lg:bg-transparent lg:px-8">
-            <div class="lg:grid lg:grid-cols-12">
-                <div class="relative z-10 lg:col-start-1 lg:row-start-1 lg:col-span-4 lg:py-16 lg:bg-transparent">
-                    <div class="absolute inset-x-0 h-1/2 bg-gray-50 lg:hidden" aria-hidden="true" />
-                    <div class="max-w-md mx-auto px-4 sm:max-w-3xl sm:px-6 lg:max-w-none lg:p-0">
-                        <div class="aspect-w-10 aspect-h-6 sm:aspect-w-2 sm:aspect-h-1 lg:aspect-w-1">
-                            <img class="object-cover object-center rounded-3xl shadow-2xl" src="https://images.unsplash.com/photo-1622599656962-59ea819860aa?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=326&q=80" alt="" />
+    <div>
+        <div class="container mx-auto px-14">
+            <div class="columns-1">
+                <div id="nav" class="py-6 grid grid-cols-2">
+                    <div>
+                        <div class="image-brand">
+                            <img src="@/Assets/logo.png" class="w-14 inline-block" alt="Logo Aplikasi Monitoring">
+                            <p class="text-xl font-semibold ml-4 hidden md:inline-block">Monitoring</p>
+                        </div>
+                    </div>
+                    <div class="justify-self-end">
+                        <button @click="gotoLogin()" type="button" class="mt-2 focus:outline-none text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-8 py-2.5 mb-2 light:bg-purple-600 light:hover:bg-purple-700 light:focus:ring-purple-900">Masuk</button>
+                    </div>
+                </div>
+                <div id="header" class="grid grid-cols-2">
+                    <div class="self-center col-span-2 lg:col-span-1">
+                        <div class=" text mt-12 lg:px-6">
+                            <p class="text-4xl mb-2 font-bold">Sistem Monitoring dan Informasi <span class="text-purple-700">Fasilitas Kereta Api</span></p>
+                            <p>Sistem internal untuk mengakses sumber informasi dan memonitoring fasilitas fasilitas kereta api yang bertujuan untuk membangun dan meningkatkan sarana dan prasarana</p>
+                            <button @click="gotoLogin()" type="button" class="mt-6 focus:outline-none text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-12 py-4 mb-2 light:bg-purple-600 light:hover:bg-purple-700 light:focus:ring-purple-900">Mulai Sekarang</button>
+                        </div>
+                    </div>
+                    <div class="my-8 col-span-2 lg:col-span-1">
+                        <div class="flex flex-nowrap">
+                            <img src="https://images.unsplash.com/photo-1622599656962-59ea819860aa?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=326&q=80"
+                                alt="Kereta Api Indonesia"
+                                class="w-6/12 rounded-xl mr-2">
+                            <img src="https://images.unsplash.com/photo-1634553492003-ceecfb2323bc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
+                                alt="Kereta Api Indonesia"
+                                class="w-6/12 rounded-xl mx-2">
+                            <img src="https://images.unsplash.com/photo-1628453297537-d3f3819691f1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=327&q=80"
+                                alt="Kereta Api Indonesia"
+                                class="w-6/12 rounded-xl mx-2">
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+        <div class="bg-gray-100 mt-4 py-12">
+            <div class="container mx-auto px-14">
+                <div class="columns-1">
+                    <p class="text-4xl font-bold">Fitur Inovatif</p>
+                </div>
+                <div class="grid grid-cols-4 gap-4 mt-8">
 
-                <div class="relative bg-indigo-600 lg:col-start-3 lg:row-start-1 lg:col-span-10 lg:rounded-3xl lg:grid lg:grid-cols-10 lg:items-center">
-                    <div class="hidden absolute inset-0 overflow-hidden rounded-3xl lg:block" aria-hidden="true">
-                        <svg class="absolute bottom-full left-full transform translate-y-1/3 -translate-x-2/3 xl:bottom-auto xl:top-0 xl:translate-y-0" width="404" height="384" fill="none" viewBox="0 0 404 384" aria-hidden="true">
-                            <defs>
-                                <pattern id="64e643ad-2176-4f86-b3d7-f2c5da3b6a6d" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
-                                    <rect x="0" y="0" width="4" height="4" class="text-indigo-500" fill="currentColor" />
-                                </pattern>
-                            </defs>
-                            <rect width="404" height="384" fill="url(#64e643ad-2176-4f86-b3d7-f2c5da3b6a6d)" />
-                        </svg>
-                        <svg class="absolute top-full transform -translate-y-1/3 -translate-x-1/3 xl:-translate-y-1/2" width="404" height="384" fill="none" viewBox="0 0 404 384" aria-hidden="true">
-                            <defs>
-                                <pattern id="64e643ad-2176-4f86-b3d7-f2c5da3b6a6d" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
-                                    <rect x="0" y="0" width="4" height="4" class="text-indigo-500" fill="currentColor" />
-                                </pattern>
-                            </defs>
-                            <rect width="404" height="384" fill="url(#64e643ad-2176-4f86-b3d7-f2c5da3b6a6d)" />
-                        </svg>
+                    <div class="col-span-4 sm:col-span-2 md:col-span-1">
+                        <div class="block w-full p-6 max-w-sm bg-white rounded-xl border border-gray-100 hover:text-purple-700">
+                            <monitor-icon size="2x"/>
+                            <h5 class="my-2 text-2xl font-semibold mt-3 tracking-tight">Monitoring</h5>
+                            <p class="font-normal text-gray-700">Memonitoring keadaan dan kondisi fasilitas kereta api apakah bagus atau tidak.</p>
+                        </div>
                     </div>
-                    <div class="relative max-w-md mx-auto py-12 px-4 space-y-6 sm:max-w-3xl sm:py-16 sm:px-6 lg:max-w-none lg:p-0 lg:col-start-4 lg:col-span-6">
-                        <h2 class="text-3xl font-extrabold text-white" id="join-heading">Sistem Monitoring Fasilitas Kereta Api</h2>
-                        <p class="text-lg text-white">Sistem informasi digital untuk keperluan monitoring fasilitas kereta secara online.</p>
-                        <Link :href="route('login')" class="block w-full py-3 px-5 text-center bg-white border border-transparent rounded-md shadow-md text-base font-medium text-indigo-700 hover:bg-gray-50 sm:inline-block sm:w-auto" >Masuk </Link>
+
+                    <div class="col-span-4 sm:col-span-2 md:col-span-1">
+                        <div class="block w-full p-6 max-w-sm bg-white rounded-xl border border-gray-100 hover:text-purple-700">
+                            <database-icon size="2x"/>
+                            <h5 class="my-2 text-2xl font-semibold mt-3 tracking-tight">Sistem Informasi</h5>
+                            <p class="font-normal text-gray-700">Berupa penyimpanan dan pengolahan data hasil monitoring fasilitas kereta api.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-span-4 sm:col-span-2 md:col-span-1">
+                        <div class="block w-full p-6 max-w-sm bg-white rounded-xl border border-gray-100 hover:text-purple-700">
+                            <file-text-icon size="2x"/>
+                            <h5 class="my-2 text-2xl font-semibold mt-3 tracking-tight">Pemberitahuan</h5>
+                            <p class="font-normal text-gray-700">Fitur untuk bookmark agar semua user bisa mengetahui sesuatu seperti pengumuman.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-span-4 sm:col-span-2 md:col-span-1">
+                        <div class="block w-full p-6 max-w-sm bg-white rounded-xl border border-gray-100 hover:text-purple-700">
+                            <user-icon size="2x"/>
+                            <h5 class="my-2 text-2xl font-semibold mt-3 tracking-tight">Data Pegawai</h5>
+                            <p class="font-normal text-gray-700">Pengolahan data pegawai sebagai subjek yang melakukan kegiatan monitoring.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-span-4 sm:col-span-2 md:col-span-1">
+                        <div class="block w-full p-6 max-w-sm bg-white rounded-xl border border-gray-100 hover:text-purple-700">
+                            <monitor-icon size="2x"/>
+                            <h5 class="my-2 text-2xl font-semibold mt-3 tracking-tight">Data Tim / Group</h5>
+                            <p class="font-normal text-gray-700">Pengolahan data tim sebagai kelompok dari subjek kegiatan monitoring.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-span-4 sm:col-span-2 md:col-span-1">
+                        <div class="block w-full p-6 max-w-sm bg-white rounded-xl border border-gray-100 hover:text-purple-700">
+                            <map-icon size="2x"/>
+                            <h5 class="my-2 text-2xl font-semibold mt-3 tracking-tight">Visualisasi Peta</h5>
+                            <p class="font-normal text-gray-700">Monitoring terdapat data lokasi yang bisa divualisasikan agar lebih inovatif.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="footer" class="bg-slate-900 py-8">
+            <div class="container mx-auto px-12">
+                <div class="grid grid-cols-2">
+                    <div class="col-span-2 sm:col-span-1 justify-self-start text-slate-300">
+                        2022 Copyright by Balai Teknik Perkeretaapian Jawa Barat.
+                        <!-- <div class="mt-4">
+                            <img src="@/Assets/logo-btp-jabar.png" class="w-14 inline-block mr-2" alt="Logo BTP Jabar">
+                            <img src="@/Assets/logo-dishub.png" class="w-14 inline-block mx-2" alt="Logo Dishub">
+                        </div> -->
+                    </div>
+                    <div class="col-span-2 sm:col-span-1 justify-self-end text-slate-300">
+                        2022 Developed by <a href="https://sidescript.id" class="underline" target="_blank">Sidescript Indonesia</a>.
+                        <!-- <div class="mt-4">
+                            <img src="@/Assets/logo-dev.png" class="w-16 inline-block mr-2" alt="Logo BTP Jabar">
+                        </div> -->
                     </div>
                 </div>
             </div>
@@ -44,85 +116,20 @@
     </div>
 </template>
 
-<style scoped>
-    .bg-gray-100 {
-        background-color: #f7fafc;
-        background-color: rgba(247, 250, 252, var(--tw-bg-opacity));
-    }
-
-    .border-gray-200 {
-        border-color: #edf2f7;
-        border-color: rgba(237, 242, 247, var(--tw-border-opacity));
-    }
-
-    .text-gray-400 {
-        color: #cbd5e0;
-        color: rgba(203, 213, 224, var(--tw-text-opacity));
-    }
-
-    .text-gray-500 {
-        color: #a0aec0;
-        color: rgba(160, 174, 192, var(--tw-text-opacity));
-    }
-
-    .text-gray-600 {
-        color: #718096;
-        color: rgba(113, 128, 150, var(--tw-text-opacity));
-    }
-
-    .text-gray-700 {
-        color: #4a5568;
-        color: rgba(74, 85, 104, var(--tw-text-opacity));
-    }
-
-    .text-gray-900 {
-        color: #1a202c;
-        color: rgba(26, 32, 44, var(--tw-text-opacity));
-    }
-
-    @media (prefers-color-scheme: dark) {
-        .dark\:bg-gray-800 {
-            background-color: #2d3748;
-            background-color: rgba(45, 55, 72, var(--tw-bg-opacity));
-        }
-
-        .dark\:bg-gray-900 {
-            background-color: #1a202c;
-            background-color: rgba(26, 32, 44, var(--tw-bg-opacity));
-        }
-
-        .dark\:border-gray-700 {
-            border-color: #4a5568;
-            border-color: rgba(74, 85, 104, var(--tw-border-opacity));
-        }
-
-        .dark\:text-white {
-            color: #fff;
-            color: rgba(255, 255, 255, var(--tw-text-opacity));
-        }
-
-        .dark\:text-gray-400 {
-            color: #cbd5e0;
-            color: rgba(203, 213, 224, var(--tw-text-opacity));
-        }
-    }
-</style>
-
 <script>
-    import { defineComponent } from 'vue'
-    import { Head, Link } from '@inertiajs/inertia-vue3';
-
-    export default defineComponent({
-        components: {
-            Head,
-            Link,
-        },
-
-        props: {
-            canLogin: Boolean,
-            canRegister: Boolean,
-            laravelVersion: String,
-            phpVersion: String,
+import { MonitorIcon, DatabaseIcon, FileTextIcon, UserIcon, UsersIcon, MapIcon } from "@zhuowenli/vue-feather-icons"
+export default {
+    components: {
+        DatabaseIcon,
+        FileTextIcon,
+        MonitorIcon,
+        UserIcon,
+        MapIcon,
+    },
+    methods: {
+        gotoLogin() {
+            this.$inertia.get(route('login'))
         }
-    })
+    }
+}
 </script>

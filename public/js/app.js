@@ -19296,6 +19296,12033 @@ const getGlobalThis = () => {
 
 /***/ }),
 
+/***/ "./node_modules/@zhuowenli/vue-feather-icons/dist/vue-feather-icons.es.js":
+/*!********************************************************************************!*\
+  !*** ./node_modules/@zhuowenli/vue-feather-icons/dist/vue-feather-icons.es.js ***!
+  \********************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "ActivityIcon": () => (/* binding */ ActivityIcon),
+/* harmony export */   "AirplayIcon": () => (/* binding */ AirplayIcon),
+/* harmony export */   "AlertCircleIcon": () => (/* binding */ AlertCircleIcon),
+/* harmony export */   "AlertOctagonIcon": () => (/* binding */ AlertOctagonIcon),
+/* harmony export */   "AlertTriangleIcon": () => (/* binding */ AlertTriangleIcon),
+/* harmony export */   "AlignCenterIcon": () => (/* binding */ AlignCenterIcon),
+/* harmony export */   "AlignJustifyIcon": () => (/* binding */ AlignJustifyIcon),
+/* harmony export */   "AlignLeftIcon": () => (/* binding */ AlignLeftIcon),
+/* harmony export */   "AlignRightIcon": () => (/* binding */ AlignRightIcon),
+/* harmony export */   "AnchorIcon": () => (/* binding */ AnchorIcon),
+/* harmony export */   "ApertureIcon": () => (/* binding */ ApertureIcon),
+/* harmony export */   "ArchiveIcon": () => (/* binding */ ArchiveIcon),
+/* harmony export */   "ArrowDownCircleIcon": () => (/* binding */ ArrowDownCircleIcon),
+/* harmony export */   "ArrowDownIcon": () => (/* binding */ ArrowDownIcon),
+/* harmony export */   "ArrowDownLeftIcon": () => (/* binding */ ArrowDownLeftIcon),
+/* harmony export */   "ArrowDownRightIcon": () => (/* binding */ ArrowDownRightIcon),
+/* harmony export */   "ArrowLeftCircleIcon": () => (/* binding */ ArrowLeftCircleIcon),
+/* harmony export */   "ArrowLeftIcon": () => (/* binding */ ArrowLeftIcon),
+/* harmony export */   "ArrowRightCircleIcon": () => (/* binding */ ArrowRightCircleIcon),
+/* harmony export */   "ArrowRightIcon": () => (/* binding */ ArrowRightIcon),
+/* harmony export */   "ArrowUpCircleIcon": () => (/* binding */ ArrowUpCircleIcon),
+/* harmony export */   "ArrowUpIcon": () => (/* binding */ ArrowUpIcon),
+/* harmony export */   "ArrowUpLeftIcon": () => (/* binding */ ArrowUpLeftIcon),
+/* harmony export */   "ArrowUpRightIcon": () => (/* binding */ ArrowUpRightIcon),
+/* harmony export */   "AtSignIcon": () => (/* binding */ AtSignIcon),
+/* harmony export */   "AwardIcon": () => (/* binding */ AwardIcon),
+/* harmony export */   "BarChart2Icon": () => (/* binding */ BarChart2Icon),
+/* harmony export */   "BarChartIcon": () => (/* binding */ BarChartIcon),
+/* harmony export */   "BatteryChargingIcon": () => (/* binding */ BatteryChargingIcon),
+/* harmony export */   "BatteryIcon": () => (/* binding */ BatteryIcon),
+/* harmony export */   "BellIcon": () => (/* binding */ BellIcon),
+/* harmony export */   "BellOffIcon": () => (/* binding */ BellOffIcon),
+/* harmony export */   "BluetoothIcon": () => (/* binding */ BluetoothIcon),
+/* harmony export */   "BoldIcon": () => (/* binding */ BoldIcon),
+/* harmony export */   "BookIcon": () => (/* binding */ BookIcon),
+/* harmony export */   "BookOpenIcon": () => (/* binding */ BookOpenIcon),
+/* harmony export */   "BookmarkIcon": () => (/* binding */ BookmarkIcon),
+/* harmony export */   "BoxIcon": () => (/* binding */ BoxIcon),
+/* harmony export */   "BriefcaseIcon": () => (/* binding */ BriefcaseIcon),
+/* harmony export */   "CalendarIcon": () => (/* binding */ CalendarIcon),
+/* harmony export */   "CameraIcon": () => (/* binding */ CameraIcon),
+/* harmony export */   "CameraOffIcon": () => (/* binding */ CameraOffIcon),
+/* harmony export */   "CastIcon": () => (/* binding */ CastIcon),
+/* harmony export */   "CheckCircleIcon": () => (/* binding */ CheckCircleIcon),
+/* harmony export */   "CheckIcon": () => (/* binding */ CheckIcon),
+/* harmony export */   "CheckSquareIcon": () => (/* binding */ CheckSquareIcon),
+/* harmony export */   "ChevronDownIcon": () => (/* binding */ ChevronDownIcon),
+/* harmony export */   "ChevronLeftIcon": () => (/* binding */ ChevronLeftIcon),
+/* harmony export */   "ChevronRightIcon": () => (/* binding */ ChevronRightIcon),
+/* harmony export */   "ChevronUpIcon": () => (/* binding */ ChevronUpIcon),
+/* harmony export */   "ChevronsDownIcon": () => (/* binding */ ChevronsDownIcon),
+/* harmony export */   "ChevronsLeftIcon": () => (/* binding */ ChevronsLeftIcon),
+/* harmony export */   "ChevronsRightIcon": () => (/* binding */ ChevronsRightIcon),
+/* harmony export */   "ChevronsUpIcon": () => (/* binding */ ChevronsUpIcon),
+/* harmony export */   "ChromeIcon": () => (/* binding */ ChromeIcon),
+/* harmony export */   "CircleIcon": () => (/* binding */ CircleIcon),
+/* harmony export */   "ClipboardIcon": () => (/* binding */ ClipboardIcon),
+/* harmony export */   "ClockIcon": () => (/* binding */ ClockIcon),
+/* harmony export */   "CloudDrizzleIcon": () => (/* binding */ CloudDrizzleIcon),
+/* harmony export */   "CloudIcon": () => (/* binding */ CloudIcon),
+/* harmony export */   "CloudLightningIcon": () => (/* binding */ CloudLightningIcon),
+/* harmony export */   "CloudOffIcon": () => (/* binding */ CloudOffIcon),
+/* harmony export */   "CloudRainIcon": () => (/* binding */ CloudRainIcon),
+/* harmony export */   "CloudSnowIcon": () => (/* binding */ CloudSnowIcon),
+/* harmony export */   "CodeIcon": () => (/* binding */ CodeIcon),
+/* harmony export */   "CodepenIcon": () => (/* binding */ CodepenIcon),
+/* harmony export */   "CodesandboxIcon": () => (/* binding */ CodesandboxIcon),
+/* harmony export */   "CoffeeIcon": () => (/* binding */ CoffeeIcon),
+/* harmony export */   "ColumnsIcon": () => (/* binding */ ColumnsIcon),
+/* harmony export */   "CommandIcon": () => (/* binding */ CommandIcon),
+/* harmony export */   "CompassIcon": () => (/* binding */ CompassIcon),
+/* harmony export */   "CopyIcon": () => (/* binding */ CopyIcon),
+/* harmony export */   "CornerDownLeftIcon": () => (/* binding */ CornerDownLeftIcon),
+/* harmony export */   "CornerDownRightIcon": () => (/* binding */ CornerDownRightIcon),
+/* harmony export */   "CornerLeftDownIcon": () => (/* binding */ CornerLeftDownIcon),
+/* harmony export */   "CornerLeftUpIcon": () => (/* binding */ CornerLeftUpIcon),
+/* harmony export */   "CornerRightDownIcon": () => (/* binding */ CornerRightDownIcon),
+/* harmony export */   "CornerRightUpIcon": () => (/* binding */ CornerRightUpIcon),
+/* harmony export */   "CornerUpLeftIcon": () => (/* binding */ CornerUpLeftIcon),
+/* harmony export */   "CornerUpRightIcon": () => (/* binding */ CornerUpRightIcon),
+/* harmony export */   "CpuIcon": () => (/* binding */ CpuIcon),
+/* harmony export */   "CreditCardIcon": () => (/* binding */ CreditCardIcon),
+/* harmony export */   "CropIcon": () => (/* binding */ CropIcon),
+/* harmony export */   "CrosshairIcon": () => (/* binding */ CrosshairIcon),
+/* harmony export */   "DatabaseIcon": () => (/* binding */ DatabaseIcon),
+/* harmony export */   "DeleteIcon": () => (/* binding */ DeleteIcon),
+/* harmony export */   "DiscIcon": () => (/* binding */ DiscIcon),
+/* harmony export */   "DivideCircleIcon": () => (/* binding */ DivideCircleIcon),
+/* harmony export */   "DivideIcon": () => (/* binding */ DivideIcon),
+/* harmony export */   "DivideSquareIcon": () => (/* binding */ DivideSquareIcon),
+/* harmony export */   "DollarSignIcon": () => (/* binding */ DollarSignIcon),
+/* harmony export */   "DownloadCloudIcon": () => (/* binding */ DownloadCloudIcon),
+/* harmony export */   "DownloadIcon": () => (/* binding */ DownloadIcon),
+/* harmony export */   "DribbbleIcon": () => (/* binding */ DribbbleIcon),
+/* harmony export */   "DropletIcon": () => (/* binding */ DropletIcon),
+/* harmony export */   "Edit2Icon": () => (/* binding */ Edit2Icon),
+/* harmony export */   "Edit3Icon": () => (/* binding */ Edit3Icon),
+/* harmony export */   "EditIcon": () => (/* binding */ EditIcon),
+/* harmony export */   "ExternalLinkIcon": () => (/* binding */ ExternalLinkIcon),
+/* harmony export */   "EyeIcon": () => (/* binding */ EyeIcon),
+/* harmony export */   "EyeOffIcon": () => (/* binding */ EyeOffIcon),
+/* harmony export */   "FacebookIcon": () => (/* binding */ FacebookIcon),
+/* harmony export */   "FastForwardIcon": () => (/* binding */ FastForwardIcon),
+/* harmony export */   "FeatherIcon": () => (/* binding */ FeatherIcon),
+/* harmony export */   "FigmaIcon": () => (/* binding */ FigmaIcon),
+/* harmony export */   "FileIcon": () => (/* binding */ FileIcon),
+/* harmony export */   "FileMinusIcon": () => (/* binding */ FileMinusIcon),
+/* harmony export */   "FilePlusIcon": () => (/* binding */ FilePlusIcon),
+/* harmony export */   "FileTextIcon": () => (/* binding */ FileTextIcon),
+/* harmony export */   "FilmIcon": () => (/* binding */ FilmIcon),
+/* harmony export */   "FilterIcon": () => (/* binding */ FilterIcon),
+/* harmony export */   "FlagIcon": () => (/* binding */ FlagIcon),
+/* harmony export */   "FolderIcon": () => (/* binding */ FolderIcon),
+/* harmony export */   "FolderMinusIcon": () => (/* binding */ FolderMinusIcon),
+/* harmony export */   "FolderPlusIcon": () => (/* binding */ FolderPlusIcon),
+/* harmony export */   "FramerIcon": () => (/* binding */ FramerIcon),
+/* harmony export */   "FrownIcon": () => (/* binding */ FrownIcon),
+/* harmony export */   "GiftIcon": () => (/* binding */ GiftIcon),
+/* harmony export */   "GitBranchIcon": () => (/* binding */ GitBranchIcon),
+/* harmony export */   "GitCommitIcon": () => (/* binding */ GitCommitIcon),
+/* harmony export */   "GitMergeIcon": () => (/* binding */ GitMergeIcon),
+/* harmony export */   "GitPullRequestIcon": () => (/* binding */ GitPullRequestIcon),
+/* harmony export */   "GithubIcon": () => (/* binding */ GithubIcon),
+/* harmony export */   "GitlabIcon": () => (/* binding */ GitlabIcon),
+/* harmony export */   "GlobeIcon": () => (/* binding */ GlobeIcon),
+/* harmony export */   "GridIcon": () => (/* binding */ GridIcon),
+/* harmony export */   "HardDriveIcon": () => (/* binding */ HardDriveIcon),
+/* harmony export */   "HashIcon": () => (/* binding */ HashIcon),
+/* harmony export */   "HeadphonesIcon": () => (/* binding */ HeadphonesIcon),
+/* harmony export */   "HeartIcon": () => (/* binding */ HeartIcon),
+/* harmony export */   "HelpCircleIcon": () => (/* binding */ HelpCircleIcon),
+/* harmony export */   "HexagonIcon": () => (/* binding */ HexagonIcon),
+/* harmony export */   "HomeIcon": () => (/* binding */ HomeIcon),
+/* harmony export */   "ImageIcon": () => (/* binding */ ImageIcon),
+/* harmony export */   "InboxIcon": () => (/* binding */ InboxIcon),
+/* harmony export */   "InfoIcon": () => (/* binding */ InfoIcon),
+/* harmony export */   "InstagramIcon": () => (/* binding */ InstagramIcon),
+/* harmony export */   "ItalicIcon": () => (/* binding */ ItalicIcon),
+/* harmony export */   "KeyIcon": () => (/* binding */ KeyIcon),
+/* harmony export */   "LayersIcon": () => (/* binding */ LayersIcon),
+/* harmony export */   "LayoutIcon": () => (/* binding */ LayoutIcon),
+/* harmony export */   "LifeBuoyIcon": () => (/* binding */ LifeBuoyIcon),
+/* harmony export */   "Link2Icon": () => (/* binding */ Link2Icon),
+/* harmony export */   "LinkIcon": () => (/* binding */ LinkIcon),
+/* harmony export */   "LinkedinIcon": () => (/* binding */ LinkedinIcon),
+/* harmony export */   "ListIcon": () => (/* binding */ ListIcon),
+/* harmony export */   "LoaderIcon": () => (/* binding */ LoaderIcon),
+/* harmony export */   "LockIcon": () => (/* binding */ LockIcon),
+/* harmony export */   "LogInIcon": () => (/* binding */ LogInIcon),
+/* harmony export */   "LogOutIcon": () => (/* binding */ LogOutIcon),
+/* harmony export */   "MailIcon": () => (/* binding */ MailIcon),
+/* harmony export */   "MapIcon": () => (/* binding */ MapIcon),
+/* harmony export */   "MapPinIcon": () => (/* binding */ MapPinIcon),
+/* harmony export */   "Maximize2Icon": () => (/* binding */ Maximize2Icon),
+/* harmony export */   "MaximizeIcon": () => (/* binding */ MaximizeIcon),
+/* harmony export */   "MehIcon": () => (/* binding */ MehIcon),
+/* harmony export */   "MenuIcon": () => (/* binding */ MenuIcon),
+/* harmony export */   "MessageCircleIcon": () => (/* binding */ MessageCircleIcon),
+/* harmony export */   "MessageSquareIcon": () => (/* binding */ MessageSquareIcon),
+/* harmony export */   "MicIcon": () => (/* binding */ MicIcon),
+/* harmony export */   "MicOffIcon": () => (/* binding */ MicOffIcon),
+/* harmony export */   "Minimize2Icon": () => (/* binding */ Minimize2Icon),
+/* harmony export */   "MinimizeIcon": () => (/* binding */ MinimizeIcon),
+/* harmony export */   "MinusCircleIcon": () => (/* binding */ MinusCircleIcon),
+/* harmony export */   "MinusIcon": () => (/* binding */ MinusIcon),
+/* harmony export */   "MinusSquareIcon": () => (/* binding */ MinusSquareIcon),
+/* harmony export */   "MonitorIcon": () => (/* binding */ MonitorIcon),
+/* harmony export */   "MoonIcon": () => (/* binding */ MoonIcon),
+/* harmony export */   "MoreHorizontalIcon": () => (/* binding */ MoreHorizontalIcon),
+/* harmony export */   "MoreVerticalIcon": () => (/* binding */ MoreVerticalIcon),
+/* harmony export */   "MousePointerIcon": () => (/* binding */ MousePointerIcon),
+/* harmony export */   "MoveIcon": () => (/* binding */ MoveIcon),
+/* harmony export */   "MusicIcon": () => (/* binding */ MusicIcon),
+/* harmony export */   "Navigation2Icon": () => (/* binding */ Navigation2Icon),
+/* harmony export */   "NavigationIcon": () => (/* binding */ NavigationIcon),
+/* harmony export */   "OctagonIcon": () => (/* binding */ OctagonIcon),
+/* harmony export */   "PackageIcon": () => (/* binding */ PackageIcon),
+/* harmony export */   "PaperclipIcon": () => (/* binding */ PaperclipIcon),
+/* harmony export */   "PauseCircleIcon": () => (/* binding */ PauseCircleIcon),
+/* harmony export */   "PauseIcon": () => (/* binding */ PauseIcon),
+/* harmony export */   "PenToolIcon": () => (/* binding */ PenToolIcon),
+/* harmony export */   "PercentIcon": () => (/* binding */ PercentIcon),
+/* harmony export */   "PhoneCallIcon": () => (/* binding */ PhoneCallIcon),
+/* harmony export */   "PhoneForwardedIcon": () => (/* binding */ PhoneForwardedIcon),
+/* harmony export */   "PhoneIcon": () => (/* binding */ PhoneIcon),
+/* harmony export */   "PhoneIncomingIcon": () => (/* binding */ PhoneIncomingIcon),
+/* harmony export */   "PhoneMissedIcon": () => (/* binding */ PhoneMissedIcon),
+/* harmony export */   "PhoneOffIcon": () => (/* binding */ PhoneOffIcon),
+/* harmony export */   "PhoneOutgoingIcon": () => (/* binding */ PhoneOutgoingIcon),
+/* harmony export */   "PieChartIcon": () => (/* binding */ PieChartIcon),
+/* harmony export */   "PlayCircleIcon": () => (/* binding */ PlayCircleIcon),
+/* harmony export */   "PlayIcon": () => (/* binding */ PlayIcon),
+/* harmony export */   "PlusCircleIcon": () => (/* binding */ PlusCircleIcon),
+/* harmony export */   "PlusIcon": () => (/* binding */ PlusIcon),
+/* harmony export */   "PlusSquareIcon": () => (/* binding */ PlusSquareIcon),
+/* harmony export */   "PocketIcon": () => (/* binding */ PocketIcon),
+/* harmony export */   "PowerIcon": () => (/* binding */ PowerIcon),
+/* harmony export */   "PrinterIcon": () => (/* binding */ PrinterIcon),
+/* harmony export */   "RadioIcon": () => (/* binding */ RadioIcon),
+/* harmony export */   "RefreshCcwIcon": () => (/* binding */ RefreshCcwIcon),
+/* harmony export */   "RefreshCwIcon": () => (/* binding */ RefreshCwIcon),
+/* harmony export */   "RepeatIcon": () => (/* binding */ RepeatIcon),
+/* harmony export */   "RewindIcon": () => (/* binding */ RewindIcon),
+/* harmony export */   "RotateCcwIcon": () => (/* binding */ RotateCcwIcon),
+/* harmony export */   "RotateCwIcon": () => (/* binding */ RotateCwIcon),
+/* harmony export */   "RssIcon": () => (/* binding */ RssIcon),
+/* harmony export */   "SaveIcon": () => (/* binding */ SaveIcon),
+/* harmony export */   "ScissorsIcon": () => (/* binding */ ScissorsIcon),
+/* harmony export */   "SearchIcon": () => (/* binding */ SearchIcon),
+/* harmony export */   "SendIcon": () => (/* binding */ SendIcon),
+/* harmony export */   "ServerIcon": () => (/* binding */ ServerIcon),
+/* harmony export */   "SettingsIcon": () => (/* binding */ SettingsIcon),
+/* harmony export */   "Share2Icon": () => (/* binding */ Share2Icon),
+/* harmony export */   "ShareIcon": () => (/* binding */ ShareIcon),
+/* harmony export */   "ShieldIcon": () => (/* binding */ ShieldIcon),
+/* harmony export */   "ShieldOffIcon": () => (/* binding */ ShieldOffIcon),
+/* harmony export */   "ShoppingBagIcon": () => (/* binding */ ShoppingBagIcon),
+/* harmony export */   "ShoppingCartIcon": () => (/* binding */ ShoppingCartIcon),
+/* harmony export */   "ShuffleIcon": () => (/* binding */ ShuffleIcon),
+/* harmony export */   "SidebarIcon": () => (/* binding */ SidebarIcon),
+/* harmony export */   "SkipBackIcon": () => (/* binding */ SkipBackIcon),
+/* harmony export */   "SkipForwardIcon": () => (/* binding */ SkipForwardIcon),
+/* harmony export */   "SlackIcon": () => (/* binding */ SlackIcon),
+/* harmony export */   "SlashIcon": () => (/* binding */ SlashIcon),
+/* harmony export */   "SlidersIcon": () => (/* binding */ SlidersIcon),
+/* harmony export */   "SmartphoneIcon": () => (/* binding */ SmartphoneIcon),
+/* harmony export */   "SmileIcon": () => (/* binding */ SmileIcon),
+/* harmony export */   "SpeakerIcon": () => (/* binding */ SpeakerIcon),
+/* harmony export */   "SquareIcon": () => (/* binding */ SquareIcon),
+/* harmony export */   "StarIcon": () => (/* binding */ StarIcon),
+/* harmony export */   "StopCircleIcon": () => (/* binding */ StopCircleIcon),
+/* harmony export */   "SunIcon": () => (/* binding */ SunIcon),
+/* harmony export */   "SunriseIcon": () => (/* binding */ SunriseIcon),
+/* harmony export */   "SunsetIcon": () => (/* binding */ SunsetIcon),
+/* harmony export */   "TabletIcon": () => (/* binding */ TabletIcon),
+/* harmony export */   "TagIcon": () => (/* binding */ TagIcon),
+/* harmony export */   "TargetIcon": () => (/* binding */ TargetIcon),
+/* harmony export */   "TerminalIcon": () => (/* binding */ TerminalIcon),
+/* harmony export */   "ThermometerIcon": () => (/* binding */ ThermometerIcon),
+/* harmony export */   "ThumbsDownIcon": () => (/* binding */ ThumbsDownIcon),
+/* harmony export */   "ThumbsUpIcon": () => (/* binding */ ThumbsUpIcon),
+/* harmony export */   "ToggleLeftIcon": () => (/* binding */ ToggleLeftIcon),
+/* harmony export */   "ToggleRightIcon": () => (/* binding */ ToggleRightIcon),
+/* harmony export */   "ToolIcon": () => (/* binding */ ToolIcon),
+/* harmony export */   "Trash2Icon": () => (/* binding */ Trash2Icon),
+/* harmony export */   "TrashIcon": () => (/* binding */ TrashIcon),
+/* harmony export */   "TrelloIcon": () => (/* binding */ TrelloIcon),
+/* harmony export */   "TrendingDownIcon": () => (/* binding */ TrendingDownIcon),
+/* harmony export */   "TrendingUpIcon": () => (/* binding */ TrendingUpIcon),
+/* harmony export */   "TriangleIcon": () => (/* binding */ TriangleIcon),
+/* harmony export */   "TruckIcon": () => (/* binding */ TruckIcon),
+/* harmony export */   "TvIcon": () => (/* binding */ TvIcon),
+/* harmony export */   "TwitchIcon": () => (/* binding */ TwitchIcon),
+/* harmony export */   "TwitterIcon": () => (/* binding */ TwitterIcon),
+/* harmony export */   "TypeIcon": () => (/* binding */ TypeIcon),
+/* harmony export */   "UmbrellaIcon": () => (/* binding */ UmbrellaIcon),
+/* harmony export */   "UnderlineIcon": () => (/* binding */ UnderlineIcon),
+/* harmony export */   "UnlockIcon": () => (/* binding */ UnlockIcon),
+/* harmony export */   "UploadCloudIcon": () => (/* binding */ UploadCloudIcon),
+/* harmony export */   "UploadIcon": () => (/* binding */ UploadIcon),
+/* harmony export */   "UserCheckIcon": () => (/* binding */ UserCheckIcon),
+/* harmony export */   "UserIcon": () => (/* binding */ UserIcon),
+/* harmony export */   "UserMinusIcon": () => (/* binding */ UserMinusIcon),
+/* harmony export */   "UserPlusIcon": () => (/* binding */ UserPlusIcon),
+/* harmony export */   "UserXIcon": () => (/* binding */ UserXIcon),
+/* harmony export */   "UsersIcon": () => (/* binding */ UsersIcon),
+/* harmony export */   "VideoIcon": () => (/* binding */ VideoIcon),
+/* harmony export */   "VideoOffIcon": () => (/* binding */ VideoOffIcon),
+/* harmony export */   "VoicemailIcon": () => (/* binding */ VoicemailIcon),
+/* harmony export */   "Volume1Icon": () => (/* binding */ Volume1Icon),
+/* harmony export */   "Volume2Icon": () => (/* binding */ Volume2Icon),
+/* harmony export */   "VolumeIcon": () => (/* binding */ VolumeIcon),
+/* harmony export */   "VolumeXIcon": () => (/* binding */ VolumeXIcon),
+/* harmony export */   "WatchIcon": () => (/* binding */ WatchIcon),
+/* harmony export */   "WifiIcon": () => (/* binding */ WifiIcon),
+/* harmony export */   "WifiOffIcon": () => (/* binding */ WifiOffIcon),
+/* harmony export */   "WindIcon": () => (/* binding */ WindIcon),
+/* harmony export */   "XCircleIcon": () => (/* binding */ XCircleIcon),
+/* harmony export */   "XIcon": () => (/* binding */ XIcon),
+/* harmony export */   "XOctagonIcon": () => (/* binding */ XOctagonIcon),
+/* harmony export */   "XSquareIcon": () => (/* binding */ XSquareIcon),
+/* harmony export */   "YoutubeIcon": () => (/* binding */ YoutubeIcon),
+/* harmony export */   "ZapIcon": () => (/* binding */ ZapIcon),
+/* harmony export */   "ZapOffIcon": () => (/* binding */ ZapOffIcon),
+/* harmony export */   "ZoomInIcon": () => (/* binding */ ZoomInIcon),
+/* harmony export */   "ZoomOutIcon": () => (/* binding */ ZoomOutIcon)
+/* harmony export */ });
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
+
+
+var ActivityIcon = {
+  name: 'ActivityIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-activity"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("polyline", {
+      "points": "22 12 18 12 15 21 9 3 6 12 2 12"
+    })]); };
+  }
+
+};
+
+var AirplayIcon = {
+  name: 'AirplayIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-airplay"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M5 17H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-1"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("polygon", {
+      "points": "12 15 17 21 7 21 12 15"
+    })]); };
+  }
+
+};
+
+var AlertCircleIcon = {
+  name: 'AlertCircleIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-alert-circle"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("circle", {
+      "cx": "12",
+      "cy": "12",
+      "r": "10"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "12",
+      "y1": "8",
+      "x2": "12",
+      "y2": "12"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "12",
+      "y1": "16",
+      "x2": "12.01",
+      "y2": "16"
+    })]); };
+  }
+
+};
+
+var AlertOctagonIcon = {
+  name: 'AlertOctagonIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-alert-octagon"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("polygon", {
+      "points": "7.86 2 16.14 2 22 7.86 22 16.14 16.14 22 7.86 22 2 16.14 2 7.86 7.86 2"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "12",
+      "y1": "8",
+      "x2": "12",
+      "y2": "12"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "12",
+      "y1": "16",
+      "x2": "12.01",
+      "y2": "16"
+    })]); };
+  }
+
+};
+
+var AlertTriangleIcon = {
+  name: 'AlertTriangleIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-alert-triangle"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "12",
+      "y1": "9",
+      "x2": "12",
+      "y2": "13"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "12",
+      "y1": "17",
+      "x2": "12.01",
+      "y2": "17"
+    })]); };
+  }
+
+};
+
+var AlignCenterIcon = {
+  name: 'AlignCenterIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-align-center"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "18",
+      "y1": "10",
+      "x2": "6",
+      "y2": "10"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "21",
+      "y1": "6",
+      "x2": "3",
+      "y2": "6"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "21",
+      "y1": "14",
+      "x2": "3",
+      "y2": "14"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "18",
+      "y1": "18",
+      "x2": "6",
+      "y2": "18"
+    })]); };
+  }
+
+};
+
+var AlignJustifyIcon = {
+  name: 'AlignJustifyIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-align-justify"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "21",
+      "y1": "10",
+      "x2": "3",
+      "y2": "10"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "21",
+      "y1": "6",
+      "x2": "3",
+      "y2": "6"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "21",
+      "y1": "14",
+      "x2": "3",
+      "y2": "14"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "21",
+      "y1": "18",
+      "x2": "3",
+      "y2": "18"
+    })]); };
+  }
+
+};
+
+var AlignLeftIcon = {
+  name: 'AlignLeftIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-align-left"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "17",
+      "y1": "10",
+      "x2": "3",
+      "y2": "10"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "21",
+      "y1": "6",
+      "x2": "3",
+      "y2": "6"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "21",
+      "y1": "14",
+      "x2": "3",
+      "y2": "14"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "17",
+      "y1": "18",
+      "x2": "3",
+      "y2": "18"
+    })]); };
+  }
+
+};
+
+var AlignRightIcon = {
+  name: 'AlignRightIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-align-right"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "21",
+      "y1": "10",
+      "x2": "7",
+      "y2": "10"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "21",
+      "y1": "6",
+      "x2": "3",
+      "y2": "6"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "21",
+      "y1": "14",
+      "x2": "3",
+      "y2": "14"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "21",
+      "y1": "18",
+      "x2": "7",
+      "y2": "18"
+    })]); };
+  }
+
+};
+
+var AnchorIcon = {
+  name: 'AnchorIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-anchor"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("circle", {
+      "cx": "12",
+      "cy": "5",
+      "r": "3"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "12",
+      "y1": "22",
+      "x2": "12",
+      "y2": "8"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M5 12H2a10 10 0 0 0 20 0h-3"
+    })]); };
+  }
+
+};
+
+var ApertureIcon = {
+  name: 'ApertureIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-aperture"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("circle", {
+      "cx": "12",
+      "cy": "12",
+      "r": "10"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "14.31",
+      "y1": "8",
+      "x2": "20.05",
+      "y2": "17.94"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "9.69",
+      "y1": "8",
+      "x2": "21.17",
+      "y2": "8"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "7.38",
+      "y1": "12",
+      "x2": "13.12",
+      "y2": "2.06"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "9.69",
+      "y1": "16",
+      "x2": "3.95",
+      "y2": "6.06"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "14.31",
+      "y1": "16",
+      "x2": "2.83",
+      "y2": "16"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "16.62",
+      "y1": "12",
+      "x2": "10.88",
+      "y2": "21.94"
+    })]); };
+  }
+
+};
+
+var ArchiveIcon = {
+  name: 'ArchiveIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-archive"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("polyline", {
+      "points": "21 8 21 21 3 21 3 8"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("rect", {
+      "x": "1",
+      "y": "3",
+      "width": "22",
+      "height": "5"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "10",
+      "y1": "12",
+      "x2": "14",
+      "y2": "12"
+    })]); };
+  }
+
+};
+
+var ArrowDownCircleIcon = {
+  name: 'ArrowDownCircleIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-arrow-down-circle"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("circle", {
+      "cx": "12",
+      "cy": "12",
+      "r": "10"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("polyline", {
+      "points": "8 12 12 16 16 12"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "12",
+      "y1": "8",
+      "x2": "12",
+      "y2": "16"
+    })]); };
+  }
+
+};
+
+var ArrowDownLeftIcon = {
+  name: 'ArrowDownLeftIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-arrow-down-left"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "17",
+      "y1": "7",
+      "x2": "7",
+      "y2": "17"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("polyline", {
+      "points": "17 17 7 17 7 7"
+    })]); };
+  }
+
+};
+
+var ArrowDownRightIcon = {
+  name: 'ArrowDownRightIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-arrow-down-right"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "7",
+      "y1": "7",
+      "x2": "17",
+      "y2": "17"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("polyline", {
+      "points": "17 7 17 17 7 17"
+    })]); };
+  }
+
+};
+
+var ArrowDownIcon = {
+  name: 'ArrowDownIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-arrow-down"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "12",
+      "y1": "5",
+      "x2": "12",
+      "y2": "19"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("polyline", {
+      "points": "19 12 12 19 5 12"
+    })]); };
+  }
+
+};
+
+var ArrowLeftCircleIcon = {
+  name: 'ArrowLeftCircleIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-arrow-left-circle"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("circle", {
+      "cx": "12",
+      "cy": "12",
+      "r": "10"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("polyline", {
+      "points": "12 8 8 12 12 16"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "16",
+      "y1": "12",
+      "x2": "8",
+      "y2": "12"
+    })]); };
+  }
+
+};
+
+var ArrowLeftIcon = {
+  name: 'ArrowLeftIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-arrow-left"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "19",
+      "y1": "12",
+      "x2": "5",
+      "y2": "12"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("polyline", {
+      "points": "12 19 5 12 12 5"
+    })]); };
+  }
+
+};
+
+var ArrowRightCircleIcon = {
+  name: 'ArrowRightCircleIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-arrow-right-circle"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("circle", {
+      "cx": "12",
+      "cy": "12",
+      "r": "10"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("polyline", {
+      "points": "12 16 16 12 12 8"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "8",
+      "y1": "12",
+      "x2": "16",
+      "y2": "12"
+    })]); };
+  }
+
+};
+
+var ArrowRightIcon = {
+  name: 'ArrowRightIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-arrow-right"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "5",
+      "y1": "12",
+      "x2": "19",
+      "y2": "12"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("polyline", {
+      "points": "12 5 19 12 12 19"
+    })]); };
+  }
+
+};
+
+var ArrowUpCircleIcon = {
+  name: 'ArrowUpCircleIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-arrow-up-circle"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("circle", {
+      "cx": "12",
+      "cy": "12",
+      "r": "10"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("polyline", {
+      "points": "16 12 12 8 8 12"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "12",
+      "y1": "16",
+      "x2": "12",
+      "y2": "8"
+    })]); };
+  }
+
+};
+
+var ArrowUpLeftIcon = {
+  name: 'ArrowUpLeftIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-arrow-up-left"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "17",
+      "y1": "17",
+      "x2": "7",
+      "y2": "7"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("polyline", {
+      "points": "7 17 7 7 17 7"
+    })]); };
+  }
+
+};
+
+var ArrowUpRightIcon = {
+  name: 'ArrowUpRightIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-arrow-up-right"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "7",
+      "y1": "17",
+      "x2": "17",
+      "y2": "7"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("polyline", {
+      "points": "7 7 17 7 17 17"
+    })]); };
+  }
+
+};
+
+var ArrowUpIcon = {
+  name: 'ArrowUpIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-arrow-up"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "12",
+      "y1": "19",
+      "x2": "12",
+      "y2": "5"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("polyline", {
+      "points": "5 12 12 5 19 12"
+    })]); };
+  }
+
+};
+
+var AtSignIcon = {
+  name: 'AtSignIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-at-sign"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("circle", {
+      "cx": "12",
+      "cy": "12",
+      "r": "4"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-3.92 7.94"
+    })]); };
+  }
+
+};
+
+var AwardIcon = {
+  name: 'AwardIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-award"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("circle", {
+      "cx": "12",
+      "cy": "8",
+      "r": "7"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("polyline", {
+      "points": "8.21 13.89 7 23 12 20 17 23 15.79 13.88"
+    })]); };
+  }
+
+};
+
+var BarChart2Icon = {
+  name: 'BarChart2Icon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-bar-chart-2"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "18",
+      "y1": "20",
+      "x2": "18",
+      "y2": "10"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "12",
+      "y1": "20",
+      "x2": "12",
+      "y2": "4"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "6",
+      "y1": "20",
+      "x2": "6",
+      "y2": "14"
+    })]); };
+  }
+
+};
+
+var BarChartIcon = {
+  name: 'BarChartIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-bar-chart"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "12",
+      "y1": "20",
+      "x2": "12",
+      "y2": "10"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "18",
+      "y1": "20",
+      "x2": "18",
+      "y2": "4"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "6",
+      "y1": "20",
+      "x2": "6",
+      "y2": "16"
+    })]); };
+  }
+
+};
+
+var BatteryChargingIcon = {
+  name: 'BatteryChargingIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-battery-charging"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M5 18H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h3.19M15 6h2a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-3.19"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "23",
+      "y1": "13",
+      "x2": "23",
+      "y2": "11"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("polyline", {
+      "points": "11 6 7 12 13 12 9 18"
+    })]); };
+  }
+
+};
+
+var BatteryIcon = {
+  name: 'BatteryIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-battery"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("rect", {
+      "x": "1",
+      "y": "6",
+      "width": "18",
+      "height": "12",
+      "rx": "2",
+      "ry": "2"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "23",
+      "y1": "13",
+      "x2": "23",
+      "y2": "11"
+    })]); };
+  }
+
+};
+
+var BellOffIcon = {
+  name: 'BellOffIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-bell-off"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M13.73 21a2 2 0 0 1-3.46 0"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M18.63 13A17.89 17.89 0 0 1 18 8"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M6.26 6.26A5.86 5.86 0 0 0 6 8c0 7-3 9-3 9h14"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M18 8a6 6 0 0 0-9.33-5"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "1",
+      "y1": "1",
+      "x2": "23",
+      "y2": "23"
+    })]); };
+  }
+
+};
+
+var BellIcon = {
+  name: 'BellIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-bell"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M13.73 21a2 2 0 0 1-3.46 0"
+    })]); };
+  }
+
+};
+
+var BluetoothIcon = {
+  name: 'BluetoothIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-bluetooth"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("polyline", {
+      "points": "6.5 6.5 17.5 17.5 12 23 12 1 17.5 6.5 6.5 17.5"
+    })]); };
+  }
+
+};
+
+var BoldIcon = {
+  name: 'BoldIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-bold"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M6 4h8a4 4 0 0 1 4 4 4 4 0 0 1-4 4H6z"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M6 12h9a4 4 0 0 1 4 4 4 4 0 0 1-4 4H6z"
+    })]); };
+  }
+
+};
+
+var BookOpenIcon = {
+  name: 'BookOpenIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-book-open"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"
+    })]); };
+  }
+
+};
+
+var BookIcon = {
+  name: 'BookIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-book"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M4 19.5A2.5 2.5 0 0 1 6.5 17H20"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"
+    })]); };
+  }
+
+};
+
+var BookmarkIcon = {
+  name: 'BookmarkIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-bookmark"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"
+    })]); };
+  }
+
+};
+
+var BoxIcon = {
+  name: 'BoxIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-box"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("polyline", {
+      "points": "3.27 6.96 12 12.01 20.73 6.96"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "12",
+      "y1": "22.08",
+      "x2": "12",
+      "y2": "12"
+    })]); };
+  }
+
+};
+
+var BriefcaseIcon = {
+  name: 'BriefcaseIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-briefcase"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("rect", {
+      "x": "2",
+      "y": "7",
+      "width": "20",
+      "height": "14",
+      "rx": "2",
+      "ry": "2"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"
+    })]); };
+  }
+
+};
+
+var CalendarIcon = {
+  name: 'CalendarIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-calendar"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("rect", {
+      "x": "3",
+      "y": "4",
+      "width": "18",
+      "height": "18",
+      "rx": "2",
+      "ry": "2"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "16",
+      "y1": "2",
+      "x2": "16",
+      "y2": "6"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "8",
+      "y1": "2",
+      "x2": "8",
+      "y2": "6"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "3",
+      "y1": "10",
+      "x2": "21",
+      "y2": "10"
+    })]); };
+  }
+
+};
+
+var CameraOffIcon = {
+  name: 'CameraOffIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-camera-off"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "1",
+      "y1": "1",
+      "x2": "23",
+      "y2": "23"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M21 21H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h3m3-3h6l2 3h4a2 2 0 0 1 2 2v9.34m-7.72-2.06a4 4 0 1 1-5.56-5.56"
+    })]); };
+  }
+
+};
+
+var CameraIcon = {
+  name: 'CameraIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-camera"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("circle", {
+      "cx": "12",
+      "cy": "13",
+      "r": "4"
+    })]); };
+  }
+
+};
+
+var CastIcon = {
+  name: 'CastIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-cast"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M2 16.1A5 5 0 0 1 5.9 20M2 12.05A9 9 0 0 1 9.95 20M2 8V6a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-6"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "2",
+      "y1": "20",
+      "x2": "2.01",
+      "y2": "20"
+    })]); };
+  }
+
+};
+
+var CheckCircleIcon = {
+  name: 'CheckCircleIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-check-circle"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M22 11.08V12a10 10 0 1 1-5.93-9.14"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("polyline", {
+      "points": "22 4 12 14.01 9 11.01"
+    })]); };
+  }
+
+};
+
+var CheckSquareIcon = {
+  name: 'CheckSquareIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-check-square"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("polyline", {
+      "points": "9 11 12 14 22 4"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"
+    })]); };
+  }
+
+};
+
+var CheckIcon = {
+  name: 'CheckIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-check"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("polyline", {
+      "points": "20 6 9 17 4 12"
+    })]); };
+  }
+
+};
+
+var ChevronDownIcon = {
+  name: 'ChevronDownIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-chevron-down"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("polyline", {
+      "points": "6 9 12 15 18 9"
+    })]); };
+  }
+
+};
+
+var ChevronLeftIcon = {
+  name: 'ChevronLeftIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-chevron-left"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("polyline", {
+      "points": "15 18 9 12 15 6"
+    })]); };
+  }
+
+};
+
+var ChevronRightIcon = {
+  name: 'ChevronRightIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-chevron-right"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("polyline", {
+      "points": "9 18 15 12 9 6"
+    })]); };
+  }
+
+};
+
+var ChevronUpIcon = {
+  name: 'ChevronUpIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-chevron-up"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("polyline", {
+      "points": "18 15 12 9 6 15"
+    })]); };
+  }
+
+};
+
+var ChevronsDownIcon = {
+  name: 'ChevronsDownIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-chevrons-down"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("polyline", {
+      "points": "7 13 12 18 17 13"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("polyline", {
+      "points": "7 6 12 11 17 6"
+    })]); };
+  }
+
+};
+
+var ChevronsLeftIcon = {
+  name: 'ChevronsLeftIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-chevrons-left"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("polyline", {
+      "points": "11 17 6 12 11 7"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("polyline", {
+      "points": "18 17 13 12 18 7"
+    })]); };
+  }
+
+};
+
+var ChevronsRightIcon = {
+  name: 'ChevronsRightIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-chevrons-right"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("polyline", {
+      "points": "13 17 18 12 13 7"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("polyline", {
+      "points": "6 17 11 12 6 7"
+    })]); };
+  }
+
+};
+
+var ChevronsUpIcon = {
+  name: 'ChevronsUpIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-chevrons-up"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("polyline", {
+      "points": "17 11 12 6 7 11"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("polyline", {
+      "points": "17 18 12 13 7 18"
+    })]); };
+  }
+
+};
+
+var ChromeIcon = {
+  name: 'ChromeIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-chrome"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("circle", {
+      "cx": "12",
+      "cy": "12",
+      "r": "10"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("circle", {
+      "cx": "12",
+      "cy": "12",
+      "r": "4"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "21.17",
+      "y1": "8",
+      "x2": "12",
+      "y2": "8"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "3.95",
+      "y1": "6.06",
+      "x2": "8.54",
+      "y2": "14"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "10.88",
+      "y1": "21.94",
+      "x2": "15.46",
+      "y2": "14"
+    })]); };
+  }
+
+};
+
+var CircleIcon = {
+  name: 'CircleIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-circle"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("circle", {
+      "cx": "12",
+      "cy": "12",
+      "r": "10"
+    })]); };
+  }
+
+};
+
+var ClipboardIcon = {
+  name: 'ClipboardIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-clipboard"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("rect", {
+      "x": "8",
+      "y": "2",
+      "width": "8",
+      "height": "4",
+      "rx": "1",
+      "ry": "1"
+    })]); };
+  }
+
+};
+
+var ClockIcon = {
+  name: 'ClockIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-clock"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("circle", {
+      "cx": "12",
+      "cy": "12",
+      "r": "10"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("polyline", {
+      "points": "12 6 12 12 16 14"
+    })]); };
+  }
+
+};
+
+var CloudDrizzleIcon = {
+  name: 'CloudDrizzleIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-cloud-drizzle"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "8",
+      "y1": "19",
+      "x2": "8",
+      "y2": "21"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "8",
+      "y1": "13",
+      "x2": "8",
+      "y2": "15"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "16",
+      "y1": "19",
+      "x2": "16",
+      "y2": "21"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "16",
+      "y1": "13",
+      "x2": "16",
+      "y2": "15"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "12",
+      "y1": "21",
+      "x2": "12",
+      "y2": "23"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "12",
+      "y1": "15",
+      "x2": "12",
+      "y2": "17"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M20 16.58A5 5 0 0 0 18 7h-1.26A8 8 0 1 0 4 15.25"
+    })]); };
+  }
+
+};
+
+var CloudLightningIcon = {
+  name: 'CloudLightningIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-cloud-lightning"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M19 16.9A5 5 0 0 0 18 7h-1.26a8 8 0 1 0-11.62 9"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("polyline", {
+      "points": "13 11 9 17 15 17 11 23"
+    })]); };
+  }
+
+};
+
+var CloudOffIcon = {
+  name: 'CloudOffIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-cloud-off"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M22.61 16.95A5 5 0 0 0 18 10h-1.26a8 8 0 0 0-7.05-6M5 5a8 8 0 0 0 4 15h9a5 5 0 0 0 1.7-.3"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "1",
+      "y1": "1",
+      "x2": "23",
+      "y2": "23"
+    })]); };
+  }
+
+};
+
+var CloudRainIcon = {
+  name: 'CloudRainIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-cloud-rain"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "16",
+      "y1": "13",
+      "x2": "16",
+      "y2": "21"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "8",
+      "y1": "13",
+      "x2": "8",
+      "y2": "21"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "12",
+      "y1": "15",
+      "x2": "12",
+      "y2": "23"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M20 16.58A5 5 0 0 0 18 7h-1.26A8 8 0 1 0 4 15.25"
+    })]); };
+  }
+
+};
+
+var CloudSnowIcon = {
+  name: 'CloudSnowIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-cloud-snow"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M20 17.58A5 5 0 0 0 18 8h-1.26A8 8 0 1 0 4 16.25"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "8",
+      "y1": "16",
+      "x2": "8.01",
+      "y2": "16"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "8",
+      "y1": "20",
+      "x2": "8.01",
+      "y2": "20"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "12",
+      "y1": "18",
+      "x2": "12.01",
+      "y2": "18"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "12",
+      "y1": "22",
+      "x2": "12.01",
+      "y2": "22"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "16",
+      "y1": "16",
+      "x2": "16.01",
+      "y2": "16"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "16",
+      "y1": "20",
+      "x2": "16.01",
+      "y2": "20"
+    })]); };
+  }
+
+};
+
+var CloudIcon = {
+  name: 'CloudIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-cloud"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"
+    })]); };
+  }
+
+};
+
+var CodeIcon = {
+  name: 'CodeIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-code"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("polyline", {
+      "points": "16 18 22 12 16 6"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("polyline", {
+      "points": "8 6 2 12 8 18"
+    })]); };
+  }
+
+};
+
+var CodepenIcon = {
+  name: 'CodepenIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-codepen"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("polygon", {
+      "points": "12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5 12 2"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "12",
+      "y1": "22",
+      "x2": "12",
+      "y2": "15.5"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("polyline", {
+      "points": "22 8.5 12 15.5 2 8.5"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("polyline", {
+      "points": "2 15.5 12 8.5 22 15.5"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "12",
+      "y1": "2",
+      "x2": "12",
+      "y2": "8.5"
+    })]); };
+  }
+
+};
+
+var CodesandboxIcon = {
+  name: 'CodesandboxIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-codesandbox"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("polyline", {
+      "points": "7.5 4.21 12 6.81 16.5 4.21"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("polyline", {
+      "points": "7.5 19.79 7.5 14.6 3 12"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("polyline", {
+      "points": "21 12 16.5 14.6 16.5 19.79"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("polyline", {
+      "points": "3.27 6.96 12 12.01 20.73 6.96"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "12",
+      "y1": "22.08",
+      "x2": "12",
+      "y2": "12"
+    })]); };
+  }
+
+};
+
+var CoffeeIcon = {
+  name: 'CoffeeIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-coffee"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M18 8h1a4 4 0 0 1 0 8h-1"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "6",
+      "y1": "1",
+      "x2": "6",
+      "y2": "4"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "10",
+      "y1": "1",
+      "x2": "10",
+      "y2": "4"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "14",
+      "y1": "1",
+      "x2": "14",
+      "y2": "4"
+    })]); };
+  }
+
+};
+
+var ColumnsIcon = {
+  name: 'ColumnsIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-columns"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M12 3h7a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-7m0-18H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h7m0-18v18"
+    })]); };
+  }
+
+};
+
+var CommandIcon = {
+  name: 'CommandIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-command"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M18 3a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3H6a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3V6a3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3h12a3 3 0 0 0 3-3 3 3 0 0 0-3-3z"
+    })]); };
+  }
+
+};
+
+var CompassIcon = {
+  name: 'CompassIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-compass"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("circle", {
+      "cx": "12",
+      "cy": "12",
+      "r": "10"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("polygon", {
+      "points": "16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"
+    })]); };
+  }
+
+};
+
+var CopyIcon = {
+  name: 'CopyIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-copy"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("rect", {
+      "x": "9",
+      "y": "9",
+      "width": "13",
+      "height": "13",
+      "rx": "2",
+      "ry": "2"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"
+    })]); };
+  }
+
+};
+
+var CornerDownLeftIcon = {
+  name: 'CornerDownLeftIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-corner-down-left"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("polyline", {
+      "points": "9 10 4 15 9 20"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M20 4v7a4 4 0 0 1-4 4H4"
+    })]); };
+  }
+
+};
+
+var CornerDownRightIcon = {
+  name: 'CornerDownRightIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-corner-down-right"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("polyline", {
+      "points": "15 10 20 15 15 20"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M4 4v7a4 4 0 0 0 4 4h12"
+    })]); };
+  }
+
+};
+
+var CornerLeftDownIcon = {
+  name: 'CornerLeftDownIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-corner-left-down"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("polyline", {
+      "points": "14 15 9 20 4 15"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M20 4h-7a4 4 0 0 0-4 4v12"
+    })]); };
+  }
+
+};
+
+var CornerLeftUpIcon = {
+  name: 'CornerLeftUpIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-corner-left-up"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("polyline", {
+      "points": "14 9 9 4 4 9"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M20 20h-7a4 4 0 0 1-4-4V4"
+    })]); };
+  }
+
+};
+
+var CornerRightDownIcon = {
+  name: 'CornerRightDownIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-corner-right-down"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("polyline", {
+      "points": "10 15 15 20 20 15"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M4 4h7a4 4 0 0 1 4 4v12"
+    })]); };
+  }
+
+};
+
+var CornerRightUpIcon = {
+  name: 'CornerRightUpIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-corner-right-up"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("polyline", {
+      "points": "10 9 15 4 20 9"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M4 20h7a4 4 0 0 0 4-4V4"
+    })]); };
+  }
+
+};
+
+var CornerUpLeftIcon = {
+  name: 'CornerUpLeftIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-corner-up-left"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("polyline", {
+      "points": "9 14 4 9 9 4"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M20 20v-7a4 4 0 0 0-4-4H4"
+    })]); };
+  }
+
+};
+
+var CornerUpRightIcon = {
+  name: 'CornerUpRightIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-corner-up-right"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("polyline", {
+      "points": "15 14 20 9 15 4"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M4 20v-7a4 4 0 0 1 4-4h12"
+    })]); };
+  }
+
+};
+
+var CpuIcon = {
+  name: 'CpuIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-cpu"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("rect", {
+      "x": "4",
+      "y": "4",
+      "width": "16",
+      "height": "16",
+      "rx": "2",
+      "ry": "2"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("rect", {
+      "x": "9",
+      "y": "9",
+      "width": "6",
+      "height": "6"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "9",
+      "y1": "1",
+      "x2": "9",
+      "y2": "4"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "15",
+      "y1": "1",
+      "x2": "15",
+      "y2": "4"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "9",
+      "y1": "20",
+      "x2": "9",
+      "y2": "23"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "15",
+      "y1": "20",
+      "x2": "15",
+      "y2": "23"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "20",
+      "y1": "9",
+      "x2": "23",
+      "y2": "9"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "20",
+      "y1": "14",
+      "x2": "23",
+      "y2": "14"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "1",
+      "y1": "9",
+      "x2": "4",
+      "y2": "9"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "1",
+      "y1": "14",
+      "x2": "4",
+      "y2": "14"
+    })]); };
+  }
+
+};
+
+var CreditCardIcon = {
+  name: 'CreditCardIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-credit-card"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("rect", {
+      "x": "1",
+      "y": "4",
+      "width": "22",
+      "height": "16",
+      "rx": "2",
+      "ry": "2"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "1",
+      "y1": "10",
+      "x2": "23",
+      "y2": "10"
+    })]); };
+  }
+
+};
+
+var CropIcon = {
+  name: 'CropIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-crop"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M6.13 1L6 16a2 2 0 0 0 2 2h15"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M1 6.13L16 6a2 2 0 0 1 2 2v15"
+    })]); };
+  }
+
+};
+
+var CrosshairIcon = {
+  name: 'CrosshairIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-crosshair"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("circle", {
+      "cx": "12",
+      "cy": "12",
+      "r": "10"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "22",
+      "y1": "12",
+      "x2": "18",
+      "y2": "12"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "6",
+      "y1": "12",
+      "x2": "2",
+      "y2": "12"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "12",
+      "y1": "6",
+      "x2": "12",
+      "y2": "2"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "12",
+      "y1": "22",
+      "x2": "12",
+      "y2": "18"
+    })]); };
+  }
+
+};
+
+var DatabaseIcon = {
+  name: 'DatabaseIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-database"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("ellipse", {
+      "cx": "12",
+      "cy": "5",
+      "rx": "9",
+      "ry": "3"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"
+    })]); };
+  }
+
+};
+
+var DeleteIcon = {
+  name: 'DeleteIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-delete"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M21 4H8l-7 8 7 8h13a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2z"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "18",
+      "y1": "9",
+      "x2": "12",
+      "y2": "15"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "12",
+      "y1": "9",
+      "x2": "18",
+      "y2": "15"
+    })]); };
+  }
+
+};
+
+var DiscIcon = {
+  name: 'DiscIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-disc"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("circle", {
+      "cx": "12",
+      "cy": "12",
+      "r": "10"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("circle", {
+      "cx": "12",
+      "cy": "12",
+      "r": "3"
+    })]); };
+  }
+
+};
+
+var DivideCircleIcon = {
+  name: 'DivideCircleIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-divide-circle"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "8",
+      "y1": "12",
+      "x2": "16",
+      "y2": "12"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "12",
+      "y1": "16",
+      "x2": "12",
+      "y2": "16"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "12",
+      "y1": "8",
+      "x2": "12",
+      "y2": "8"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("circle", {
+      "cx": "12",
+      "cy": "12",
+      "r": "10"
+    })]); };
+  }
+
+};
+
+var DivideSquareIcon = {
+  name: 'DivideSquareIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-divide-square"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("rect", {
+      "x": "3",
+      "y": "3",
+      "width": "18",
+      "height": "18",
+      "rx": "2",
+      "ry": "2"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "8",
+      "y1": "12",
+      "x2": "16",
+      "y2": "12"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "12",
+      "y1": "16",
+      "x2": "12",
+      "y2": "16"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "12",
+      "y1": "8",
+      "x2": "12",
+      "y2": "8"
+    })]); };
+  }
+
+};
+
+var DivideIcon = {
+  name: 'DivideIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-divide"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("circle", {
+      "cx": "12",
+      "cy": "6",
+      "r": "2"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "5",
+      "y1": "12",
+      "x2": "19",
+      "y2": "12"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("circle", {
+      "cx": "12",
+      "cy": "18",
+      "r": "2"
+    })]); };
+  }
+
+};
+
+var DollarSignIcon = {
+  name: 'DollarSignIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-dollar-sign"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "12",
+      "y1": "1",
+      "x2": "12",
+      "y2": "23"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"
+    })]); };
+  }
+
+};
+
+var DownloadCloudIcon = {
+  name: 'DownloadCloudIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-download-cloud"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("polyline", {
+      "points": "8 17 12 21 16 17"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "12",
+      "y1": "12",
+      "x2": "12",
+      "y2": "21"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M20.88 18.09A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.29"
+    })]); };
+  }
+
+};
+
+var DownloadIcon = {
+  name: 'DownloadIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-download"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("polyline", {
+      "points": "7 10 12 15 17 10"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "12",
+      "y1": "15",
+      "x2": "12",
+      "y2": "3"
+    })]); };
+  }
+
+};
+
+var DribbbleIcon = {
+  name: 'DribbbleIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-dribbble"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("circle", {
+      "cx": "12",
+      "cy": "12",
+      "r": "10"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M8.56 2.75c4.37 6.03 6.02 9.42 8.03 17.72m2.54-15.38c-3.72 4.35-8.94 5.66-16.88 5.85m19.5 1.9c-3.5-.93-6.63-.82-8.94 0-2.58.92-5.01 2.86-7.44 6.32"
+    })]); };
+  }
+
+};
+
+var DropletIcon = {
+  name: 'DropletIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-droplet"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"
+    })]); };
+  }
+
+};
+
+var Edit2Icon = {
+  name: 'Edit2Icon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-edit-2"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"
+    })]); };
+  }
+
+};
+
+var Edit3Icon = {
+  name: 'Edit3Icon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-edit-3"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M12 20h9"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"
+    })]); };
+  }
+
+};
+
+var EditIcon = {
+  name: 'EditIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-edit"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"
+    })]); };
+  }
+
+};
+
+var ExternalLinkIcon = {
+  name: 'ExternalLinkIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-external-link"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("polyline", {
+      "points": "15 3 21 3 21 9"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "10",
+      "y1": "14",
+      "x2": "21",
+      "y2": "3"
+    })]); };
+  }
+
+};
+
+var EyeOffIcon = {
+  name: 'EyeOffIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-eye-off"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "1",
+      "y1": "1",
+      "x2": "23",
+      "y2": "23"
+    })]); };
+  }
+
+};
+
+var EyeIcon = {
+  name: 'EyeIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-eye"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("circle", {
+      "cx": "12",
+      "cy": "12",
+      "r": "3"
+    })]); };
+  }
+
+};
+
+var FacebookIcon = {
+  name: 'FacebookIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-facebook"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+    })]); };
+  }
+
+};
+
+var FastForwardIcon = {
+  name: 'FastForwardIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-fast-forward"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("polygon", {
+      "points": "13 19 22 12 13 5 13 19"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("polygon", {
+      "points": "2 19 11 12 2 5 2 19"
+    })]); };
+  }
+
+};
+
+var FeatherIcon = {
+  name: 'FeatherIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-feather"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "16",
+      "y1": "8",
+      "x2": "2",
+      "y2": "22"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "17.5",
+      "y1": "15",
+      "x2": "9",
+      "y2": "15"
+    })]); };
+  }
+
+};
+
+var FigmaIcon = {
+  name: 'FigmaIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-figma"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M5 5.5A3.5 3.5 0 0 1 8.5 2H12v7H8.5A3.5 3.5 0 0 1 5 5.5z"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M12 2h3.5a3.5 3.5 0 1 1 0 7H12V2z"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M12 12.5a3.5 3.5 0 1 1 7 0 3.5 3.5 0 1 1-7 0z"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M5 19.5A3.5 3.5 0 0 1 8.5 16H12v3.5a3.5 3.5 0 1 1-7 0z"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M5 12.5A3.5 3.5 0 0 1 8.5 9H12v7H8.5A3.5 3.5 0 0 1 5 12.5z"
+    })]); };
+  }
+
+};
+
+var FileMinusIcon = {
+  name: 'FileMinusIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-file-minus"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("polyline", {
+      "points": "14 2 14 8 20 8"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "9",
+      "y1": "15",
+      "x2": "15",
+      "y2": "15"
+    })]); };
+  }
+
+};
+
+var FilePlusIcon = {
+  name: 'FilePlusIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-file-plus"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("polyline", {
+      "points": "14 2 14 8 20 8"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "12",
+      "y1": "18",
+      "x2": "12",
+      "y2": "12"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "9",
+      "y1": "15",
+      "x2": "15",
+      "y2": "15"
+    })]); };
+  }
+
+};
+
+var FileTextIcon = {
+  name: 'FileTextIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-file-text"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("polyline", {
+      "points": "14 2 14 8 20 8"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "16",
+      "y1": "13",
+      "x2": "8",
+      "y2": "13"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "16",
+      "y1": "17",
+      "x2": "8",
+      "y2": "17"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("polyline", {
+      "points": "10 9 9 9 8 9"
+    })]); };
+  }
+
+};
+
+var FileIcon = {
+  name: 'FileIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-file"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("polyline", {
+      "points": "13 2 13 9 20 9"
+    })]); };
+  }
+
+};
+
+var FilmIcon = {
+  name: 'FilmIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-film"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("rect", {
+      "x": "2",
+      "y": "2",
+      "width": "20",
+      "height": "20",
+      "rx": "2.18",
+      "ry": "2.18"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "7",
+      "y1": "2",
+      "x2": "7",
+      "y2": "22"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "17",
+      "y1": "2",
+      "x2": "17",
+      "y2": "22"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "2",
+      "y1": "12",
+      "x2": "22",
+      "y2": "12"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "2",
+      "y1": "7",
+      "x2": "7",
+      "y2": "7"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "2",
+      "y1": "17",
+      "x2": "7",
+      "y2": "17"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "17",
+      "y1": "17",
+      "x2": "22",
+      "y2": "17"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "17",
+      "y1": "7",
+      "x2": "22",
+      "y2": "7"
+    })]); };
+  }
+
+};
+
+var FilterIcon = {
+  name: 'FilterIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-filter"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("polygon", {
+      "points": "22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"
+    })]); };
+  }
+
+};
+
+var FlagIcon = {
+  name: 'FlagIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-flag"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "4",
+      "y1": "22",
+      "x2": "4",
+      "y2": "15"
+    })]); };
+  }
+
+};
+
+var FolderMinusIcon = {
+  name: 'FolderMinusIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-folder-minus"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "9",
+      "y1": "14",
+      "x2": "15",
+      "y2": "14"
+    })]); };
+  }
+
+};
+
+var FolderPlusIcon = {
+  name: 'FolderPlusIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-folder-plus"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "12",
+      "y1": "11",
+      "x2": "12",
+      "y2": "17"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "9",
+      "y1": "14",
+      "x2": "15",
+      "y2": "14"
+    })]); };
+  }
+
+};
+
+var FolderIcon = {
+  name: 'FolderIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-folder"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"
+    })]); };
+  }
+
+};
+
+var FramerIcon = {
+  name: 'FramerIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-framer"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M5 16V9h14V2H5l14 14h-7m-7 0l7 7v-7m-7 0h7"
+    })]); };
+  }
+
+};
+
+var FrownIcon = {
+  name: 'FrownIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-frown"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("circle", {
+      "cx": "12",
+      "cy": "12",
+      "r": "10"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M16 16s-1.5-2-4-2-4 2-4 2"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "9",
+      "y1": "9",
+      "x2": "9.01",
+      "y2": "9"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "15",
+      "y1": "9",
+      "x2": "15.01",
+      "y2": "9"
+    })]); };
+  }
+
+};
+
+var GiftIcon = {
+  name: 'GiftIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-gift"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("polyline", {
+      "points": "20 12 20 22 4 22 4 12"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("rect", {
+      "x": "2",
+      "y": "7",
+      "width": "20",
+      "height": "5"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "12",
+      "y1": "22",
+      "x2": "12",
+      "y2": "7"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"
+    })]); };
+  }
+
+};
+
+var GitBranchIcon = {
+  name: 'GitBranchIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-git-branch"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "6",
+      "y1": "3",
+      "x2": "6",
+      "y2": "15"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("circle", {
+      "cx": "18",
+      "cy": "6",
+      "r": "3"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("circle", {
+      "cx": "6",
+      "cy": "18",
+      "r": "3"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M18 9a9 9 0 0 1-9 9"
+    })]); };
+  }
+
+};
+
+var GitCommitIcon = {
+  name: 'GitCommitIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-git-commit"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("circle", {
+      "cx": "12",
+      "cy": "12",
+      "r": "4"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "1.05",
+      "y1": "12",
+      "x2": "7",
+      "y2": "12"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "17.01",
+      "y1": "12",
+      "x2": "22.96",
+      "y2": "12"
+    })]); };
+  }
+
+};
+
+var GitMergeIcon = {
+  name: 'GitMergeIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-git-merge"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("circle", {
+      "cx": "18",
+      "cy": "18",
+      "r": "3"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("circle", {
+      "cx": "6",
+      "cy": "6",
+      "r": "3"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M6 21V9a9 9 0 0 0 9 9"
+    })]); };
+  }
+
+};
+
+var GitPullRequestIcon = {
+  name: 'GitPullRequestIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-git-pull-request"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("circle", {
+      "cx": "18",
+      "cy": "18",
+      "r": "3"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("circle", {
+      "cx": "6",
+      "cy": "6",
+      "r": "3"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M13 6h3a2 2 0 0 1 2 2v7"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "6",
+      "y1": "9",
+      "x2": "6",
+      "y2": "21"
+    })]); };
+  }
+
+};
+
+var GithubIcon = {
+  name: 'GithubIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-github"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
+    })]); };
+  }
+
+};
+
+var GitlabIcon = {
+  name: 'GitlabIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-gitlab"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M22.65 14.39L12 22.13 1.35 14.39a.84.84 0 0 1-.3-.94l1.22-3.78 2.44-7.51A.42.42 0 0 1 4.82 2a.43.43 0 0 1 .58 0 .42.42 0 0 1 .11.18l2.44 7.49h8.1l2.44-7.51A.42.42 0 0 1 18.6 2a.43.43 0 0 1 .58 0 .42.42 0 0 1 .11.18l2.44 7.51L23 13.45a.84.84 0 0 1-.35.94z"
+    })]); };
+  }
+
+};
+
+var GlobeIcon = {
+  name: 'GlobeIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-globe"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("circle", {
+      "cx": "12",
+      "cy": "12",
+      "r": "10"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "2",
+      "y1": "12",
+      "x2": "22",
+      "y2": "12"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
+    })]); };
+  }
+
+};
+
+var GridIcon = {
+  name: 'GridIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-grid"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("rect", {
+      "x": "3",
+      "y": "3",
+      "width": "7",
+      "height": "7"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("rect", {
+      "x": "14",
+      "y": "3",
+      "width": "7",
+      "height": "7"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("rect", {
+      "x": "14",
+      "y": "14",
+      "width": "7",
+      "height": "7"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("rect", {
+      "x": "3",
+      "y": "14",
+      "width": "7",
+      "height": "7"
+    })]); };
+  }
+
+};
+
+var HardDriveIcon = {
+  name: 'HardDriveIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-hard-drive"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "22",
+      "y1": "12",
+      "x2": "2",
+      "y2": "12"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M5.45 5.11L2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "6",
+      "y1": "16",
+      "x2": "6.01",
+      "y2": "16"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "10",
+      "y1": "16",
+      "x2": "10.01",
+      "y2": "16"
+    })]); };
+  }
+
+};
+
+var HashIcon = {
+  name: 'HashIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-hash"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "4",
+      "y1": "9",
+      "x2": "20",
+      "y2": "9"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "4",
+      "y1": "15",
+      "x2": "20",
+      "y2": "15"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "10",
+      "y1": "3",
+      "x2": "8",
+      "y2": "21"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "16",
+      "y1": "3",
+      "x2": "14",
+      "y2": "21"
+    })]); };
+  }
+
+};
+
+var HeadphonesIcon = {
+  name: 'HeadphonesIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-headphones"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M3 18v-6a9 9 0 0 1 18 0v6"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"
+    })]); };
+  }
+
+};
+
+var HeartIcon = {
+  name: 'HeartIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-heart"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+    })]); };
+  }
+
+};
+
+var HelpCircleIcon = {
+  name: 'HelpCircleIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-help-circle"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("circle", {
+      "cx": "12",
+      "cy": "12",
+      "r": "10"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "12",
+      "y1": "17",
+      "x2": "12.01",
+      "y2": "17"
+    })]); };
+  }
+
+};
+
+var HexagonIcon = {
+  name: 'HexagonIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-hexagon"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"
+    })]); };
+  }
+
+};
+
+var HomeIcon = {
+  name: 'HomeIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-home"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("polyline", {
+      "points": "9 22 9 12 15 12 15 22"
+    })]); };
+  }
+
+};
+
+var ImageIcon = {
+  name: 'ImageIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-image"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("rect", {
+      "x": "3",
+      "y": "3",
+      "width": "18",
+      "height": "18",
+      "rx": "2",
+      "ry": "2"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("circle", {
+      "cx": "8.5",
+      "cy": "8.5",
+      "r": "1.5"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("polyline", {
+      "points": "21 15 16 10 5 21"
+    })]); };
+  }
+
+};
+
+var InboxIcon = {
+  name: 'InboxIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-inbox"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("polyline", {
+      "points": "22 12 16 12 14 15 10 15 8 12 2 12"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M5.45 5.11L2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"
+    })]); };
+  }
+
+};
+
+var InfoIcon = {
+  name: 'InfoIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-info"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("circle", {
+      "cx": "12",
+      "cy": "12",
+      "r": "10"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "12",
+      "y1": "16",
+      "x2": "12",
+      "y2": "12"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "12",
+      "y1": "8",
+      "x2": "12.01",
+      "y2": "8"
+    })]); };
+  }
+
+};
+
+var InstagramIcon = {
+  name: 'InstagramIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-instagram"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("rect", {
+      "x": "2",
+      "y": "2",
+      "width": "20",
+      "height": "20",
+      "rx": "5",
+      "ry": "5"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "17.5",
+      "y1": "6.5",
+      "x2": "17.51",
+      "y2": "6.5"
+    })]); };
+  }
+
+};
+
+var ItalicIcon = {
+  name: 'ItalicIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-italic"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "19",
+      "y1": "4",
+      "x2": "10",
+      "y2": "4"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "14",
+      "y1": "20",
+      "x2": "5",
+      "y2": "20"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "15",
+      "y1": "4",
+      "x2": "9",
+      "y2": "20"
+    })]); };
+  }
+
+};
+
+var KeyIcon = {
+  name: 'KeyIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-key"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"
+    })]); };
+  }
+
+};
+
+var LayersIcon = {
+  name: 'LayersIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-layers"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("polygon", {
+      "points": "12 2 2 7 12 12 22 7 12 2"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("polyline", {
+      "points": "2 17 12 22 22 17"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("polyline", {
+      "points": "2 12 12 17 22 12"
+    })]); };
+  }
+
+};
+
+var LayoutIcon = {
+  name: 'LayoutIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-layout"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("rect", {
+      "x": "3",
+      "y": "3",
+      "width": "18",
+      "height": "18",
+      "rx": "2",
+      "ry": "2"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "3",
+      "y1": "9",
+      "x2": "21",
+      "y2": "9"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "9",
+      "y1": "21",
+      "x2": "9",
+      "y2": "9"
+    })]); };
+  }
+
+};
+
+var LifeBuoyIcon = {
+  name: 'LifeBuoyIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-life-buoy"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("circle", {
+      "cx": "12",
+      "cy": "12",
+      "r": "10"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("circle", {
+      "cx": "12",
+      "cy": "12",
+      "r": "4"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "4.93",
+      "y1": "4.93",
+      "x2": "9.17",
+      "y2": "9.17"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "14.83",
+      "y1": "14.83",
+      "x2": "19.07",
+      "y2": "19.07"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "14.83",
+      "y1": "9.17",
+      "x2": "19.07",
+      "y2": "4.93"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "14.83",
+      "y1": "9.17",
+      "x2": "18.36",
+      "y2": "5.64"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "4.93",
+      "y1": "19.07",
+      "x2": "9.17",
+      "y2": "14.83"
+    })]); };
+  }
+
+};
+
+var Link2Icon = {
+  name: 'Link2Icon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-link-2"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "8",
+      "y1": "12",
+      "x2": "16",
+      "y2": "12"
+    })]); };
+  }
+
+};
+
+var LinkIcon = {
+  name: 'LinkIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-link"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"
+    })]); };
+  }
+
+};
+
+var LinkedinIcon = {
+  name: 'LinkedinIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-linkedin"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("rect", {
+      "x": "2",
+      "y": "9",
+      "width": "4",
+      "height": "12"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("circle", {
+      "cx": "4",
+      "cy": "4",
+      "r": "2"
+    })]); };
+  }
+
+};
+
+var ListIcon = {
+  name: 'ListIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-list"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "8",
+      "y1": "6",
+      "x2": "21",
+      "y2": "6"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "8",
+      "y1": "12",
+      "x2": "21",
+      "y2": "12"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "8",
+      "y1": "18",
+      "x2": "21",
+      "y2": "18"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "3",
+      "y1": "6",
+      "x2": "3.01",
+      "y2": "6"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "3",
+      "y1": "12",
+      "x2": "3.01",
+      "y2": "12"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "3",
+      "y1": "18",
+      "x2": "3.01",
+      "y2": "18"
+    })]); };
+  }
+
+};
+
+var LoaderIcon = {
+  name: 'LoaderIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-loader"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "12",
+      "y1": "2",
+      "x2": "12",
+      "y2": "6"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "12",
+      "y1": "18",
+      "x2": "12",
+      "y2": "22"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "4.93",
+      "y1": "4.93",
+      "x2": "7.76",
+      "y2": "7.76"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "16.24",
+      "y1": "16.24",
+      "x2": "19.07",
+      "y2": "19.07"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "2",
+      "y1": "12",
+      "x2": "6",
+      "y2": "12"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "18",
+      "y1": "12",
+      "x2": "22",
+      "y2": "12"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "4.93",
+      "y1": "19.07",
+      "x2": "7.76",
+      "y2": "16.24"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "16.24",
+      "y1": "7.76",
+      "x2": "19.07",
+      "y2": "4.93"
+    })]); };
+  }
+
+};
+
+var LockIcon = {
+  name: 'LockIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-lock"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("rect", {
+      "x": "3",
+      "y": "11",
+      "width": "18",
+      "height": "11",
+      "rx": "2",
+      "ry": "2"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M7 11V7a5 5 0 0 1 10 0v4"
+    })]); };
+  }
+
+};
+
+var LogInIcon = {
+  name: 'LogInIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-log-in"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("polyline", {
+      "points": "10 17 15 12 10 7"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "15",
+      "y1": "12",
+      "x2": "3",
+      "y2": "12"
+    })]); };
+  }
+
+};
+
+var LogOutIcon = {
+  name: 'LogOutIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-log-out"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("polyline", {
+      "points": "16 17 21 12 16 7"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "21",
+      "y1": "12",
+      "x2": "9",
+      "y2": "12"
+    })]); };
+  }
+
+};
+
+var MailIcon = {
+  name: 'MailIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-mail"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("polyline", {
+      "points": "22,6 12,13 2,6"
+    })]); };
+  }
+
+};
+
+var MapPinIcon = {
+  name: 'MapPinIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-map-pin"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("circle", {
+      "cx": "12",
+      "cy": "10",
+      "r": "3"
+    })]); };
+  }
+
+};
+
+var MapIcon = {
+  name: 'MapIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-map"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("polygon", {
+      "points": "1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "8",
+      "y1": "2",
+      "x2": "8",
+      "y2": "18"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "16",
+      "y1": "6",
+      "x2": "16",
+      "y2": "22"
+    })]); };
+  }
+
+};
+
+var Maximize2Icon = {
+  name: 'Maximize2Icon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-maximize-2"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("polyline", {
+      "points": "15 3 21 3 21 9"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("polyline", {
+      "points": "9 21 3 21 3 15"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "21",
+      "y1": "3",
+      "x2": "14",
+      "y2": "10"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "3",
+      "y1": "21",
+      "x2": "10",
+      "y2": "14"
+    })]); };
+  }
+
+};
+
+var MaximizeIcon = {
+  name: 'MaximizeIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-maximize"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"
+    })]); };
+  }
+
+};
+
+var MehIcon = {
+  name: 'MehIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-meh"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("circle", {
+      "cx": "12",
+      "cy": "12",
+      "r": "10"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "8",
+      "y1": "15",
+      "x2": "16",
+      "y2": "15"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "9",
+      "y1": "9",
+      "x2": "9.01",
+      "y2": "9"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "15",
+      "y1": "9",
+      "x2": "15.01",
+      "y2": "9"
+    })]); };
+  }
+
+};
+
+var MenuIcon = {
+  name: 'MenuIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-menu"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "3",
+      "y1": "12",
+      "x2": "21",
+      "y2": "12"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "3",
+      "y1": "6",
+      "x2": "21",
+      "y2": "6"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "3",
+      "y1": "18",
+      "x2": "21",
+      "y2": "18"
+    })]); };
+  }
+
+};
+
+var MessageCircleIcon = {
+  name: 'MessageCircleIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-message-circle"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"
+    })]); };
+  }
+
+};
+
+var MessageSquareIcon = {
+  name: 'MessageSquareIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-message-square"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
+    })]); };
+  }
+
+};
+
+var MicOffIcon = {
+  name: 'MicOffIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-mic-off"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "1",
+      "y1": "1",
+      "x2": "23",
+      "y2": "23"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M9 9v3a3 3 0 0 0 5.12 2.12M15 9.34V4a3 3 0 0 0-5.94-.6"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M17 16.95A7 7 0 0 1 5 12v-2m14 0v2a7 7 0 0 1-.11 1.23"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "12",
+      "y1": "19",
+      "x2": "12",
+      "y2": "23"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "8",
+      "y1": "23",
+      "x2": "16",
+      "y2": "23"
+    })]); };
+  }
+
+};
+
+var MicIcon = {
+  name: 'MicIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-mic"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M19 10v2a7 7 0 0 1-14 0v-2"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "12",
+      "y1": "19",
+      "x2": "12",
+      "y2": "23"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "8",
+      "y1": "23",
+      "x2": "16",
+      "y2": "23"
+    })]); };
+  }
+
+};
+
+var Minimize2Icon = {
+  name: 'Minimize2Icon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-minimize-2"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("polyline", {
+      "points": "4 14 10 14 10 20"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("polyline", {
+      "points": "20 10 14 10 14 4"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "14",
+      "y1": "10",
+      "x2": "21",
+      "y2": "3"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "3",
+      "y1": "21",
+      "x2": "10",
+      "y2": "14"
+    })]); };
+  }
+
+};
+
+var MinimizeIcon = {
+  name: 'MinimizeIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-minimize"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M8 3v3a2 2 0 0 1-2 2H3m18 0h-3a2 2 0 0 1-2-2V3m0 18v-3a2 2 0 0 1 2-2h3M3 16h3a2 2 0 0 1 2 2v3"
+    })]); };
+  }
+
+};
+
+var MinusCircleIcon = {
+  name: 'MinusCircleIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-minus-circle"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("circle", {
+      "cx": "12",
+      "cy": "12",
+      "r": "10"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "8",
+      "y1": "12",
+      "x2": "16",
+      "y2": "12"
+    })]); };
+  }
+
+};
+
+var MinusSquareIcon = {
+  name: 'MinusSquareIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-minus-square"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("rect", {
+      "x": "3",
+      "y": "3",
+      "width": "18",
+      "height": "18",
+      "rx": "2",
+      "ry": "2"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "8",
+      "y1": "12",
+      "x2": "16",
+      "y2": "12"
+    })]); };
+  }
+
+};
+
+var MinusIcon = {
+  name: 'MinusIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-minus"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "5",
+      "y1": "12",
+      "x2": "19",
+      "y2": "12"
+    })]); };
+  }
+
+};
+
+var MonitorIcon = {
+  name: 'MonitorIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-monitor"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("rect", {
+      "x": "2",
+      "y": "3",
+      "width": "20",
+      "height": "14",
+      "rx": "2",
+      "ry": "2"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "8",
+      "y1": "21",
+      "x2": "16",
+      "y2": "21"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "12",
+      "y1": "17",
+      "x2": "12",
+      "y2": "21"
+    })]); };
+  }
+
+};
+
+var MoonIcon = {
+  name: 'MoonIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-moon"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"
+    })]); };
+  }
+
+};
+
+var MoreHorizontalIcon = {
+  name: 'MoreHorizontalIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-more-horizontal"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("circle", {
+      "cx": "12",
+      "cy": "12",
+      "r": "1"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("circle", {
+      "cx": "19",
+      "cy": "12",
+      "r": "1"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("circle", {
+      "cx": "5",
+      "cy": "12",
+      "r": "1"
+    })]); };
+  }
+
+};
+
+var MoreVerticalIcon = {
+  name: 'MoreVerticalIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-more-vertical"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("circle", {
+      "cx": "12",
+      "cy": "12",
+      "r": "1"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("circle", {
+      "cx": "12",
+      "cy": "5",
+      "r": "1"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("circle", {
+      "cx": "12",
+      "cy": "19",
+      "r": "1"
+    })]); };
+  }
+
+};
+
+var MousePointerIcon = {
+  name: 'MousePointerIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-mouse-pointer"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M3 3l7.07 16.97 2.51-7.39 7.39-2.51L3 3z"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M13 13l6 6"
+    })]); };
+  }
+
+};
+
+var MoveIcon = {
+  name: 'MoveIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-move"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("polyline", {
+      "points": "5 9 2 12 5 15"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("polyline", {
+      "points": "9 5 12 2 15 5"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("polyline", {
+      "points": "15 19 12 22 9 19"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("polyline", {
+      "points": "19 9 22 12 19 15"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "2",
+      "y1": "12",
+      "x2": "22",
+      "y2": "12"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "12",
+      "y1": "2",
+      "x2": "12",
+      "y2": "22"
+    })]); };
+  }
+
+};
+
+var MusicIcon = {
+  name: 'MusicIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-music"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M9 18V5l12-2v13"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("circle", {
+      "cx": "6",
+      "cy": "18",
+      "r": "3"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("circle", {
+      "cx": "18",
+      "cy": "16",
+      "r": "3"
+    })]); };
+  }
+
+};
+
+var Navigation2Icon = {
+  name: 'Navigation2Icon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-navigation-2"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("polygon", {
+      "points": "12 2 19 21 12 17 5 21 12 2"
+    })]); };
+  }
+
+};
+
+var NavigationIcon = {
+  name: 'NavigationIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-navigation"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("polygon", {
+      "points": "3 11 22 2 13 21 11 13 3 11"
+    })]); };
+  }
+
+};
+
+var OctagonIcon = {
+  name: 'OctagonIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-octagon"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("polygon", {
+      "points": "7.86 2 16.14 2 22 7.86 22 16.14 16.14 22 7.86 22 2 16.14 2 7.86 7.86 2"
+    })]); };
+  }
+
+};
+
+var PackageIcon = {
+  name: 'PackageIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-package"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "16.5",
+      "y1": "9.4",
+      "x2": "7.5",
+      "y2": "4.21"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("polyline", {
+      "points": "3.27 6.96 12 12.01 20.73 6.96"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "12",
+      "y1": "22.08",
+      "x2": "12",
+      "y2": "12"
+    })]); };
+  }
+
+};
+
+var PaperclipIcon = {
+  name: 'PaperclipIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-paperclip"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"
+    })]); };
+  }
+
+};
+
+var PauseCircleIcon = {
+  name: 'PauseCircleIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-pause-circle"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("circle", {
+      "cx": "12",
+      "cy": "12",
+      "r": "10"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "10",
+      "y1": "15",
+      "x2": "10",
+      "y2": "9"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "14",
+      "y1": "15",
+      "x2": "14",
+      "y2": "9"
+    })]); };
+  }
+
+};
+
+var PauseIcon = {
+  name: 'PauseIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-pause"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("rect", {
+      "x": "6",
+      "y": "4",
+      "width": "4",
+      "height": "16"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("rect", {
+      "x": "14",
+      "y": "4",
+      "width": "4",
+      "height": "16"
+    })]); };
+  }
+
+};
+
+var PenToolIcon = {
+  name: 'PenToolIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-pen-tool"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M12 19l7-7 3 3-7 7-3-3z"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M2 2l7.586 7.586"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("circle", {
+      "cx": "11",
+      "cy": "11",
+      "r": "2"
+    })]); };
+  }
+
+};
+
+var PercentIcon = {
+  name: 'PercentIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-percent"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "19",
+      "y1": "5",
+      "x2": "5",
+      "y2": "19"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("circle", {
+      "cx": "6.5",
+      "cy": "6.5",
+      "r": "2.5"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("circle", {
+      "cx": "17.5",
+      "cy": "17.5",
+      "r": "2.5"
+    })]); };
+  }
+
+};
+
+var PhoneCallIcon = {
+  name: 'PhoneCallIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-phone-call"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M15.05 5A5 5 0 0 1 19 8.95M15.05 1A9 9 0 0 1 23 8.94m-1 7.98v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+    })]); };
+  }
+
+};
+
+var PhoneForwardedIcon = {
+  name: 'PhoneForwardedIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-phone-forwarded"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("polyline", {
+      "points": "19 1 23 5 19 9"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "15",
+      "y1": "5",
+      "x2": "23",
+      "y2": "5"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+    })]); };
+  }
+
+};
+
+var PhoneIncomingIcon = {
+  name: 'PhoneIncomingIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-phone-incoming"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("polyline", {
+      "points": "16 2 16 8 22 8"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "23",
+      "y1": "1",
+      "x2": "16",
+      "y2": "8"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+    })]); };
+  }
+
+};
+
+var PhoneMissedIcon = {
+  name: 'PhoneMissedIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-phone-missed"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "23",
+      "y1": "1",
+      "x2": "17",
+      "y2": "7"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "17",
+      "y1": "1",
+      "x2": "23",
+      "y2": "7"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+    })]); };
+  }
+
+};
+
+var PhoneOffIcon = {
+  name: 'PhoneOffIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-phone-off"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M10.68 13.31a16 16 0 0 0 3.41 2.6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7 2 2 0 0 1 1.72 2v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.42 19.42 0 0 1-3.33-2.67m-2.67-3.34a19.79 19.79 0 0 1-3.07-8.63A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "23",
+      "y1": "1",
+      "x2": "1",
+      "y2": "23"
+    })]); };
+  }
+
+};
+
+var PhoneOutgoingIcon = {
+  name: 'PhoneOutgoingIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-phone-outgoing"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("polyline", {
+      "points": "23 7 23 1 17 1"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "16",
+      "y1": "8",
+      "x2": "23",
+      "y2": "1"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+    })]); };
+  }
+
+};
+
+var PhoneIcon = {
+  name: 'PhoneIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-phone"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+    })]); };
+  }
+
+};
+
+var PieChartIcon = {
+  name: 'PieChartIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-pie-chart"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M21.21 15.89A10 10 0 1 1 8 2.83"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M22 12A10 10 0 0 0 12 2v10z"
+    })]); };
+  }
+
+};
+
+var PlayCircleIcon = {
+  name: 'PlayCircleIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-play-circle"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("circle", {
+      "cx": "12",
+      "cy": "12",
+      "r": "10"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("polygon", {
+      "points": "10 8 16 12 10 16 10 8"
+    })]); };
+  }
+
+};
+
+var PlayIcon = {
+  name: 'PlayIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-play"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("polygon", {
+      "points": "5 3 19 12 5 21 5 3"
+    })]); };
+  }
+
+};
+
+var PlusCircleIcon = {
+  name: 'PlusCircleIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-plus-circle"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("circle", {
+      "cx": "12",
+      "cy": "12",
+      "r": "10"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "12",
+      "y1": "8",
+      "x2": "12",
+      "y2": "16"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "8",
+      "y1": "12",
+      "x2": "16",
+      "y2": "12"
+    })]); };
+  }
+
+};
+
+var PlusSquareIcon = {
+  name: 'PlusSquareIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-plus-square"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("rect", {
+      "x": "3",
+      "y": "3",
+      "width": "18",
+      "height": "18",
+      "rx": "2",
+      "ry": "2"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "12",
+      "y1": "8",
+      "x2": "12",
+      "y2": "16"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "8",
+      "y1": "12",
+      "x2": "16",
+      "y2": "12"
+    })]); };
+  }
+
+};
+
+var PlusIcon = {
+  name: 'PlusIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-plus"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "12",
+      "y1": "5",
+      "x2": "12",
+      "y2": "19"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "5",
+      "y1": "12",
+      "x2": "19",
+      "y2": "12"
+    })]); };
+  }
+
+};
+
+var PocketIcon = {
+  name: 'PocketIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-pocket"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M4 3h16a2 2 0 0 1 2 2v6a10 10 0 0 1-10 10A10 10 0 0 1 2 11V5a2 2 0 0 1 2-2z"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("polyline", {
+      "points": "8 10 12 14 16 10"
+    })]); };
+  }
+
+};
+
+var PowerIcon = {
+  name: 'PowerIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-power"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M18.36 6.64a9 9 0 1 1-12.73 0"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "12",
+      "y1": "2",
+      "x2": "12",
+      "y2": "12"
+    })]); };
+  }
+
+};
+
+var PrinterIcon = {
+  name: 'PrinterIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-printer"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("polyline", {
+      "points": "6 9 6 2 18 2 18 9"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("rect", {
+      "x": "6",
+      "y": "14",
+      "width": "12",
+      "height": "8"
+    })]); };
+  }
+
+};
+
+var RadioIcon = {
+  name: 'RadioIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-radio"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("circle", {
+      "cx": "12",
+      "cy": "12",
+      "r": "2"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M16.24 7.76a6 6 0 0 1 0 8.49m-8.48-.01a6 6 0 0 1 0-8.49m11.31-2.82a10 10 0 0 1 0 14.14m-14.14 0a10 10 0 0 1 0-14.14"
+    })]); };
+  }
+
+};
+
+var RefreshCcwIcon = {
+  name: 'RefreshCcwIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-refresh-ccw"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("polyline", {
+      "points": "1 4 1 10 7 10"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("polyline", {
+      "points": "23 20 23 14 17 14"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M20.49 9A9 9 0 0 0 5.64 5.64L1 10m22 4l-4.64 4.36A9 9 0 0 1 3.51 15"
+    })]); };
+  }
+
+};
+
+var RefreshCwIcon = {
+  name: 'RefreshCwIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-refresh-cw"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("polyline", {
+      "points": "23 4 23 10 17 10"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("polyline", {
+      "points": "1 20 1 14 7 14"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"
+    })]); };
+  }
+
+};
+
+var RepeatIcon = {
+  name: 'RepeatIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-repeat"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("polyline", {
+      "points": "17 1 21 5 17 9"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M3 11V9a4 4 0 0 1 4-4h14"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("polyline", {
+      "points": "7 23 3 19 7 15"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M21 13v2a4 4 0 0 1-4 4H3"
+    })]); };
+  }
+
+};
+
+var RewindIcon = {
+  name: 'RewindIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-rewind"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("polygon", {
+      "points": "11 19 2 12 11 5 11 19"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("polygon", {
+      "points": "22 19 13 12 22 5 22 19"
+    })]); };
+  }
+
+};
+
+var RotateCcwIcon = {
+  name: 'RotateCcwIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-rotate-ccw"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("polyline", {
+      "points": "1 4 1 10 7 10"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M3.51 15a9 9 0 1 0 2.13-9.36L1 10"
+    })]); };
+  }
+
+};
+
+var RotateCwIcon = {
+  name: 'RotateCwIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-rotate-cw"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("polyline", {
+      "points": "23 4 23 10 17 10"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M20.49 15a9 9 0 1 1-2.12-9.36L23 10"
+    })]); };
+  }
+
+};
+
+var RssIcon = {
+  name: 'RssIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-rss"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M4 11a9 9 0 0 1 9 9"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M4 4a16 16 0 0 1 16 16"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("circle", {
+      "cx": "5",
+      "cy": "19",
+      "r": "1"
+    })]); };
+  }
+
+};
+
+var SaveIcon = {
+  name: 'SaveIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-save"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("polyline", {
+      "points": "17 21 17 13 7 13 7 21"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("polyline", {
+      "points": "7 3 7 8 15 8"
+    })]); };
+  }
+
+};
+
+var ScissorsIcon = {
+  name: 'ScissorsIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-scissors"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("circle", {
+      "cx": "6",
+      "cy": "6",
+      "r": "3"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("circle", {
+      "cx": "6",
+      "cy": "18",
+      "r": "3"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "20",
+      "y1": "4",
+      "x2": "8.12",
+      "y2": "15.88"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "14.47",
+      "y1": "14.48",
+      "x2": "20",
+      "y2": "20"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "8.12",
+      "y1": "8.12",
+      "x2": "12",
+      "y2": "12"
+    })]); };
+  }
+
+};
+
+var SearchIcon = {
+  name: 'SearchIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-search"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("circle", {
+      "cx": "11",
+      "cy": "11",
+      "r": "8"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "21",
+      "y1": "21",
+      "x2": "16.65",
+      "y2": "16.65"
+    })]); };
+  }
+
+};
+
+var SendIcon = {
+  name: 'SendIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-send"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "22",
+      "y1": "2",
+      "x2": "11",
+      "y2": "13"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("polygon", {
+      "points": "22 2 15 22 11 13 2 9 22 2"
+    })]); };
+  }
+
+};
+
+var ServerIcon = {
+  name: 'ServerIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-server"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("rect", {
+      "x": "2",
+      "y": "2",
+      "width": "20",
+      "height": "8",
+      "rx": "2",
+      "ry": "2"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("rect", {
+      "x": "2",
+      "y": "14",
+      "width": "20",
+      "height": "8",
+      "rx": "2",
+      "ry": "2"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "6",
+      "y1": "6",
+      "x2": "6.01",
+      "y2": "6"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "6",
+      "y1": "18",
+      "x2": "6.01",
+      "y2": "18"
+    })]); };
+  }
+
+};
+
+var SettingsIcon = {
+  name: 'SettingsIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-settings"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("circle", {
+      "cx": "12",
+      "cy": "12",
+      "r": "3"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"
+    })]); };
+  }
+
+};
+
+var Share2Icon = {
+  name: 'Share2Icon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-share-2"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("circle", {
+      "cx": "18",
+      "cy": "5",
+      "r": "3"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("circle", {
+      "cx": "6",
+      "cy": "12",
+      "r": "3"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("circle", {
+      "cx": "18",
+      "cy": "19",
+      "r": "3"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "8.59",
+      "y1": "13.51",
+      "x2": "15.42",
+      "y2": "17.49"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "15.41",
+      "y1": "6.51",
+      "x2": "8.59",
+      "y2": "10.49"
+    })]); };
+  }
+
+};
+
+var ShareIcon = {
+  name: 'ShareIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-share"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("polyline", {
+      "points": "16 6 12 2 8 6"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "12",
+      "y1": "2",
+      "x2": "12",
+      "y2": "15"
+    })]); };
+  }
+
+};
+
+var ShieldOffIcon = {
+  name: 'ShieldOffIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-shield-off"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M19.69 14a6.9 6.9 0 0 0 .31-2V5l-8-3-3.16 1.18"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M4.73 4.73L4 5v7c0 6 8 10 8 10a20.29 20.29 0 0 0 5.62-4.38"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "1",
+      "y1": "1",
+      "x2": "23",
+      "y2": "23"
+    })]); };
+  }
+
+};
+
+var ShieldIcon = {
+  name: 'ShieldIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-shield"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"
+    })]); };
+  }
+
+};
+
+var ShoppingBagIcon = {
+  name: 'ShoppingBagIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-shopping-bag"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "3",
+      "y1": "6",
+      "x2": "21",
+      "y2": "6"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M16 10a4 4 0 0 1-8 0"
+    })]); };
+  }
+
+};
+
+var ShoppingCartIcon = {
+  name: 'ShoppingCartIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-shopping-cart"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("circle", {
+      "cx": "9",
+      "cy": "21",
+      "r": "1"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("circle", {
+      "cx": "20",
+      "cy": "21",
+      "r": "1"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"
+    })]); };
+  }
+
+};
+
+var ShuffleIcon = {
+  name: 'ShuffleIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-shuffle"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("polyline", {
+      "points": "16 3 21 3 21 8"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "4",
+      "y1": "20",
+      "x2": "21",
+      "y2": "3"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("polyline", {
+      "points": "21 16 21 21 16 21"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "15",
+      "y1": "15",
+      "x2": "21",
+      "y2": "21"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "4",
+      "y1": "4",
+      "x2": "9",
+      "y2": "9"
+    })]); };
+  }
+
+};
+
+var SidebarIcon = {
+  name: 'SidebarIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-sidebar"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("rect", {
+      "x": "3",
+      "y": "3",
+      "width": "18",
+      "height": "18",
+      "rx": "2",
+      "ry": "2"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "9",
+      "y1": "3",
+      "x2": "9",
+      "y2": "21"
+    })]); };
+  }
+
+};
+
+var SkipBackIcon = {
+  name: 'SkipBackIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-skip-back"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("polygon", {
+      "points": "19 20 9 12 19 4 19 20"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "5",
+      "y1": "19",
+      "x2": "5",
+      "y2": "5"
+    })]); };
+  }
+
+};
+
+var SkipForwardIcon = {
+  name: 'SkipForwardIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-skip-forward"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("polygon", {
+      "points": "5 4 15 12 5 20 5 4"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "19",
+      "y1": "5",
+      "x2": "19",
+      "y2": "19"
+    })]); };
+  }
+
+};
+
+var SlackIcon = {
+  name: 'SlackIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-slack"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M14.5 10c-.83 0-1.5-.67-1.5-1.5v-5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5z"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M20.5 10H19V8.5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M9.5 14c.83 0 1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5S8 21.33 8 20.5v-5c0-.83.67-1.5 1.5-1.5z"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M3.5 14H5v1.5c0 .83-.67 1.5-1.5 1.5S2 16.33 2 15.5 2.67 14 3.5 14z"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M14 14.5c0-.83.67-1.5 1.5-1.5h5c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5h-5c-.83 0-1.5-.67-1.5-1.5z"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M15.5 19H14v1.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5-.67-1.5-1.5-1.5z"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M10 9.5C10 8.67 9.33 8 8.5 8h-5C2.67 8 2 8.67 2 9.5S2.67 11 3.5 11h5c.83 0 1.5-.67 1.5-1.5z"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M8.5 5H10V3.5C10 2.67 9.33 2 8.5 2S7 2.67 7 3.5 7.67 5 8.5 5z"
+    })]); };
+  }
+
+};
+
+var SlashIcon = {
+  name: 'SlashIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-slash"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("circle", {
+      "cx": "12",
+      "cy": "12",
+      "r": "10"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "4.93",
+      "y1": "4.93",
+      "x2": "19.07",
+      "y2": "19.07"
+    })]); };
+  }
+
+};
+
+var SlidersIcon = {
+  name: 'SlidersIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-sliders"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "4",
+      "y1": "21",
+      "x2": "4",
+      "y2": "14"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "4",
+      "y1": "10",
+      "x2": "4",
+      "y2": "3"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "12",
+      "y1": "21",
+      "x2": "12",
+      "y2": "12"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "12",
+      "y1": "8",
+      "x2": "12",
+      "y2": "3"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "20",
+      "y1": "21",
+      "x2": "20",
+      "y2": "16"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "20",
+      "y1": "12",
+      "x2": "20",
+      "y2": "3"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "1",
+      "y1": "14",
+      "x2": "7",
+      "y2": "14"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "9",
+      "y1": "8",
+      "x2": "15",
+      "y2": "8"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "17",
+      "y1": "16",
+      "x2": "23",
+      "y2": "16"
+    })]); };
+  }
+
+};
+
+var SmartphoneIcon = {
+  name: 'SmartphoneIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-smartphone"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("rect", {
+      "x": "5",
+      "y": "2",
+      "width": "14",
+      "height": "20",
+      "rx": "2",
+      "ry": "2"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "12",
+      "y1": "18",
+      "x2": "12.01",
+      "y2": "18"
+    })]); };
+  }
+
+};
+
+var SmileIcon = {
+  name: 'SmileIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-smile"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("circle", {
+      "cx": "12",
+      "cy": "12",
+      "r": "10"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M8 14s1.5 2 4 2 4-2 4-2"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "9",
+      "y1": "9",
+      "x2": "9.01",
+      "y2": "9"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "15",
+      "y1": "9",
+      "x2": "15.01",
+      "y2": "9"
+    })]); };
+  }
+
+};
+
+var SpeakerIcon = {
+  name: 'SpeakerIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-speaker"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("rect", {
+      "x": "4",
+      "y": "2",
+      "width": "16",
+      "height": "20",
+      "rx": "2",
+      "ry": "2"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("circle", {
+      "cx": "12",
+      "cy": "14",
+      "r": "4"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "12",
+      "y1": "6",
+      "x2": "12.01",
+      "y2": "6"
+    })]); };
+  }
+
+};
+
+var SquareIcon = {
+  name: 'SquareIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-square"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("rect", {
+      "x": "3",
+      "y": "3",
+      "width": "18",
+      "height": "18",
+      "rx": "2",
+      "ry": "2"
+    })]); };
+  }
+
+};
+
+var StarIcon = {
+  name: 'StarIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-star"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("polygon", {
+      "points": "12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+    })]); };
+  }
+
+};
+
+var StopCircleIcon = {
+  name: 'StopCircleIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-stop-circle"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("circle", {
+      "cx": "12",
+      "cy": "12",
+      "r": "10"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("rect", {
+      "x": "9",
+      "y": "9",
+      "width": "6",
+      "height": "6"
+    })]); };
+  }
+
+};
+
+var SunIcon = {
+  name: 'SunIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-sun"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("circle", {
+      "cx": "12",
+      "cy": "12",
+      "r": "5"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "12",
+      "y1": "1",
+      "x2": "12",
+      "y2": "3"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "12",
+      "y1": "21",
+      "x2": "12",
+      "y2": "23"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "4.22",
+      "y1": "4.22",
+      "x2": "5.64",
+      "y2": "5.64"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "18.36",
+      "y1": "18.36",
+      "x2": "19.78",
+      "y2": "19.78"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "1",
+      "y1": "12",
+      "x2": "3",
+      "y2": "12"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "21",
+      "y1": "12",
+      "x2": "23",
+      "y2": "12"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "4.22",
+      "y1": "19.78",
+      "x2": "5.64",
+      "y2": "18.36"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "18.36",
+      "y1": "5.64",
+      "x2": "19.78",
+      "y2": "4.22"
+    })]); };
+  }
+
+};
+
+var SunriseIcon = {
+  name: 'SunriseIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-sunrise"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M17 18a5 5 0 0 0-10 0"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "12",
+      "y1": "2",
+      "x2": "12",
+      "y2": "9"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "4.22",
+      "y1": "10.22",
+      "x2": "5.64",
+      "y2": "11.64"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "1",
+      "y1": "18",
+      "x2": "3",
+      "y2": "18"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "21",
+      "y1": "18",
+      "x2": "23",
+      "y2": "18"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "18.36",
+      "y1": "11.64",
+      "x2": "19.78",
+      "y2": "10.22"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "23",
+      "y1": "22",
+      "x2": "1",
+      "y2": "22"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("polyline", {
+      "points": "8 6 12 2 16 6"
+    })]); };
+  }
+
+};
+
+var SunsetIcon = {
+  name: 'SunsetIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-sunset"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M17 18a5 5 0 0 0-10 0"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "12",
+      "y1": "9",
+      "x2": "12",
+      "y2": "2"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "4.22",
+      "y1": "10.22",
+      "x2": "5.64",
+      "y2": "11.64"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "1",
+      "y1": "18",
+      "x2": "3",
+      "y2": "18"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "21",
+      "y1": "18",
+      "x2": "23",
+      "y2": "18"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "18.36",
+      "y1": "11.64",
+      "x2": "19.78",
+      "y2": "10.22"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "23",
+      "y1": "22",
+      "x2": "1",
+      "y2": "22"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("polyline", {
+      "points": "16 5 12 9 8 5"
+    })]); };
+  }
+
+};
+
+var TabletIcon = {
+  name: 'TabletIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-tablet"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("rect", {
+      "x": "4",
+      "y": "2",
+      "width": "16",
+      "height": "20",
+      "rx": "2",
+      "ry": "2"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "12",
+      "y1": "18",
+      "x2": "12.01",
+      "y2": "18"
+    })]); };
+  }
+
+};
+
+var TagIcon = {
+  name: 'TagIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-tag"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "7",
+      "y1": "7",
+      "x2": "7.01",
+      "y2": "7"
+    })]); };
+  }
+
+};
+
+var TargetIcon = {
+  name: 'TargetIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-target"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("circle", {
+      "cx": "12",
+      "cy": "12",
+      "r": "10"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("circle", {
+      "cx": "12",
+      "cy": "12",
+      "r": "6"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("circle", {
+      "cx": "12",
+      "cy": "12",
+      "r": "2"
+    })]); };
+  }
+
+};
+
+var TerminalIcon = {
+  name: 'TerminalIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-terminal"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("polyline", {
+      "points": "4 17 10 11 4 5"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "12",
+      "y1": "19",
+      "x2": "20",
+      "y2": "19"
+    })]); };
+  }
+
+};
+
+var ThermometerIcon = {
+  name: 'ThermometerIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-thermometer"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4.5 4.5 0 1 0 5 0z"
+    })]); };
+  }
+
+};
+
+var ThumbsDownIcon = {
+  name: 'ThumbsDownIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-thumbs-down"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M10 15v4a3 3 0 0 0 3 3l4-9V2H5.72a2 2 0 0 0-2 1.7l-1.38 9a2 2 0 0 0 2 2.3zm7-13h2.67A2.31 2.31 0 0 1 22 4v7a2.31 2.31 0 0 1-2.33 2H17"
+    })]); };
+  }
+
+};
+
+var ThumbsUpIcon = {
+  name: 'ThumbsUpIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-thumbs-up"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"
+    })]); };
+  }
+
+};
+
+var ToggleLeftIcon = {
+  name: 'ToggleLeftIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-toggle-left"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("rect", {
+      "x": "1",
+      "y": "5",
+      "width": "22",
+      "height": "14",
+      "rx": "7",
+      "ry": "7"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("circle", {
+      "cx": "8",
+      "cy": "12",
+      "r": "3"
+    })]); };
+  }
+
+};
+
+var ToggleRightIcon = {
+  name: 'ToggleRightIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-toggle-right"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("rect", {
+      "x": "1",
+      "y": "5",
+      "width": "22",
+      "height": "14",
+      "rx": "7",
+      "ry": "7"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("circle", {
+      "cx": "16",
+      "cy": "12",
+      "r": "3"
+    })]); };
+  }
+
+};
+
+var ToolIcon = {
+  name: 'ToolIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-tool"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"
+    })]); };
+  }
+
+};
+
+var Trash2Icon = {
+  name: 'Trash2Icon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-trash-2"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("polyline", {
+      "points": "3 6 5 6 21 6"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "10",
+      "y1": "11",
+      "x2": "10",
+      "y2": "17"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "14",
+      "y1": "11",
+      "x2": "14",
+      "y2": "17"
+    })]); };
+  }
+
+};
+
+var TrashIcon = {
+  name: 'TrashIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-trash"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("polyline", {
+      "points": "3 6 5 6 21 6"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"
+    })]); };
+  }
+
+};
+
+var TrelloIcon = {
+  name: 'TrelloIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-trello"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("rect", {
+      "x": "3",
+      "y": "3",
+      "width": "18",
+      "height": "18",
+      "rx": "2",
+      "ry": "2"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("rect", {
+      "x": "7",
+      "y": "7",
+      "width": "3",
+      "height": "9"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("rect", {
+      "x": "14",
+      "y": "7",
+      "width": "3",
+      "height": "5"
+    })]); };
+  }
+
+};
+
+var TrendingDownIcon = {
+  name: 'TrendingDownIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-trending-down"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("polyline", {
+      "points": "23 18 13.5 8.5 8.5 13.5 1 6"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("polyline", {
+      "points": "17 18 23 18 23 12"
+    })]); };
+  }
+
+};
+
+var TrendingUpIcon = {
+  name: 'TrendingUpIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-trending-up"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("polyline", {
+      "points": "23 6 13.5 15.5 8.5 10.5 1 18"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("polyline", {
+      "points": "17 6 23 6 23 12"
+    })]); };
+  }
+
+};
+
+var TriangleIcon = {
+  name: 'TriangleIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-triangle"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"
+    })]); };
+  }
+
+};
+
+var TruckIcon = {
+  name: 'TruckIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-truck"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("rect", {
+      "x": "1",
+      "y": "3",
+      "width": "15",
+      "height": "13"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("polygon", {
+      "points": "16 8 20 8 23 11 23 16 16 16 16 8"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("circle", {
+      "cx": "5.5",
+      "cy": "18.5",
+      "r": "2.5"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("circle", {
+      "cx": "18.5",
+      "cy": "18.5",
+      "r": "2.5"
+    })]); };
+  }
+
+};
+
+var TvIcon = {
+  name: 'TvIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-tv"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("rect", {
+      "x": "2",
+      "y": "7",
+      "width": "20",
+      "height": "15",
+      "rx": "2",
+      "ry": "2"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("polyline", {
+      "points": "17 2 12 7 7 2"
+    })]); };
+  }
+
+};
+
+var TwitchIcon = {
+  name: 'TwitchIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-twitch"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M21 2H3v16h5v4l4-4h5l4-4V2zm-10 9V7m5 4V7"
+    })]); };
+  }
+
+};
+
+var TwitterIcon = {
+  name: 'TwitterIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-twitter"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"
+    })]); };
+  }
+
+};
+
+var TypeIcon = {
+  name: 'TypeIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-type"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("polyline", {
+      "points": "4 7 4 4 20 4 20 7"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "9",
+      "y1": "20",
+      "x2": "15",
+      "y2": "20"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "12",
+      "y1": "4",
+      "x2": "12",
+      "y2": "20"
+    })]); };
+  }
+
+};
+
+var UmbrellaIcon = {
+  name: 'UmbrellaIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-umbrella"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M23 12a11.05 11.05 0 0 0-22 0zm-5 7a3 3 0 0 1-6 0v-7"
+    })]); };
+  }
+
+};
+
+var UnderlineIcon = {
+  name: 'UnderlineIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-underline"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M6 3v7a6 6 0 0 0 6 6 6 6 0 0 0 6-6V3"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "4",
+      "y1": "21",
+      "x2": "20",
+      "y2": "21"
+    })]); };
+  }
+
+};
+
+var UnlockIcon = {
+  name: 'UnlockIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-unlock"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("rect", {
+      "x": "3",
+      "y": "11",
+      "width": "18",
+      "height": "11",
+      "rx": "2",
+      "ry": "2"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M7 11V7a5 5 0 0 1 9.9-1"
+    })]); };
+  }
+
+};
+
+var UploadCloudIcon = {
+  name: 'UploadCloudIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-upload-cloud"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("polyline", {
+      "points": "16 16 12 12 8 16"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "12",
+      "y1": "12",
+      "x2": "12",
+      "y2": "21"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M20.39 18.39A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.3"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("polyline", {
+      "points": "16 16 12 12 8 16"
+    })]); };
+  }
+
+};
+
+var UploadIcon = {
+  name: 'UploadIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-upload"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("polyline", {
+      "points": "17 8 12 3 7 8"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "12",
+      "y1": "3",
+      "x2": "12",
+      "y2": "15"
+    })]); };
+  }
+
+};
+
+var UserCheckIcon = {
+  name: 'UserCheckIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-user-check"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("circle", {
+      "cx": "8.5",
+      "cy": "7",
+      "r": "4"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("polyline", {
+      "points": "17 11 19 13 23 9"
+    })]); };
+  }
+
+};
+
+var UserMinusIcon = {
+  name: 'UserMinusIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-user-minus"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("circle", {
+      "cx": "8.5",
+      "cy": "7",
+      "r": "4"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "23",
+      "y1": "11",
+      "x2": "17",
+      "y2": "11"
+    })]); };
+  }
+
+};
+
+var UserPlusIcon = {
+  name: 'UserPlusIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-user-plus"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("circle", {
+      "cx": "8.5",
+      "cy": "7",
+      "r": "4"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "20",
+      "y1": "8",
+      "x2": "20",
+      "y2": "14"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "23",
+      "y1": "11",
+      "x2": "17",
+      "y2": "11"
+    })]); };
+  }
+
+};
+
+var UserXIcon = {
+  name: 'UserXIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-user-x"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("circle", {
+      "cx": "8.5",
+      "cy": "7",
+      "r": "4"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "18",
+      "y1": "8",
+      "x2": "23",
+      "y2": "13"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "23",
+      "y1": "8",
+      "x2": "18",
+      "y2": "13"
+    })]); };
+  }
+
+};
+
+var UserIcon = {
+  name: 'UserIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-user"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("circle", {
+      "cx": "12",
+      "cy": "7",
+      "r": "4"
+    })]); };
+  }
+
+};
+
+var UsersIcon = {
+  name: 'UsersIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-users"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("circle", {
+      "cx": "9",
+      "cy": "7",
+      "r": "4"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M23 21v-2a4 4 0 0 0-3-3.87"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M16 3.13a4 4 0 0 1 0 7.75"
+    })]); };
+  }
+
+};
+
+var VideoOffIcon = {
+  name: 'VideoOffIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-video-off"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M16 16v1a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h2m5.66 0H14a2 2 0 0 1 2 2v3.34l1 1L23 7v10"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "1",
+      "y1": "1",
+      "x2": "23",
+      "y2": "23"
+    })]); };
+  }
+
+};
+
+var VideoIcon = {
+  name: 'VideoIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-video"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("polygon", {
+      "points": "23 7 16 12 23 17 23 7"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("rect", {
+      "x": "1",
+      "y": "5",
+      "width": "15",
+      "height": "14",
+      "rx": "2",
+      "ry": "2"
+    })]); };
+  }
+
+};
+
+var VoicemailIcon = {
+  name: 'VoicemailIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-voicemail"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("circle", {
+      "cx": "5.5",
+      "cy": "11.5",
+      "r": "4.5"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("circle", {
+      "cx": "18.5",
+      "cy": "11.5",
+      "r": "4.5"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "5.5",
+      "y1": "16",
+      "x2": "18.5",
+      "y2": "16"
+    })]); };
+  }
+
+};
+
+var Volume1Icon = {
+  name: 'Volume1Icon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-volume-1"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("polygon", {
+      "points": "11 5 6 9 2 9 2 15 6 15 11 19 11 5"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M15.54 8.46a5 5 0 0 1 0 7.07"
+    })]); };
+  }
+
+};
+
+var Volume2Icon = {
+  name: 'Volume2Icon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-volume-2"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("polygon", {
+      "points": "11 5 6 9 2 9 2 15 6 15 11 19 11 5"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"
+    })]); };
+  }
+
+};
+
+var VolumeXIcon = {
+  name: 'VolumeXIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-volume-x"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("polygon", {
+      "points": "11 5 6 9 2 9 2 15 6 15 11 19 11 5"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "23",
+      "y1": "9",
+      "x2": "17",
+      "y2": "15"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "17",
+      "y1": "9",
+      "x2": "23",
+      "y2": "15"
+    })]); };
+  }
+
+};
+
+var VolumeIcon = {
+  name: 'VolumeIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-volume"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("polygon", {
+      "points": "11 5 6 9 2 9 2 15 6 15 11 19 11 5"
+    })]); };
+  }
+
+};
+
+var WatchIcon = {
+  name: 'WatchIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-watch"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("circle", {
+      "cx": "12",
+      "cy": "12",
+      "r": "7"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("polyline", {
+      "points": "12 9 12 12 13.5 13.5"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M16.51 17.35l-.35 3.83a2 2 0 0 1-2 1.82H9.83a2 2 0 0 1-2-1.82l-.35-3.83m.01-10.7l.35-3.83A2 2 0 0 1 9.83 1h4.35a2 2 0 0 1 2 1.82l.35 3.83"
+    })]); };
+  }
+
+};
+
+var WifiOffIcon = {
+  name: 'WifiOffIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-wifi-off"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "1",
+      "y1": "1",
+      "x2": "23",
+      "y2": "23"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M16.72 11.06A10.94 10.94 0 0 1 19 12.55"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M5 12.55a10.94 10.94 0 0 1 5.17-2.39"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M10.71 5.05A16 16 0 0 1 22.58 9"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M1.42 9a15.91 15.91 0 0 1 4.7-2.88"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M8.53 16.11a6 6 0 0 1 6.95 0"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "12",
+      "y1": "20",
+      "x2": "12.01",
+      "y2": "20"
+    })]); };
+  }
+
+};
+
+var WifiIcon = {
+  name: 'WifiIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-wifi"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M5 12.55a11 11 0 0 1 14.08 0"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M1.42 9a16 16 0 0 1 21.16 0"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M8.53 16.11a6 6 0 0 1 6.95 0"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "12",
+      "y1": "20",
+      "x2": "12.01",
+      "y2": "20"
+    })]); };
+  }
+
+};
+
+var WindIcon = {
+  name: 'WindIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-wind"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M9.59 4.59A2 2 0 1 1 11 8H2m10.59 11.41A2 2 0 1 0 14 16H2m15.73-8.27A2.5 2.5 0 1 1 19.5 12H2"
+    })]); };
+  }
+
+};
+
+var XCircleIcon = {
+  name: 'XCircleIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-x-circle"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("circle", {
+      "cx": "12",
+      "cy": "12",
+      "r": "10"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "15",
+      "y1": "9",
+      "x2": "9",
+      "y2": "15"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "9",
+      "y1": "9",
+      "x2": "15",
+      "y2": "15"
+    })]); };
+  }
+
+};
+
+var XOctagonIcon = {
+  name: 'XOctagonIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-x-octagon"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("polygon", {
+      "points": "7.86 2 16.14 2 22 7.86 22 16.14 16.14 22 7.86 22 2 16.14 2 7.86 7.86 2"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "15",
+      "y1": "9",
+      "x2": "9",
+      "y2": "15"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "9",
+      "y1": "9",
+      "x2": "15",
+      "y2": "15"
+    })]); };
+  }
+
+};
+
+var XSquareIcon = {
+  name: 'XSquareIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-x-square"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("rect", {
+      "x": "3",
+      "y": "3",
+      "width": "18",
+      "height": "18",
+      "rx": "2",
+      "ry": "2"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "9",
+      "y1": "9",
+      "x2": "15",
+      "y2": "15"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "15",
+      "y1": "9",
+      "x2": "9",
+      "y2": "15"
+    })]); };
+  }
+
+};
+
+var XIcon = {
+  name: 'XIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-x"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "18",
+      "y1": "6",
+      "x2": "6",
+      "y2": "18"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "6",
+      "y1": "6",
+      "x2": "18",
+      "y2": "18"
+    })]); };
+  }
+
+};
+
+var YoutubeIcon = {
+  name: 'YoutubeIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-youtube"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+      "d": "M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("polygon", {
+      "points": "9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"
+    })]); };
+  }
+
+};
+
+var ZapOffIcon = {
+  name: 'ZapOffIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-zap-off"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("polyline", {
+      "points": "12.41 6.75 13 2 10.57 4.92"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("polyline", {
+      "points": "18.57 12.91 21 10 15.66 10"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("polyline", {
+      "points": "8 8 3 14 12 14 11 22 16 16"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "1",
+      "y1": "1",
+      "x2": "23",
+      "y2": "23"
+    })]); };
+  }
+
+};
+
+var ZapIcon = {
+  name: 'ZapIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-zap"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("polygon", {
+      "points": "13 2 3 14 12 14 11 22 21 10 12 10 13 2"
+    })]); };
+  }
+
+};
+
+var ZoomInIcon = {
+  name: 'ZoomInIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-zoom-in"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("circle", {
+      "cx": "11",
+      "cy": "11",
+      "r": "8"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "21",
+      "y1": "21",
+      "x2": "16.65",
+      "y2": "16.65"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "11",
+      "y1": "8",
+      "x2": "11",
+      "y2": "14"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "8",
+      "y1": "11",
+      "x2": "14",
+      "y2": "11"
+    })]); };
+  }
+
+};
+
+var ZoomOutIcon = {
+  name: 'ZoomOutIcon',
+  props: {
+    size: {
+      type: String,
+      default: '16',
+      validator: function (s) { return !isNaN(s) || s.length >= 2 && !isNaN(s.slice(0, s.length - 1)) && s.slice(-1) === 'x'; }
+    }
+  },
+
+  setup: function setup(props, ctx) {
+    var size = props.size.slice(-1) === 'x' ? props.size.slice(0, props.size.length - 1) + 'em' : parseInt(props.size) + 'px';
+    var attrs = Object.assign({}, ctx.attrs);
+    attrs.width = attrs.width || size;
+    attrs.height = attrs.height || size;
+    return function () { return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+      "xmlns": "http://www.w3.org/2000/svg",
+      "width": "24",
+      "height": "24",
+      "viewBox": "0 0 24 24",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "2",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+      "class": "feather feather-zoom-out"
+    }, Object.assign({}, attrs)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("circle", {
+      "cx": "11",
+      "cy": "11",
+      "r": "8"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "21",
+      "y1": "21",
+      "x2": "16.65",
+      "y2": "16.65"
+    }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("line", {
+      "x1": "8",
+      "y1": "11",
+      "x2": "14",
+      "y2": "11"
+    })]); };
+  }
+
+};
+
+
+
+
+/***/ }),
+
 /***/ "./node_modules/axios/index.js":
 /*!*************************************!*\
   !*** ./node_modules/axios/index.js ***!
@@ -21451,6 +33478,49 @@ module.exports = {
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Components/MToast.vue?vue&type=script&lang=js":
+/*!************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Components/MToast.vue?vue&type=script&lang=js ***!
+  \************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  props: {
+    color: {
+      required: true,
+      type: String,
+      "default": 'purple'
+    },
+    is_active: {
+      required: true,
+      type: Boolean
+    },
+    message: {
+      type: String
+    }
+  },
+  data: function data() {
+    return {
+      active: false
+    };
+  },
+  mounted: function mounted() {
+    this.active = this.is_active;
+  },
+  methods: {
+    onCloseToast: function onCloseToast() {
+      this.active = !this.active;
+    }
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Jetstream/ActionMessage.vue?vue&type=script&lang=js":
 /*!******************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Jetstream/ActionMessage.vue?vue&type=script&lang=js ***!
@@ -22541,14 +34611,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
-/* harmony import */ var _Jetstream_AuthenticationCard_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/Jetstream/AuthenticationCard.vue */ "./resources/js/Jetstream/AuthenticationCard.vue");
-/* harmony import */ var _Jetstream_AuthenticationCardLogo_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/Jetstream/AuthenticationCardLogo.vue */ "./resources/js/Jetstream/AuthenticationCardLogo.vue");
-/* harmony import */ var _Jetstream_Button_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/Jetstream/Button.vue */ "./resources/js/Jetstream/Button.vue");
-/* harmony import */ var _Jetstream_Input_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @/Jetstream/Input.vue */ "./resources/js/Jetstream/Input.vue");
-/* harmony import */ var _Jetstream_Checkbox_vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @/Jetstream/Checkbox.vue */ "./resources/js/Jetstream/Checkbox.vue");
-/* harmony import */ var _Jetstream_Label_vue__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @/Jetstream/Label.vue */ "./resources/js/Jetstream/Label.vue");
-/* harmony import */ var _Jetstream_ValidationErrors_vue__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @/Jetstream/ValidationErrors.vue */ "./resources/js/Jetstream/ValidationErrors.vue");
-/* harmony import */ var _inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @inertiajs/inertia-vue3 */ "./node_modules/@inertiajs/inertia-vue3/dist/index.js");
+/* harmony import */ var _inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia-vue3 */ "./node_modules/@inertiajs/inertia-vue3/dist/index.js");
+/* harmony import */ var _Components_MToast__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/Components/MToast */ "./resources/js/Components/MToast.vue");
+/* harmony import */ var _zhuowenli_vue_feather_icons__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @zhuowenli/vue-feather-icons */ "./node_modules/@zhuowenli/vue-feather-icons/dist/vue-feather-icons.es.js");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
@@ -22559,22 +34624,15 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
-
-
-
-
-
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,vue__WEBPACK_IMPORTED_MODULE_0__.defineComponent)({
   components: {
-    Head: _inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_8__.Head,
-    JetAuthenticationCard: _Jetstream_AuthenticationCard_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
-    JetAuthenticationCardLogo: _Jetstream_AuthenticationCardLogo_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
-    JetButton: _Jetstream_Button_vue__WEBPACK_IMPORTED_MODULE_3__["default"],
-    JetInput: _Jetstream_Input_vue__WEBPACK_IMPORTED_MODULE_4__["default"],
-    JetCheckbox: _Jetstream_Checkbox_vue__WEBPACK_IMPORTED_MODULE_5__["default"],
-    JetLabel: _Jetstream_Label_vue__WEBPACK_IMPORTED_MODULE_6__["default"],
-    JetValidationErrors: _Jetstream_ValidationErrors_vue__WEBPACK_IMPORTED_MODULE_7__["default"],
-    Link: _inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_8__.Link
+    Head: _inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_1__.Head,
+    MailIcon: _zhuowenli_vue_feather_icons__WEBPACK_IMPORTED_MODULE_3__.MailIcon,
+    LockIcon: _zhuowenli_vue_feather_icons__WEBPACK_IMPORTED_MODULE_3__.LockIcon,
+    MToast: _Components_MToast__WEBPACK_IMPORTED_MODULE_2__["default"],
+    EyeOffIcon: _zhuowenli_vue_feather_icons__WEBPACK_IMPORTED_MODULE_3__.EyeOffIcon,
+    EyeIcon: _zhuowenli_vue_feather_icons__WEBPACK_IMPORTED_MODULE_3__.EyeIcon,
+    Link: _inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_1__.Link
   },
   props: {
     canResetPassword: Boolean,
@@ -22582,6 +34640,13 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   },
   data: function data() {
     return {
+      is_disable: false,
+      toast: {
+        color: 'purple',
+        active: false,
+        message: ''
+      },
+      password: 'password',
       form: this.$inertia.form({
         email: '',
         password: '',
@@ -22600,9 +34665,25 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         return _objectSpread(_objectSpread({}, data), {}, {
           remember: _this.form.remember ? 'on' : ''
         });
-      }).post(this.route('login'), {
+      }).post(this.route('app.login'), {
+        onStart: function onStart() {
+          _this.is_disable = true;
+        },
         onFinish: function onFinish() {
-          return _this.form.reset('password');
+          _this.form.reset('password');
+
+          if (_this.$page.props.flash.status == 'failed') {
+            _this.toast.active = true;
+            _this.toast.color = 'red';
+            setTimeout(function () {
+              _this.toast.active = false;
+            }, 5000);
+          } else if (_this.$page.props.flash.status == 'success') _this.toast.color = 'green';else _this.toast.color = 'purple';
+
+          _this.is_disable = false;
+        },
+        onError: function onError(error) {
+          console.log(error);
         }
       });
     }
@@ -22809,6 +34890,99 @@ __webpack_require__.r(__webpack_exports__);
     },
     submit: function submit() {
       this.form.post(this.route('two-factor.login'));
+    }
+  }
+}));
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Auth/Verify.vue?vue&type=script&lang=js":
+/*!************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Auth/Verify.vue?vue&type=script&lang=js ***!
+  \************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
+/* harmony import */ var _Components_MToast__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/Components/MToast */ "./resources/js/Components/MToast.vue");
+/* harmony import */ var _inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @inertiajs/inertia-vue3 */ "./node_modules/@inertiajs/inertia-vue3/dist/index.js");
+/* harmony import */ var _zhuowenli_vue_feather_icons__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @zhuowenli/vue-feather-icons */ "./node_modules/@zhuowenli/vue-feather-icons/dist/vue-feather-icons.es.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,vue__WEBPACK_IMPORTED_MODULE_0__.defineComponent)({
+  components: {
+    Head: _inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_2__.Head,
+    MailIcon: _zhuowenli_vue_feather_icons__WEBPACK_IMPORTED_MODULE_3__.MailIcon,
+    LockIcon: _zhuowenli_vue_feather_icons__WEBPACK_IMPORTED_MODULE_3__.LockIcon,
+    MToast: _Components_MToast__WEBPACK_IMPORTED_MODULE_1__["default"],
+    EyeOffIcon: _zhuowenli_vue_feather_icons__WEBPACK_IMPORTED_MODULE_3__.EyeOffIcon,
+    EyeIcon: _zhuowenli_vue_feather_icons__WEBPACK_IMPORTED_MODULE_3__.EyeIcon,
+    Link: _inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_2__.Link
+  },
+  props: {
+    canResetPassword: Boolean,
+    status: String
+  },
+  data: function data() {
+    return {
+      password: 'password',
+      toast: {
+        color: 'purple',
+        active: false,
+        message: ''
+      },
+      form: this.$inertia.form({
+        code: ''
+      })
+    };
+  },
+  methods: {
+    onSubmit: function onSubmit() {
+      this.$inertia.get(route('under.construction'));
+    },
+    backLogout: function backLogout() {
+      this.$inertia.post(this.route('logout'));
+    },
+    submit: function submit() {
+      var _this = this;
+
+      this.form.transform(function (data) {
+        return _objectSpread(_objectSpread({}, data), {}, {
+          remember: _this.form.remember ? 'on' : ''
+        });
+      }).post(this.route('app.verification'), {
+        onStart: function onStart() {
+          _this.is_disable = true;
+        },
+        onFinish: function onFinish() {
+          _this.form.reset('password');
+
+          if (_this.$page.props.flash.status == 'failed') {
+            _this.toast.active = true;
+            _this.toast.color = 'red';
+            setTimeout(function () {
+              _this.toast.active = false;
+            }, 5000);
+          } else if (_this.$page.props.flash.status == 'success') _this.toast.color = 'green';else _this.toast.color = 'purple';
+
+          _this.is_disable = false;
+        },
+        onError: function onError(error) {
+          console.log(error);
+        }
+      });
     }
   }
 }));
@@ -23450,22 +35624,80 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
-/* harmony import */ var _inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia-vue3 */ "./node_modules/@inertiajs/inertia-vue3/dist/index.js");
+/* harmony import */ var _zhuowenli_vue_feather_icons__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @zhuowenli/vue-feather-icons */ "./node_modules/@zhuowenli/vue-feather-icons/dist/vue-feather-icons.es.js");
 
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,vue__WEBPACK_IMPORTED_MODULE_0__.defineComponent)({
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   components: {
-    Head: _inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_1__.Head,
-    Link: _inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_1__.Link
+    DatabaseIcon: _zhuowenli_vue_feather_icons__WEBPACK_IMPORTED_MODULE_0__.DatabaseIcon,
+    FileTextIcon: _zhuowenli_vue_feather_icons__WEBPACK_IMPORTED_MODULE_0__.FileTextIcon,
+    MonitorIcon: _zhuowenli_vue_feather_icons__WEBPACK_IMPORTED_MODULE_0__.MonitorIcon,
+    UserIcon: _zhuowenli_vue_feather_icons__WEBPACK_IMPORTED_MODULE_0__.UserIcon,
+    MapIcon: _zhuowenli_vue_feather_icons__WEBPACK_IMPORTED_MODULE_0__.MapIcon
   },
-  props: {
-    canLogin: Boolean,
-    canRegister: Boolean,
-    laravelVersion: String,
-    phpVersion: String
+  methods: {
+    gotoLogin: function gotoLogin() {
+      this.$inertia.get(route('login'));
+    }
   }
-}));
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Components/MToast.vue?vue&type=template&id=71c172c5":
+/*!****************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Components/MToast.vue?vue&type=template&id=71c172c5 ***!
+  \****************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render)
+/* harmony export */ });
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
+
+var _hoisted_1 = {
+  "class": "fixed top-8 right-8"
+};
+var _hoisted_2 = {
+  id: "toast-danger",
+  "class": "flex items-center w-full max-w-xs p-4 mb-4 text-gray-500 bg-white rounded-lg shadow",
+  role: "alert"
+};
+
+var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("svg", {
+  "class": "w-5 h-5",
+  fill: "currentColor",
+  viewBox: "0 0 20 20",
+  xmlns: "http://www.w3.org/2000/svg"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("path", {
+  "fill-rule": "evenodd",
+  d: "M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z",
+  "clip-rule": "evenodd"
+})], -1
+/* HOISTED */
+);
+
+var _hoisted_4 = [_hoisted_3];
+var _hoisted_5 = {
+  "class": "ml-3 mr-3 text-sm font-normal"
+};
+function render(_ctx, _cache, $props, $setup, $data, $options) {
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", {
+    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(["transition duration-300 ease-in-out", {
+      'inline-block': $props.is_active,
+      'invisible': !$props.is_active
+    }])
+  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(["inline-flex items-center justify-center flex-shrink-0 w-8 h-8 rounded-lg", "bg-".concat($props.color, "-100 text-").concat($props.color, "-500")])
+  }, _hoisted_4, 2
+  /* CLASS */
+  ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.message), 1
+  /* TEXT */
+  ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <button @click=\"onCloseToast()\" type=\"button\" class=\"ml-auto -mx-1.5 -my-1.5 bg-white text-gray-400 hover:text-gray-900 rounded-lg focus:ring-2 focus:ring-gray-300 p-1.5 hover:bg-gray-100 inline-flex h-8 w-8 light:text-gray-500 light:hover:text-white light:bg-gray-800 light:hover:bg-gray-700\" data-dismiss-target=\"#toast-danger\" aria-label=\"Close\">\n                    <span class=\"sr-only\">Close</span>\n                    <svg class=\"w-5 h-5\" fill=\"currentColor\" viewBox=\"0 0 20 20\" xmlns=\"http://www.w3.org/2000/svg\"><path fill-rule=\"evenodd\" d=\"M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z\" clip-rule=\"evenodd\"></path></svg>\n                </button> ")])])], 2
+  /* CLASS */
+  );
+}
 
 /***/ }),
 
@@ -25943,6 +38175,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "render": () => (/* binding */ render)
 /* harmony export */ });
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
+/* harmony import */ var _Assets_illustrations_login_png__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/Assets/illustrations/login.png */ "./resources/js/Assets/illustrations/login.png");
+
 
 var _hoisted_1 = {
   "class": "min-h-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8"
@@ -25952,21 +38186,80 @@ var _hoisted_2 = {
 };
 
 var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
-  "class": "mx-auto h-12 w-auto",
-  src: "https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg",
-  alt: "Workflow"
+  "class": "mx-auto w-6/12 mx-auto h-auto",
+  src: _Assets_illustrations_login_png__WEBPACK_IMPORTED_MODULE_1__["default"],
+  alt: "Login Illustrations"
 }), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h2", {
-  "class": "mt-6 text-center text-3xl font-extrabold text-gray-900"
-}, "Sign in to your account")], -1
+  "class": "mt-6 text-3xl font-extrabold text-gray-900"
+}, "Masuk")], -1
 /* HOISTED */
 );
 
-var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<input type=\"hidden\" name=\"remember\" value=\"true\"><div class=\"rounded-md shadow-sm -space-y-px\"><div><label for=\"email-address\" class=\"sr-only\">Email address</label><input id=\"email-address\" name=\"email\" type=\"email\" autocomplete=\"email\" required class=\"appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm\" placeholder=\"Email address\"></div><div><label for=\"password\" class=\"sr-only\">Password</label><input id=\"password\" name=\"password\" type=\"password\" autocomplete=\"current-password\" required class=\"appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm\" placeholder=\"Password\"></div></div><div class=\"flex items-center justify-between\"><div class=\"flex items-center\"><input id=\"remember-me\" name=\"remember-me\" type=\"checkbox\" class=\"h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded\"><label for=\"remember-me\" class=\"ml-2 block text-sm text-gray-900\"> Remember me </label></div></div>", 3);
+var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+  type: "hidden",
+  name: "remember",
+  value: "true"
+}, null, -1
+/* HOISTED */
+);
 
-var _hoisted_7 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+  "for": "price",
+  "class": "block text-sm font-medium text-gray-700"
+}, "Email", -1
+/* HOISTED */
+);
+
+var _hoisted_6 = {
+  "class": "mt-1 relative rounded-md shadow-sm"
+};
+var _hoisted_7 = {
+  "class": "absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"
+};
+var _hoisted_8 = {
+  "class": "text-gray-500 sm:text-sm"
+};
+
+var _hoisted_9 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+  "for": "price",
+  "class": "block text-sm font-medium text-gray-700"
+}, "Kata sandi", -1
+/* HOISTED */
+);
+
+var _hoisted_10 = {
+  "class": "mt-1 relative rounded-md shadow-sm"
+};
+var _hoisted_11 = {
+  "class": "absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"
+};
+var _hoisted_12 = {
+  "class": "text-gray-500 sm:text-sm"
+};
+var _hoisted_13 = ["type"];
+var _hoisted_14 = {
+  "class": "absolute inset-y-0 right-6 flex items-center"
+};
+var _hoisted_15 = {
+  "class": "flex items-center justify-between"
+};
+var _hoisted_16 = {
+  "class": "flex items-center"
+};
+
+var _hoisted_17 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+  "for": "remember-me",
+  "class": "ml-2 block text-sm text-gray-900"
+}, " Ingat Saya ", -1
+/* HOISTED */
+);
+
+var _hoisted_18 = ["disabled"];
+
+var _hoisted_19 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
   "class": "absolute left-0 inset-y-0 flex items-center pl-3"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Heroicon name: solid/lock-closed "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("svg", {
-  "class": "h-5 w-5 text-indigo-500 group-hover:text-indigo-400",
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("svg", {
+  "class": "h-5 w-5 text-purple-500 group-hover:text-purple-400",
   xmlns: "http://www.w3.org/2000/svg",
   viewBox: "0 0 20 20",
   fill: "currentColor",
@@ -25979,21 +38272,101 @@ var _hoisted_7 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
 /* HOISTED */
 );
 
-var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Sign in ");
+var _hoisted_20 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Masuk ");
 
-var _hoisted_9 = [_hoisted_7, _hoisted_8];
+var _hoisted_21 = [_hoisted_19, _hoisted_20];
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_Head = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Head");
 
+  var _component_m_toast = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("m-toast");
+
+  var _component_mail_icon = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("mail-icon");
+
+  var _component_lock_icon = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("lock-icon");
+
+  var _component_eye_off_icon = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("eye-off-icon");
+
+  var _component_eye_icon = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("eye-icon");
+
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Head, {
-    title: "Log in"
-  }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <jet-authentication-card>\n        <template #logo>\n            <jet-authentication-card-logo />\n        </template>\n\n        <jet-validation-errors class=\"mb-4\" />\n\n        <div v-if=\"status\" class=\"mb-4 font-medium text-sm text-green-600\">\n            {{ status }}\n        </div>\n\n        <form @submit.prevent=\"submit\">\n            <div>\n                <jet-label for=\"email\" value=\"Email\" />\n                <jet-input id=\"email\" type=\"email\" class=\"mt-1 block w-full\" v-model=\"form.email\" required autofocus />\n            </div>\n\n            <div class=\"mt-4\">\n                <jet-label for=\"password\" value=\"Password\" />\n                <jet-input id=\"password\" type=\"password\" class=\"mt-1 block w-full\" v-model=\"form.password\" required autocomplete=\"current-password\" />\n            </div>\n\n            <div class=\"block mt-4\">\n                <label class=\"flex items-center\">\n                    <jet-checkbox name=\"remember\" v-model:checked=\"form.remember\" />\n                    <span class=\"ml-2 text-sm text-gray-600\">Remember me</span>\n                </label>\n            </div>\n\n            <div class=\"flex items-center justify-end mt-4\">\n                <Link v-if=\"canResetPassword\" :href=\"route('password.request')\" class=\"underline text-sm text-gray-600 hover:text-gray-900\">\n                    Forgot your password?\n                </Link>\n\n                <jet-button class=\"ml-4\" :class=\"{ 'opacity-25': form.processing }\" :disabled=\"form.processing\">\n                    Log in\n                </jet-button>\n            </div>\n        </form>\n    </jet-authentication-card> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [_hoisted_3, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <form class=\"mt-8 space-y-6\" action=\"#\" method=\"POST\"> "), _hoisted_4, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
-    onClick: _cache[0] || (_cache[0] = function ($event) {
-      return _ctx.onSubmit();
+    title: "Masuk"
+  }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_m_toast, {
+    color: _ctx.toast.color,
+    is_active: _ctx.toast.active,
+    message: _ctx.$page.props.flash.message
+  }, null, 8
+  /* PROPS */
+  , ["color", "is_active", "message"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [_hoisted_3, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("form", {
+    onSubmit: _cache[5] || (_cache[5] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function () {
+      return _ctx.submit && _ctx.submit.apply(_ctx, arguments);
+    }, ["prevent"])),
+    "class": "mt-8 space-y-6",
+    action: "#",
+    method: "POST"
+  }, [_hoisted_4, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [_hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_mail_icon, {
+    size: "1.5x"
+  })])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+    "onUpdate:modelValue": _cache[0] || (_cache[0] = function ($event) {
+      return _ctx.form.email = $event;
     }),
+    required: "",
+    type: "email",
+    name: "email",
+    id: "email-input",
+    "class": "focus:ring-purple-500 focus:border-purple-500 block w-full pl-10 sm:text-sm border-gray-300 rounded-md",
+    placeholder: "e.g. email@domain.com"
+  }, null, 512
+  /* NEED_PATCH */
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, _ctx.form.email]])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [_hoisted_9, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_10, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_11, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_12, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_lock_icon, {
+    size: "1.5x"
+  })])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+    "onUpdate:modelValue": _cache[1] || (_cache[1] = function ($event) {
+      return _ctx.form.password = $event;
+    }),
+    required: "",
+    type: _ctx.password,
+    name: "password",
+    id: "password-input",
+    "class": "focus:ring-purple-500 focus:border-purple-500 block w-full pl-10 pr-12 sm:text-sm border-gray-300 rounded-md"
+  }, null, 8
+  /* PROPS */
+  , _hoisted_13), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelDynamic, _ctx.form.password]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_14, [_ctx.password == 'password' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", {
+    key: 0,
+    onClick: _cache[2] || (_cache[2] = function ($event) {
+      return _ctx.password = 'text';
+    }),
+    "class": "text-gray-500 sm:text-sm"
+  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_eye_off_icon, {
+    role: "button",
+    size: "1.5x"
+  })])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", {
+    key: 1,
+    onClick: _cache[3] || (_cache[3] = function ($event) {
+      return _ctx.password = 'password';
+    }),
+    "class": "text-purple-700 sm:text-sm"
+  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_eye_icon, {
+    role: "button",
+    size: "1.5x"
+  })]))])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_15, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_16, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+    id: "remember-me",
+    "onUpdate:modelValue": _cache[4] || (_cache[4] = function ($event) {
+      return _ctx.form.remember = $event;
+    }),
+    name: "remember-me",
+    type: "checkbox",
+    "class": "h-4 w-4 text-purple-600 focus:ring-purple-500 border-gray-300 rounded"
+  }, null, 512
+  /* NEED_PATCH */
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelCheckbox, _ctx.form.remember]]), _hoisted_17])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+    disabled: _ctx.is_disable,
     type: "submit",
-    "class": "group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-  }, _hoisted_9)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" </form> ")])])], 64
+    "class": "group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-purple-600 hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500"
+  }, _hoisted_21, 8
+  /* PROPS */
+  , _hoisted_18)])], 32
+  /* HYDRATE_EVENTS */
+  )])])], 64
   /* STABLE_FRAGMENT */
   );
 }
@@ -26477,6 +38850,133 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     /* STABLE */
 
   })], 64
+  /* STABLE_FRAGMENT */
+  );
+}
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Auth/Verify.vue?vue&type=template&id=53cbb3c7":
+/*!****************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Auth/Verify.vue?vue&type=template&id=53cbb3c7 ***!
+  \****************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render)
+/* harmony export */ });
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
+/* harmony import */ var _Assets_illustrations_login_png__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/Assets/illustrations/login.png */ "./resources/js/Assets/illustrations/login.png");
+
+
+var _hoisted_1 = {
+  "class": "min-h-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8"
+};
+var _hoisted_2 = {
+  "class": "max-w-md w-full space-y-8"
+};
+
+var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
+  "class": "mx-auto w-6/12 mx-auto h-auto",
+  src: _Assets_illustrations_login_png__WEBPACK_IMPORTED_MODULE_1__["default"],
+  alt: "Login Illustrations"
+}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h2", {
+  "class": "mt-6 text-3xl font-extrabold text-gray-900"
+}, "Verifikasi"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, "Masukkan kode verifikasi untuk melanjutkan.")], -1
+/* HOISTED */
+);
+
+var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+  type: "hidden",
+  name: "remember",
+  value: "true"
+}, null, -1
+/* HOISTED */
+);
+
+var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+  "for": "price",
+  "class": "block text-sm font-medium text-gray-700"
+}, "Kode Verifikasi", -1
+/* HOISTED */
+);
+
+var _hoisted_6 = {
+  "class": "mt-1 relative rounded-md shadow-sm"
+};
+var _hoisted_7 = {
+  "class": "absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"
+};
+var _hoisted_8 = {
+  "class": "text-gray-500 sm:text-sm"
+};
+
+var _hoisted_9 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+  type: "submit",
+  "class": "group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-purple-600 hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+  "class": "absolute left-0 inset-y-0 flex items-center pl-3"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("svg", {
+  "class": "h-5 w-5 text-purple-500 group-hover:text-purple-400",
+  xmlns: "http://www.w3.org/2000/svg",
+  viewBox: "0 0 20 20",
+  fill: "currentColor",
+  "aria-hidden": "true"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("path", {
+  "fill-rule": "evenodd",
+  d: "M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z",
+  "clip-rule": "evenodd"
+})])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Verifikasi ")])], -1
+/* HOISTED */
+);
+
+function render(_ctx, _cache, $props, $setup, $data, $options) {
+  var _component_Head = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Head");
+
+  var _component_m_toast = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("m-toast");
+
+  var _component_lock_icon = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("lock-icon");
+
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Head, {
+    title: "Verifikasi"
+  }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_m_toast, {
+    color: _ctx.toast.color,
+    is_active: _ctx.toast.active,
+    message: _ctx.$page.props.flash.message
+  }, null, 8
+  /* PROPS */
+  , ["color", "is_active", "message"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [_hoisted_3, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("form", {
+    onSubmit: _cache[1] || (_cache[1] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function () {
+      return _ctx.submit && _ctx.submit.apply(_ctx, arguments);
+    }, ["prevent"])),
+    "class": "mt-8 space-y-6",
+    action: "#",
+    method: "POST"
+  }, [_hoisted_4, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [_hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_lock_icon, {
+    size: "1.5x"
+  })])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+    "onUpdate:modelValue": _cache[0] || (_cache[0] = function ($event) {
+      return _ctx.form.code = $event;
+    }),
+    required: "",
+    type: "text",
+    name: "code",
+    id: "code-input",
+    "class": "focus:ring-purple-500 focus:border-purple-500 block w-full pl-10 pr-12 sm:text-sm border-gray-300 rounded-md",
+    placeholder: "XXXX-XXXX"
+  }, null, 512
+  /* NEED_PATCH */
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, _ctx.form.code]])])]), _hoisted_9], 32
+  /* HYDRATE_EVENTS */
+  ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+    type: "button",
+    onClick: _cache[2] || (_cache[2] = function ($event) {
+      return _ctx.backLogout();
+    }),
+    "class": "mt-4 group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-gray-900 bg-gray-100 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-200"
+  }, " Kembali ")])])], 64
   /* STABLE_FRAGMENT */
   );
 }
@@ -27831,10 +40331,10 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Welcome.vue?vue&type=template&id=317d1a6e&scoped=true":
-/*!************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Welcome.vue?vue&type=template&id=317d1a6e&scoped=true ***!
-  \************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Welcome.vue?vue&type=template&id=317d1a6e":
+/*!************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Welcome.vue?vue&type=template&id=317d1a6e ***!
+  \************************************************************************************************************************************************************************************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -27843,85 +40343,230 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "render": () => (/* binding */ render)
 /* harmony export */ });
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
+/* harmony import */ var _Assets_logo_png__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/Assets/logo.png */ "./resources/js/Assets/logo.png");
 
-
-var _withScopeId = function _withScopeId(n) {
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.pushScopeId)("data-v-317d1a6e"), n = n(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.popScopeId)(), n;
-};
 
 var _hoisted_1 = {
-  "class": "relative py-16 bg-white"
+  "class": "container mx-auto px-14"
 };
-
-var _hoisted_2 = /*#__PURE__*/_withScopeId(function () {
-  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-    "class": "hidden absolute top-0 inset-x-0 h-1/2 bg-gray-50 lg:block",
-    "aria-hidden": "true"
-  }, null, -1
-  /* HOISTED */
-  );
-});
-
+var _hoisted_2 = {
+  "class": "columns-1"
+};
 var _hoisted_3 = {
-  "class": "max-w-7xl mx-auto bg-indigo-600 lg:bg-transparent lg:px-8"
-};
-var _hoisted_4 = {
-  "class": "lg:grid lg:grid-cols-12"
+  id: "nav",
+  "class": "py-6 grid grid-cols-2"
 };
 
-var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"relative z-10 lg:col-start-1 lg:row-start-1 lg:col-span-4 lg:py-16 lg:bg-transparent\" data-v-317d1a6e><div class=\"absolute inset-x-0 h-1/2 bg-gray-50 lg:hidden\" aria-hidden=\"true\" data-v-317d1a6e></div><div class=\"max-w-md mx-auto px-4 sm:max-w-3xl sm:px-6 lg:max-w-none lg:p-0\" data-v-317d1a6e><div class=\"aspect-w-10 aspect-h-6 sm:aspect-w-2 sm:aspect-h-1 lg:aspect-w-1\" data-v-317d1a6e><img class=\"object-cover object-center rounded-3xl shadow-2xl\" src=\"https://images.unsplash.com/photo-1622599656962-59ea819860aa?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=326&amp;q=80\" alt=\"\" data-v-317d1a6e></div></div></div>", 1);
+var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "image-brand"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
+  src: _Assets_logo_png__WEBPACK_IMPORTED_MODULE_1__["default"],
+  "class": "w-14 inline-block",
+  alt: "Logo Aplikasi Monitoring"
+}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
+  "class": "text-xl font-semibold ml-4 hidden md:inline-block"
+}, "Monitoring")])], -1
+/* HOISTED */
+);
 
+var _hoisted_5 = {
+  "class": "justify-self-end"
+};
 var _hoisted_6 = {
-  "class": "relative bg-indigo-600 lg:col-start-3 lg:row-start-1 lg:col-span-10 lg:rounded-3xl lg:grid lg:grid-cols-10 lg:items-center"
+  id: "header",
+  "class": "grid grid-cols-2"
 };
-
-var _hoisted_7 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"hidden absolute inset-0 overflow-hidden rounded-3xl lg:block\" aria-hidden=\"true\" data-v-317d1a6e><svg class=\"absolute bottom-full left-full transform translate-y-1/3 -translate-x-2/3 xl:bottom-auto xl:top-0 xl:translate-y-0\" width=\"404\" height=\"384\" fill=\"none\" viewBox=\"0 0 404 384\" aria-hidden=\"true\" data-v-317d1a6e><defs data-v-317d1a6e><pattern id=\"64e643ad-2176-4f86-b3d7-f2c5da3b6a6d\" x=\"0\" y=\"0\" width=\"20\" height=\"20\" patternUnits=\"userSpaceOnUse\" data-v-317d1a6e><rect x=\"0\" y=\"0\" width=\"4\" height=\"4\" class=\"text-indigo-500\" fill=\"currentColor\" data-v-317d1a6e></rect></pattern></defs><rect width=\"404\" height=\"384\" fill=\"url(#64e643ad-2176-4f86-b3d7-f2c5da3b6a6d)\" data-v-317d1a6e></rect></svg><svg class=\"absolute top-full transform -translate-y-1/3 -translate-x-1/3 xl:-translate-y-1/2\" width=\"404\" height=\"384\" fill=\"none\" viewBox=\"0 0 404 384\" aria-hidden=\"true\" data-v-317d1a6e><defs data-v-317d1a6e><pattern id=\"64e643ad-2176-4f86-b3d7-f2c5da3b6a6d\" x=\"0\" y=\"0\" width=\"20\" height=\"20\" patternUnits=\"userSpaceOnUse\" data-v-317d1a6e><rect x=\"0\" y=\"0\" width=\"4\" height=\"4\" class=\"text-indigo-500\" fill=\"currentColor\" data-v-317d1a6e></rect></pattern></defs><rect width=\"404\" height=\"384\" fill=\"url(#64e643ad-2176-4f86-b3d7-f2c5da3b6a6d)\" data-v-317d1a6e></rect></svg></div>", 1);
-
+var _hoisted_7 = {
+  "class": "self-center col-span-2 lg:col-span-1"
+};
 var _hoisted_8 = {
-  "class": "relative max-w-md mx-auto py-12 px-4 space-y-6 sm:max-w-3xl sm:py-16 sm:px-6 lg:max-w-none lg:p-0 lg:col-start-4 lg:col-span-6"
+  "class": "text mt-12 lg:px-6"
 };
 
-var _hoisted_9 = /*#__PURE__*/_withScopeId(function () {
-  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h2", {
-    "class": "text-3xl font-extrabold text-white",
-    id: "join-heading"
-  }, "Sistem Monitoring Fasilitas Kereta Api", -1
-  /* HOISTED */
-  );
-});
+var _hoisted_9 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
+  "class": "text-4xl mb-2 font-bold"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Sistem Monitoring dan Informasi "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+  "class": "text-purple-700"
+}, "Fasilitas Kereta Api")], -1
+/* HOISTED */
+);
 
-var _hoisted_10 = /*#__PURE__*/_withScopeId(function () {
-  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
-    "class": "text-lg text-white"
-  }, "Sistem informasi digital untuk keperluan monitoring fasilitas kereta secara online.", -1
-  /* HOISTED */
-  );
-});
+var _hoisted_10 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, "Sistem internal untuk mengakses sumber informasi dan memonitoring fasilitas fasilitas kereta api yang bertujuan untuk membangun dan meningkatkan sarana dan prasarana", -1
+/* HOISTED */
+);
 
-var _hoisted_11 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Masuk ");
+var _hoisted_11 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"my-8 col-span-2 lg:col-span-1\"><div class=\"flex flex-nowrap\"><img src=\"https://images.unsplash.com/photo-1622599656962-59ea819860aa?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=326&amp;q=80\" alt=\"Kereta Api Indonesia\" class=\"w-6/12 rounded-xl mr-2\"><img src=\"https://images.unsplash.com/photo-1634553492003-ceecfb2323bc?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=387&amp;q=80\" alt=\"Kereta Api Indonesia\" class=\"w-6/12 rounded-xl mx-2\"><img src=\"https://images.unsplash.com/photo-1628453297537-d3f3819691f1?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=327&amp;q=80\" alt=\"Kereta Api Indonesia\" class=\"w-6/12 rounded-xl mx-2\"></div></div>", 1);
+
+var _hoisted_12 = {
+  "class": "bg-gray-100 mt-4 py-12"
+};
+var _hoisted_13 = {
+  "class": "container mx-auto px-14"
+};
+
+var _hoisted_14 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "columns-1"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
+  "class": "text-4xl font-bold"
+}, "Fitur Inovatif")], -1
+/* HOISTED */
+);
+
+var _hoisted_15 = {
+  "class": "grid grid-cols-4 gap-4 mt-8"
+};
+var _hoisted_16 = {
+  "class": "col-span-4 sm:col-span-2 md:col-span-1"
+};
+var _hoisted_17 = {
+  "class": "block w-full p-6 max-w-sm bg-white rounded-xl border border-gray-100 hover:text-purple-700"
+};
+
+var _hoisted_18 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h5", {
+  "class": "my-2 text-2xl font-semibold mt-3 tracking-tight"
+}, "Monitoring", -1
+/* HOISTED */
+);
+
+var _hoisted_19 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
+  "class": "font-normal text-gray-700"
+}, "Memonitoring keadaan dan kondisi fasilitas kereta api apakah bagus atau tidak.", -1
+/* HOISTED */
+);
+
+var _hoisted_20 = {
+  "class": "col-span-4 sm:col-span-2 md:col-span-1"
+};
+var _hoisted_21 = {
+  "class": "block w-full p-6 max-w-sm bg-white rounded-xl border border-gray-100 hover:text-purple-700"
+};
+
+var _hoisted_22 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h5", {
+  "class": "my-2 text-2xl font-semibold mt-3 tracking-tight"
+}, "Sistem Informasi", -1
+/* HOISTED */
+);
+
+var _hoisted_23 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
+  "class": "font-normal text-gray-700"
+}, "Berupa penyimpanan dan pengolahan data hasil monitoring fasilitas kereta api.", -1
+/* HOISTED */
+);
+
+var _hoisted_24 = {
+  "class": "col-span-4 sm:col-span-2 md:col-span-1"
+};
+var _hoisted_25 = {
+  "class": "block w-full p-6 max-w-sm bg-white rounded-xl border border-gray-100 hover:text-purple-700"
+};
+
+var _hoisted_26 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h5", {
+  "class": "my-2 text-2xl font-semibold mt-3 tracking-tight"
+}, "Pemberitahuan", -1
+/* HOISTED */
+);
+
+var _hoisted_27 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
+  "class": "font-normal text-gray-700"
+}, "Fitur untuk bookmark agar semua user bisa mengetahui sesuatu seperti pengumuman.", -1
+/* HOISTED */
+);
+
+var _hoisted_28 = {
+  "class": "col-span-4 sm:col-span-2 md:col-span-1"
+};
+var _hoisted_29 = {
+  "class": "block w-full p-6 max-w-sm bg-white rounded-xl border border-gray-100 hover:text-purple-700"
+};
+
+var _hoisted_30 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h5", {
+  "class": "my-2 text-2xl font-semibold mt-3 tracking-tight"
+}, "Data Pegawai", -1
+/* HOISTED */
+);
+
+var _hoisted_31 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
+  "class": "font-normal text-gray-700"
+}, "Pengolahan data pegawai sebagai subjek yang melakukan kegiatan monitoring.", -1
+/* HOISTED */
+);
+
+var _hoisted_32 = {
+  "class": "col-span-4 sm:col-span-2 md:col-span-1"
+};
+var _hoisted_33 = {
+  "class": "block w-full p-6 max-w-sm bg-white rounded-xl border border-gray-100 hover:text-purple-700"
+};
+
+var _hoisted_34 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h5", {
+  "class": "my-2 text-2xl font-semibold mt-3 tracking-tight"
+}, "Data Tim / Group", -1
+/* HOISTED */
+);
+
+var _hoisted_35 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
+  "class": "font-normal text-gray-700"
+}, "Pengolahan data tim sebagai kelompok dari subjek kegiatan monitoring.", -1
+/* HOISTED */
+);
+
+var _hoisted_36 = {
+  "class": "col-span-4 sm:col-span-2 md:col-span-1"
+};
+var _hoisted_37 = {
+  "class": "block w-full p-6 max-w-sm bg-white rounded-xl border border-gray-100 hover:text-purple-700"
+};
+
+var _hoisted_38 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h5", {
+  "class": "my-2 text-2xl font-semibold mt-3 tracking-tight"
+}, "Visualisasi Peta", -1
+/* HOISTED */
+);
+
+var _hoisted_39 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
+  "class": "font-normal text-gray-700"
+}, "Monitoring terdapat data lokasi yang bisa divualisasikan agar lebih inovatif.", -1
+/* HOISTED */
+);
+
+var _hoisted_40 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div id=\"footer\" class=\"bg-slate-900 py-8\"><div class=\"container mx-auto px-12\"><div class=\"grid grid-cols-2\"><div class=\"col-span-2 sm:col-span-1 justify-self-start text-slate-300\"> 2022 Copyright by Balai Teknik Perkeretaapian Jawa Barat. <!-- &lt;div class=&quot;mt-4&quot;&gt;\n                            &lt;img src=&quot;@/Assets/logo-btp-jabar.png&quot; class=&quot;w-14 inline-block mr-2&quot; alt=&quot;Logo BTP Jabar&quot;&gt;\n                            &lt;img src=&quot;@/Assets/logo-dishub.png&quot; class=&quot;w-14 inline-block mx-2&quot; alt=&quot;Logo Dishub&quot;&gt;\n                        &lt;/div&gt; --></div><div class=\"col-span-2 sm:col-span-1 justify-self-end text-slate-300\"> 2022 Developed by <a href=\"https://sidescript.id\" class=\"underline\" target=\"_blank\">Sidescript Indonesia</a>. <!-- &lt;div class=&quot;mt-4&quot;&gt;\n                            &lt;img src=&quot;@/Assets/logo-dev.png&quot; class=&quot;w-16 inline-block mr-2&quot; alt=&quot;Logo BTP Jabar&quot;&gt;\n                        &lt;/div&gt; --></div></div></div></div>", 1);
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
-  var _component_Head = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Head");
+  var _component_monitor_icon = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("monitor-icon");
 
-  var _component_Link = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Link");
+  var _component_database_icon = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("database-icon");
 
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Head, {
-    title: "Welcome"
-  }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1, [_hoisted_2, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [_hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [_hoisted_7, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_8, [_hoisted_9, _hoisted_10, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Link, {
-    href: _ctx.route('login'),
-    "class": "block w-full py-3 px-5 text-center bg-white border border-transparent rounded-md shadow-md text-base font-medium text-indigo-700 hover:bg-gray-50 sm:inline-block sm:w-auto"
-  }, {
-    "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [_hoisted_11];
+  var _component_file_text_icon = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("file-text-icon");
+
+  var _component_user_icon = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("user-icon");
+
+  var _component_map_icon = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("map-icon");
+
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [_hoisted_4, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+    onClick: _cache[0] || (_cache[0] = function ($event) {
+      return $options.gotoLogin();
     }),
-    _: 1
-    /* STABLE */
-
-  }, 8
-  /* PROPS */
-  , ["href"])])])])])])], 64
-  /* STABLE_FRAGMENT */
-  );
+    type: "button",
+    "class": "mt-2 focus:outline-none text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-8 py-2.5 mb-2 light:bg-purple-600 light:hover:bg-purple-700 light:focus:ring-purple-900"
+  }, "Masuk")])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_8, [_hoisted_9, _hoisted_10, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+    onClick: _cache[1] || (_cache[1] = function ($event) {
+      return $options.gotoLogin();
+    }),
+    type: "button",
+    "class": "mt-6 focus:outline-none text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-12 py-4 mb-2 light:bg-purple-600 light:hover:bg-purple-700 light:focus:ring-purple-900"
+  }, "Mulai Sekarang")])]), _hoisted_11])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_12, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_13, [_hoisted_14, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_15, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_16, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_17, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_monitor_icon, {
+    size: "2x"
+  }), _hoisted_18, _hoisted_19])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_20, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_21, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_database_icon, {
+    size: "2x"
+  }), _hoisted_22, _hoisted_23])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_24, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_25, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_file_text_icon, {
+    size: "2x"
+  }), _hoisted_26, _hoisted_27])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_28, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_29, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_user_icon, {
+    size: "2x"
+  }), _hoisted_30, _hoisted_31])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_32, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_33, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_monitor_icon, {
+    size: "2x"
+  }), _hoisted_34, _hoisted_35])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_36, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_37, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_map_icon, {
+    size: "2x"
+  }), _hoisted_38, _hoisted_39])])])])]), _hoisted_40]);
 }
 
 /***/ }),
@@ -28089,106 +40734,6 @@ if ($defineProperty) {
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Welcome.vue?vue&type=style&index=0&id=317d1a6e&scoped=true&lang=css":
-/*!*********************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Welcome.vue?vue&type=style&index=0&id=317d1a6e&scoped=true&lang=css ***!
-  \*********************************************************************************************************************************************************************************************************************************************************************************************************************************************/
-/***/ ((module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
-/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
-// Imports
-
-var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
-// Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.bg-gray-100[data-v-317d1a6e] {\n        background-color: #f7fafc;\n        background-color: rgba(247, 250, 252, var(--tw-bg-opacity));\n}\n.border-gray-200[data-v-317d1a6e] {\n        border-color: #edf2f7;\n        border-color: rgba(237, 242, 247, var(--tw-border-opacity));\n}\n.text-gray-400[data-v-317d1a6e] {\n        color: #cbd5e0;\n        color: rgba(203, 213, 224, var(--tw-text-opacity));\n}\n.text-gray-500[data-v-317d1a6e] {\n        color: #a0aec0;\n        color: rgba(160, 174, 192, var(--tw-text-opacity));\n}\n.text-gray-600[data-v-317d1a6e] {\n        color: #718096;\n        color: rgba(113, 128, 150, var(--tw-text-opacity));\n}\n.text-gray-700[data-v-317d1a6e] {\n        color: #4a5568;\n        color: rgba(74, 85, 104, var(--tw-text-opacity));\n}\n.text-gray-900[data-v-317d1a6e] {\n        color: #1a202c;\n        color: rgba(26, 32, 44, var(--tw-text-opacity));\n}\n@media (prefers-color-scheme: dark) {\n.dark\\:bg-gray-800[data-v-317d1a6e] {\n            background-color: #2d3748;\n            background-color: rgba(45, 55, 72, var(--tw-bg-opacity));\n}\n.dark\\:bg-gray-900[data-v-317d1a6e] {\n            background-color: #1a202c;\n            background-color: rgba(26, 32, 44, var(--tw-bg-opacity));\n}\n.dark\\:border-gray-700[data-v-317d1a6e] {\n            border-color: #4a5568;\n            border-color: rgba(74, 85, 104, var(--tw-border-opacity));\n}\n.dark\\:text-white[data-v-317d1a6e] {\n            color: #fff;\n            color: rgba(255, 255, 255, var(--tw-text-opacity));\n}\n.dark\\:text-gray-400[data-v-317d1a6e] {\n            color: #cbd5e0;\n            color: rgba(203, 213, 224, var(--tw-text-opacity));\n}\n}\n", ""]);
-// Exports
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
-
-
-/***/ }),
-
-/***/ "./node_modules/css-loader/dist/runtime/api.js":
-/*!*****************************************************!*\
-  !*** ./node_modules/css-loader/dist/runtime/api.js ***!
-  \*****************************************************/
-/***/ ((module) => {
-
-"use strict";
-
-
-/*
-  MIT License http://www.opensource.org/licenses/mit-license.php
-  Author Tobias Koppers @sokra
-*/
-// css base code, injected by the css-loader
-// eslint-disable-next-line func-names
-module.exports = function (cssWithMappingToString) {
-  var list = []; // return the list of modules as css string
-
-  list.toString = function toString() {
-    return this.map(function (item) {
-      var content = cssWithMappingToString(item);
-
-      if (item[2]) {
-        return "@media ".concat(item[2], " {").concat(content, "}");
-      }
-
-      return content;
-    }).join("");
-  }; // import a list of modules into the list
-  // eslint-disable-next-line func-names
-
-
-  list.i = function (modules, mediaQuery, dedupe) {
-    if (typeof modules === "string") {
-      // eslint-disable-next-line no-param-reassign
-      modules = [[null, modules, ""]];
-    }
-
-    var alreadyImportedModules = {};
-
-    if (dedupe) {
-      for (var i = 0; i < this.length; i++) {
-        // eslint-disable-next-line prefer-destructuring
-        var id = this[i][0];
-
-        if (id != null) {
-          alreadyImportedModules[id] = true;
-        }
-      }
-    }
-
-    for (var _i = 0; _i < modules.length; _i++) {
-      var item = [].concat(modules[_i]);
-
-      if (dedupe && alreadyImportedModules[item[0]]) {
-        // eslint-disable-next-line no-continue
-        continue;
-      }
-
-      if (mediaQuery) {
-        if (!item[2]) {
-          item[2] = mediaQuery;
-        } else {
-          item[2] = "".concat(mediaQuery, " and ").concat(item[2]);
-        }
-      }
-
-      list.push(item);
-    }
-  };
-
-  return list;
-};
-
-/***/ }),
-
 /***/ "./node_modules/deepmerge/dist/cjs.js":
 /*!********************************************!*\
   !*** ./node_modules/deepmerge/dist/cjs.js ***!
@@ -28330,6 +40875,36 @@ var deepmerge_1 = deepmerge;
 
 module.exports = deepmerge_1;
 
+
+/***/ }),
+
+/***/ "./resources/js/Assets/illustrations/login.png":
+/*!*****************************************************!*\
+  !*** ./resources/js/Assets/illustrations/login.png ***!
+  \*****************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("/images/login.png?ece180a4e5b5737f4eb443e91e4bdc38");
+
+/***/ }),
+
+/***/ "./resources/js/Assets/logo.png":
+/*!**************************************!*\
+  !*** ./resources/js/Assets/logo.png ***!
+  \**************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("/images/logo.png?3929f1e00083f1306aa2a06c56e7c996");
 
 /***/ }),
 
@@ -51946,315 +64521,6 @@ module.exports = function getSideChannel() {
 
 /***/ }),
 
-/***/ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Welcome.vue?vue&type=style&index=0&id=317d1a6e&scoped=true&lang=css":
-/*!*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Welcome.vue?vue&type=style&index=0&id=317d1a6e&scoped=true&lang=css ***!
-  \*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
-/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_use_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Welcome_vue_vue_type_style_index_0_id_317d1a6e_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!../../../node_modules/vue-loader/dist/stylePostLoader.js!../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./Welcome.vue?vue&type=style&index=0&id=317d1a6e&scoped=true&lang=css */ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Welcome.vue?vue&type=style&index=0&id=317d1a6e&scoped=true&lang=css");
-
-            
-
-var options = {};
-
-options.insert = "head";
-options.singleton = false;
-
-var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_use_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Welcome_vue_vue_type_style_index_0_id_317d1a6e_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_1__["default"], options);
-
-
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_use_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Welcome_vue_vue_type_style_index_0_id_317d1a6e_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
-
-/***/ }),
-
-/***/ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js":
-/*!****************************************************************************!*\
-  !*** ./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js ***!
-  \****************************************************************************/
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
-
-"use strict";
-
-
-var isOldIE = function isOldIE() {
-  var memo;
-  return function memorize() {
-    if (typeof memo === 'undefined') {
-      // Test for IE <= 9 as proposed by Browserhacks
-      // @see http://browserhacks.com/#hack-e71d8692f65334173fee715c222cb805
-      // Tests for existence of standard globals is to allow style-loader
-      // to operate correctly into non-standard environments
-      // @see https://github.com/webpack-contrib/style-loader/issues/177
-      memo = Boolean(window && document && document.all && !window.atob);
-    }
-
-    return memo;
-  };
-}();
-
-var getTarget = function getTarget() {
-  var memo = {};
-  return function memorize(target) {
-    if (typeof memo[target] === 'undefined') {
-      var styleTarget = document.querySelector(target); // Special case to return head of iframe instead of iframe itself
-
-      if (window.HTMLIFrameElement && styleTarget instanceof window.HTMLIFrameElement) {
-        try {
-          // This will throw an exception if access to iframe is blocked
-          // due to cross-origin restrictions
-          styleTarget = styleTarget.contentDocument.head;
-        } catch (e) {
-          // istanbul ignore next
-          styleTarget = null;
-        }
-      }
-
-      memo[target] = styleTarget;
-    }
-
-    return memo[target];
-  };
-}();
-
-var stylesInDom = [];
-
-function getIndexByIdentifier(identifier) {
-  var result = -1;
-
-  for (var i = 0; i < stylesInDom.length; i++) {
-    if (stylesInDom[i].identifier === identifier) {
-      result = i;
-      break;
-    }
-  }
-
-  return result;
-}
-
-function modulesToDom(list, options) {
-  var idCountMap = {};
-  var identifiers = [];
-
-  for (var i = 0; i < list.length; i++) {
-    var item = list[i];
-    var id = options.base ? item[0] + options.base : item[0];
-    var count = idCountMap[id] || 0;
-    var identifier = "".concat(id, " ").concat(count);
-    idCountMap[id] = count + 1;
-    var index = getIndexByIdentifier(identifier);
-    var obj = {
-      css: item[1],
-      media: item[2],
-      sourceMap: item[3]
-    };
-
-    if (index !== -1) {
-      stylesInDom[index].references++;
-      stylesInDom[index].updater(obj);
-    } else {
-      stylesInDom.push({
-        identifier: identifier,
-        updater: addStyle(obj, options),
-        references: 1
-      });
-    }
-
-    identifiers.push(identifier);
-  }
-
-  return identifiers;
-}
-
-function insertStyleElement(options) {
-  var style = document.createElement('style');
-  var attributes = options.attributes || {};
-
-  if (typeof attributes.nonce === 'undefined') {
-    var nonce =  true ? __webpack_require__.nc : 0;
-
-    if (nonce) {
-      attributes.nonce = nonce;
-    }
-  }
-
-  Object.keys(attributes).forEach(function (key) {
-    style.setAttribute(key, attributes[key]);
-  });
-
-  if (typeof options.insert === 'function') {
-    options.insert(style);
-  } else {
-    var target = getTarget(options.insert || 'head');
-
-    if (!target) {
-      throw new Error("Couldn't find a style target. This probably means that the value for the 'insert' parameter is invalid.");
-    }
-
-    target.appendChild(style);
-  }
-
-  return style;
-}
-
-function removeStyleElement(style) {
-  // istanbul ignore if
-  if (style.parentNode === null) {
-    return false;
-  }
-
-  style.parentNode.removeChild(style);
-}
-/* istanbul ignore next  */
-
-
-var replaceText = function replaceText() {
-  var textStore = [];
-  return function replace(index, replacement) {
-    textStore[index] = replacement;
-    return textStore.filter(Boolean).join('\n');
-  };
-}();
-
-function applyToSingletonTag(style, index, remove, obj) {
-  var css = remove ? '' : obj.media ? "@media ".concat(obj.media, " {").concat(obj.css, "}") : obj.css; // For old IE
-
-  /* istanbul ignore if  */
-
-  if (style.styleSheet) {
-    style.styleSheet.cssText = replaceText(index, css);
-  } else {
-    var cssNode = document.createTextNode(css);
-    var childNodes = style.childNodes;
-
-    if (childNodes[index]) {
-      style.removeChild(childNodes[index]);
-    }
-
-    if (childNodes.length) {
-      style.insertBefore(cssNode, childNodes[index]);
-    } else {
-      style.appendChild(cssNode);
-    }
-  }
-}
-
-function applyToTag(style, options, obj) {
-  var css = obj.css;
-  var media = obj.media;
-  var sourceMap = obj.sourceMap;
-
-  if (media) {
-    style.setAttribute('media', media);
-  } else {
-    style.removeAttribute('media');
-  }
-
-  if (sourceMap && typeof btoa !== 'undefined') {
-    css += "\n/*# sourceMappingURL=data:application/json;base64,".concat(btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap)))), " */");
-  } // For old IE
-
-  /* istanbul ignore if  */
-
-
-  if (style.styleSheet) {
-    style.styleSheet.cssText = css;
-  } else {
-    while (style.firstChild) {
-      style.removeChild(style.firstChild);
-    }
-
-    style.appendChild(document.createTextNode(css));
-  }
-}
-
-var singleton = null;
-var singletonCounter = 0;
-
-function addStyle(obj, options) {
-  var style;
-  var update;
-  var remove;
-
-  if (options.singleton) {
-    var styleIndex = singletonCounter++;
-    style = singleton || (singleton = insertStyleElement(options));
-    update = applyToSingletonTag.bind(null, style, styleIndex, false);
-    remove = applyToSingletonTag.bind(null, style, styleIndex, true);
-  } else {
-    style = insertStyleElement(options);
-    update = applyToTag.bind(null, style, options);
-
-    remove = function remove() {
-      removeStyleElement(style);
-    };
-  }
-
-  update(obj);
-  return function updateStyle(newObj) {
-    if (newObj) {
-      if (newObj.css === obj.css && newObj.media === obj.media && newObj.sourceMap === obj.sourceMap) {
-        return;
-      }
-
-      update(obj = newObj);
-    } else {
-      remove();
-    }
-  };
-}
-
-module.exports = function (list, options) {
-  options = options || {}; // Force single-tag solution on IE6-9, which has a hard limit on the # of <style>
-  // tags it will allow on a page
-
-  if (!options.singleton && typeof options.singleton !== 'boolean') {
-    options.singleton = isOldIE();
-  }
-
-  list = list || [];
-  var lastIdentifiers = modulesToDom(list, options);
-  return function update(newList) {
-    newList = newList || [];
-
-    if (Object.prototype.toString.call(newList) !== '[object Array]') {
-      return;
-    }
-
-    for (var i = 0; i < lastIdentifiers.length; i++) {
-      var identifier = lastIdentifiers[i];
-      var index = getIndexByIdentifier(identifier);
-      stylesInDom[index].references--;
-    }
-
-    var newLastIdentifiers = modulesToDom(newList, options);
-
-    for (var _i = 0; _i < lastIdentifiers.length; _i++) {
-      var _identifier = lastIdentifiers[_i];
-
-      var _index = getIndexByIdentifier(_identifier);
-
-      if (stylesInDom[_index].references === 0) {
-        stylesInDom[_index].updater();
-
-        stylesInDom.splice(_index, 1);
-      }
-    }
-
-    lastIdentifiers = newLastIdentifiers;
-  };
-};
-
-/***/ }),
-
 /***/ "./node_modules/vue-loader/dist/exportHelper.js":
 /*!******************************************************!*\
   !*** ./node_modules/vue-loader/dist/exportHelper.js ***!
@@ -52274,6 +64540,34 @@ exports["default"] = (sfc, props) => {
     return target;
 };
 
+
+/***/ }),
+
+/***/ "./resources/js/Components/MToast.vue":
+/*!********************************************!*\
+  !*** ./resources/js/Components/MToast.vue ***!
+  \********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _MToast_vue_vue_type_template_id_71c172c5__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./MToast.vue?vue&type=template&id=71c172c5 */ "./resources/js/Components/MToast.vue?vue&type=template&id=71c172c5");
+/* harmony import */ var _MToast_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./MToast.vue?vue&type=script&lang=js */ "./resources/js/Components/MToast.vue?vue&type=script&lang=js");
+/* harmony import */ var C_xampp_htdocs_emon_core_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+
+
+
+
+;
+const __exports__ = /*#__PURE__*/(0,C_xampp_htdocs_emon_core_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_MToast_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_MToast_vue_vue_type_template_id_71c172c5__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/Components/MToast.vue"]])
+/* hot reload */
+if (false) {}
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__exports__);
 
 /***/ }),
 
@@ -53275,6 +65569,34 @@ if (false) {}
 
 /***/ }),
 
+/***/ "./resources/js/Pages/Auth/Verify.vue":
+/*!********************************************!*\
+  !*** ./resources/js/Pages/Auth/Verify.vue ***!
+  \********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _Verify_vue_vue_type_template_id_53cbb3c7__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Verify.vue?vue&type=template&id=53cbb3c7 */ "./resources/js/Pages/Auth/Verify.vue?vue&type=template&id=53cbb3c7");
+/* harmony import */ var _Verify_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Verify.vue?vue&type=script&lang=js */ "./resources/js/Pages/Auth/Verify.vue?vue&type=script&lang=js");
+/* harmony import */ var C_xampp_htdocs_emon_core_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+
+
+
+
+;
+const __exports__ = /*#__PURE__*/(0,C_xampp_htdocs_emon_core_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_Verify_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_Verify_vue_vue_type_template_id_53cbb3c7__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/Pages/Auth/Verify.vue"]])
+/* hot reload */
+if (false) {}
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__exports__);
+
+/***/ }),
+
 /***/ "./resources/js/Pages/Auth/VerifyEmail.vue":
 /*!*************************************************!*\
   !*** ./resources/js/Pages/Auth/VerifyEmail.vue ***!
@@ -53594,23 +65916,36 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _Welcome_vue_vue_type_template_id_317d1a6e_scoped_true__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Welcome.vue?vue&type=template&id=317d1a6e&scoped=true */ "./resources/js/Pages/Welcome.vue?vue&type=template&id=317d1a6e&scoped=true");
+/* harmony import */ var _Welcome_vue_vue_type_template_id_317d1a6e__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Welcome.vue?vue&type=template&id=317d1a6e */ "./resources/js/Pages/Welcome.vue?vue&type=template&id=317d1a6e");
 /* harmony import */ var _Welcome_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Welcome.vue?vue&type=script&lang=js */ "./resources/js/Pages/Welcome.vue?vue&type=script&lang=js");
-/* harmony import */ var _Welcome_vue_vue_type_style_index_0_id_317d1a6e_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Welcome.vue?vue&type=style&index=0&id=317d1a6e&scoped=true&lang=css */ "./resources/js/Pages/Welcome.vue?vue&type=style&index=0&id=317d1a6e&scoped=true&lang=css");
-/* harmony import */ var C_xampp_htdocs_emon_core_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+/* harmony import */ var C_xampp_htdocs_emon_core_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
 
 
 
 
 ;
-
-
-const __exports__ = /*#__PURE__*/(0,C_xampp_htdocs_emon_core_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_3__["default"])(_Welcome_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_Welcome_vue_vue_type_template_id_317d1a6e_scoped_true__WEBPACK_IMPORTED_MODULE_0__.render],['__scopeId',"data-v-317d1a6e"],['__file',"resources/js/Pages/Welcome.vue"]])
+const __exports__ = /*#__PURE__*/(0,C_xampp_htdocs_emon_core_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_Welcome_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_Welcome_vue_vue_type_template_id_317d1a6e__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/Pages/Welcome.vue"]])
 /* hot reload */
 if (false) {}
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__exports__);
+
+/***/ }),
+
+/***/ "./resources/js/Components/MToast.vue?vue&type=script&lang=js":
+/*!********************************************************************!*\
+  !*** ./resources/js/Components/MToast.vue?vue&type=script&lang=js ***!
+  \********************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_MToast_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__["default"])
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_MToast_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./MToast.vue?vue&type=script&lang=js */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Components/MToast.vue?vue&type=script&lang=js");
+ 
 
 /***/ }),
 
@@ -54110,6 +66445,22 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/Pages/Auth/Verify.vue?vue&type=script&lang=js":
+/*!********************************************************************!*\
+  !*** ./resources/js/Pages/Auth/Verify.vue?vue&type=script&lang=js ***!
+  \********************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Verify_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__["default"])
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Verify_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./Verify.vue?vue&type=script&lang=js */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Auth/Verify.vue?vue&type=script&lang=js");
+ 
+
+/***/ }),
+
 /***/ "./resources/js/Pages/Auth/VerifyEmail.vue?vue&type=script&lang=js":
 /*!*************************************************************************!*\
   !*** ./resources/js/Pages/Auth/VerifyEmail.vue?vue&type=script&lang=js ***!
@@ -54299,6 +66650,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Welcome_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./Welcome.vue?vue&type=script&lang=js */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Welcome.vue?vue&type=script&lang=js");
  
+
+/***/ }),
+
+/***/ "./resources/js/Components/MToast.vue?vue&type=template&id=71c172c5":
+/*!**************************************************************************!*\
+  !*** ./resources/js/Components/MToast.vue?vue&type=template&id=71c172c5 ***!
+  \**************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_MToast_vue_vue_type_template_id_71c172c5__WEBPACK_IMPORTED_MODULE_0__.render)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_MToast_vue_vue_type_template_id_71c172c5__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./MToast.vue?vue&type=template&id=71c172c5 */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Components/MToast.vue?vue&type=template&id=71c172c5");
+
 
 /***/ }),
 
@@ -54878,6 +67245,22 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/Pages/Auth/Verify.vue?vue&type=template&id=53cbb3c7":
+/*!**************************************************************************!*\
+  !*** ./resources/js/Pages/Auth/Verify.vue?vue&type=template&id=53cbb3c7 ***!
+  \**************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Verify_vue_vue_type_template_id_53cbb3c7__WEBPACK_IMPORTED_MODULE_0__.render)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Verify_vue_vue_type_template_id_53cbb3c7__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./Verify.vue?vue&type=template&id=53cbb3c7 */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Auth/Verify.vue?vue&type=template&id=53cbb3c7");
+
+
+/***/ }),
+
 /***/ "./resources/js/Pages/Auth/VerifyEmail.vue?vue&type=template&id=9f895776":
 /*!*******************************************************************************!*\
   !*** ./resources/js/Pages/Auth/VerifyEmail.vue?vue&type=template&id=9f895776 ***!
@@ -55054,31 +67437,18 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/js/Pages/Welcome.vue?vue&type=template&id=317d1a6e&scoped=true":
-/*!**********************************************************************************!*\
-  !*** ./resources/js/Pages/Welcome.vue?vue&type=template&id=317d1a6e&scoped=true ***!
-  \**********************************************************************************/
+/***/ "./resources/js/Pages/Welcome.vue?vue&type=template&id=317d1a6e":
+/*!**********************************************************************!*\
+  !*** ./resources/js/Pages/Welcome.vue?vue&type=template&id=317d1a6e ***!
+  \**********************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "render": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Welcome_vue_vue_type_template_id_317d1a6e_scoped_true__WEBPACK_IMPORTED_MODULE_0__.render)
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Welcome_vue_vue_type_template_id_317d1a6e__WEBPACK_IMPORTED_MODULE_0__.render)
 /* harmony export */ });
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Welcome_vue_vue_type_template_id_317d1a6e_scoped_true__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./Welcome.vue?vue&type=template&id=317d1a6e&scoped=true */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Welcome.vue?vue&type=template&id=317d1a6e&scoped=true");
-
-
-/***/ }),
-
-/***/ "./resources/js/Pages/Welcome.vue?vue&type=style&index=0&id=317d1a6e&scoped=true&lang=css":
-/*!************************************************************************************************!*\
-  !*** ./resources/js/Pages/Welcome.vue?vue&type=style&index=0&id=317d1a6e&scoped=true&lang=css ***!
-  \************************************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_style_loader_dist_cjs_js_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_use_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Welcome_vue_vue_type_style_index_0_id_317d1a6e_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/style-loader/dist/cjs.js!../../../node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!../../../node_modules/vue-loader/dist/stylePostLoader.js!../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./Welcome.vue?vue&type=style&index=0&id=317d1a6e&scoped=true&lang=css */ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Welcome.vue?vue&type=style&index=0&id=317d1a6e&scoped=true&lang=css");
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Welcome_vue_vue_type_template_id_317d1a6e__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./Welcome.vue?vue&type=template&id=317d1a6e */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Welcome.vue?vue&type=template&id=317d1a6e");
 
 
 /***/ }),
@@ -55328,6 +67698,7 @@ var map = {
 	"./Auth/Register.vue": "./resources/js/Pages/Auth/Register.vue",
 	"./Auth/ResetPassword.vue": "./resources/js/Pages/Auth/ResetPassword.vue",
 	"./Auth/TwoFactorChallenge.vue": "./resources/js/Pages/Auth/TwoFactorChallenge.vue",
+	"./Auth/Verify.vue": "./resources/js/Pages/Auth/Verify.vue",
 	"./Auth/VerifyEmail.vue": "./resources/js/Pages/Auth/VerifyEmail.vue",
 	"./Dashboard.vue": "./resources/js/Pages/Dashboard.vue",
 	"./PrivacyPolicy.vue": "./resources/js/Pages/PrivacyPolicy.vue",
@@ -55447,18 +67818,6 @@ module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"P
 /******/ 				}
 /******/ 			}
 /******/ 			return result;
-/******/ 		};
-/******/ 	})();
-/******/ 	
-/******/ 	/* webpack/runtime/compat get default export */
-/******/ 	(() => {
-/******/ 		// getDefaultExport function for compatibility with non-harmony modules
-/******/ 		__webpack_require__.n = (module) => {
-/******/ 			var getter = module && module.__esModule ?
-/******/ 				() => (module['default']) :
-/******/ 				() => (module);
-/******/ 			__webpack_require__.d(getter, { a: getter });
-/******/ 			return getter;
 /******/ 		};
 /******/ 	})();
 /******/ 	

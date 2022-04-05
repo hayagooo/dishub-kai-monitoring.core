@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->string('password');
+            $table->timestamp('verified_at')->nullable();
             $table->enum('level', User::getAvailableLevel());
             $table->rememberToken();
             $table->timestamps();

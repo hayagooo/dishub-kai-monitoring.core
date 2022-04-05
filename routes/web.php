@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Web\PageController;
+use App\Http\Controllers\Web\UserController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -24,6 +25,13 @@ Route::get('/', function () {
         'phpVersion' => PHP_VERSION,
     ]);
 })->name('home');
+
+Route::post('/app/login', [UserController::class, 'login'])->name('app.login');
+Route::middleware(['auth:sanctum', 'verified'])->group(function() {
+    Route::post('/logout', [UserController::class, 'logout'])->name('logout');
+    Route::get('/verify', [UserController::class, 'indexVerification'])->name('index.verification');
+    Route::post('/verify', [UserController::class, 'verification'])->name('app.verification');
+});
 
 Route::get('under/construction', [PageController::class, 'index'])->name('under.construction');
 
