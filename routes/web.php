@@ -1,6 +1,12 @@
 <?php
 
+use App\Http\Controllers\Web\Information\InformationController;
+use App\Http\Controllers\Web\Monitoring\CategoryController;
+use App\Http\Controllers\Web\Monitoring\MonitoringController;
+use App\Http\Controllers\Web\Monitoring\ObjectController;
 use App\Http\Controllers\Web\PageController;
+use App\Http\Controllers\Web\Team\TeamController;
+use App\Http\Controllers\Web\User\UserController as UserUserController;
 use App\Http\Controllers\Web\UserController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
@@ -31,6 +37,14 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function() {
     Route::post('/logout', [UserController::class, 'logout'])->name('logout');
     Route::get('/verify', [UserController::class, 'indexVerification'])->name('index.verification');
     Route::post('/verify', [UserController::class, 'verification'])->name('app.verification');
+    Route::namespace('App')->prefix('app')->name('app.')->group(function() {
+        Route::resource('/monitoring/category', CategoryController::class);
+        Route::resource('/monitoring/object', ObjectController::class);
+        Route::resource('/monitoring', MonitoringController::class);
+        Route::resource('/information', InformationController::class);
+        Route::resource('/user', UserUserController::class);
+        Route::resource('/team', TeamController::class);
+    });
 });
 
 Route::get('under/construction', [PageController::class, 'index'])->name('under.construction');
