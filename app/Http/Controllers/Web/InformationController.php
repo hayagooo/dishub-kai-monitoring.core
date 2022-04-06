@@ -1,13 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\Web\Monitoring;
+namespace App\Http\Controllers\Web;
 
 use App\Http\Controllers\Controller;
-use App\Models\Monitoring\Category;
 use Illuminate\Http\Request;
-use Inertia\Inertia;
 
-class CategoryController extends Controller
+class InformationController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +14,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $categories = Category::query()->get();
-        return Inertia::render('Monitoring/Category/Index', ['categories' => $categories]);
+        //
     }
 
     /**

@@ -32,8 +32,10 @@ Route::get('/', function () {
     ]);
 })->name('home');
 
+Route::get('under/construction', [PageController::class, 'index'])->name('under.construction');
 Route::post('/app/login', [UserController::class, 'login'])->name('app.login');
 Route::middleware(['auth:sanctum', 'verified'])->group(function() {
+    Route::get('/dashboard', [PageController::class, 'dashboard'])->name('dashboard');
     Route::post('/logout', [UserController::class, 'logout'])->name('logout');
     Route::get('/verify', [UserController::class, 'indexVerification'])->name('index.verification');
     Route::post('/verify', [UserController::class, 'verification'])->name('app.verification');
@@ -47,8 +49,7 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function() {
     });
 });
 
-Route::get('under/construction', [PageController::class, 'index'])->name('under.construction');
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return Inertia::render('Dashboard');
-})->name('dashboard');
+// Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+//     return Inertia::render('Dashboard');
+// })->name('dashboard');
