@@ -3,9 +3,12 @@
 namespace App\Http\Controllers\Web\Monitoring;
 
 use App\Http\Controllers\Controller;
+use App\Jobs\Monitoring\Category\CreateData;
 use App\Models\Monitoring\Category;
+use App\Models\Monitoring\Image;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
+use Illuminate\Support\Str;
 
 class CategoryController extends Controller
 {
@@ -21,16 +24,6 @@ class CategoryController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -38,7 +31,24 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = [
+            'name' => $request->name,
+            'icon' => $request->file('icon'),
+        ];
+        if($request->hasFile('icon')) {
+            $file = $request->file('icon');
+            $filename = 'icon-'.Str::slug($request->name).'-'.uniqid().'.'.$file->extension();
+            $image = Image::make($file->path());
+            $image->resize(750, 750, function($constraint) {
+                $constraint->aspectRatio();
+            });
+            $data['icon'] = $filename;
+        } else {
+            unset($data['icon']);
+        }
+        CreateData::dispatch($data);
+        Category::query()->create($data);
+        return redirect()->back();
     }
 
     /**

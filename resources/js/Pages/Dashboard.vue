@@ -15,8 +15,8 @@
                                 <div>
                                     <h2 class="text-2xl text-gray-800 leading-tight font-semibold">Pemberitahuan</h2>
                                 </div>
-                                <div v-if="$page.props.user.level != 'user'" class="col-span-2 mt-8 md:mt-0 md:col-span-1 justify-self-end">
-                                    <button type="button" class="w-full md:w-auto focus:outline-none text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2">
+                                <div v-if="$page.props.user.level != 'user'" class="col-span-2 mt-4 md:mt-0 md:col-span-1 md:justify-self-end">
+                                    <button type="button" class="w-full focus:outline-none text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2">
                                         <plus-circle-icon size="18" class="inline-block"/>
                                         <span class="inline-block ml-2">
                                             Pemberitahuan Baru
