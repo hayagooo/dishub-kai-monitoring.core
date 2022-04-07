@@ -16,6 +16,7 @@ class ObjectData extends Model
     protected $fillable = [
         'name',
         'icon',
+        'description',
     ];
 
     public function category(): BelongsToMany

@@ -45,6 +45,7 @@ class ObjectDataController extends Controller
             'icon' => $request->file('icon'),
             'description' => $request->description,
         ];
+        return $this->jsonResponse($data);
         if($request->hasFile('icon')) {
             $icon = $request->file('icon');
             $iconName = 'object-'.Str::slug($request->name).'-'.uniqid().'.'.$icon->extension();

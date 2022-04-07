@@ -115,7 +115,7 @@ export default defineComponent({
     },
     methods: {
         gotoIndex(path) {
-            this.$inertia.get(this.route(path))
+            this.$inertia.get(this.route(path), {preserveState: true})
         },
     }
 })
