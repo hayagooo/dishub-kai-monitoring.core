@@ -89,10 +89,12 @@
                         </div>
                         <div v-if="categories.length > 0">
                             <div class="mt-3 mb-4" v-for="(item, index) in categories" :key="`category-${index}`">
-                                <div role="button" class="transition-all ease-in-out relative flex gap-x-4 p-4 rounded-lg bg-white hover:shadow-lg">
-                                    <img src="@/Assets/defaults/category.png" class="h-12 w-auto inline-block" alt="Default Icon">
-                                    <div class="pt-3">
-                                        <p class="text-lg font-semibold">{{ item.name }}</p>
+                                <div role="button" class="transition-all ease-in-out relative flex gap-x-4 rounded-lg bg-white hover:shadow-lg">
+                                    <div role="button" @click="gotoObject(item.id)" class="flex w-9/12 gap-x-4 p-4">
+                                        <img src="@/Assets/defaults/category.png" class="h-12 w-auto inline-block" alt="Default Icon">
+                                        <div class="pt-3">
+                                            <p class="text-lg font-semibold">{{ item.name }}</p>
+                                        </div>
                                     </div>
                                     <div v-if="$page.props.user.level != 'user'" class="absolute right-0 top-0 p-4">
                                         <button type="button" @click="toggleOptionModal(true, index, item)" class="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm p-2 mt-1">
@@ -114,7 +116,7 @@
                                             </button>
                                         </div>
                                         <div class="p-6 space-y-4">
-                                            <div role="button" class="flex gap-x-4 w-full hover:bg-gray-50 p-2 rounded-lg">
+                                            <div role="button" @click="gotoObject(categories[optionModal.index].id)" class="flex gap-x-4 w-full hover:bg-gray-50 p-2 rounded-lg">
                                                 <div class="flex h-12 w-12 rounded-lg bg-purple-100 relative">
                                                     <eye-icon class="mx-auto text-purple-600 self-center" size="24"/>
                                                 </div>
@@ -270,6 +272,11 @@ export default defineComponent({
         setNullForm() {
             this.form.name = ''
             this.form.icon = null
+        },
+        gotoObject(category_id) {
+            this.$inertia.get(this.route('app.object.index'), {
+                categoryId: category_id
+            })
         },
         toggleFormModal(status, mode, indexId = null) {
             this.toggleOptionModal(false, this.optionModal.index, this.optionModal.item)

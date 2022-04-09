@@ -1,5 +1,8 @@
 <template>
     <app-layout title="Dashboard">
+        <m-toast :color="toast.color"
+            :is_active="toast.active"
+            :message="$page.props.flash.message"/>
         <template #header>
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
                 Dashboard
@@ -100,16 +103,35 @@
 <script>
 import { defineComponent } from 'vue'
 import { PlusCircleIcon, ArrowRightIcon } from '@zhuowenli/vue-feather-icons'
+import MToast from '@/Components/MToast'
 import AppLayout from '@/Layouts/AppLayout.vue'
 import Welcome from '@/Jetstream/Welcome.vue'
 import MNoData from '@/Components/MNoData.vue'
 
 export default defineComponent({
     props: ['informations'],
+    data() {
+        return {
+            toast: {
+                color: 'purple',
+                active: false,
+                message: '',
+            },
+        }
+    },
+    mounted() {
+        this.toast.active = this.$page.props.flash.message != null || this.$page.props.flash.message != undefined ? true : false
+        if(this.$page.props.flash.status == 'success') this.toast.color = 'green'
+        else if(this.$page.props.flash.status == 'failed') this.toast.color = 'red'
+        setTimeout(() => {
+            this.toast.active = false
+        }, 5000);
+    },
     components: {
         AppLayout,
         ArrowRightIcon,
         Welcome,
+        MToast,
         MNoData,
         PlusCircleIcon,
     },

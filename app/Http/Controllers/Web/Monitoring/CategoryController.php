@@ -41,6 +41,7 @@ class CategoryController extends Controller
             $file = $request->file('icon');
             $filename = 'icon-'.Str::slug($request->name).'-'.uniqid().'.'.$file->extension();
             $image = Image::make($file->path());
+            $this->checkDirectory('/monitoring/icon');
             $image->resize(750, 750, function($constraint) {
                 $constraint->aspectRatio();
             })->save(public_path('/monitoring/icon/'.$filename));

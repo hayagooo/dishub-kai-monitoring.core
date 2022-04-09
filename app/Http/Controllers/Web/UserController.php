@@ -101,7 +101,7 @@ class UserController extends Controller
         ]);
         if(Auth::attempt($data, $request->remember)) {
             $user = User::query()->find(Auth::id());
-            return redirect()->route('index.verification')->with('message', 'Login berhasil: Selamat datang kembali')
+            return redirect()->route('index.verification')->with('message', 'Login berhasil: Verifikasi dahulu')
                 ->with('status', 'success');;
         } else {
             return redirect()->back()->with('message', 'Login gagal: Email atau kata sandi tidak sesuai')
@@ -116,7 +116,7 @@ class UserController extends Controller
         $user->save();
         Session::flush();
 
-        return redirect()->route('login');
+        return redirect()->route('home');
     }
 
     public function indexVerification()
@@ -137,7 +137,7 @@ class UserController extends Controller
         if($user->code == $request->code) {
             $user->verified_at = Carbon::now();
             $user->save();
-            return redirect()->route('dashboard');
+            return redirect()->route('dashboard')->with('message', 'Verifikasi Berhasil : Selamat datang kembali')->with('status', 'success');
         } else {
             return redirect()->back()->with('message', 'Kode verifikasi tidak sesuai')->with('status', 'failed');
         }

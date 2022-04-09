@@ -79,6 +79,15 @@
             }
         },
 
+        mounted() {
+            this.toast.active = this.$page.props.flash.message != null || this.$page.props.flash.message != undefined ? true : false
+            if(this.$page.props.flash.status == 'success') this.toast.color = 'green'
+            else if(this.$page.props.flash.status == 'failed') this.toast.color = 'red'
+            setTimeout(() => {
+                this.toast.active = false
+            }, 5000);
+        },
+
         methods: {
             onSubmit() {
                 this.$inertia.get(route('under.construction'))
@@ -99,14 +108,14 @@
                         onFinish: () => {
                             this.form.reset('password')
                             if(this.$page.props.flash.status == 'failed') {
-                                this.toast.active = true
                                 this.toast.color = 'red'
-                                setTimeout(() => {
-                                    this.toast.active = false
-                                }, 5000);
                             }
                             else if(this.$page.props.flash.status == 'success') this.toast.color = 'green'
                             else this.toast.color = 'purple'
+                            this.toast.active = true
+                            setTimeout(() => {
+                                this.toast.active = false
+                            }, 2000);
                             this.is_disable = false
                         },
                         onError: (error) => {

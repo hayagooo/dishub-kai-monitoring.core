@@ -127,15 +127,13 @@
                         },
                         onFinish: () => {
                             this.form.reset('password')
-                            if(this.$page.props.flash.status == 'failed') {
-                                this.toast.active = true
-                                this.toast.color = 'red'
-                                setTimeout(() => {
-                                    this.toast.active = false
-                                }, 5000);
-                            }
+                            if(this.$page.props.flash.status == 'failed') this.toast.color = 'red'
                             else if(this.$page.props.flash.status == 'success') this.toast.color = 'green'
                             else this.toast.color = 'purple'
+                            this.toast.active = true
+                            setTimeout(() => {
+                                this.toast.active = false
+                            }, 2000)
                             this.is_disable = false
                         },
                         onError: (error) => {
