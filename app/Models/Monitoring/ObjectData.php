@@ -4,7 +4,6 @@ namespace App\Models\Monitoring;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class ObjectData extends Model
@@ -19,17 +18,13 @@ class ObjectData extends Model
         'description',
     ];
 
-    public function category(): BelongsToMany
+    public function monitoring(): HasMany
     {
-        return $this->belongsToMany(Category::class,
-            'monitoring_category_objects',
-            'monitoring_category_id',
-            'monitoring_object_id'
-        );
+        return $this->hasMany(Monitoring::class, 'monitoring_object_id', 'id');
     }
 
-    public function categoryObject(): HasMany
+    public function input(): HasMany
     {
-        return $this->hasMany(CategoryObject::class, 'monitoring_object_id', 'id');
+        return $this->hasMany(Input::class, 'monitoring_object_id', 'id');
     }
 }

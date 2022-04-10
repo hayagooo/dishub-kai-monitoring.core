@@ -18,8 +18,15 @@ class Input extends Model
     public const TYPE_SELECT = 'select';
     public const TYPE_CHECKBOX = 'checkbox';
     public const TYPE_RADIO = 'radio';
+    public const TYPE_DATE = 'date';
+    public const TYPE_TIME = 'time';
+    public const TYPE_IMAGE = 'image';
+    public const TYPE_FILE = 'file';
+    public const TYPE_DESCRIPTION = 'description';
 
     protected $fillable = [
+        'monitoring_category_id',
+        'monitoring_object_id',
         'monitoring_id',
         'label',
         'type',
@@ -36,14 +43,29 @@ class Input extends Model
             self::TYPE_TEXT,
             self::TYPE_NUMBER,
             self::TYPE_SELECT,
-            self::TYPE_RADIO,
             self::TYPE_CHECKBOX,
+            self::TYPE_RADIO,
+            self::TYPE_DATE,
+            self::TYPE_TIME,
+            self::TYPE_IMAGE,
+            self::TYPE_FILE,
+            self::TYPE_DESCRIPTION,
         ];
     }
 
     public function monitoring(): BelongsTo
     {
         return $this->belongsTo(Monitoring::class, 'monitoring_id', 'id');
+    }
+
+    public function category(): BelongsTo
+    {
+        return $this->belongsTo(Category::class, 'monitoring_category_id', 'id');
+    }
+
+    public function object(): BelongsTo
+    {
+        return $this->belongsTo(ObjectData::class, 'monitoring_object_id', 'id');
     }
 
     public function option(): HasMany

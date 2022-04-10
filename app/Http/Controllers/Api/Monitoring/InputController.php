@@ -16,9 +16,18 @@ class InputController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $inputs = Input::query()->with('monitoring', 'option')->get();
+        $inputs = Input::query()->with('monitoring', 'option', 'category', 'object')
+        ->when($request->get('category_id') != null, function($query) use($request) {
+            $query->where('monitoring_category_id', $request->get('category_id'));
+        })
+        ->when($request->get('object_id') != null, function($query) use($request) {
+            $query->where('monitoring_object_id', $request->get('object_id'));
+        })
+        ->when($request->get('monitoring_id') != null, function($query) use($request) {
+            $query->where('monitoring_id', $request->get('monitoring_id'));
+        })->get();
         return $this->jsonResponse($inputs);
     }
 

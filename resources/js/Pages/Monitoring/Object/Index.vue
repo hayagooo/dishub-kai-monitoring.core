@@ -1,5 +1,8 @@
 <template>
     <app-layout title="Monitoring">
+        <m-toast :color="toast.color"
+            :is_active="toast.active"
+            :message="$page.props.flash.message"/>
         <template #header>
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
                 Monitoring
@@ -15,29 +18,24 @@
                             <span class="inline-block">Kembali</span>
                         </button>
                         <div class="mt-6 relative">
-                            <img src="@/Assets/features/monitoring.png" class="inline-block h-20 w-auto" alt="Monitoring">
-                            <span class="inline-block text-2xl text-gray-600 ml-6 font-semibold">
+                            <img src="@/Assets/features/monitoring.png" class="inline-block h-16 md:h-20 w-auto" alt="Monitoring">
+                            <span class="inline-block text-lg md:text-2xl text-gray-600 ml-6 font-semibold">
                                 Monitoring Data
                             </span>
                         </div>
                     </div>
-                    <div class="p-7 relative">
+                    <div class="p-7 flex flex-nowrap">
                         <img src="@/Assets/defaults/category.png" class="h-12 w-auto inline-block" alt="Default Icon">
-                        <p class="text-xl text-gray-500 inline-block ml-4">{{ category.name }}</p>
-                        <!-- <div v-if="$page.props.user.level != 'user'" class="absolute right-0 top-0 p-7">
-                            <button type="button" @click="toggleOptionModal(true, index, item)" class="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm p-2 mt-1">
-                                <more-vertical-icon size="20"/>
-                            </button>
-                        </div> -->
+                        <p class="self-center text-base md:text-lg text-gray-700 inline-block ml-4">{{ category.name }}</p>
                     </div>
-                    <div id="objects" class="bg-gray-100 relative sm:rounded-xl p-7">
+                    <div id="objects" class="bg-gray-50 relative sm:rounded-xl p-7">
                         <h2 class="text-xl text-gray-700 font-semibold">Objek Monitoring</h2>
                         <div v-if="$page.props.user.level != 'user'">
 
                         </div>
                         <div>
-                            <div class="grid grid-cols-3 gap-6 mt-3">
-                                <div v-if="$page.props.user.level != 'user'" class="col-span-3 md:col-span-1">
+                            <div class="grid grid-cols-4 md:grid-cols-3 gap-6 mt-3">
+                                <div v-if="$page.props.user.level != 'user'" class="col-span-2 md:col-span-1">
                                     <div @click="toggleFormModal(true, 'create')" role="button">
                                         <div class="flex w-full justify-center h-36 mb-2 text-lg border-dashed border-2 border-purple-600 rounded-lg transition-all ease-in-out hover:bg-gray-200">
                                             <span class="self-center">
@@ -60,8 +58,14 @@
                                                 <form @submit.prevent="store()" action="#">
                                                     <div class="p-6">
                                                         <div class="text-center">
-                                                            <img v-if="form.preview == null" src="@/Assets/defaults/object.png" class="h-20 w-auto inline-block" alt="Default Icon">
-                                                            <img v-else :src="form.preview" class="h-24 w-auto inline-block" alt="Preview Icon">
+                                                            <div v-if="form.preview == null">
+                                                                <img src="@/Assets/defaults/category.png" class="h-20 w-auto inline-block" alt="Default Icon">
+                                                            </div>
+                                                            <div v-else>
+                                                                <div class="h-20 w-20 inline-block relative rounded-lg overflow-hidden">
+                                                                    <img :src="form.preview" class="h-full w-full object-cover object-center inline-block" alt="Preview Icon">
+                                                                </div>
+                                                            </div>
                                                         </div>
                                                         <div>
                                                             <label for="name-object">Nama Objek</label>
@@ -103,16 +107,18 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div v-for="(item, index) in objects" :key="`object-${index}`">
+                                <div class="col-span-2 md:col-span-1" v-for="(item, index) in objects" :key="`object-${index}`">
                                     <div role="button" class="text-center transition-all ease-in-out relative p-4 rounded-lg bg-white hover:shadow-lg">
-                                        <img src="@/Assets/defaults/object.png" class="h-28 w-auto inline-block" alt="Default Icon">
-                                        <div v-if="$page.props.user.level != 'user'" class="absolute right-0 top-0 p-2">
+                                        <div v-if="$page.props.user.level != 'user'" class="absolute right-0 top-0 p-2 z-20">
                                             <button type="button" @click="toggleOptionModal(true, index, item)" class="text-gray-900 bg-white focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm p-2 mt-1">
                                                 <more-vertical-icon size="20"/>
                                             </button>
                                         </div>
+                                        <div class="z-10" @click="goMonitoring(item.id)">
+                                            <img src="@/Assets/defaults/object.png" class="h-28 w-28 md:w-auto inline-block" alt="Default Icon">
+                                        </div>
                                     </div>
-                                    <div class="pt-2 text-center">
+                                    <div role="button" class="pt-2 text-center" @click="goMonitoring(item.id)">
                                         <p class="text-lg font-semibold">{{ item.name }}</p>
                                     </div>
                                 </div>
@@ -129,12 +135,21 @@
                                                 </button>
                                             </div>
                                             <div class="p-6 space-y-4">
-                                                <div role="button" class="flex gap-x-4 w-full hover:bg-gray-50 p-2 rounded-lg">
+                                                <div role="button" @click="goMonitoring(objects[optionModal.index].id)" class="flex gap-x-4 w-full hover:bg-gray-50 p-2 rounded-lg">
                                                     <div class="flex h-12 w-12 rounded-lg bg-purple-100 relative">
                                                         <eye-icon class="mx-auto text-purple-600 self-center" size="24"/>
                                                     </div>
                                                     <div>
                                                         <p class="text-lg font-semi-bold text-gray-700 pt-2">Lihat Data</p>
+                                                    </div>
+                                                </div>
+                                                <div v-if="$page.props.user.level != 'user' && optionModal.index != null" @click="goInput(objects[optionModal.index].id)" role="button" class="flex gap-x-4 w-full hover:bg-gray-50 p-2 rounded-lg">
+                                                    <div class="flex h-12 w-12 rounded-lg bg-indigo-100 relative">
+                                                        <file-text-icon class="mx-auto text-indigo-600 self-center" size="24"/>
+                                                    </div>
+                                                    <div class="self-center">
+                                                        <p class="text-lg font-semi-bold text-gray-700">Formulir Object</p>
+                                                        <small v-if="objects[optionModal.index] != undefined">{{ objects[optionModal.index].input.length }} Data</small>
                                                     </div>
                                                 </div>
                                                 <div role="button" @click="toggleFormModal(true, 'edit', optionModal.index)" class="flex gap-x-4 w-full hover:bg-gray-50 p-2 rounded-lg">
@@ -168,7 +183,7 @@
                                         <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
                                             <div class="flex justify-between items-center p-5 rounded-t border-b dark:border-gray-600">
                                                 <h3 class="text-xl font-medium text-gray-900 dark:text-white">
-                                                    Hapus Kategori ?
+                                                    Hapus Objek ?
                                                 </h3>
                                                 <button @click="toggleDeleteModal(false)" type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white">
                                                     <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
@@ -181,7 +196,7 @@
                                                     </div>
                                                 </div>
                                                 <h3 class="mb-5 text-lg font-normal text-gray-500 text-center text-dark">
-                                                    Kategori dan isi dari kategori akan tehapus secara permanen
+                                                    Objek dan monitoring data berdasarkan objek ini akan tehapus secara permanen
                                                 </h3>
                                                 <div class="flex justify-between">
                                                     <button @click="toggleDeleteModal(false)" type="button" class="text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-200 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10">Batal</button>
@@ -208,14 +223,17 @@
 import { defineComponent } from 'vue'
 import AppLayout from '@/Layouts/AppLayout.vue'
 import MUnderConstruction from '@/Components/MUnderConstruction'
-import { ArrowLeftIcon, PlusIcon, ImageIcon, TrashIcon, MoreVerticalIcon, EditIcon, EyeIcon } from '@zhuowenli/vue-feather-icons'
+import { ArrowLeftIcon, PlusIcon, FileTextIcon, ImageIcon, TrashIcon, MoreVerticalIcon, EditIcon, EyeIcon } from '@zhuowenli/vue-feather-icons'
+import MToast from '@/Components/MToast'
 import MNoData from '@/Components/MNoData.vue'
 
 export default defineComponent({
     props: ['objects', 'category'],
     components: {
         MoreVerticalIcon,
+        MToast,
         EyeIcon,
+        FileTextIcon,
         AppLayout,
         TrashIcon,
         MNoData,
@@ -246,31 +264,70 @@ export default defineComponent({
                 name: '',
                 icon: null,
             }),
+            toast: {
+                color: 'purple',
+                active: false,
+                message: '',
+            },
         }
     },
     methods: {
         goBack() {
             this.$inertia.get(this.route('app.category.index'))
         },
+        goInput(object_id) {
+            this.toggleOptionModal(false)
+            this.$inertia.get(this.route('app.input.index'), {
+                categoryId: this.category.id,
+                objectId: object_id
+            })
+        },
+        goMonitoring(object_id) {
+            this.toggleOptionModal(false)
+            this.$inertia.get(this.route('app.monitoring.index'), {
+                categoryId: this.category.id,
+                objectId: object_id,
+            })
+        },
+        onToast(response) {
+            this.toast.active = response.props.flash.message != null || response.props.flash.message != undefined ? true : false
+            if(response.props.flash.status == 'success') this.toast.color = 'green'
+            else if(response.props.flash.status == 'failed') this.toast.color = 'red'
+            setTimeout(() => {
+                this.toast.active = false
+            }, 5000);
+        },
         store() {
             if(this.formModal.mode == 'create') {
-                this.form.post(this.route('app.object.store'))
+                this.form.post(this.route('app.object.store'), {
+                    onFinish: () => this.toggleFormModal(false),
+                    onSuccess: (response) => {
+                        this.onToast(response)
+                    }
+                })
             } else {
                 this.form.transform(data => ({
                     ... data,
                     _method: 'PATCH'
                 })).post(this.route('app.object.update', {
                     id: this.objects[this.optionModal.index].id
-                }))
+                }), {
+                    onFinish: () => this.toggleFormModal(false),
+                    onSuccess: (response) => {
+                        this.onToast(response)
+                    }
+                })
             }
         },
         deleteData() {
             this.$inertia.delete(this.route('app.object.destroy', {
                 id: this.objects[this.optionModal.index].id
-            }), {
-               onSuccess: () => {
-                   this.toggleDeleteModal(false)
-               }
+            }),
+            {
+                onFinish: () => this.toggleDeleteModal(false),
+                onSuccess: (response) => {
+                    this.onToast(response)
+                }
             })
         },
         clickFile() {
@@ -303,7 +360,9 @@ export default defineComponent({
             this.optionModal.item = item
         },
         toggleDeleteModal(status, index = null) {
-            this.toggleOptionModal(false, this.optionModal.index, this.optionModal.item)
+            if(status == true) {
+                this.toggleOptionModal(false, this.optionModal.index, this.optionModal.item)
+            }
             this.deleteModal.show = status
             this.deleteModal.index = index
         },

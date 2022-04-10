@@ -28,6 +28,9 @@
         "vue-loader": "^16.1.2"
     },
     "dependencies": {
-        "@zhuowenli/vue-feather-icons": "^5.0.2"
+        "@ckeditor/ckeditor5-build-inline": "^33.0.0",
+        "@ckeditor/ckeditor5-vue": "^3.0.0",
+        "@zhuowenli/vue-feather-icons": "^5.0.2",
+        "moment": "^2.29.2"
     }
 }

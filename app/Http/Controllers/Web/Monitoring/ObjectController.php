@@ -23,8 +23,8 @@ class ObjectController extends Controller
     public function index(Request $request)
     {
         $categoryId = $request->get('categoryId', Category::query()->first()->id);
-        $objects = ObjectData::query()->with('category', 'categoryObject', 'categoryObject.monitoring')->get();
-        $category = Category::query()->find($categoryId);
+        $objects = ObjectData::with('input')->get();
+        $category = Category::query()->with('input')->find($categoryId);
         return Inertia::render('Monitoring/Object/Index', [
             'objects' => $objects,
             'category' => $category,
@@ -57,29 +57,7 @@ class ObjectController extends Controller
         }
         CreateData::dispatch($data);
         ObjectData::query()->create($data);
-        return redirect()->back();
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
+        return redirect()->back()->with('message', 'Data objek baru berhasil disimpan')->with('status', 'success');
     }
 
     /**
@@ -113,7 +91,7 @@ class ObjectController extends Controller
         }
         EditData::dispatch($data);
         $object->update($data);
-        return redirect()->back();
+        return redirect()->back()->with('message', 'Data objek berhasil diedit')->with('status', 'success');
     }
 
     /**
@@ -129,6 +107,6 @@ class ObjectController extends Controller
             File::delete(public_path('/monitoring/icon/').$object->icon);
         }
         $object->delete();
-        return redirect()->back();
+        return redirect()->back()->with('message', 'Data objek berhasil dihapus')->with('status', 'success');
     }
 }

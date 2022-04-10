@@ -15,9 +15,11 @@ return new class extends Migration
     {
         Schema::create('monitorings', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->text('description')->nullable();
-            $table->json('data');
+            $table->foreignId('monitoring_category_id')->constrained('monitoring_categories');
+            $table->foreignId('monitoring_object_id')->constrained('monitoring_objects');
+            $table->string('title');
+            $table->longText('description')->nullable();
+            $table->json('data')->nullable();
             $table->timestamps();
         });
     }

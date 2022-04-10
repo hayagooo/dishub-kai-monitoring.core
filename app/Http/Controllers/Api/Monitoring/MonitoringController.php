@@ -18,7 +18,7 @@ class MonitoringController extends Controller
      */
     public function index(Request $request)
     {
-        $query = Monitoring::query()->with('employee', 'employee.team', 'team', 'image', 'input', 'input.option', 'categoryObject', 'categoryObject.category', 'categoryObject.object');
+        $query = Monitoring::query()->with('employee', 'employee.team', 'team', 'image', 'input', 'input.option', 'category', 'object');
         $monitorings = $query->when($request->get('name') != null, function($queryMonitor) use($request) {
             $queryMonitor->where('name', 'LIKE', '%'.$request->get('name').'%');
         })->orderBy('created_at', $request->get('sort', 'ASC'))
@@ -68,7 +68,7 @@ class MonitoringController extends Controller
     public function show($id)
     {
         $monitoring = Monitoring::query()
-            ->with('employee', 'employee.team', 'team', 'image', 'input', 'input.option', 'categoryObject', 'categoryObject.category', 'categoryObject.object')
+            ->with('employee', 'employee.team', 'team', 'image', 'input', 'input.option', 'category', 'object')
             ->find($id);
         return $this->jsonResponse($monitoring);
     }

@@ -5,6 +5,7 @@ import './index.css'
 import { createApp, h } from 'vue';
 import { createInertiaApp } from '@inertiajs/inertia-vue3';
 import { InertiaProgress } from '@inertiajs/progress';
+import moment from 'moment'
 
 const appName = window.document.getElementsByTagName('title')[0]?.innerText || 'Laravel';
 
@@ -19,7 +20,8 @@ createInertiaApp({
     },
 });
 
-InertiaProgress.init({ color: '#4B5563' });
+InertiaProgress.init({ color: '#6c2bd9' });
+moment.locale('id')
 
 document.addEventListener("dom-reload", function() {
   Tooltip.start();

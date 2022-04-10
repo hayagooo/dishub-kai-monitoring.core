@@ -16,17 +16,23 @@ class Monitoring extends Model
     protected $table = 'monitorings';
 
     protected $fillable = [
-        'monitoring_category_object_id',
-        'name',
+        'monitoring_category_id',
+        'monitoring_object_id',
+        'title',
         'employee_id',
         'team_id',
         'description',
         'data',
     ];
 
-    public function categoryObject(): BelongsTo
+    public function category(): BelongsTo
     {
-        return $this->belongsTo(CategoryObject::class, 'monitoring_category_object_id', 'id');
+        return $this->belongsTo(Category::class, 'monitoring_category_id', 'id');
+    }
+
+    public function object(): BelongsTo
+    {
+        return $this->belongsTo(ObjectData::class, 'monitoring_object_id', 'id');
     }
 
     public function input(): HasMany

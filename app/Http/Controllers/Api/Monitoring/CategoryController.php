@@ -20,7 +20,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $categories = Category::with('object', 'categoryObject', 'categoryObject.monitoring')->get();
+        $categories = Category::with('monitoring', 'input')->get();
         return $this->jsonResponse($categories);
     }
 
@@ -69,7 +69,7 @@ class CategoryController extends Controller
      */
     public function show($id)
     {
-        $category = Category::with('object', 'categoryObject', 'categoryObject.monitoring')->find($id);
+        $category = Category::with('monitoring')->find($id);
         return $this->jsonResponse($category);
     }
 
@@ -129,38 +129,6 @@ class CategoryController extends Controller
             File::delete(public_path('/monitoring/icon/').$category->icon);
         }
         $category->delete();
-        return $this->jsonResponse($category);
-    }
-
-    public function addObject(Request $request, $id)
-    {
-        $rules = [
-            'objectId' => 'required',
-        ];
-        $validator = Validator::make($request->all(), $rules);
-        if($validator->fails()) {
-            return $this->jsonResponse([
-                'messages' => $validator->errors(),
-            ], 400, 'FAILED');
-        }
-        Category::find($id)->object()->attach($request->objectId);
-        $category = Category::with('object', 'categoryObject', 'categoryObject.monitoring')->find($id);
-        return $this->jsonResponse($category);
-    }
-
-    public function removeObject(Request $request, $id)
-    {
-        $rules = [
-            'objectId' => 'required',
-        ];
-        $validator = Validator::make($request->all(), $rules);
-        if($validator->fails()) {
-            return $this->jsonResponse([
-                'messages' => $validator->errors(),
-            ], 400, 'FAILED');
-        }
-        Category::find($id)->object()->detach($request->objectId);
-        $category = Category::with('object', 'categoryObject', 'categoryObject.monitoring')->find($id);
         return $this->jsonResponse($category);
     }
 }

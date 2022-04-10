@@ -19,7 +19,7 @@ class ObjectDataController extends Controller
      */
     public function index(Request $request)
     {
-        $query = ObjectData::query()->with('category', 'categoryObject', 'categoryObject.monitoring');
+        $query = ObjectData::query()->with('monitoring', 'input');
         $objects = $query->when($request->category_id != null, function($queryObject, $request) {
             $queryObject->whereHas('category', function($object) use($request) {
                 $object->where('monitoring_category_id', $request->get('category_id', 1));
@@ -64,6 +64,18 @@ class ObjectDataController extends Controller
         }
         $object = ObjectData::query()->create($data);
         return $this->jsonResponse($object);
+    }
+
+     /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        $category = ObjectData::with('monitoring')->find($id);
+        return $this->jsonResponse($category);
     }
 
     /**

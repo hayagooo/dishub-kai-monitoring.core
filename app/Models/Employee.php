@@ -26,7 +26,7 @@ class Employee extends Model
 
     public function team(): BelongsToMany
     {
-        return $this->belongsToMany(Team::class, 'employee_teams', 'team_id', 'employee_id');
+        return $this->belongsToMany(Team::class, 'employee_teams', 'employee_id', 'team_id');
     }
 
     public function monitoring(): HasMany

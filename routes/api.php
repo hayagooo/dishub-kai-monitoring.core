@@ -27,21 +27,23 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::post('login', [UserController::class, 'login']);
-Route::post('verification', [UserController::class, 'verification']);
-
-Route::middleware('auth:sanctum')->group(function() {
-    Route::resource('/category-monitoring', CategoryController::class);
-    Route::resource('/object', ObjectDataController::class);
-    Route::resource('/monitoring', MonitoringController::class);
-    Route::resource('/input-monitoring', InputController::class);
-    Route::resource('/option-input-monitoring', OptionController::class);
-    Route::resource('/image-monitoring', ImageController::class);
+Route::name('api.')->group(function() {
+    Route::post('login', [UserController::class, 'login']);
+    Route::post('verification', [UserController::class, 'verification']);
     Route::resource('/employee', EmployeeController::class);
-    Route::resource('/user', UserController::class);
-    Route::resource('/team', TeamController::class);
-    Route::post('/team/{id}/add/employee', [TeamController::class, 'addEmployee']);
-    Route::post('/team/{id}/remove/employee', [TeamController::class, 'removeEmployee']);
-    Route::post('/category-monitoring/{id}/add/object', [CategoryController::class, 'addObject']);
-    Route::post('/category-monitoring/{id}/remove/object', [CategoryController::class, 'removeObject']);
+
+    Route::middleware('auth:sanctum')->group(function() {
+        Route::resource('/category-monitoring', CategoryController::class);
+        Route::resource('/object', ObjectDataController::class);
+        Route::resource('/monitoring', MonitoringController::class);
+        Route::resource('/input-monitoring', InputController::class);
+        Route::resource('/option-input-monitoring', OptionController::class);
+        Route::resource('/image-monitoring', ImageController::class);
+        Route::resource('/user', UserController::class);
+        Route::resource('/team', TeamController::class);
+        Route::post('/team/{id}/add/employee', [TeamController::class, 'addEmployee']);
+        Route::post('/team/{id}/remove/employee', [TeamController::class, 'removeEmployee']);
+        Route::post('/category-monitoring/{id}/add/object', [CategoryController::class, 'addObject']);
+        Route::post('/category-monitoring/{id}/remove/object', [CategoryController::class, 'removeObject']);
+    });
 });

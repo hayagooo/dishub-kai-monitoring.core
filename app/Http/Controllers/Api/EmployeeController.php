@@ -23,8 +23,13 @@ class EmployeeController extends Controller
         ->when($request->get('name') != null, function($query) use($request) {
             $query->where('name', 'LIKE', '%'.$request->get('name').'%');
         })
+        ->when($request->get('team_id') != null, function($query) use($request) {
+            $query->whereHas('team', function($queryTeam) use($request) {
+                $queryTeam->where('employee_teams.team_id', $request->get('team_id'));
+            });
+        })
         ->orderBy('created_at', $request->get('sort', 'ASC'))
-        ->paginate($request->get('pagination', 10));
+        ->get();
         return $this->jsonResponse($employees);
     }
 

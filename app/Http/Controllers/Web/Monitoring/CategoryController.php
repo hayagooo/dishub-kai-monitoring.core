@@ -21,7 +21,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $categories = Category::query()->get();
+        $categories = Category::query()->with('input')->get();
         return Inertia::render('Monitoring/Category/Index', ['categories' => $categories]);
     }
 
@@ -51,29 +51,7 @@ class CategoryController extends Controller
         }
         CreateData::dispatch($data);
         Category::query()->create($data);
-        return redirect()->back();
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
+        return redirect()->back()->with('message', 'Data Kategori baru berhasil disimpan')->with('status', 'success');
     }
 
     /**
@@ -107,7 +85,7 @@ class CategoryController extends Controller
         }
         EditData::dispatch($data);
         $category->update($data);
-        return redirect()->back();
+        return redirect()->back()->with('message', 'Data kategori berhasil diedit')->with('status', 'success');
     }
 
     /**
@@ -123,6 +101,6 @@ class CategoryController extends Controller
             File::delete(public_path('/monitoring/icon/').$category->icon);
         }
         $category->delete();
-        return redirect()->back();
+        return redirect()->back()->with('message', 'Data kategori berhasil dihapus')->with('status', 'success');
     }
 }
