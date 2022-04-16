@@ -21,7 +21,9 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $categories = Category::query()->with('input')->get();
+        $categories = Category::query()->with(['input' => function($query) {
+            $query->where('monitoring_object_id', null);
+        }])->get();
         return Inertia::render('Monitoring/Category/Index', ['categories' => $categories]);
     }
 

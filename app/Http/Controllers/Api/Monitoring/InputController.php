@@ -8,6 +8,9 @@ use App\Jobs\Monitoring\Input\EditData;
 use App\Models\Monitoring\Input;
 use App\Models\Monitoring\InputOption;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Str;
+use Intervention\Image\Facades\Image;
 use Illuminate\Support\Facades\Validator;
 
 class InputController extends Controller
@@ -43,26 +46,38 @@ class InputController extends Controller
         $rules = [
             'monitoring_category_id' => 'required',
             'label' => 'required',
-            'image' => 'mimes:jpg,png,jpeg',
+            'image' => 'image|mimes:jpeg,png,jpg',
             'type' => 'required',
         ];
         $data = [
             'monitoring_category_id' => $request->category_id,
             'monitoring_object_id' => $request->object_id,
             'monitoring_id' => $request->monitoring_id,
-            // 'image' => $request->file('image'),
+            'image' => $request->file('image'),
             'is_required' => $request->is_required,
             'label' => $request->label,
+            'link' => $request->link,
             'type' => $request->type,
             'placeholder' => $request->placeholder,
             'description' => $request->description,
         ];
-        $validator = Validator::make($data, $rules);
-        if($validator->fails()) {
-            return $this->jsonResponse([
-                'messages' => $validator->errors(),
-            ], 400, 'FAILED');
+        if($request->hasFile('image')) {
+            $file = $request->file('image');
+            $fileName = 'input-'.Str::slug($request->label).'-'.time().'-'.uniqid().'.'.$file->extension();
+            $image = Image::make($file->path());
+            $dimension = 480;
+            if($request->type == 'image') $dimension = 720;
+            $image->resize($dimension, $dimension, function($constraint) {
+                $constraint->aspectRatio();
+            })->save(public_path('/monitoring/input/'.$fileName));
+            $data['image'] = $fileName;
         }
+        // $validator = Validator::make($data, $rules);
+        // if($validator->fails()) {
+        //     return $this->jsonResponse([
+        //         'messages' => $validator->errors(),
+        //     ], 400, 'FAILED');
+        // }
         $input = Input::query()->create($data);
         $decodeOptions = json_decode($request->options);
         if(count($decodeOptions) > 0) {
@@ -99,28 +114,79 @@ class InputController extends Controller
     public function update(Request $request, $id)
     {
         $rules = [
-            'monitoring_id' => 'required',
+            'monitoring_category_id' => 'required',
             'label' => 'required',
+            'image' => 'image|mimes:jpeg,png,jpg',
             'type' => 'required',
         ];
         $data = [
+            'monitoring_category_id' => $request->category_id,
+            'monitoring_object_id' => $request->object_id,
             'monitoring_id' => $request->monitoring_id,
+            'image' => $request->file('image'),
+            'is_required' => $request->is_required,
+            'link' => $request->link,
             'label' => $request->label,
             'type' => $request->type,
             'placeholder' => $request->placeholder,
-            'text' => $request->text,
-            'number' => $request->number,
             'description' => $request->description,
-            'is_required' => $request->is_required,
         ];
-        $validator = Validator::make($data, $rules);
-        if($validator->fails()) {
-            return $this->jsonResponse([
-                'messages' => $validator->errors(),
-            ], 400, 'FAILED');
-        }
-        Input::query()->where('id', $id)->update($data);
         $input = Input::query()->find($id);
+        if($request->hasFile('image')) {
+            $file = $request->file('image');
+            $fileName = 'input-'.Str::slug($request->label).'-'.time().'-'.uniqid().'.'.$file->extension();
+            $image = Image::make($file->path());
+            $dimension = 480;
+            if($request->type == 'image') $dimension = 720;
+            $this->checkDirectory('/monitoring/input');
+            if(File::exists(public_path('/monitoring/icon/').$input->image)) {
+                File::delete(public_path('/monitoring/icon/').$input->image);
+            }
+            $image->resize($dimension, $dimension, function($constraint) {
+                $constraint->aspectRatio();
+            })->save(public_path('/monitoring/input/'.$fileName));
+            $data['image'] = $fileName;
+        } else {
+            unset($data['image']);
+        }
+        $validator = Validator::make($data, $rules);
+        // if($validator->fails()) {
+        //     return $this->jsonResponse([
+        //         'messages' => $validator->errors(),
+        //     ], 400, 'FAILED');
+        // }
+        Input::query()->where('id', $id)->update($data);
+        $decodeOptions = json_decode($request->options);
+        if(count($decodeOptions) > 0) {
+            $itemIds = [];
+            foreach($decodeOptions as $item) {
+                $itemIds[] = $item->id;
+                if($item->id == null) {
+                    $option = new InputOption();
+                    $option->monitoring_input_id = $id;
+                    $option->value = $item->value;
+                    $option->save();
+                } else {
+                    $data = [
+                        'value' => $item->value,
+                        'monitoring_input_id' => $id,
+                    ];
+                    InputOption::query()->where('id', $item->id)->update($data);
+                }
+            }
+        }
+        $data = Input::query()->with('option')->find($id);
+        return $this->jsonResponse($data);
+    }
+
+    public function deleteImage($id)
+    {
+        $input = Input::query()->find($id);
+        if(File::exists(public_path('/monitoring/icon/').$input->image)) {
+            File::delete(public_path('/monitoring/icon/').$input->image);
+        }
+        $input->image = null;
+        $input->save();
         return $this->jsonResponse($input);
     }
 
@@ -132,7 +198,11 @@ class InputController extends Controller
      */
     public function destroy($id)
     {
-        $input = Input::query()->find($id);
+        $input = Input::query()->with('option')->find($id);
+        if(File::exists(public_path('/monitoring/icon/').$input->image)) {
+            File::delete(public_path('/monitoring/icon/').$input->image);
+        }
+        $input->option()->delete();
         $input->delete();
         return $this->jsonResponse($input);
     }

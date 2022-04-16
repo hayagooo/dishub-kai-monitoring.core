@@ -37,6 +37,7 @@ Route::name('api.')->group(function() {
         Route::resource('/object', ObjectDataController::class);
         Route::resource('/monitoring', MonitoringController::class);
         Route::resource('/input-monitoring', InputController::class);
+        Route::delete('/input-monitoring/delete-image/{id}', [InputController::class, 'deleteImage'])->name('api.input-monitoring.delete-image');
         Route::resource('/option-input-monitoring', OptionController::class);
         Route::resource('/image-monitoring', ImageController::class);
         Route::resource('/user', UserController::class);

@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('image')->nullable();
             $table->boolean('is_required')->default(1)->nullable();
             $table->string('label');
+            $table->string('link')->nullable();
             $table->enum('type', Input::getAvailableType());
             $table->string('placeholder')->nullable();
             $table->longText('description')->nullable();

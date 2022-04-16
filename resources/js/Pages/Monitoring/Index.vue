@@ -59,7 +59,7 @@
                                             <p class="text-lg font-semibold text-dark">{{ item.title }}</p>
                                             <div class="flex flex-nowrap mt-5 mb-5 md:mb-0">
                                                 <div class="self-center flex -space-x-4">
-                                                    <img class="w-12 h-12 border-2 border-white rounded-full dark:border-gray-800" src="https://via.placeholder.com/300x300/6c2bd9/ffffff.png?text=MK" alt="">
+                                                    <img class="w-12 h-12 border-2 border-white rounded-full dark:border-gray-800" :src="`https://via.placeholder.com/300x300/6c2bd9/ffffff.png?text=${initialsString(item.team.name)}`" alt="">
                                                     <img class="w-12 h-12 border-2 border-white rounded-full dark:border-gray-800" src="@/Assets/avatar/male.png" alt="User Avatar">
                                                 </div>
                                                 <div class="self-center ml-4">
@@ -103,7 +103,7 @@
                                                         <small v-if="monitorings.data[optionModal.index] != undefined">{{ monitorings.data[optionModal.index].input.length }} Data</small>
                                                     </div>
                                                 </div>
-                                                <div role="button" class="flex gap-x-4 w-full hover:bg-gray-50 p-2 rounded-lg">
+                                                <div @click="gotoEditMonitoring()" role="button" class="flex gap-x-4 w-full hover:bg-gray-50 p-2 rounded-lg">
                                                     <div class="flex h-12 w-12 rounded-lg bg-green-100 relative">
                                                         <edit-icon class="mx-auto text-green-600 self-center" size="24"/>
                                                     </div>
@@ -134,7 +134,7 @@
                                         <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
                                             <div class="flex justify-between items-center p-5 rounded-t border-b dark:border-gray-600">
                                                 <h3 class="text-xl font-medium text-gray-900 dark:text-white">
-                                                    Hapus Objek ?
+                                                    Hapus Data ?
                                                 </h3>
                                                 <button @click="toggleDeleteModal(false)" type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white">
                                                     <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
@@ -147,7 +147,7 @@
                                                     </div>
                                                 </div>
                                                 <h3 class="mb-5 text-lg font-normal text-gray-500 text-center text-dark">
-                                                    Objek dan monitoring data berdasarkan objek ini akan tehapus secara permanen
+                                                    Data monitoring dan data yang terkait seperti gambar akan terhapus secara permanen.
                                                 </h3>
                                                 <div class="flex justify-between">
                                                     <button @click="toggleDeleteModal(false)" type="button" class="text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-200 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10">Batal</button>
@@ -245,6 +245,14 @@ export default defineComponent({
                 categoryId: this.category.id
             })
         },
+        initialsString(str) {
+            let rgx = new RegExp(/(\p{L}{1})\p{L}+/, 'gu')
+            let initials = [...str.matchAll(rgx)] || []
+            initials = (
+                (initials.shift()?.[1] || '') + (initials.pop()?.[1] || '')
+            ).toUpperCase();
+            return initials
+        },
         store() {
             if(this.formModal.mode == 'create') {
                 this.form.post(this.route('app.object.store'))
@@ -263,12 +271,21 @@ export default defineComponent({
                 objectId: this.object.id
             }))
         },
+        gotoEditMonitoring() {
+            this.toggleOptionModal(false, this.optionModal.index, this.optionModal.item)
+            this.$inertia.get(this.route('app.monitoring.edit', {
+                id: this.monitorings.data[this.optionModal.index].id,
+            }), {
+                categoryId: this.category.id,
+                objectId: this.object.id
+            })
+        },
         showTimestamps(timestamp) {
             return moment(timestamp).calendar()
         },
         deleteData() {
-            this.$inertia.delete(this.route('app.object.destroy', {
-                id: this.objects[this.optionModal.index].id
+            this.$inertia.delete(this.route('app.monitoring.destroy', {
+                id: this.monitorings.data[this.optionModal.index].id
             }), {
                onSuccess: () => {
                    this.toggleDeleteModal(false)

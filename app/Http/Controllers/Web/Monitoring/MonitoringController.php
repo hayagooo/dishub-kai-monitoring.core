@@ -4,8 +4,10 @@ namespace App\Http\Controllers\Web\Monitoring;
 
 use App\Http\Controllers\Controller;
 use App\Jobs\Monitoring\CreateData;
+use App\Jobs\Monitoring\EditData;
 use App\Models\Employee;
 use App\Models\Monitoring\Category;
+use App\Models\Monitoring\Input;
 use App\Models\Monitoring\Monitoring;
 use App\Models\Monitoring\ObjectData;
 use App\Models\Team;
@@ -45,13 +47,24 @@ class MonitoringController extends Controller
     public function create(Request $request)
     {
         $categoryId = $request->get('categoryId', Category::query()->first()->id);
-        $objectId = $request->get('objectId', Category::query()->first()->id);
+        $objectId = $request->get('objectId', ObjectData::query()->first()->id);
         $teams = Team::all();
+        $inputs = [];
+        $inputs['category'] = Input::query()->with('option')
+            ->where('monitoring_category_id', $categoryId)
+            ->where('monitoring_object_id', null)
+            ->get();
+        $inputs['object'] = Input::query()->with('option')
+            ->where('monitoring_category_id', $categoryId)
+            ->where('monitoring_object_id', $objectId)
+            ->where('monitoring_id', null)
+            ->get();
         $object = ObjectData::query()->find($objectId);
         $category = Category::query()->find($categoryId);
         return Inertia::render('Monitoring/Create', [
             'object' => $object,
             'category' => $category,
+            'inputs' => $inputs,
             'teams' => $teams,
         ]);
     }
@@ -73,8 +86,8 @@ class MonitoringController extends Controller
             'description' => $request->description,
         ];
         CreateData::dispatch($data);
-        Monitoring::query()->create($data);
-        return redirect()->back()->with('message', 'Data monitoring berhasil disimpan')->with('status', 'success');
+        $monitoring = Monitoring::query()->create($data);
+        return redirect()->route('app.monitoring.edit', $monitoring->id)->with('message', 'Data monitoring berhasil disimpan')->with('status', 'success');
     }
 
     /**
@@ -94,19 +107,39 @@ class MonitoringController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Request $request, $id)
     {
         $categoryId = $request->get('categoryId', Category::query()->first()->id);
-        $objectId = $request->get('objectId', Category::query()->first()->id);
+        $objectId = $request->get('objectId', ObjectData::query()->first()->id);
         $teams = Team::all();
+        $inputs = [];
+        $inputs['category'] = Input::query()->with('option')
+            ->where('monitoring_category_id', Category::query()->first()->id)
+            ->where('monitoring_object_id', null)
+            ->get();
+        $inputs['object'] = Input::query()->with('option')
+            ->where('monitoring_category_id', Category::query()->first()->id)
+            ->where('monitoring_object_id', ObjectData::query()->first()->id)
+            ->where('monitoring_id', null)
+            ->get();
+        $inputs['monitoring'] = Input::query()->with('option')
+            ->where('monitoring_category_id', Category::query()->first()->id)
+            ->where('monitoring_object_id', ObjectData::query()->first()->id)
+            ->where('monitoring_id', $id)
+            ->get();
         $monitoring = Monitoring::query()->find($id);
         $object = ObjectData::query()->find($objectId);
+        $employees = Employee::with('team')->whereHas('team', function($query) use($monitoring) {
+            $query->where('team_id', $monitoring->team_id);
+        })->get();
         $category = Category::query()->find($categoryId);
         return Inertia::render('Monitoring/Edit', [
             'object' => $object,
-            'monitoring' => $monitoring,
             'category' => $category,
+            'inputs' => $inputs,
+            'list_employee' => $employees,
             'teams' => $teams,
+            'monitoring' => $monitoring,
         ]);
     }
 
@@ -119,7 +152,17 @@ class MonitoringController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = [
+            'monitoring_category_id' => $request->category_id,
+            'monitoring_object_id' => $request->object_id,
+            'employee_id' => $request->employee_id,
+            'team_id' => $request->team_id,
+            'title' => $request->title,
+            'description' => $request->description,
+        ];
+        EditData::dispatch($data);
+        $monitoring = Monitoring::query()->where('id', $id)->update($data);
+        return redirect()->back()->with('message', 'Data monitoring berhasil diedit')->with('status', 'success');
     }
 
     /**
@@ -130,6 +173,8 @@ class MonitoringController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $data = Monitoring::query()->find($id);
+        $data->delete();
+        return redirect()->back()->with('message', 'Data monitoring berhasil dihapus')->with('status', 'success');
     }
 }

@@ -23,7 +23,9 @@ class ObjectController extends Controller
     public function index(Request $request)
     {
         $categoryId = $request->get('categoryId', Category::query()->first()->id);
-        $objects = ObjectData::with('input')->get();
+        $objects = ObjectData::with(['input' => function($query) {
+            $query->where('monitoring_id', null);
+        }])->get();
         $category = Category::query()->with('input')->find($categoryId);
         return Inertia::render('Monitoring/Object/Index', [
             'objects' => $objects,

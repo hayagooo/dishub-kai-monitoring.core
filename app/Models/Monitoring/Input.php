@@ -33,6 +33,7 @@ class Input extends Model
         'image',
         'is_required',
         'label',
+        'link',
         'type',
         'placeholder',
         'description',

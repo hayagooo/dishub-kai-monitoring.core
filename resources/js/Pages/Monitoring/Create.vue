@@ -2,7 +2,7 @@
     <app-layout title="Monitoring">
         <m-toast :color="toast.color"
             :is_active="toast.active"
-            :message="$page.props.flash.message"/>
+            :message="toast.message"/>
         <template #header>
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
                 Monitoring
@@ -26,34 +26,34 @@
                     </div>
                     <div class="grid grid-cols-2">
                          <div class="col-span-2 md:col-span-1 p-7 border-b-2 md:border-b-0 border-gray-100 flex flex-nowrap">
-                            <img src="@/Assets/defaults/category.png" class="h-12 w-auto inline-block" alt="Default Icon">
-                            <p class="self-center text-base md:text-xl text-gray-700 inline-block ml-4">{{ category.name }}</p>
+                            <img v-if="category.icon == null" src="@/Assets/defaults/category.png" class="h-12 w-auto inline-block" alt="Default Icon">
+                            <img v-else :src="'/monitoring/icon/'+category.icon" class="h-12 w-auto inline-block" alt="Default Icon">
+                            <p class="self-center text-base md:text-lg text-gray-700 inline-block ml-4">{{ category.name }}</p>
                         </div>
                         <div class="col-span-2 md:col-span-1 p-7 flex flex-nowrap">
-                            <img src="@/Assets/defaults/object.png" class="h-12 w-auto inline-block" alt="Default Icon">
-                            <p class="self-center text-base md:text-xl text-gray-700 inline-block ml-4">{{ object.name }}</p>
+                            <img v-if="object.icon == null" src="@/Assets/defaults/object.png" class="h-12 w-auto inline-block" alt="Default Icon">
+                            <img v-else :src="'/monitoring/icon/'+object.icon" class="h-12 w-auto inline-block" alt="Default Icon">
+                            <p class="self-center text-base md:text-lg text-gray-700 inline-block ml-4">{{ object.name }}</p>
                         </div>
                     </div>
                     <div class="text-sm w-full font-medium text-center text-gray-500 border-b border-gray-200">
                         <ul class="flex items-stretch flex-wrap -mb-px">
-                            <li class="mr-2">
-                                <a href="#" class="inline-block p-4 text-purple-600 rounded-t-lg border-b-2 border-purple-600 active" aria-current="page">Umum</a>
-                            </li>
-                            <li class="mr-2">
-                                <a href="#" class="inline-block p-4 rounded-t-lg border-b-2 border-transparent hover:text-gray-600 hover:border-gray-300">Kategori</a>
-                            </li>
-                            <li class="mr-2">
-                                <a href="#" class="inline-block p-4 rounded-t-lg border-b-2 border-transparent hover:text-gray-600 hover:border-gray-300">Objek</a>
-                            </li>
-                            <li class="mr-2">
-                                <a href="#" class="inline-block p-4 rounded-t-lg border-b-2 border-transparent hover:text-gray-600 hover:border-gray-300">Monitoring Data</a>
+                            <li class="mr-2" v-for="(item, index) in menuForms" :key="`menu-${index}`">
+                                <span class="inline-block p-4 rounded-t-lg border-b-2"
+                                @click="clickMenu(item, index)"
+                                role="button"
+                                :class="{'text-purple-600 border-purple-600 active': index == menuIndex,
+                                'border-transparent hover:text-gray-600 hover:border-gray-300': index != menuIndex}" a
+                                ria-current="page">
+                                    {{ item.label }}
+                                </span>
                             </li>
                         </ul>
                     </div>
                     <div id="objects" class="bg-gray-50 relative p-7">
                         <h2 class="text-xl text-gray-800 font-semibold">Monitoring Baru</h2>
                         <p class="text-base text-gray-600">Formulir berdasarkan kebutuhan umum.</p>
-                        <form @submit.prevent="submit" action="#">
+                        <form @submit.prevent="submitGeneral" action="#">
                             <div class="mt-6">
                                 <label for="title-monitoring">Judul Monitoring</label>
                                 <input required name="title" id="title-monitoring" v-model="form.general.title" type="text" placeholder="e.g. Monitoring Jembatan Bandung" class="mt-3 focus:ring-purple-500 focus:border-purple-500 block w-full pl-4 sm:text-sm border-gray-300 rounded-md">
@@ -78,7 +78,7 @@
                                     <ckeditor id="editor" placeholder="e.g. Tujuan monitoring ini adalah untuk kepentingan bersama" :editor="editor" v-model="form.general.description"></ckeditor>
                                 </div>
                                 <div class="rounded mt-3 block md:hidden">
-                                    <textarea required name="title" id="title-monitoring" v-model="form.general.title" type="text" placeholder="e.g. Deskripsi Monitoring Jembatan Bandung" class="mt-3 focus:ring-purple-500 focus:border-purple-500 block w-full pl-4 sm:text-sm border-gray-300 rounded-md"></textarea>                   
+                                    <textarea required name="title" id="title-monitoring" v-model="form.general.title" type="text" placeholder="e.g. Deskripsi Monitoring Jembatan Bandung" class="mt-3 focus:ring-purple-500 focus:border-purple-500 block w-full pl-4 sm:text-sm border-gray-300 rounded-md"></textarea>
                                 </div>
                             </div>
                             <div class="mt-6">
@@ -106,7 +106,7 @@ import MToast from '@/Components/MToast'
 import MNoData from '@/Components/MNoData.vue'
 
 export default defineComponent({
-    props: ['object', 'category', 'teams'],
+    props: ['object', 'category', 'teams', 'inputs'],
     components: {
         MoreVerticalIcon,
         FileTextIcon,
@@ -125,6 +125,11 @@ export default defineComponent({
     data() {
         return {
             editor: InlineEditor,
+            menuIndex: 0,
+            menuForms: [
+            {   name: 'general',
+                label: 'Umum',
+            }],
             employees: [],
             optionModal: {
                 show: false,
@@ -151,6 +156,7 @@ export default defineComponent({
         }
     },
     mounted() {
+        this.setMenu()
         this.toast.active = this.$page.props.flash.message != null || this.$page.props.flash.message != undefined ? true : false
         if(this.$page.props.flash.status == 'success') this.toast.color = 'green'
         else if(this.$page.props.flash.status == 'failed') this.toast.color = 'red'
@@ -159,6 +165,40 @@ export default defineComponent({
         }, 5000);
     },
     methods: {
+        clickMenu(item, index) {
+            if(index != 0) {
+                this.onToast('red', 'Simpan data monitoring dulu')
+            }
+        },
+        onToast(color, message) {
+            this.toast.active = true
+            this.toast.message = message
+            this.toast.color = color
+            setTimeout(() => {
+                this.toast.active = false
+            }, 5000);
+        },
+        setMenu() {
+            if(this.inputs.category.length > 0) {
+                let category = {
+                    name: 'category',
+                    label: 'Kategori'
+                }
+                this.menuForms.push(category)
+            }
+            if(this.inputs.object.length > 0) {
+                let object = {
+                    name: 'object',
+                    label: 'Objek'
+                }
+                this.menuForms.push(object)
+            }
+            let image = {
+                name: 'image',
+                label: 'Gambar'
+            }
+            this.menuForms.push(image)
+        },
         getEmployee() {
             this.form.general.employee_id = 0
             axios.get(this.route('api.employee.index', {
@@ -167,7 +207,7 @@ export default defineComponent({
                 this.employees = response.data.payload
             })
         },
-        submit() {
+        submitGeneral() {
             this.form.general
                 .transform(data => ({
                     ...data,
