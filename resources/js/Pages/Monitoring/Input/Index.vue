@@ -351,7 +351,7 @@
 
                                 </div>
                             </div>
-                            <button type="button" class="focus:outline-none mt-6 w-full text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2">
+                            <button type="button" @click="onSubmitData()" class="focus:outline-none mt-6 w-full text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2">
                                 Simpan
                             </button>
                         </div>
@@ -369,12 +369,13 @@
 import { defineComponent } from 'vue'
 import MToast from '@/Components/MToast'
 import AppLayout from '@/Layouts/AppLayout.vue'
+import axios from 'axios'
 import MUnderConstruction from '@/Components/MUnderConstruction'
 import { ArrowLeftIcon, DivideIcon, ListIcon, ChevronUpIcon, CalendarIcon, ClockIcon, UploadIcon, CheckCircleIcon, CheckSquareIcon, PlusCircleIcon, FileIcon, AlignLeftIcon, YoutubeIcon, ItalicIcon, TypeIcon, FileTextIcon, ImageIcon, TrashIcon, MoreVerticalIcon, EditIcon, EyeIcon } from '@zhuowenli/vue-feather-icons'
 import MNoData from '@/Components/MNoData.vue'
 
 export default defineComponent({
-    props: ['inputs', 'datas'],
+    props: ['inputs', 'datas', 'token'],
     components: {
         FileIcon,
         YoutubeIcon,
@@ -477,6 +478,26 @@ export default defineComponent({
         }, 5000);
     },
     methods: {
+        onSubmitData() {
+            this.form_inputs.forEach((value, index) => {
+                let fm = new FormData()
+                fm.append('category_id', this.datas.category.id)
+                if(this.datas.object != undefined && this.datas.object != null) fm.append('object_id', this.datas.object.id)
+                if(this.datas.monitoring != undefined && this.datas.monitoring != null) fm.append('monitoring_id', this.datas.monitoring.id)
+                fm.append('type', value.type_input)
+                fm.append('label', value.label)
+                fm.append('placeholder', value.placeholder)
+                fm.append('description', value.description)
+                fm.append('is_required', value.is_required ? 1 : 0)
+                fm.append('image', value.image)
+                fm.append('options', JSON.stringify(value.options))
+                axios.post(this.route('api.input-monitoring.store'), fm, {
+                    headers: {
+                        'Authorization': `Bearer ${this.token}`
+                    }
+                })
+            })
+        },
         setDescription(index, item) {
             if(this.form_inputs[index].description == null) this.form_inputs[index].description = ''
             else this.form_inputs[index].description = null
@@ -534,13 +555,17 @@ export default defineComponent({
             this.form_inputs[index].is_required = !this.form_inputs[index].is_required
         },
         setFormInput(mode) {
+            let type_input = ''
+            if(mode == 'input') type_input = 'text'
+            else type_input = mode
+
             let data = {
                 mode: mode,
                 value: '',
                 label: '',
                 is_required: true,
                 option: false,
-                type_input: 'text',
+                type_input: type_input,
                 link: '',
                 description: null,
                 image: null,

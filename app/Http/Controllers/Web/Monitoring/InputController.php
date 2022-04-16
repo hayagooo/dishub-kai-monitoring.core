@@ -7,7 +7,9 @@ use App\Models\Monitoring\Category;
 use App\Models\Monitoring\Input;
 use App\Models\Monitoring\Monitoring;
 use App\Models\Monitoring\ObjectData;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Inertia\Inertia;
 
 class InputController extends Controller
@@ -39,17 +41,8 @@ class InputController extends Controller
         ->when($request->get('monitoringId') != null, function($query) use($request) {
             $query->where('monitoring_id', $request->get('monitoringId'));
         })->get();
-        return Inertia::render('Monitoring/Input/Index', ['inputs' => $inputs, 'datas' => $datas]);
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+        $token = User::find(Auth::guard('api')->id())->createToken('authentification')->plainTextToken;
+        return Inertia::render('Monitoring/Input/Index', ['inputs' => $inputs, 'datas' => $datas, 'token' => $token]);
     }
 
     /**
@@ -60,7 +53,18 @@ class InputController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = [
+            'monitoring_category_id' => $request->category_id,
+            'monitoring_object_id' => $request->object_id,
+            'monitoring_id' => $request->monitoring_id,
+            'image' => $request->file('image'),
+            'is_required' => $request->is_required,
+            'label' => $request->label,
+            'type' => $request->type,
+            'placeholder' => $request->placeholder,
+            'description' => $request->description,
+        ];
+        Input::query()->create($data);
     }
 
     /**

@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Jobs\Monitoring\Object\CreateData;
 use App\Jobs\Monitoring\Object\EditData;
 use App\Models\Monitoring\Category;
-use App\Models\Monitoring\Image;
+use Intervention\Image\Facades\Image;
 use App\Models\Monitoring\ObjectData;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;

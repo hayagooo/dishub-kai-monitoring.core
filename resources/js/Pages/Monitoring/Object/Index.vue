@@ -25,7 +25,8 @@
                         </div>
                     </div>
                     <div class="p-7 flex flex-nowrap">
-                        <img src="@/Assets/defaults/category.png" class="h-12 w-auto inline-block" alt="Default Icon">
+                        <img v-if="category.icon == null" src="@/Assets/defaults/category.png" class="h-12 w-auto inline-block" alt="Default Icon">
+                        <img v-else :src="'/monitoring/icon/'+category.icon" class="h-12 w-auto inline-block" alt="Default Icon">
                         <p class="self-center text-base md:text-lg text-gray-700 inline-block ml-4">{{ category.name }}</p>
                     </div>
                     <div id="objects" class="bg-gray-50 relative sm:rounded-xl p-7">
@@ -58,12 +59,18 @@
                                                 <form @submit.prevent="store()" action="#">
                                                     <div class="p-6">
                                                         <div class="text-center">
-                                                            <div v-if="form.preview == null">
-                                                                <img src="@/Assets/defaults/category.png" class="h-20 w-auto inline-block" alt="Default Icon">
+                                                            <div v-if="formModal.mode == 'create'">
+                                                                <div class="h-20 w-20 inline-block relative rounded-lg overflow-hidden">
+                                                                    <img v-if="form.preview == null" src="@/Assets/defaults/object.png" class="h-20 w-auto inline-block" alt="Default Icon">
+                                                                    <img v-else :src="form.preview" class="h-20 w-auto inline-block" alt="Default Icon">
+                                                                </div>
                                                             </div>
                                                             <div v-else>
                                                                 <div class="h-20 w-20 inline-block relative rounded-lg overflow-hidden">
-                                                                    <img :src="form.preview" class="h-full w-full object-cover object-center inline-block" alt="Preview Icon">
+                                                                    <div class="h-20 w-20 inline-block relative rounded-lg overflow-hidden">
+                                                                        <img v-if="form.icon == null" src="@/Assets/defaults/object.png" class="h-20 w-auto inline-block" alt="Default Icon">
+                                                                        <img v-else :src="form.preview" class="h-20 w-auto inline-block" alt="Default Icon">
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -91,7 +98,7 @@
                                                                 </p>
                                                                 <p v-else>{{ form.icon.name }}</p>
                                                             </div>
-                                                            <small>Abaikan untuk membuat icon default</small>
+                                                            <small> {{ formModal.mode == 'create' ? 'Abaikan untuk membuat icon default' : 'Abaikan untuk tidak mengganti icon' }} </small>
                                                         </div>
                                                     </div>
                                                     <div class="flex gap-x-4 items-center flex-row-reverse p-6 space-x-2 rounded-b border-t border-gray-200 dark:border-gray-600">
@@ -115,7 +122,8 @@
                                             </button>
                                         </div>
                                         <div class="z-10" @click="goMonitoring(item.id)">
-                                            <img src="@/Assets/defaults/object.png" class="h-28 w-28 md:w-auto inline-block" alt="Default Icon">
+                                            <img v-if="item.icon == null" src="@/Assets/defaults/object.png" class="h-28 w-28 md:w-auto inline-block" alt="Default Icon">
+                                            <img v-else :src="'/monitoring/icon/'+item.icon" class="h-28 w-28 md:w-auto inline-block" alt="Default Icon">
                                         </div>
                                     </div>
                                     <div role="button" class="pt-2 text-center" @click="goMonitoring(item.id)">
@@ -348,6 +356,7 @@ export default defineComponent({
             if(indexId != null) {
                 this.form.name = this.objects[indexId].name
                 this.form.icon = this.objects[indexId].icon
+                this.form.preview = '/monitoring/icon/'+this.objects[indexId].icon
             } else this.setNullForm()
             this.formModal.show = status
             if(!status) this.setNullForm()

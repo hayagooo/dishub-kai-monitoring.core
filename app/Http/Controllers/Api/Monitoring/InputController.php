@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Jobs\Monitoring\Input\CreateData;
 use App\Jobs\Monitoring\Input\EditData;
 use App\Models\Monitoring\Input;
+use App\Models\Monitoring\InputOption;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
@@ -40,19 +41,21 @@ class InputController extends Controller
     public function store(Request $request)
     {
         $rules = [
-            'monitoring_id' => 'required',
+            'monitoring_category_id' => 'required',
             'label' => 'required',
+            'image' => 'mimes:jpg,png,jpeg',
             'type' => 'required',
         ];
         $data = [
+            'monitoring_category_id' => $request->category_id,
+            'monitoring_object_id' => $request->object_id,
             'monitoring_id' => $request->monitoring_id,
+            // 'image' => $request->file('image'),
+            'is_required' => $request->is_required,
             'label' => $request->label,
             'type' => $request->type,
             'placeholder' => $request->placeholder,
-            'text' => $request->text,
-            'number' => $request->number,
             'description' => $request->description,
-            'is_required' => $request->is_required,
         ];
         $validator = Validator::make($data, $rules);
         if($validator->fails()) {
@@ -61,7 +64,17 @@ class InputController extends Controller
             ], 400, 'FAILED');
         }
         $input = Input::query()->create($data);
-        return $this->jsonResponse($input);
+        $decodeOptions = json_decode($request->options);
+        if(count($decodeOptions) > 0) {
+            foreach($decodeOptions as $item) {
+                $option = new InputOption();
+                $option->monitoring_input_id = $input->id;
+                $option->value = $item->value;
+                $option->save();
+            }
+        }
+        $data = Input::query()->with('option')->find($input->id);
+        return $this->jsonResponse($data);
     }
 
     /**

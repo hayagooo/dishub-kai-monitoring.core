@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Jobs\Monitoring\Category\CreateData;
 use App\Jobs\Monitoring\Category\EditData;
 use App\Models\Monitoring\Category;
-use App\Models\Monitoring\Image;
+use Intervention\Image\Facades\Image;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 use Inertia\Inertia;

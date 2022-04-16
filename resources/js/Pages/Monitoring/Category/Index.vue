@@ -47,12 +47,18 @@
                                         <form @submit.prevent="store()" action="#">
                                             <div class="p-6">
                                                 <div class="text-center">
-                                                    <div v-if="form.preview == null">
-                                                        <img src="@/Assets/defaults/category.png" class="h-20 w-auto inline-block" alt="Default Icon">
+                                                    <div v-if="formModal.mode == 'create'">
+                                                        <div class="h-20 w-20 inline-block relative rounded-lg overflow-hidden">
+                                                            <img v-if="form.preview == null" src="@/Assets/defaults/category.png" class="h-20 w-auto inline-block" alt="Default Icon">
+                                                            <img v-else :src="form.preview" class="h-20 w-auto inline-block" alt="Default Icon">
+                                                        </div>
                                                     </div>
                                                     <div v-else>
                                                         <div class="h-20 w-20 inline-block relative rounded-lg overflow-hidden">
-                                                            <img :src="form.preview" class="h-full w-full object-cover object-center inline-block" alt="Preview Icon">
+                                                            <div class="h-20 w-20 inline-block relative rounded-lg overflow-hidden">
+                                                                <img v-if="form.icon == null" src="@/Assets/defaults/category.png" class="h-20 w-auto inline-block" alt="Default Icon">
+                                                                <img v-else :src="form.preview" class="h-20 w-auto inline-block" alt="Default Icon">
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -80,7 +86,7 @@
                                                         </p>
                                                         <p v-else>{{ form.icon.name }}</p>
                                                     </div>
-                                                    <small>Abaikan untuk membuat icon default</small>
+                                                    <small> {{ formModal.mode == 'create' ? 'Abaikan untuk membuat icon default' : 'Abaikan untuk tidak mengganti icon' }} </small>
                                                 </div>
                                             </div>
                                             <div class="flex gap-x-4 items-center flex-row-reverse p-6 space-x-2 rounded-b border-t border-gray-200 dark:border-gray-600">
@@ -100,7 +106,12 @@
                             <div class="mt-3 mb-4" v-for="(item, index) in categories" :key="`category-${index}`">
                                 <div role="button" class="transition-all ease-in-out relative flex gap-x-4 rounded-lg bg-white hover:shadow-lg">
                                     <div role="button" @click="gotoObject(item.id)" class="flex w-9/12 gap-x-4 p-4">
-                                        <img src="@/Assets/defaults/category.png" class="h-12 w-auto inline-block self-center" alt="Default Icon">
+                                        <div v-if="item.icon != null" class="h-12 w-12 inline-block relative rounded-lg overflow-hidden">
+                                            <img :src="'/monitoring/icon/'+item.icon" class="h-full w-full object-cover object-center inline-block" alt="Preview Icon">
+                                        </div>
+                                        <div v-else>
+                                            <img src="@/Assets/defaults/category.png" class="h-12 w-auto inline-block self-center" alt="Default Icon">
+                                        </div>
                                         <div class="self-center">
                                             <p class="text-base md:text-lg font-semibold">{{ item.name }}</p>
                                         </div>
@@ -335,6 +346,7 @@ export default defineComponent({
             if(indexId != null) {
                 this.form.name = this.categories[indexId].name
                 this.form.icon = this.categories[indexId].icon
+                this.form.preview = '/monitoring/icon/'+this.categories[indexId].icon
             } else this.setNullForm()
             this.formModal.show = status
             if(!status) this.setNullForm()

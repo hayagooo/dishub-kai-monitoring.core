@@ -19,17 +19,17 @@ return new class extends Migration
             $table->foreignId('monitoring_category_id')->constrained('monitoring_categories');
             $table->foreignId('monitoring_object_id')->nullable()->constrained('monitoring_objects');
             $table->foreignId('monitoring_id')->nullable()->constrained('monitorings');
-            $table->string('image_input')->nullable();
+            $table->string('image')->nullable();
+            $table->boolean('is_required')->default(1)->nullable();
             $table->string('label');
             $table->enum('type', Input::getAvailableType());
             $table->string('placeholder')->nullable();
-            $table->text('description')->nullable();
-            $table->string('text')->nullable();
-            $table->longText('long_text')->nullable();
-            $table->date('date');
-            $table->time('time');
-            $table->float('number')->nullable();
-            $table->boolean('is_required')->default(1)->nullable();
+            $table->longText('description')->nullable();
+            $table->string('string_value')->nullable();
+            $table->date('date_value')->nullable();
+            $table->time('time_value')->nullable();
+            $table->float('number_value')->nullable();
+            $table->string('file_value')->nullable();
             $table->timestamps();
         });
     }

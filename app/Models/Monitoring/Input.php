@@ -14,41 +14,49 @@ class Input extends Model
     protected $table = 'monitoring_inputs';
 
     public const TYPE_TEXT = 'text';
+    public const TYPE_TEXTAREA = 'textarea';
     public const TYPE_NUMBER = 'number';
-    public const TYPE_SELECT = 'select';
+    public const TYPE_DROPDOWN = 'dropdown';
     public const TYPE_CHECKBOX = 'checkbox';
     public const TYPE_RADIO = 'radio';
     public const TYPE_DATE = 'date';
     public const TYPE_TIME = 'time';
     public const TYPE_IMAGE = 'image';
     public const TYPE_FILE = 'file';
+    public const TYPE_YOUTUBE = 'media-youtube';
     public const TYPE_DESCRIPTION = 'description';
 
     protected $fillable = [
         'monitoring_category_id',
         'monitoring_object_id',
         'monitoring_id',
+        'image',
+        'is_required',
         'label',
         'type',
         'placeholder',
-        'text',
-        'number',
         'description',
-        'is_required',
+        'string_value',
+        'date_value',
+        'time_value',
+        'number_value',
+        'file_value',
     ];
 
     public static function getAvailableType(): array
     {
         return [
             self::TYPE_TEXT,
+            self::TYPE_TEXTAREA,
             self::TYPE_NUMBER,
-            self::TYPE_SELECT,
+            self::TYPE_DROPDOWN,
             self::TYPE_CHECKBOX,
             self::TYPE_RADIO,
             self::TYPE_DATE,
             self::TYPE_TIME,
             self::TYPE_IMAGE,
             self::TYPE_FILE,
+            self::TYPE_YOUTUBE,
             self::TYPE_DESCRIPTION,
         ];
     }
