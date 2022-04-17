@@ -277,6 +277,7 @@ export default defineComponent({
                 id: this.monitorings.data[this.optionModal.index].id,
             }), {
                 categoryId: this.category.id,
+                menu_index: 0,
                 objectId: this.object.id
             })
         },

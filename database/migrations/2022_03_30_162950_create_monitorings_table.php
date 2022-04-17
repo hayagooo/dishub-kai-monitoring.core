@@ -19,7 +19,6 @@ return new class extends Migration
             $table->foreignId('monitoring_object_id')->constrained('monitoring_objects');
             $table->string('title');
             $table->longText('description')->nullable();
-            $table->json('data')->nullable();
             $table->timestamps();
         });
     }

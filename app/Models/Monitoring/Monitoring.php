@@ -22,7 +22,6 @@ class Monitoring extends Model
         'employee_id',
         'team_id',
         'description',
-        'data',
     ];
 
     public function category(): BelongsTo
@@ -48,6 +47,11 @@ class Monitoring extends Model
     public function team(): BelongsTo
     {
         return $this->belongsTo(Team::class, 'team_id', 'id');
+    }
+
+    public function value(): HasMany
+    {
+        return $this->hasMany(InputValue::class, 'monitoring_input_id', 'id');
     }
 
     public function employee(): BelongsTo

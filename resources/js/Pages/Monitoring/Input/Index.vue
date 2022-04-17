@@ -576,6 +576,7 @@ export default defineComponent({
         onDuplicate(index, item) {
             let newItem = item
             this.form_inputs.push(JSON.parse(JSON.stringify(newItem)))
+            this.focus_option = null
             this.onRedirectLabel()
         },
         onRedirectLabel(index) {
@@ -628,12 +629,15 @@ export default defineComponent({
                         'Authorization': `Bearer ${this.token}`,
                         'content-type': 'multipart/form-data',
                     }
+                }).then((response) => {
+                    if(index == this.form_inputs.length - 1) {
+                        this.loading_button = false
+                        this.onToast('green', 'Formulir Monitoring Berhasil Disimpan')
+                    }
                 })
             })
-            this.loading_button = false
-            this.onToast('green', 'Formulir Monitoring Berhasil Disimpan')
             setTimeout(() => {
-                this.goInput()
+                this.goInput('changed')
             }, 1000);
         },
         onToast(color, message) {
@@ -644,7 +648,7 @@ export default defineComponent({
                 this.toast.active = false
             }, 5000);
         },
-        goInput() {
+        goInput(feedback) {
             let data = {}
             if(this.datas.category != null && this.datas.category != undefined) data.categoryId = this.datas.category.id
             if(this.datas.object != null && this.datas.object != undefined) data.objectId = this.datas.object.id
@@ -655,11 +659,13 @@ export default defineComponent({
             if(this.form_inputs[index].description == null) this.form_inputs[index].description = ''
             else this.form_inputs[index].description = null
             this.form_inputs[index].option = false
+            this.focus_option = null
         },
         setPlaceholder(index, item) {
             if(this.form_inputs[index].placeholder == null) this.form_inputs[index].placeholder = ''
             else this.form_inputs[index].placeholder = null
             this.form_inputs[index].option = false
+            this.focus_option = null
         },
         clickFileInput(index) {
             document.getElementById('input-image-'+index).click()

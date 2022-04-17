@@ -64,40 +64,199 @@
                             </p>
                         </div>
 
-                        <form v-if="menuIndex == 0" @submit.prevent="submitGeneral" action="#">
-                            <div class="mt-6">
-                                <label for="title-monitoring">Judul Monitoring</label>
-                                <input required name="title" id="title-monitoring" v-model="form.general.title" type="text" placeholder="e.g. Monitoring Jembatan Bandung" class="mt-3 focus:ring-purple-500 focus:border-purple-500 block w-full pl-4 sm:text-sm border-gray-300 rounded-md">
-                            </div>
-                            <div class="mt-6">
-                                <label for="team-monitoring">Tim Monitoring</label>
-                                <select @change="getEmployee()" required name="team_id" id="team-monitoring" v-model="form.general.team_id" type="text" class="mt-3 focus:ring-purple-500 focus:border-purple-500 block w-full pl-4 sm:text-sm border-gray-300 rounded-md">
-                                    <option :value="0">Pilih Tim Monitoring</option>
-                                    <option v-for="(item, index) in teams" :key="`team-${index}`" :value="item.id">{{ item.name }}</option>
-                                </select>
-                            </div>
-                            <div v-if="form.general.team_id != 0 && (employees && employees.length > 0)" class="mt-6">
-                                <label for="employee-monitoring">Subjek Monitoring</label>
-                                <select required name="employee_id" id="employee-monitoring" v-model="form.general.employee_id" type="text" class="mt-3 focus:ring-purple-500 focus:border-purple-500 block w-full pl-4 sm:text-sm border-gray-300 rounded-md">
-                                    <option :value="0">Pilih Pegawai atau Subjek</option>
-                                    <option v-for="(item, index) in employees" :key="`employee-${index}`" :value="item.id">{{ item.name }}</option>
-                                </select>
-                            </div>
-                            <div class="mt-6">
-                                <label for="description-monitoring">Deskripsi Monitoring</label>
-                                <div class="border-2 border-gray-300 rounded mt-3 hidden md:block">
-                                    <ckeditor placeholder="e.g. Tujuan monitoring ini adalah untuk kepentingan bersama" :editor="editor" v-model="form.general.description"></ckeditor>
+                        <div v-if="menuForms[menuIndex] != null && menuForms[menuIndex] != undefined">
+                            <form v-if="menuForms[menuIndex].name == 'general'" @submit.prevent="submitGeneral" action="#">
+                                <div class="mt-6">
+                                    <label for="title-monitoring">Judul Monitoring</label>
+                                    <input required name="title" id="title-monitoring" v-model="form.general.title" type="text" placeholder="e.g. Monitoring Jembatan Bandung" class="mt-3 focus:ring-purple-500 focus:border-purple-500 block w-full pl-4 sm:text-sm border-gray-300 rounded-md">
                                 </div>
-                                <div class="rounded mt-3 block md:hidden">
-                                    <textarea required name="title" v-model="form.general.description" type="text" placeholder="e.g. Deskripsi Monitoring Jembatan Bandung" class="mt-3 focus:ring-purple-500 focus:border-purple-500 block w-full pl-4 sm:text-sm border-gray-300 rounded-md"></textarea>
+                                <div class="mt-6">
+                                    <label for="team-monitoring">Tim Monitoring</label>
+                                    <select @change="getEmployee()" required name="team_id" id="team-monitoring" v-model="form.general.team_id" type="text" class="mt-3 focus:ring-purple-500 focus:border-purple-500 block w-full pl-4 sm:text-sm border-gray-300 rounded-md">
+                                        <option :value="0">Pilih Tim Monitoring</option>
+                                        <option v-for="(item, index) in teams" :key="`team-${index}`" :value="item.id">{{ item.name }}</option>
+                                    </select>
                                 </div>
+                                <div v-if="form.general.team_id != 0 && (employees && employees.length > 0)" class="mt-6">
+                                    <label for="employee-monitoring">Subjek Monitoring</label>
+                                    <select required name="employee_id" id="employee-monitoring" v-model="form.general.employee_id" type="text" class="mt-3 focus:ring-purple-500 focus:border-purple-500 block w-full pl-4 sm:text-sm border-gray-300 rounded-md">
+                                        <option :value="0">Pilih Pegawai atau Subjek</option>
+                                        <option v-for="(item, index) in employees" :key="`employee-${index}`" :value="item.id">{{ item.name }}</option>
+                                    </select>
+                                </div>
+                                <div class="mt-6">
+                                    <label for="description-monitoring">Deskripsi Monitoring</label>
+                                    <div class="border-2 border-gray-300 rounded mt-3 hidden md:block">
+                                        <ckeditor placeholder="e.g. Tujuan monitoring ini adalah untuk kepentingan bersama" :editor="editor" v-model="form.general.description"></ckeditor>
+                                    </div>
+                                    <div class="rounded mt-3 block md:hidden">
+                                        <textarea required name="title" v-model="form.general.description" type="text" placeholder="e.g. Deskripsi Monitoring Jembatan Bandung" class="mt-3 focus:ring-purple-500 focus:border-purple-500 block w-full pl-4 sm:text-sm border-gray-300 rounded-md"></textarea>
+                                    </div>
+                                </div>
+                                <div class="mt-6">
+                                    <button type="submit" class="text-white w-full bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
+                                        Simpan & Lanjutkan
+                                    </button>
+                                </div>
+                            </form>
+
+                            <div v-if="menuForms[menuIndex].name == 'category'">
+                                <form @submit.prevent="onSubmitInput" action="#">
+                                    <div v-if="inputs.category != null && inputs.category != undefined" @submit.prevent="submitGeneral" action="#">
+                                        <div v-for="(item, index) in inputs.category" :key="`category-form-${index}`" class="my-3">
+                                            <label class="font-semibold" :for="`field-data-${index}`">{{ item.label }}</label>
+                                            <div v-if="inputType(item.type)">
+                                                <div v-if="item.image != null">
+                                                    <img class="object-cover object-center w-full h-auto rounded-lg h-48" :src="'/monitoring/input/'+item.image" :alt="item.image">
+                                                </div>
+                                                <div v-if="item.type == 'text'">
+                                                    <input :placeholder="item.placeholder == null ? 'Masukkan data '+item.label : item.placeholder"
+                                                        type="text"
+                                                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-purple-500 block w-full p-2.5">
+                                                    <small v-if="item.description != null" v-html="item.description"></small>
+                                                </div>
+
+                                                <div v-if="item.type == 'textarea'">
+                                                    <ckeditor :placeholder="item.placeholder == null ? 'Masukkan data '+item.label : item.placeholder" :editor="editor"></ckeditor>
+                                                    <small v-if="item.description != null" v-html="item.description"></small>
+                                                </div>
+
+                                                <div v-if="item.type == 'number'">
+                                                    <input :placeholder="item.placeholder == null ? 'Masukkan data '+item.label : item.placeholder"
+                                                        type="number"
+                                                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-purple-500 block w-full p-2.5">
+                                                    <small v-if="item.description != null" v-html="item.description"></small>
+                                                </div>
+
+                                                <div v-if="item.type == 'checkbox'">
+                                                    <div v-if="item.option.length > 0">
+                                                        <div v-for="(option, indexOption) in item.option" :key="`option-${indexOption}`">
+                                                            <div class="flex items-center mb-4">
+                                                                <input :id="`option-${index}-value-${indexOption}`" type="checkbox" :name="`option-checkbox-${index}-value`" :value="item.value" class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 focus:ring-2" :aria-labelledby="`option-${index}-${indexOption}-checkbox`" :aria-describedby="`option-${index}-${indexOption}-checkbox`">
+                                                                <label :for="`option-${index}-value-${indexOption}`" class="block ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+                                                                {{ option.value }}
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div v-else>
+                                                        <div class="p-4 mb-4 text-sm text-red-700 bg-red-100 rounded-lg mt-2" role="alert">
+                                                            <span class="font-medium">Perlu Diperthatikan! :</span> Opsi kosong, beritahu admin untuk mengisi opsi.
+                                                        </div>
+                                                    </div>
+                                                    <div class="flex gap-x-2 w-full">
+                                                        <div class="self-center"><span>Yang lain :</span></div>
+                                                        <div class="justify-self-stretch">
+                                                            <input placeholder="Apabila ada" type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-purple-500 block w-full p-2.5">
+                                                        </div>
+                                                    </div>
+                                                    <small v-if="item.description != null" v-html="item.description"></small>
+                                                </div>
+
+                                                <div v-if="item.type == 'radio'">
+                                                    <div v-if="item.option.length > 0">
+                                                        <div v-for="(option, indexOption) in item.option" :key="`option-${indexOption}`">
+                                                            <div class="flex items-center mb-4">
+                                                                <input :id="`option-${index}-value-${indexOption}`" type="radio" :name="`option-radio-${index}-value`" :value="item.value" class="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300" :aria-labelledby="`option-${index}-${indexOption}`" :aria-describedby="`option-${index}-${indexOption}`">
+                                                                <label :for="`option-${index}-value-${indexOption}`" class="block ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+                                                                {{ option.value }}
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div v-else>
+                                                        <div class="p-4 mb-4 text-sm text-red-700 bg-red-100 rounded-lg mt-2" role="alert">
+                                                            <span class="font-medium">Perlu Diperthatikan! :</span> Opsi kosong, beritahu admin untuk mengisi opsi.
+                                                        </div>
+                                                    </div>
+                                                    <small v-if="item.description != null" v-html="item.description"></small>
+                                                </div>
+
+                                                <div v-if="item.type == 'dropdown'">
+                                                    <select :placeholder="item.placeholder == null ? 'Masukkan data '+item.label : item.placeholder"
+                                                    type="text"
+                                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                                                        <option value="">{{ item.placeholder == null ? 'Pilih data '+item.label : item.placeholder }}</option>
+                                                        <option v-for="(option, indexOption) in item.option" :key="`option-${indexOption}`" :value="option.value">{{ option.value }}</option>
+                                                    </select>
+                                                    <div v-if="item.option.length <= 0">
+                                                        <div class="p-4 mb-4 text-sm text-red-700 bg-red-100 rounded-lg mt-2" role="alert">
+                                                            <span class="font-medium">Perlu Diperthatikan! :</span> Opsi kosong, beritahu admin untuk mengisi opsi.
+                                                        </div>
+                                                    </div>
+                                                    <small v-if="item.description != null" v-html="item.description"></small>
+                                                </div>
+
+                                                <div v-if="item.type == 'file'">
+                                                    <input :placeholder="item.placeholder == null ? 'Pilih data '+item.label : item.placeholder"
+                                                        type="file"
+                                                        class="block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent">
+                                                    <small v-if="item.description != null" v-html="item.description"></small>
+                                                </div>
+
+                                                <div v-if="item.type == 'date'">
+                                                    <div class="relative">
+                                                        <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
+                                                            <svg class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path></svg>
+                                                        </div>
+                                                        <input :placeholder="item.placeholder == null ? 'Tentukan tanggal data '+item.label : item.placeholder" type="date" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5">
+                                                        <small v-if="item.description != null" v-html="item.description"></small>
+                                                    </div>
+                                                </div>
+
+                                                <div v-if="item.type == 'time'">
+                                                    <div class="relative">
+                                                        <input :placeholder="item.placeholder == null ? 'Tentukan waktu data '+item.label : item.placeholder" type="time" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5">
+                                                        <small v-if="item.description != null" v-html="item.description"></small>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div v-else>
+                                                <div v-if="item.type == 'description'">
+                                                    <div v-html="item.description"></div>
+                                                </div>
+                                                <div v-if="item.type == 'image'">
+                                                    <img class="object-cover object-center w-full h-auto rounded-lg" :src="'/monitoring/input/'+item.image" :alt="item.image">
+                                                    <small v-if="item.description != null" v-html="item.description"></small>
+                                                </div>
+                                                <div v-if="item.type == 'media-youtube'">
+                                                    <YouTube
+                                                        width="100%"
+                                                        :src="item.link"
+                                                        @ready="onReadyYoutube(index)"
+                                                        :ref="`youtube-${index}`" />
+                                                    <small v-if="item.description != null" v-html="item.description"></small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
                             </div>
-                            <div class="mt-6">
-                                <button type="submit" class="text-white w-full bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
-                                    Simpan & Lanjutkan
-                                </button>
+
+                            <div v-if="menuForms[menuIndex].name == 'object'">
+                                <form v-if="inputs.object != null && inputs.object != undefined" @submit.prevent="submitGeneral" action="#">
+                                    <div v-for="(item, index) in inputs.object" :key="`object-form-${index}`" class="my-3">
+                                        {{ item.label != null ? item.label : '-' }}
+                                        <div v-if="item.type == 'media-youtube'">
+                                            <YouTube
+                                                width="100%"
+                                                :src="item.link"
+                                                @ready="onReadyYoutube(index)"
+                                                :ref="`youtube-${index}`" />
+                                        </div>
+                                    </div>
+                                </form>
                             </div>
-                        </form>
+
+                            <div v-if="menuForms[menuIndex].name == 'monitoring'">
+                                <form v-if="inputs.monitoring != null && inputs.monitoring != undefined" @submit.prevent="submitGeneral" action="#">
+                                    <div v-for="(item, index) in inputs.monitoring" :key="`monitoring-form-${index}`" class="my-3">
+                                        {{ item.label != null ? item.label : '-' }}
+                                    </div>
+                                </form>
+                            </div>
+
+                        </div>
 
                     </div>
                 </div>
@@ -116,14 +275,16 @@ import MUnderConstruction from '@/Components/MUnderConstruction'
 import { ArrowLeftIcon, PlusCircleIcon, FileTextIcon, ImageIcon, TrashIcon, MoreVerticalIcon, EditIcon, EyeIcon } from '@zhuowenli/vue-feather-icons'
 import MToast from '@/Components/MToast'
 import MNoData from '@/Components/MNoData.vue'
+import YouTube from 'vue3-youtube'
 
 export default defineComponent({
-    props: ['object', 'category', 'teams', 'inputs', 'monitoring', 'list_employee'],
+    props: ['object', 'category', 'teams', 'inputs', 'monitoring', 'list_employee', 'menu_index'],
     components: {
         MoreVerticalIcon,
         FileTextIcon,
         EyeIcon,
         AppLayout,
+        YouTube,
         MToast,
         TrashIcon,
         MNoData,
@@ -137,7 +298,8 @@ export default defineComponent({
     data() {
         return {
             editor: InlineEditor,
-            menuIndex: 1,
+            menuIndex: 0,
+            values: [],
             menuForms: [
             {   name: 'general',
                 label: 'Umum',
@@ -170,6 +332,10 @@ export default defineComponent({
     mounted() {
         this.setMenu()
         this.setInput()
+        this.setModelValues()
+        if(this.menu_index != null && this.menu_index != undefined) {
+            this.menuIndex = this.menu_index
+        }
         this.toast.active = this.$page.props.flash.message != null || this.$page.props.flash.message != undefined ? true : false
         if(this.$page.props.flash.status == 'success') this.toast.color = 'green'
         else if(this.$page.props.flash.status == 'failed') this.toast.color = 'red'
@@ -178,6 +344,12 @@ export default defineComponent({
         }, 5000);
     },
     methods: {
+        setModelValues() {
+
+        },
+        onReadyYoutube(index) {
+            this.$refs['youtube-'+index].playVideo()
+        },
         lowerCased(str) {
             return str.toLowerCase()
         },
@@ -200,6 +372,11 @@ export default defineComponent({
             setTimeout(() => {
                 this.toast.active = false
             }, 5000);
+        },
+        inputType(type) {
+            let nonInputTypes = ['image', 'description', 'media-youtube'];
+            if(!nonInputTypes.includes(type)) return true
+            else return false
         },
         setMenu() {
             if(this.inputs.category.length > 0) {
@@ -247,7 +424,11 @@ export default defineComponent({
                 }))
                 .post(this.route('app.monitoring.update', {
                     id: this.monitoring.id
-                }))
+                }), {
+                    onFinish:() => {
+                        this.menuIndex = 1
+                    }
+                })
         },
         goBack() {
             this.$inertia.get(this.route('app.monitoring.index'), {
@@ -318,3 +499,10 @@ export default defineComponent({
     },
 })
 </script>
+
+<style scoped>
+.ck-editor__editable_inline {
+    border: 2px solid gainsboro;
+    border-radius: 12px !important;
+}
+</style>

@@ -37,11 +37,6 @@ class Input extends Model
         'type',
         'placeholder',
         'description',
-        'string_value',
-        'date_value',
-        'time_value',
-        'number_value',
-        'file_value',
     ];
 
     public static function getAvailableType(): array
@@ -75,6 +70,11 @@ class Input extends Model
     public function object(): BelongsTo
     {
         return $this->belongsTo(ObjectData::class, 'monitoring_object_id', 'id');
+    }
+
+    public function value(): HasMany
+    {
+        return $this->hasMany(InputValue::class, 'monitoring_input_id', 'id');
     }
 
     public function option(): HasMany

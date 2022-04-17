@@ -112,6 +112,7 @@ class MonitoringController extends Controller
         $categoryId = $request->get('categoryId', Category::query()->first()->id);
         $objectId = $request->get('objectId', ObjectData::query()->first()->id);
         $teams = Team::all();
+        $menuIndex = $request->get('menu_index', 1);
         $inputs = [];
         $inputs['category'] = Input::query()->with('option')
             ->where('monitoring_category_id', Category::query()->first()->id)
@@ -138,6 +139,7 @@ class MonitoringController extends Controller
             'category' => $category,
             'inputs' => $inputs,
             'list_employee' => $employees,
+            'menu_index' => $menuIndex,
             'teams' => $teams,
             'monitoring' => $monitoring,
         ]);

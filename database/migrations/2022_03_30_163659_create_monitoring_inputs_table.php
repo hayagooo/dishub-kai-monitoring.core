@@ -26,11 +26,6 @@ return new class extends Migration
             $table->enum('type', Input::getAvailableType());
             $table->string('placeholder')->nullable();
             $table->longText('description')->nullable();
-            $table->string('string_value')->nullable();
-            $table->date('date_value')->nullable();
-            $table->time('time_value')->nullable();
-            $table->float('number_value')->nullable();
-            $table->string('file_value')->nullable();
             $table->timestamps();
         });
     }
