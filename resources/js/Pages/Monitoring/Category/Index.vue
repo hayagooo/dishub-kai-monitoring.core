@@ -179,7 +179,7 @@
                                 </div>
                             </div>
 
-                            <div id="option-modal" tabindex="-1" :class="{'hidden' : !deleteModal.show}" class="flex overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 w-full md:inset-0 bg-black/30 backdrop-blur h-screen md:h-full">
+                            <div id="delete-modal" tabindex="-1" :class="{'hidden' : !deleteModal.show}" class="flex overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 w-full md:inset-0 bg-black/30 backdrop-blur h-screen md:h-full">
                                 <div class="relative p-4 w-full max-w-md h-full md:h-auto mx-auto self-center">
                                     <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
                                         <div class="flex justify-between items-center p-5 rounded-t border-b dark:border-gray-600">

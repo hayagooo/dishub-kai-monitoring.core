@@ -7,6 +7,7 @@ use App\Jobs\Monitoring\CreateData;
 use App\Jobs\Monitoring\EditData;
 use App\Models\Employee;
 use App\Models\Monitoring\Category;
+use App\Models\Monitoring\Image;
 use App\Models\Monitoring\Input;
 use App\Models\Monitoring\Monitoring;
 use App\Models\Monitoring\ObjectData;
@@ -130,12 +131,14 @@ class MonitoringController extends Controller
             ->get();
         $monitoring = Monitoring::query()->find($id);
         $object = ObjectData::query()->find($objectId);
+        $images = Image::query()->where('monitoring_id', $id)->get();
         $employees = Employee::with('team')->whereHas('team', function($query) use($monitoring) {
             $query->where('team_id', $monitoring->team_id);
         })->get();
         $category = Category::query()->find($categoryId);
         return Inertia::render('Monitoring/Edit', [
             'object' => $object,
+            'images' => $images,
             'category' => $category,
             'inputs' => $inputs,
             'list_employee' => $employees,
