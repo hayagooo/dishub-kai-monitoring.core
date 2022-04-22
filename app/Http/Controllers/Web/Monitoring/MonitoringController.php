@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Web\Monitoring;
 
+use App\Exports\MonitoringExport;
 use App\Http\Controllers\Controller;
 use App\Jobs\Monitoring\CreateData;
 use App\Jobs\Monitoring\EditData;
@@ -12,7 +13,9 @@ use App\Models\Monitoring\Input;
 use App\Models\Monitoring\Monitoring;
 use App\Models\Monitoring\ObjectData;
 use App\Models\Team;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Inertia\Inertia;
 
 class MonitoringController extends Controller
@@ -27,9 +30,13 @@ class MonitoringController extends Controller
         $categoryId = $request->get('categoryId', Category::query()->first()->id);
         $objectId = $request->get('objectId', Category::query()->first()->id);
         $monitorings = Monitoring::query()
+            ->when($request->get('title') != null, function($query) use($request) {
+                $query->where('title', 'LIKE', '%'.$request->get('title').'%');
+            })
             ->with('category', 'object', 'team', 'employee', 'input')
             ->where('monitoring_category_id', $categoryId)
             ->where('monitoring_object_id', $objectId)
+            ->orderBy('created_at', $request->get('sort', 'DESC'))
             ->paginate($request->get('pagination', 10));
         $object = ObjectData::query()->find($objectId);
         $category = Category::query()->find($categoryId);
@@ -115,16 +122,18 @@ class MonitoringController extends Controller
         $teams = Team::all();
         $menuIndex = $request->get('menu_index', 1);
         $inputs = [];
-        $inputs['category'] = Input::query()->with('option')
+        $inputs['category'] = Input::query()->with(['option', 'valueData' => function($query) use($id) {
+            $query->where('monitoring_id', $id);
+        }])
             ->where('monitoring_category_id', Category::query()->first()->id)
             ->where('monitoring_object_id', null)
             ->get();
-        $inputs['object'] = Input::query()->with('option')
+        $inputs['object'] = Input::query()->with('option', 'valueData')
             ->where('monitoring_category_id', Category::query()->first()->id)
             ->where('monitoring_object_id', ObjectData::query()->first()->id)
             ->where('monitoring_id', null)
             ->get();
-        $inputs['monitoring'] = Input::query()->with('option')
+        $inputs['monitoring'] = Input::query()->with('option', 'valueData')
             ->where('monitoring_category_id', Category::query()->first()->id)
             ->where('monitoring_object_id', ObjectData::query()->first()->id)
             ->where('monitoring_id', $id)
@@ -134,11 +143,14 @@ class MonitoringController extends Controller
         $images = Image::query()->where('monitoring_id', $id)->get();
         $employees = Employee::with('team')->whereHas('team', function($query) use($monitoring) {
             $query->where('team_id', $monitoring->team_id);
-        })->get();
+        })->orderBy('created_at', 'DESC')->get();
+        $token = User::find(Auth::guard('api')->id())->createToken('authentification')->plainTextToken;
         $category = Category::query()->find($categoryId);
+        // return response()->json($inputs);
         return Inertia::render('Monitoring/Edit', [
             'object' => $object,
             'images' => $images,
+            'token' => $token,
             'category' => $category,
             'inputs' => $inputs,
             'list_employee' => $employees,
@@ -181,5 +193,15 @@ class MonitoringController extends Controller
         $data = Monitoring::query()->find($id);
         $data->delete();
         return redirect()->back()->with('message', 'Data monitoring berhasil dihapus')->with('status', 'success');
+    }
+
+    public function export_excel(Request $request)
+    {
+        $categoryId = $request->get('categoryId', Category::query()->first()->id);
+        $objectId = $request->get('objectId', Category::query()->first()->id);
+        $object = ObjectData::query()->find($objectId);
+        $category = Category::query()->find($categoryId);
+        // $monitorings = Monitoring::query()->with('option', 'valueData', 'team', 'employee', 'object', 'category')->get;
+        return (new MonitoringExport($categoryId, $objectId))->download('Monitoring Data-'.$category->name.'-'.$object->name.'.xlsx');
     }
 }

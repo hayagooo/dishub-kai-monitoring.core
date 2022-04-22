@@ -4,6 +4,7 @@ use App\Http\Controllers\Api\EmployeeController;
 use App\Http\Controllers\Api\Monitoring\CategoryController;
 use App\Http\Controllers\Api\Monitoring\ImageController;
 use App\Http\Controllers\Api\Monitoring\InputController;
+use App\Http\Controllers\Api\Monitoring\InputValueController;
 use App\Http\Controllers\Api\Monitoring\MonitoringController;
 use App\Http\Controllers\Api\Monitoring\ObjectDataController;
 use App\Http\Controllers\Api\Monitoring\OptionController;
@@ -41,6 +42,7 @@ Route::name('api.')->group(function() {
         Route::resource('/option-input-monitoring', OptionController::class);
         Route::resource('/image-monitoring', ImageController::class);
         Route::resource('/user', UserController::class);
+        Route::post('/input-value', [InputValueController::class, 'store'])->name('value.store');
         Route::resource('/team', TeamController::class);
         Route::post('/team/{id}/add/employee', [TeamController::class, 'addEmployee']);
         Route::post('/team/{id}/remove/employee', [TeamController::class, 'removeEmployee']);
