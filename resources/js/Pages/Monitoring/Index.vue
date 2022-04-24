@@ -176,7 +176,7 @@
                                 </div>
                             </div>
                             <div id="pagination-data" class="flex w-full mt-3 justify-end">
-                                <m-pagination-data :paginationData="monitorings" :data="dataNeed" :preserveState="false"/>
+                                <m-pagination-data :paginationData="monitorings" :data="dataNeed"/>
                             </div>
                         </div>
                         <div v-else class="text-center">
