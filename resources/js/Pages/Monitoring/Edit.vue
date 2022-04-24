@@ -26,13 +26,13 @@
                     </div>
                     <div class="grid grid-cols-2">
                          <div class="col-span-2 md:col-span-1 p-7 border-b-2 md:border-b-0 border-gray-100 flex flex-nowrap">
-                            <img v-if="category.icon == null" src="@/Assets/defaults/category.png" class="h-12 w-auto inline-block" alt="Default Icon">
-                            <img v-else :src="'/monitoring/icon/'+category.icon" class="h-12 w-auto inline-block" alt="Default Icon">
+                            <img v-if="category.icon == null" src="@/Assets/defaults/category.png" class="h-12 w-12 rounded-lg object-cover object-center inline-block" alt="Default Icon">
+                            <img v-else :src="'/monitoring/icon/'+category.icon" class="h-12 w-12 rounded-lg object-cover object-center inline-block" alt="Default Icon">
                             <p class="self-center text-base md:text-lg text-gray-700 inline-block ml-4">{{ category.name }}</p>
                         </div>
                         <div class="col-span-2 md:col-span-1 p-7 flex flex-nowrap">
-                            <img v-if="object.icon == null" src="@/Assets/defaults/object.png" class="h-12 w-auto inline-block" alt="Default Icon">
-                            <img v-else :src="'/monitoring/icon/'+object.icon" class="h-12 w-auto inline-block" alt="Default Icon">
+                            <img v-if="object.icon == null" src="@/Assets/defaults/object.png" class="h-12 w-12 rounded-lg object-cover object-center inline-block" alt="Default Icon">
+                            <img v-else :src="'/monitoring/icon/'+object.icon" class="h-12 w-12 rounded-lg object-cover object-center inline-block" alt="Default Icon">
                             <p class="self-center text-base md:text-lg text-gray-700 inline-block ml-4">{{ object.name }}</p>
                         </div>
                     </div>
@@ -95,7 +95,7 @@
                                     </div>
                                 </div>
                                 <div class="mt-6">
-                                    <button type="submit" class="text-white w-full bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
+                                    <button type="submit" :disabled="is_loading" class="text-white w-full bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
                                         <span v-if="!loading_button">
                                                 Simpan
                                             </span>
@@ -146,7 +146,7 @@
                                                     <div v-if="item.option.length > 0">
                                                         <div v-for="(option, indexOption) in item.option" :key="`option-${indexOption}`">
                                                             <div class="flex items-center mb-4">
-                                                                <input @change="updateOption(option, index, indexOption)" :id="`option-${index}-value-${indexOption}`" type="checkbox" :name="`option-checkbox-${index}-value`" :checked="option.is_checked == 1" :value="item.value" class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 focus:ring-2" :aria-labelledby="`option-${index}-${indexOption}-checkbox`" :aria-describedby="`option-${index}-${indexOption}-checkbox`">
+                                                                <input @change="updateOption(option, index, indexOption)" :id="`option-${index}-value-${indexOption}`" type="checkbox" :name="`option-checkbox-${index}-value`" :checked="option.option_value.length > 0" :value="item.value" class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 focus:ring-2" :aria-labelledby="`option-${index}-${indexOption}-checkbox`" :aria-describedby="`option-${index}-${indexOption}-checkbox`">
                                                                 <label :for="`option-${index}-value-${indexOption}`" class="block ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">
                                                                 {{ option.value }}
                                                                 </label>
@@ -171,7 +171,7 @@
                                                     <div v-if="item.option.length > 0">
                                                         <div v-for="(option, indexOption) in item.option" :key="`option-${indexOption}`">
                                                             <div class="flex items-center mb-4">
-                                                                <input :checked="option.is_checked == 1" @change="onChangeReset(option, index, indexOption, 'category')" :id="`option-${index}-value-${indexOption}`" type="radio" :name="`option-radio-${index}-value`" :value="item.value" class="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300" :aria-labelledby="`option-${index}-${indexOption}`" :aria-describedby="`option-${index}-${indexOption}`">
+                                                                <input :checked="option.option_value.length > 0" @change="onChangeReset(option, index, indexOption, 'category')" :id="`option-${index}-value-${indexOption}`" type="radio" :name="`option-radio-${index}-value`" :value="item.value" class="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300" :aria-labelledby="`option-${index}-${indexOption}`" :aria-describedby="`option-${index}-${indexOption}`">
                                                                 <label :for="`option-${index}-value-${indexOption}`" class="block ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">
                                                                 {{ option.value }}
                                                                 </label>
@@ -187,12 +187,19 @@
                                                 </div>
 
                                                 <div v-if="item.type == 'dropdown'">
-                                                    <select @change="onChangeSelect(index, 'category')" v-model="values.category[index].text_value" :placeholder="item.placeholder == null ? 'Masukkan data '+item.label : item.placeholder"
-                                                    type="text"
-                                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                                                        <option value="">{{ item.placeholder == null ? 'Pilih data '+item.label : item.placeholder }}</option>
-                                                        <option :selected="option.is_checked == 1" v-for="(option, indexOption) in item.option" :key="`option-${indexOption}`" :value="option.id">{{ option.value }}</option>
-                                                    </select>
+                                                    <div class="flex flex-wrap gap-4">
+                                                        <div class="justify-self-stretch place-self-auto shrink w-full" :class="{'w-7/12 md:w-9/12' : values.category[index].text_value != '', 'w-full': values.category[index].text_value == ''}">
+                                                            <select @change="onChangeSelect(index, 'category')" v-model="values.category[index].text_value" :placeholder="item.placeholder == null ? 'Masukkan data '+item.label : item.placeholder"
+                                                            type="text"
+                                                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                                                                <option value="">{{ item.placeholder == null ? 'Pilih data '+item.label : item.placeholder }}</option>
+                                                                <option :selected="option.option_value.length > 0" v-for="(option, indexOption) in item.option" :key="`option-${indexOption}`" :value="option.id">{{ option.value }}</option>
+                                                            </select>
+                                                        </div>
+                                                        <div v-if="values.category[index].text_value != ''" class="justify-self-end place-self-end">
+                                                            <button type="button" @click="onDeleteOptionValue(item, index)" class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2">Kosongkan</button>
+                                                        </div>
+                                                    </div>
                                                     <div v-if="item.option.length <= 0">
                                                         <div class="p-4 mb-4 text-sm text-red-700 bg-red-100 rounded-lg mt-2" role="alert">
                                                             <span class="font-medium">Perlu Diperthatikan! :</span> Opsi kosong, beritahu admin untuk mengisi opsi.
@@ -261,7 +268,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <button type="submit" class="text-white w-full bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
+                                        <button type="submit" :disabled="is_loading" class="text-white w-full bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
                                             <span v-if="!loading_button">
                                                 Simpan
                                             </span>
@@ -313,7 +320,7 @@
                                                     <div v-if="item.option.length > 0">
                                                         <div v-for="(option, indexOption) in item.option" :key="`option-${indexOption}`">
                                                             <div class="flex items-center mb-4">
-                                                                <input @change="updateOption(option, index, indexOption)" :id="`option-${index}-value-${indexOption}`" type="checkbox" :name="`option-checkbox-${index}-value`" :checked="option.is_checked == 1" :value="item.value" class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 focus:ring-2" :aria-labelledby="`option-${index}-${indexOption}-checkbox`" :aria-describedby="`option-${index}-${indexOption}-checkbox`">
+                                                                <input @change="updateOption(option, index, indexOption)" :id="`option-${index}-value-${indexOption}`" type="checkbox" :name="`option-checkbox-${index}-value`" :checked="option.option_value.length > 0" :value="item.value" class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 focus:ring-2" :aria-labelledby="`option-${index}-${indexOption}-checkbox`" :aria-describedby="`option-${index}-${indexOption}-checkbox`">
                                                                 <label :for="`option-${index}-value-${indexOption}`" class="block ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">
                                                                 {{ option.value }}
                                                                 </label>
@@ -338,7 +345,7 @@
                                                     <div v-if="item.option.length > 0">
                                                         <div v-for="(option, indexOption) in item.option" :key="`option-${indexOption}`">
                                                             <div class="flex items-center mb-4">
-                                                                <input :checked="option.is_checked == 1" @change="onChangeReset(option, index, indexOption, 'object')" :id="`option-${index}-value-${indexOption}`" type="radio" :name="`option-radio-${index}-value`" :value="item.value" class="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300" :aria-labelledby="`option-${index}-${indexOption}`" :aria-describedby="`option-${index}-${indexOption}`">
+                                                                <input :checked="option.option_value.length > 0" @change="onChangeReset(option, index, indexOption, 'object')" :id="`option-${index}-value-${indexOption}`" type="radio" :name="`option-radio-${index}-value`" :value="item.value" class="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300" :aria-labelledby="`option-${index}-${indexOption}`" :aria-describedby="`option-${index}-${indexOption}`">
                                                                 <label :for="`option-${index}-value-${indexOption}`" class="block ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">
                                                                 {{ option.value }}
                                                                 </label>
@@ -354,12 +361,19 @@
                                                 </div>
 
                                                 <div v-if="item.type == 'dropdown'">
-                                                    <select @change="onChangeSelect(index, 'object')" v-model="values.object[index].text_value" :placeholder="item.placeholder == null ? 'Masukkan data '+item.label : item.placeholder"
-                                                    type="text"
-                                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                                                        <option value="">{{ item.placeholder == null ? 'Pilih data '+item.label : item.placeholder }}</option>
-                                                        <option :selected="option.is_checked == 1" v-for="(option, indexOption) in item.option" :key="`option-${indexOption}`" :value="option.id">{{ option.value }}</option>
-                                                    </select>
+                                                    <div class="flex flex-wrap gap-4">
+                                                        <div class="justify-self-stretch place-self-auto shrink w-full" :class="{'w-7/12 md:w-9/12' : values.object[index].text_value != '', 'w-full': values.object[index].text_value == ''}">
+                                                            <select @change="onChangeSelect(index, 'object')" v-model="values.object[index].text_value" :placeholder="item.placeholder == null ? 'Masukkan data '+item.label : item.placeholder"
+                                                            type="text"
+                                                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                                                                <option value="">{{ item.placeholder == null ? 'Pilih data '+item.label : item.placeholder }}</option>
+                                                                <option :selected="option.option_value.length > 0" v-for="(option, indexOption) in item.option" :key="`option-${indexOption}`" :value="option.id">{{ option.value }}</option>
+                                                            </select>
+                                                        </div>
+                                                        <div v-if="values.object[index].text_value != ''" class="justify-self-end place-self-end">
+                                                            <button type="button" @click="onDeleteOptionValue(item, index)" class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2">Kosongkan</button>
+                                                        </div>
+                                                    </div>
                                                     <div v-if="item.option.length <= 0">
                                                         <div class="p-4 mb-4 text-sm text-red-700 bg-red-100 rounded-lg mt-2" role="alert">
                                                             <span class="font-medium">Perlu Diperthatikan! :</span> Opsi kosong, beritahu admin untuk mengisi opsi.
@@ -428,7 +442,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <button type="submit" class="text-white w-full bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
+                                        <button type="submit" :disabled="is_loading" class="text-white w-full bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
                                             <span v-if="!loading_button">
                                                 Simpan
                                             </span>
@@ -449,7 +463,7 @@
                             <div v-if="menuForms[menuIndex].name == 'monitoring'">
                                 <form @submit.prevent="onSubmitInput('monitoring')" action="#">
                                     <div v-if="inputs.monitoring != null && inputs.monitoring != undefined">
-                                        <div v-for="(item, index) in inputs.monitoring" :key="`category-form-${index}`" class="my-3">
+                                        <div v-for="(item, index) in inputs.monitoring" :key="`monitoring-form-${index}`" class="my-3">
                                             <label class="font-semibold" :for="`field-data-${index}`">{{ item.label }}</label>
                                             <div v-if="inputType(item.type)">
                                                 <div v-if="item.image != null">
@@ -482,7 +496,7 @@
                                                     <div v-if="item.option.length > 0">
                                                         <div v-for="(option, indexOption) in item.option" :key="`option-${indexOption}`">
                                                             <div class="flex items-center mb-4">
-                                                                <input @change="updateOption(option, index, indexOption)" :id="`option-${index}-value-${indexOption}`" type="checkbox" :name="`option-checkbox-${index}-value`" :checked="option.is_checked == 1" :value="item.value" class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 focus:ring-2" :aria-labelledby="`option-${index}-${indexOption}-checkbox`" :aria-describedby="`option-${index}-${indexOption}-checkbox`">
+                                                                <input @change="updateOption(option, index, indexOption)" :id="`option-${index}-value-${indexOption}`" type="checkbox" :name="`option-checkbox-${index}-value`" :checked="option.option_value.length > 0" :value="item.value" class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 focus:ring-2" :aria-labelledby="`option-${index}-${indexOption}-checkbox`" :aria-describedby="`option-${index}-${indexOption}-checkbox`">
                                                                 <label :for="`option-${index}-value-${indexOption}`" class="block ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">
                                                                 {{ option.value }}
                                                                 </label>
@@ -507,7 +521,7 @@
                                                     <div v-if="item.option.length > 0">
                                                         <div v-for="(option, indexOption) in item.option" :key="`option-${indexOption}`">
                                                             <div class="flex items-center mb-4">
-                                                                <input :checked="option.is_checked == 1" @change="onChangeReset(option, index, indexOption, 'object')" :id="`option-${index}-value-${indexOption}`" type="radio" :name="`option-radio-${index}-value`" :value="item.value" class="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300" :aria-labelledby="`option-${index}-${indexOption}`" :aria-describedby="`option-${index}-${indexOption}`">
+                                                                <input :checked="option.option_value.length > 0" @change="onChangeReset(option, index, indexOption, 'monitoring')" :id="`option-${index}-value-${indexOption}`" type="radio" :name="`option-radio-${index}-value`" :value="item.value" class="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300" :aria-labelledby="`option-${index}-${indexOption}`" :aria-describedby="`option-${index}-${indexOption}`">
                                                                 <label :for="`option-${index}-value-${indexOption}`" class="block ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">
                                                                 {{ option.value }}
                                                                 </label>
@@ -523,12 +537,19 @@
                                                 </div>
 
                                                 <div v-if="item.type == 'dropdown'">
-                                                    <select @change="onChangeSelect(index, 'monitoring')" v-model="values.monitoring[index].text_value" :placeholder="item.placeholder == null ? 'Masukkan data '+item.label : item.placeholder"
-                                                    type="text"
-                                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                                                        <option value="">{{ item.placeholder == null ? 'Pilih data '+item.label : item.placeholder }}</option>
-                                                        <option :selected="option.is_checked == 1" v-for="(option, indexOption) in item.option" :key="`option-${indexOption}`" :value="option.id">{{ option.value }}</option>
-                                                    </select>
+                                                    <div class="flex flex-wrap gap-4">
+                                                        <div class="justify-self-stretch place-self-auto shrink w-full" :class="{'w-7/12 md:w-9/12' : values.monitoring[index].text_value != '', 'w-full': values.monitoring[index].text_value == ''}">
+                                                            <select @change="onChangeSelect(index, 'monitoring')" v-model="values.monitoring[index].text_value" :placeholder="item.placeholder == null ? 'Masukkan data '+item.label : item.placeholder"
+                                                            type="text"
+                                                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                                                                <option value="">{{ item.placeholder == null ? 'Pilih data '+item.label : item.placeholder }}</option>
+                                                                <option :selected="option.option_value.length > 0" v-for="(option, indexOption) in item.option" :key="`option-${indexOption}`" :value="option.id">{{ option.value }}</option>
+                                                            </select>
+                                                        </div>
+                                                        <div v-if="values.monitoring[index].text_value != ''" class="justify-self-end place-self-end">
+                                                            <button type="button" @click="onDeleteOptionValue(item, index)" class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2">Kosongkan</button>
+                                                        </div>
+                                                    </div>
                                                     <div v-if="item.option.length <= 0">
                                                         <div class="p-4 mb-4 text-sm text-red-700 bg-red-100 rounded-lg mt-2" role="alert">
                                                             <span class="font-medium">Perlu Diperthatikan! :</span> Opsi kosong, beritahu admin untuk mengisi opsi.
@@ -597,7 +618,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <button type="submit" class="text-white w-full bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
+                                        <button type="submit" :disabled="is_loading" class="text-white w-full bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
                                             <span v-if="!loading_button">
                                                 Simpan
                                             </span>
@@ -960,10 +981,10 @@ export default defineComponent({
             if(type == 'category') dataId = this.values.category[index].text_value
             else if(type == 'object') dataId = this.values.object[index].text_value
             else dataId = this.values.monitoring[index].text_value
-            if(dataId != null && dataId != '' && dataId != undefined) {
-                let option = mOptions.find(item => item.id == dataId)
-                this.updateOption(option, index, null)
-            }
+            // if(dataId != null && dataId != '' && dataId != undefined) {
+            let option = mOptions.find(item => item.id == dataId)
+            this.updateOption(option, index, null)
+            // }
         },
         onSubmitInput(type) {
             let mValue = null
@@ -980,11 +1001,11 @@ export default defineComponent({
                 fm.append('string_value', item.string_value)
                 fm.append('text_value', item.text_value)
                 fm.append('time_value', item.time_value)
-                if(item.date_value == '') fm.append('number_value', 0)                
+                if(item.date_value == '') fm.append('number_value', 0)
                 else fm.append('number_value', item.number_value)
-                if(item.date_value == '') fm.append('date_value', moment().format('YYYY-MM-DD'))                
+                if(item.date_value == '') fm.append('date_value', moment().format('YYYY-MM-DD'))
                 else fm.append('date_value', item.date_value)
-                if(item.time_value == '') fm.append('time_value', moment().format('HH:mm'))                
+                if(item.time_value == '') fm.append('time_value', moment().format('HH:mm'))
                 else fm.append('time_value', item.time_value)
                 axios.post(this.route('api.value.store'), fm, {
                     headers: {
@@ -1050,6 +1071,7 @@ export default defineComponent({
                     let fm = new FormData()
                     fm.append('input_id', item.monitoring_input_id)
                     fm.append('value', item.value)
+                    fm.append('monitoring_id', this.monitoring.id)
                     fm.append('is_checked', 0)
                     fm.append('_method', 'PATCH')
                     axios.post(this.route('api.option-input-monitoring.update', {
@@ -1090,18 +1112,58 @@ export default defineComponent({
         },
         updateOption(option, index, index_option) {
             let value
-            if(option.is_checked == 0) value = 1
-            else value = 0
+            if(option.option_value.length > 0) value = 0
+            else value = 1
             let fm = new FormData()
             fm.append('_method', 'PATCH')
             fm.append('input_id', option.monitoring_input_id)
+            fm.append('monitoring_id', this.monitoring.id)
             fm.append('value', option.value)
+            fm.append('option_id', option.id)
             fm.append('is_checked', value)
+            console.log(option)
+            console.log(value)
             axios.post(this.route('api.option-input-monitoring.update', {
                 id: option.id
             }), fm, {
                 headers: {
                     'Authorization': `Bearer ${this.token}`
+                }
+            }).then((response) => {
+                this.$inertia.get(this.route('app.monitoring.edit', {
+                    id: this.monitoring.id
+                }), {
+                    categoryId: this.category.id,
+                    objectId: this.object.id,
+                }, {
+                    preserveState: true,
+                    preserveScroll: true
+                })
+            })
+        },
+        onDeleteOptionValue(item, index) {
+            let menuName = this.menuForms[this.menuIndex].name
+            let optionId
+            if(menuName == 'category') optionId = this.values.category[index].text_value
+            else if(menuName == 'object') optionId = this.values.object[index].text_value
+            else optionId = this.values.monitoring[index].text_value
+            console.log([{
+                monitoringId: this.monitoring.id,
+                optionId: optionId,
+            }])
+
+            // console.log(optionId)
+            // return
+            this.$inertia.post(this.route('app.input-option.destroy', {
+                id: item.id
+            }), {
+                _method: 'DELETE',
+                monitoringId: this.monitoring.id,
+                optionId: optionId,
+            }, {
+                preserveScroll: true,
+                onFinish: () => {
+                    this.values.category[index].text_value = ''
                 }
             })
         },
@@ -1135,10 +1197,12 @@ export default defineComponent({
                 this.inputs.category.forEach((item, index) => {
                     let value_dropdown = ''
                     if(item.type == 'dropdown') {
-                        let option_checked = item.option.find(item => item.is_checked == 1)
-                        if(option_checked != undefined && option_checked != null) {
-                            value_dropdown = option_checked.id
-                        }
+                        item.option.forEach((option, indexOption) => {
+                            let value_checked = option.option_value.find(item => item.monitoring_input_option_id == option.id)
+                            if(value_checked != undefined && value_checked != null) {
+                                value_dropdown = value_checked.monitoring_input_option_id
+                            }
+                        })
                     }
                     let lengthData = this.inputs.category[index].value_data.length > 0
                     let dataValue =  this.inputs.category[index].value_data
@@ -1151,7 +1215,6 @@ export default defineComponent({
                         file_value: '',
                         time_value: dataValue[0] != null && lengthData && dataValue[0] != undefined ? dataValue[0].time_value : '',
                         number_value: dataValue[0] != null && lengthData && dataValue[0] != undefined ? dataValue[0].number_value : '',
-                        file_value: '',
                         text_value: dataValue[0] != null && lengthData && dataValue[0] != undefined ? dataValue[0].text_value : value_dropdown,
                     }
                     this.values.category.push(data)
@@ -1161,10 +1224,12 @@ export default defineComponent({
                 this.inputs.object.forEach((item, index) => {
                     let value_dropdown = ''
                     if(item.type == 'dropdown') {
-                        let option_checked = item.option.find(item => item.is_checked == 1)
-                        if(option_checked != undefined && option_checked != null) {
-                            value_dropdown = option_checked.id
-                        }
+                        item.option.forEach((option, indexOption) => {
+                            let value_checked = option.option_value.find(item => item.monitoring_input_option_id == option.id)
+                            if(value_checked != undefined && value_checked != null) {
+                                value_dropdown = value_checked.monitoring_input_option_id
+                            }
+                        })
                     }
                     let lengthData = this.inputs.object[index].value_data.length > 0
                     let dataValue =  this.inputs.object[index].value_data
@@ -1177,7 +1242,6 @@ export default defineComponent({
                         file_value: '',
                         time_value: dataValue[0] != null && lengthData && dataValue[0] != undefined ? dataValue[0].time_value : '',
                         number_value: dataValue[0] != null && lengthData && dataValue[0] != undefined ? dataValue[0].number_value : '',
-                        file_value: '',
                         text_value: dataValue[0] != null && lengthData && dataValue[0] != undefined ? dataValue[0].text_value : value_dropdown,
                     }
                     this.values.object.push(data)
@@ -1187,10 +1251,12 @@ export default defineComponent({
                 this.inputs.monitoring.forEach((item, index) => {
                     let value_dropdown = ''
                     if(item.type == 'dropdown') {
-                        let option_checked = item.option.find(item => item.is_checked == 1)
-                        if(option_checked != undefined && option_checked != null) {
-                            value_dropdown = option_checked.id
-                        }
+                        item.option.forEach((option, indexOption) => {
+                            let value_checked = option.option_value.find(item => item.monitoring_input_option_id == option.id)
+                            if(value_checked != undefined && value_checked != null) {
+                                value_dropdown = value_checked.monitoring_input_option_id
+                            }
+                        })
                     }
                     let lengthData = this.inputs.monitoring[index].value_data.length > 0
                     let dataValue =  this.inputs.monitoring[index].value_data
@@ -1203,12 +1269,12 @@ export default defineComponent({
                         file_value: '',
                         time_value: dataValue[0] != null && lengthData && dataValue[0] != undefined ? dataValue[0].time_value : '',
                         number_value: dataValue[0] != null && lengthData && dataValue[0] != undefined ? dataValue[0].number_value : '',
-                        file_value: '',
                         text_value: dataValue[0] != null && lengthData && dataValue[0] != undefined ? dataValue[0].text_value : value_dropdown,
                     }
                     this.values.monitoring.push(data)
                 })
             }
+            console.log(this.values)
         },
         onReadyYoutube(index) {
             this.$refs['youtube-'+index].playVideo()

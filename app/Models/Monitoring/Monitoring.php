@@ -49,7 +49,7 @@ class Monitoring extends Model
         return $this->belongsTo(Team::class, 'team_id', 'id');
     }
 
-    public function value(): HasMany
+    public function valueData(): HasMany
     {
         return $this->hasMany(InputValue::class, 'monitoring_input_id', 'id');
     }
@@ -57,5 +57,10 @@ class Monitoring extends Model
     public function employee(): BelongsTo
     {
         return $this->belongsTo(Employee::class, 'employee_id', 'id');
+    }
+
+    public function optionValue(): HasMany
+    {
+        return $this->hasMany(OptionValue::class, 'monitoring_id', 'id');
     }
 }

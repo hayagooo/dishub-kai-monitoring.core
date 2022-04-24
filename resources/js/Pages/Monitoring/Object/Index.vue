@@ -25,8 +25,8 @@
                         </div>
                     </div>
                     <div class="p-7 flex flex-nowrap">
-                        <img v-if="category.icon == null" src="@/Assets/defaults/category.png" class="h-12 w-auto inline-block" alt="Default Icon">
-                        <img v-else :src="'/monitoring/icon/'+category.icon" class="h-12 w-auto inline-block" alt="Default Icon">
+                        <img v-if="category.icon == null" src="@/Assets/defaults/category.png" class="h-12 w-12 rounded-lg object-cover object-center inline-block" alt="Default Icon">
+                        <img v-else :src="'/monitoring/icon/'+category.icon" class="h-12 w-12 rounded-lg object-cover object-center inline-block" alt="Default Icon">
                         <p class="self-center text-base md:text-lg text-gray-700 inline-block ml-4">{{ category.name }}</p>
                     </div>
                     <div id="objects" class="bg-gray-50 relative sm:rounded-xl p-7">
@@ -62,14 +62,14 @@
                                                             <div v-if="formModal.mode == 'create'">
                                                                 <div class="h-20 w-20 inline-block relative rounded-lg overflow-hidden">
                                                                     <img v-if="form.preview == null" src="@/Assets/defaults/object.png" class="h-20 w-auto inline-block" alt="Default Icon">
-                                                                    <img v-else :src="form.preview" class="h-20 w-auto inline-block" alt="Default Icon">
+                                                                    <img v-else :src="form.preview" class="h-20 w-20 rounded-lg object-cover object-center inline-block" alt="Default Icon">
                                                                 </div>
                                                             </div>
                                                             <div v-else>
                                                                 <div class="h-20 w-20 inline-block relative rounded-lg overflow-hidden">
                                                                     <div class="h-20 w-20 inline-block relative rounded-lg overflow-hidden">
                                                                         <img v-if="form.icon == null" src="@/Assets/defaults/object.png" class="h-20 w-auto inline-block" alt="Default Icon">
-                                                                        <img v-else :src="form.preview" class="h-20 w-auto inline-block" alt="Default Icon">
+                                                                        <img v-else :src="form.preview" class="h-20 w-20 rounded-lg object-cover object-center inline-block" alt="Default Icon">
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -122,8 +122,8 @@
                                             </button>
                                         </div>
                                         <div class="z-10" @click="goMonitoring(item.id)">
-                                            <img v-if="item.icon == null" src="@/Assets/defaults/object.png" class="h-28 w-28 md:w-auto inline-block" alt="Default Icon">
-                                            <img v-else :src="'/monitoring/icon/'+item.icon" class="h-28 w-28 md:w-auto inline-block" alt="Default Icon">
+                                            <img v-if="item.icon == null" src="@/Assets/defaults/object.png" class="h-28 w-28 rounded-lg object-cover object-center md:w-auto inline-block" alt="Default Icon">
+                                            <img v-else :src="'/monitoring/icon/'+item.icon" class="h-28 w-28 rounded-lg object-cover object-center md:w-auto inline-block" alt="Default Icon">
                                         </div>
                                     </div>
                                     <div role="button" class="pt-2 text-center" @click="goMonitoring(item.id)">

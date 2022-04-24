@@ -4,7 +4,9 @@ namespace App\Http\Controllers\Web\Monitoring;
 
 use App\Http\Controllers\Controller;
 use App\Models\Monitoring\Input;
+use App\Models\Monitoring\InputOption;
 use App\Models\Monitoring\InputValue;
+use App\Models\Monitoring\OptionValue;
 use Illuminate\Support\Str;
 use Intervention\Image\Facades\Image;
 use Illuminate\Http\Request;
@@ -142,6 +144,9 @@ class InputValueController extends Controller
         if(File::isDirectory(public_path('/monitoring/value/').$value->file_value) && $value->file_value != null) {
             unlink(public_path('/monitoring/value/').$value->file_value);
         }
+        InputValue::query()->where('monitoring_input_id', $id)->delete();
+        InputOption::query()->where('monitoring_input_id', $id)->delete();
+        OptionValue::query()->where('monitoring_input_id', $id)->delete();
         $value->delete();
         return redirect()->back()->with('message', 'Input Value Berhasil Dihapus')->with('status', 'success');
     }

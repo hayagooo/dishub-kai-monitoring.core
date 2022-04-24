@@ -81,4 +81,9 @@ class Input extends Model
     {
         return $this->hasMany(InputOption::class, 'monitoring_input_id', 'id');
     }
+
+    public function optionValue(): HasMany
+    {
+        return $this->hasMany(OptionValue::class, 'monitoring_input_id', 'id');
+    }
 }

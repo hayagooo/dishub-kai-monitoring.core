@@ -4,6 +4,7 @@ use App\Http\Controllers\Web\Information\InformationController;
 use App\Http\Controllers\Web\Monitoring\CategoryController;
 use App\Http\Controllers\Web\Monitoring\ImageController;
 use App\Http\Controllers\Web\Monitoring\InputController;
+use App\Http\Controllers\Web\Monitoring\InputOptionController;
 use App\Http\Controllers\Web\Monitoring\InputValueController;
 use App\Http\Controllers\Web\Monitoring\MonitoringController;
 use App\Http\Controllers\Web\Monitoring\ObjectController;
@@ -47,6 +48,7 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function() {
         Route::resource('/monitoring/category', CategoryController::class);
         Route::resource('/monitoring/object', ObjectController::class);
         Route::resource('/monitoring/input', InputController::class);
+        Route::resource('/monitoring/input-option', InputOptionController::class);
         Route::resource('/monitoring/input/value', InputValueController::class);
         Route::resource('/monitoring', MonitoringController::class);
         Route::resource('/monitoring/image', ImageController::class);

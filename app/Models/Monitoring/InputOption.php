@@ -5,6 +5,7 @@ namespace App\Models\Monitoring;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class InputOption extends Model
 {
@@ -21,5 +22,10 @@ class InputOption extends Model
     public function input(): BelongsTo
     {
         return $this->belongsTo(Input::class, 'monitoring_input_id', 'id');
+    }
+
+    public function optionValue(): HasMany
+    {
+        return $this->hasMany(OptionValue::class, 'monitoring_input_option_id', 'id');
     }
 }

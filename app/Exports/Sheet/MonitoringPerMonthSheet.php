@@ -34,7 +34,7 @@ class MonitoringPerMonthSheet implements FromCollection, WithTitle, WithHeadings
     */
     public function collection()
     {
-        return Monitoring::query()->with('input', 'input.option', 'input.valueData', 'team', 'employee', 'object', 'category')->whereYear('created_at', $this->year)->get();
+        return Monitoring::query()->with('input', 'input.option', 'input.option.optionValue', 'input.valueData', 'team', 'employee', 'object', 'category')->whereYear('created_at', $this->year)->get();
     }
 
     public function map($monitoring): array
@@ -55,7 +55,7 @@ class MonitoringPerMonthSheet implements FromCollection, WithTitle, WithHeadings
                 ->where('monitoring_object_id', null);
         }, 'input.valueData' => function($query) use($monitoring) {
             $query->where('monitoring_id', $monitoring->id);
-        }, 'monitoring'])->whereHas('monitoring', function($query) use($monitoring) {
+        }, 'monitoring', 'input.option', 'input.option.optionValue'])->whereHas('monitoring', function($query) use($monitoring) {
             $query->where('id', $monitoring->id);
         })->first();
         foreach($category->input as $input) {
@@ -82,9 +82,9 @@ class MonitoringPerMonthSheet implements FromCollection, WithTitle, WithHeadings
                     if($input->type == 'checkbox') {
                         $option_value = '';
                         foreach($input->option as $option) {
-                            if($option->monitoring_input_id == $input->id) {
-                                if($option->is_checked == 1)
-                                    $option_value .= $option->value.' ,';
+                            foreach($option->optionValue as $value) {
+                                if($value->monitoring_input_id == $input->id && $value->monitoring_id == $monitoring->id && $value->monitoring_input_option_id == $option->id)
+                                    $option_value .= $value->value.' ,';
                             }
                         }
                         $option_value .= !is_null($value->string_value) ? $value->string_value : '';
@@ -94,9 +94,9 @@ class MonitoringPerMonthSheet implements FromCollection, WithTitle, WithHeadings
                     if($input->type == 'checkbox') {
                         $option_value = '';
                         foreach($input->option as $option) {
-                            if($option->monitoring_input_id == $input->id) {
-                                if($option->is_checked == 1)
-                                    $option_value .= $option->value.' ,';
+                            foreach($option->optionValue as $value) {
+                                if($value->monitoring_input_id == $input->id && $value->monitoring_id == $monitoring->id && $value->monitoring_input_option_id == $option->id)
+                                    $option_value .= $value->value.' ,';
                             }
                         }
                         $inputs_arr[] = $option_value;
@@ -104,9 +104,9 @@ class MonitoringPerMonthSheet implements FromCollection, WithTitle, WithHeadings
                     else if($input->type == 'radio') {
                         $option_value = '';
                         foreach($input->option as $option) {
-                            if($option->monitoring_input_id == $input->id) {
-                                if($option->is_checked == 1)
-                                    $option_value .= $option->value.' ,';
+                            foreach($option->optionValue as $value) {
+                                if($value->monitoring_input_id == $input->id && $value->monitoring_id == $monitoring->id && $value->monitoring_input_option_id == $option->id)
+                                    $option_value .= $value->value.' ,';
                             }
                         }
                         $inputs_arr[] = $option_value;
@@ -114,9 +114,9 @@ class MonitoringPerMonthSheet implements FromCollection, WithTitle, WithHeadings
                     else if($input->type == 'dropdown') {
                         $option_value = '';
                         foreach($input->option as $option) {
-                            if($option->monitoring_input_id == $input->id) {
-                                if($option->is_checked == 1)
-                                    $option_value .= $option->value.' ,';
+                            foreach($option->optionValue as $value) {
+                                if($value->monitoring_input_id == $input->id && $value->monitoring_id == $monitoring->id && $value->monitoring_input_option_id == $option->id)
+                                    $option_value .= $value->value.' ,';
                             }
                         }
                         $inputs_arr[] = $option_value;
@@ -169,24 +169,30 @@ class MonitoringPerMonthSheet implements FromCollection, WithTitle, WithHeadings
                     if($input->type == 'checkbox') {
                         $option_value = '';
                         foreach($input->option as $option) {
-                            if($option->is_checked == 1)
-                                $option_value .= $option->value.' ,';
+                            foreach($option->optionValue as $value) {
+                                if($value->monitoring_input_id == $input->id && $value->monitoring_id == $monitoring->id && $value->monitoring_input_option_id == $option->id)
+                                    $option_value .= $value->value.' ,';
+                            }
                         }
                         $inputs_arr[] = $option_value;
                     }
                     else if($input->type == 'radio') {
                         $option_value = '';
                         foreach($input->option as $option) {
-                            if($option->is_checked == 1)
-                                $option_value .= $option->value.' ,';
+                            foreach($option->optionValue as $value) {
+                                if($value->monitoring_input_id == $input->id && $value->monitoring_id == $monitoring->id && $value->monitoring_input_option_id == $option->id)
+                                    $option_value .= $value->value.' ,';
+                            }
                         }
                         $inputs_arr[] = $option_value;
                     }
                     else if($input->type == 'dropdown') {
                         $option_value = '';
                         foreach($input->option as $option) {
-                            if($option->is_checked == 1)
-                                $option_value .= $option->value.' ,';
+                            foreach($option->optionValue as $value) {
+                                if($value->monitoring_input_id == $input->id && $value->monitoring_id == $monitoring->id && $value->monitoring_input_option_id == $option->id)
+                                    $option_value .= $value->value.' ,';
+                            }
                         }
                         $inputs_arr[] = $option_value;
                     }
@@ -209,7 +215,7 @@ class MonitoringPerMonthSheet implements FromCollection, WithTitle, WithHeadings
             $inputs = $monitoring_header->input;
             foreach($inputs as $input_header) {
                 foreach($monitoring_data->input as $input) {
-                    if($input_header->label == $input->label) {
+                    if($input_header->id == $input->id) {
                         if(!in_array($input->type, $nonInputValue, true)) {
                             $value = InputValue::query()->with('monitoring', 'input', 'input.option')
                             ->where('monitoring_input_id', $input->id)
@@ -241,24 +247,30 @@ class MonitoringPerMonthSheet implements FromCollection, WithTitle, WithHeadings
                                 if($input->type == 'checkbox') {
                                     $option_value = '';
                                     foreach($input->option as $option) {
-                                        if($option->is_checked == 1)
-                                            $option_value .= $option->value.' ,';
+                                        foreach($option->optionValue as $value) {
+                                            if($value->monitoring_input_id == $input->id && $value->monitoring_id == $monitoring->id && $value->monitoring_input_option_id == $option->id)
+                                                $option_value .= $value->value.' ,';
+                                        }
                                     }
                                     $inputs_arr[] = $option_value;
                                 }
                                 else if($input->type == 'radio') {
                                     $option_value = '';
                                     foreach($input->option as $option) {
-                                        if($option->is_checked == 1)
-                                            $option_value .= $option->value.' ,';
+                                        foreach($option->optionValue as $value) {
+                                            if($value->monitoring_input_id == $input->id && $value->monitoring_id == $monitoring->id && $value->monitoring_input_option_id == $option->id)
+                                                $option_value .= $value->value.' ,';
+                                        }
                                     }
                                     $inputs_arr[] = $option_value;
                                 }
                                 else if($input->type == 'dropdown') {
                                     $option_value = '';
                                     foreach($input->option as $option) {
-                                        if($option->is_checked == 1)
-                                            $option_value .= $option->value.' ,';
+                                        foreach($option->optionValue as $value) {
+                                            if($value->monitoring_input_id == $input->id && $value->monitoring_id == $monitoring->id && $value->monitoring_input_option_id == $option->id)
+                                                $option_value .= $value->value.' ,';
+                                        }
                                     }
                                     $inputs_arr[] = $option_value;
                                 }
@@ -266,8 +278,8 @@ class MonitoringPerMonthSheet implements FromCollection, WithTitle, WithHeadings
                                     $inputs_arr[] = '-';
                             }
                         }
-                        else $inputs_arr[] = '-';
                     }
+                    else $inputs_arr[] = '-';
                 }
             }
         }

@@ -10,8 +10,10 @@ use App\Models\Employee;
 use App\Models\Monitoring\Category;
 use App\Models\Monitoring\Image;
 use App\Models\Monitoring\Input;
+use App\Models\Monitoring\InputValue;
 use App\Models\Monitoring\Monitoring;
 use App\Models\Monitoring\ObjectData;
+use App\Models\Monitoring\OptionValue;
 use App\Models\Team;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -122,22 +124,27 @@ class MonitoringController extends Controller
         $teams = Team::all();
         $menuIndex = $request->get('menu_index', 1);
         $inputs = [];
-        $inputs['category'] = Input::query()->with(['option', 'valueData' => function($query) use($id) {
+        $inputs['category'] = Input::query()->with(['option',
+        'option.optionValue' => function($query) use($id) {
+            $query->where('monitoring_id', $id);
+        },
+        'valueData' => function($query) use($id) {
             $query->where('monitoring_id', $id);
         }])
             ->where('monitoring_category_id', Category::query()->first()->id)
             ->where('monitoring_object_id', null)
             ->get();
-        $inputs['object'] = Input::query()->with('option', 'valueData')
+        $inputs['object'] = Input::query()->with('option',  'option.optionValue', 'valueData')
             ->where('monitoring_category_id', Category::query()->first()->id)
             ->where('monitoring_object_id', ObjectData::query()->first()->id)
             ->where('monitoring_id', null)
             ->get();
-        $inputs['monitoring'] = Input::query()->with('option', 'valueData')
+        $inputs['monitoring'] = Input::query()->with('option',  'option.optionValue', 'valueData')
             ->where('monitoring_category_id', Category::query()->first()->id)
             ->where('monitoring_object_id', ObjectData::query()->first()->id)
             ->where('monitoring_id', $id)
             ->get();
+        // return response()->json($inputs);
         $monitoring = Monitoring::query()->find($id);
         $object = ObjectData::query()->find($objectId);
         $images = Image::query()->where('monitoring_id', $id)->get();
@@ -190,7 +197,11 @@ class MonitoringController extends Controller
      */
     public function destroy($id)
     {
-        $data = Monitoring::query()->find($id);
+        $data = Monitoring::query()->with('valueData', 'input', 'image', 'optionValue')->find($id);
+        InputValue::query()->where('monitoring_id', $id)->delete();
+        OptionValue::query()->where('monitoring_id', $id)->delete();
+        Input::query()->where('monitoring_id', $id)->delete();
+        Image::query()->where('monitoring_id', $id)->delete();
         $data->delete();
         return redirect()->back()->with('message', 'Data monitoring berhasil dihapus')->with('status', 'success');
     }
