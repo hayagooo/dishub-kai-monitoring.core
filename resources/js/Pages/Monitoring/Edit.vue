@@ -87,7 +87,7 @@
                                 </div>
                                 <div class="mt-6">
                                     <label for="description-monitoring">Deskripsi Monitoring</label>
-                                    <div class="border-2 border-gray-300 rounded mt-3 hidden md:block">
+                                    <div class="rounded mt-3 hidden md:block">
                                         <ckeditor placeholder="e.g. Tujuan monitoring ini adalah untuk kepentingan bersama" :editor="editor" v-model="form.general.description"></ckeditor>
                                     </div>
                                     <div class="rounded mt-3 block md:hidden">
@@ -209,12 +209,13 @@
                                                 </div>
 
                                                 <div v-if="item.type == 'file'">
-                                                    <div v-if="item.value_data.length > 0" class="bg-white flex p-4 rounded-lg shadow-lg gap-x-4 relative">
+                                                    <div v-if="item.value_data.length > 0" class="bg-white p-4 rounded-lg shadow-lg gap-x-4 relative" :class="{'flex gap-x-4': item.value_data[0].type_file != 'image'}">
                                                         <div @click="onRemoveFile(item.value_data[0].id)" role="button" class="absolute right-0 top-0 m-6">
                                                             <x-circle-icon class="text-gray-600" size="20"/>
                                                         </div>
                                                         <div>
-                                                            <img class="h-10 w-auto" :src="`/image/icon/${item.value_data[0].type_file}.png`" :alt="item.value_data[0].type_file">
+                                                            <img v-if="item.value_data[0].type_file == 'image'" class="w-10/12 h-48 object-cover object-center rounded-lg" :src="`/monitoring/value/${item.value_data[0].file_value}`" :alt="item.value_data[0].type_file">
+                                                            <img v-else class="h-10 w-auto" :src="`/image/icon/${item.value_data[0].type_file}.png`" :alt="item.value_data[0].type_file">
                                                         </div>
                                                         <div class="justify-self-stretch self-center">
                                                             {{ item.value_data[0].file_value }}
@@ -232,7 +233,7 @@
                                                 <div v-if="item.type == 'date'">
                                                     <div class="relative">
                                                         <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
-                                                            <svg class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path></svg>
+                                                            <calendar-icon size="20" class="text-gray-700 dark:text-gray-400"/>
                                                         </div>
                                                         <input v-model="values.category[index].date_value"
                                                         :required="item.is_required == 1 ? true : false"
@@ -243,6 +244,9 @@
 
                                                 <div v-if="item.type == 'time'">
                                                     <div class="relative">
+                                                        <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
+                                                            <clock-icon size="20" class="text-gray-700 dark:text-gray-400"/>
+                                                        </div>
                                                         <input v-model="values.category[index].time_value"
                                                         :required="item.is_required == 1 ? true : false"
                                                         :placeholder="item.placeholder == null ? 'Tentukan waktu data '+item.label : item.placeholder" type="time" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5">
@@ -383,12 +387,13 @@
                                                 </div>
 
                                                 <div v-if="item.type == 'file'">
-                                                    <div v-if="item.value_data.length > 0" class="bg-white flex p-4 rounded-lg shadow-lg gap-x-4 relative">
+                                                    <div v-if="item.value_data.length > 0" class="bg-white p-4 rounded-lg shadow-lg gap-x-4 relative" :class="{'flex gap-x-4': item.value_data[0].type_file != 'image'}">
                                                         <div @click="onRemoveFile(item.value_data[0].id)" role="button" class="absolute right-0 top-0 m-6">
                                                             <x-circle-icon class="text-gray-600" size="20"/>
                                                         </div>
                                                         <div>
-                                                            <img class="h-10 w-auto" :src="`/image/icon/${item.value_data[0].type_file}.png`" :alt="item.value_data[0].type_file">
+                                                            <img v-if="item.value_data[0].type_file == 'image'" class="w-10/12 h-48 object-cover object-center rounded-lg" :src="`/monitoring/value/${item.value_data[0].file_value}`" :alt="item.value_data[0].type_file">
+                                                            <img v-else class="h-10 w-auto" :src="`/image/icon/${item.value_data[0].type_file}.png`" :alt="item.value_data[0].type_file">
                                                         </div>
                                                         <div class="justify-self-stretch self-center">
                                                             {{ item.value_data[0].file_value }}
@@ -406,7 +411,7 @@
                                                 <div v-if="item.type == 'date'">
                                                     <div class="relative">
                                                         <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
-                                                            <svg class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path></svg>
+                                                            <calendar-icon size="20" class="text-gray-700 dark:text-gray-400"/>
                                                         </div>
                                                         <input v-model="values.object[index].date_value"
                                                         :required="item.is_required == 1 ? true : false"
@@ -417,6 +422,9 @@
 
                                                 <div v-if="item.type == 'time'">
                                                     <div class="relative">
+                                                        <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
+                                                            <clock-icon size="20" class="text-gray-700 dark:text-gray-400"/>
+                                                        </div>
                                                         <input v-model="values.object[index].time_value"
                                                         :required="item.is_required == 1 ? true : false"
                                                         :placeholder="item.placeholder == null ? 'Tentukan waktu data '+item.label : item.placeholder" type="time" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5">
@@ -559,12 +567,13 @@
                                                 </div>
 
                                                 <div v-if="item.type == 'file'">
-                                                    <div v-if="item.value_data.length > 0" class="bg-white flex p-4 rounded-lg shadow-lg gap-x-4 relative">
+                                                    <div v-if="item.value_data.length > 0" class="bg-white p-4 rounded-lg shadow-lg gap-x-4 relative" :class="{'flex gap-x-4': item.value_data[0].type_file != 'image'}">
                                                         <div @click="onRemoveFile(item.value_data[0].id)" role="button" class="absolute right-0 top-0 m-6">
                                                             <x-circle-icon class="text-gray-600" size="20"/>
                                                         </div>
                                                         <div>
-                                                            <img class="h-10 w-auto" :src="`/image/icon/${item.value_data[0].type_file}.png`" :alt="item.value_data[0].type_file">
+                                                            <img v-if="item.value_data[0].type_file == 'image'" class="w-10/12 h-48 object-cover object-center rounded-lg" :src="`/monitoring/value/${item.value_data[0].file_value}`" :alt="item.value_data[0].type_file">
+                                                            <img v-else class="h-10 w-auto" :src="`/image/icon/${item.value_data[0].type_file}.png`" :alt="item.value_data[0].type_file">
                                                         </div>
                                                         <div class="justify-self-stretch self-center">
                                                             {{ item.value_data[0].file_value }}
@@ -582,7 +591,7 @@
                                                 <div v-if="item.type == 'date'">
                                                     <div class="relative">
                                                         <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
-                                                            <svg class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path></svg>
+                                                            <calendar-icon size="20" class="text-gray-700 dark:text-gray-400"/>
                                                         </div>
                                                         <input v-model="values.monitoring[index].date_value"
                                                         :required="item.is_required == 1 ? true : false"
@@ -593,6 +602,9 @@
 
                                                 <div v-if="item.type == 'time'">
                                                     <div class="relative">
+                                                        <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
+                                                            <clock-icon size="20" class="text-gray-700 dark:text-gray-400"/>
+                                                        </div>
                                                         <input v-model="values.monitoring[index].time_value"
                                                         :required="item.is_required == 1 ? true : false"
                                                         :placeholder="item.placeholder == null ? 'Tentukan waktu data '+item.label : item.placeholder" type="time" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5">
@@ -832,7 +844,7 @@ import CKEditor from '@ckeditor/ckeditor5-vue'
 import InlineEditor from '@ckeditor/ckeditor5-build-inline'
 import AppLayout from '@/Layouts/AppLayout.vue'
 import MUnderConstruction from '@/Components/MUnderConstruction'
-import { ArrowLeftIcon, PlusCircleIcon, XCircleIcon, FileTextIcon, ImageIcon, TrashIcon, MoreVerticalIcon, EditIcon, EyeIcon,  } from '@zhuowenli/vue-feather-icons'
+import { ArrowLeftIcon, CalendarIcon, ClockIcon, PlusCircleIcon, XCircleIcon, FileTextIcon, ImageIcon, TrashIcon, MoreVerticalIcon, EditIcon, EyeIcon,  } from '@zhuowenli/vue-feather-icons'
 import MToast from '@/Components/MToast'
 import MNoData from '@/Components/MNoData.vue'
 import YouTube from 'vue3-youtube'
@@ -846,6 +858,8 @@ export default defineComponent({
         EyeIcon,
         AppLayout,
         YouTube,
+        CalendarIcon,
+        ClockIcon,
         MToast,
         TrashIcon,
         XCircleIcon,

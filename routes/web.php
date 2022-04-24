@@ -50,9 +50,13 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function() {
         Route::resource('/monitoring/input', InputController::class);
         Route::resource('/monitoring/input-option', InputOptionController::class);
         Route::resource('/monitoring/input/value', InputValueController::class);
+        Route::get('/monitoring/input-download/image', [InputController::class, 'download'])->name('input-image.download');
+        Route::get('/monitoring/input-download/value', [InputValueController::class, 'download'])->name('value.download');
         Route::resource('/monitoring', MonitoringController::class);
         Route::resource('/monitoring/image', ImageController::class);
+        Route::get('/monitoring/download/image', [ImageController::class, 'downloadImage'])->name('image.download');
         Route::get('/monitoring/export/excel', [MonitoringController::class, 'export_excel'])->name('monitoring.export-excel');
+        Route::get('/monitoring/export/{id}/pdf', [MonitoringController::class, 'export_pdf'])->name('monitoring.export-pdf');
         Route::resource('/information', InformationController::class);
         Route::resource('/user', UserUserController::class);
         Route::resource('/team', TeamController::class);

@@ -71,7 +71,7 @@
                                                 <more-vertical-icon size="20"/>
                                             </button>
                                         </div>
-                                        <div class="w-10/12 text-left p-4 z-10">
+                                        <div class="w-10/12 text-left p-4 z-10" @click="gotoShowMonitoring(item.id)">
                                             <p class="text-lg font-semibold text-dark">{{ item.title }}</p>
                                             <div class="flex flex-nowrap mt-5 mb-5 md:mb-0">
                                                 <div class="self-center flex -space-x-4">
@@ -101,7 +101,7 @@
                                                 </button>
                                             </div>
                                             <div class="p-6 space-y-4">
-                                                <div role="button" @click="gotoMonitoring(category.id, objects[optionModal.index].id)" class="flex gap-x-4 w-full hover:bg-gray-50 p-2 rounded-lg">
+                                                <div v-if="optionModal.index != null" role="button" @click="gotoShowMonitoring(monitorings.data[optionModal.index].id)" class="flex gap-x-4 w-full hover:bg-gray-50 p-2 rounded-lg">
                                                     <div class="flex h-12 w-12 rounded-lg bg-purple-100 relative">
                                                         <eye-icon class="mx-auto text-purple-600 self-center" size="24"/>
                                                     </div>
@@ -314,6 +314,16 @@ export default defineComponent({
             this.toggleOptionModal(false, this.optionModal.index, this.optionModal.item)
             this.$inertia.get(this.route('app.monitoring.edit', {
                 id: this.monitorings.data[this.optionModal.index].id,
+            }), {
+                categoryId: this.category.id,
+                menu_index: 0,
+                objectId: this.object.id
+            })
+        },
+        gotoShowMonitoring(itemId) {
+            this.toggleOptionModal(false, this.optionModal.index, this.optionModal.item)
+            this.$inertia.get(this.route('app.monitoring.show', {
+                id: itemId,
             }), {
                 categoryId: this.category.id,
                 menu_index: 0,

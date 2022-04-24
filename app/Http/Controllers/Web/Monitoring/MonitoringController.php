@@ -16,9 +16,11 @@ use App\Models\Monitoring\ObjectData;
 use App\Models\Monitoring\OptionValue;
 use App\Models\Team;
 use App\Models\User;
+use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Inertia\Inertia;
+use Illuminate\Support\Str;
 
 class MonitoringController extends Controller
 {
@@ -106,9 +108,54 @@ class MonitoringController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Request $request, $id)
     {
-        //
+        $categoryId = $request->get('categoryId', Category::query()->first()->id);
+        $objectId = $request->get('objectId', ObjectData::query()->first()->id);
+        $teams = Team::all();
+        $menuIndex = $request->get('menu_index', 1);
+        $inputs = [];
+        $inputs['category'] = Input::query()->with(['option',
+        'option.optionValue' => function($query) use($id) {
+            $query->where('monitoring_id', $id);
+        },
+        'valueData' => function($query) use($id) {
+            $query->where('monitoring_id', $id);
+        }])
+            ->where('monitoring_category_id', Category::query()->first()->id)
+            ->where('monitoring_object_id', null)
+            ->get();
+        $inputs['object'] = Input::query()->with('option',  'option.optionValue', 'valueData')
+            ->where('monitoring_category_id', Category::query()->first()->id)
+            ->where('monitoring_object_id', ObjectData::query()->first()->id)
+            ->where('monitoring_id', null)
+            ->get();
+        $inputs['monitoring'] = Input::query()->with('option',  'option.optionValue', 'valueData')
+            ->where('monitoring_category_id', Category::query()->first()->id)
+            ->where('monitoring_object_id', ObjectData::query()->first()->id)
+            ->where('monitoring_id', $id)
+            ->get();
+        // return response()->json($inputs);
+        $monitoring = Monitoring::query()->find($id);
+        $object = ObjectData::query()->find($objectId);
+        $images = Image::query()->where('monitoring_id', $id)->get();
+        $employees = Employee::with('team')->whereHas('team', function($query) use($monitoring) {
+            $query->where('team_id', $monitoring->team_id);
+        })->orderBy('created_at', 'DESC')->get();
+        $token = User::find(Auth::guard('api')->id())->createToken('authentification')->plainTextToken;
+        $category = Category::query()->find($categoryId);
+        // return response()->json($inputs);
+        return Inertia::render('Monitoring/Show', [
+            'object' => $object,
+            'images' => $images,
+            'token' => $token,
+            'category' => $category,
+            'inputs' => $inputs,
+            'list_employee' => $employees,
+            'menu_index' => $menuIndex,
+            'teams' => $teams,
+            'monitoring' => $monitoring,
+        ]);
     }
 
     /**
@@ -214,5 +261,68 @@ class MonitoringController extends Controller
         $category = Category::query()->find($categoryId);
         // $monitorings = Monitoring::query()->with('option', 'valueData', 'team', 'employee', 'object', 'category')->get;
         return (new MonitoringExport($categoryId, $objectId))->download('Monitoring Data-'.$category->name.'-'.$object->name.'.xlsx');
+    }
+
+    public function export_pdf(Request $request, $id)
+    {
+        setlocale(LC_TIME, 'id_ID');
+        \Carbon\Carbon::setLocale('id');
+        $categoryId = $request->get('categoryId', Category::query()->first()->id);
+        $objectId = $request->get('objectId', ObjectData::query()->first()->id);
+        $teams = Team::all();
+        $menuIndex = $request->get('menu_index', 1);
+        $inputs = [];
+        $inputs['category'] = Input::query()->with(['option',
+        'option.optionValue' => function($query) use($id) {
+            $query->where('monitoring_id', $id);
+        },
+        'valueData' => function($query) use($id) {
+            $query->where('monitoring_id', $id);
+        }])
+            ->where('monitoring_category_id', Category::query()->first()->id)
+            ->where('monitoring_object_id', null)
+            ->get();
+        $inputs['object'] = Input::query()->with('option',  'option.optionValue', 'valueData')
+            ->where('monitoring_category_id', Category::query()->first()->id)
+            ->where('monitoring_object_id', ObjectData::query()->first()->id)
+            ->where('monitoring_id', null)
+            ->get();
+        $inputs['monitoring'] = Input::query()->with('option',  'option.optionValue', 'valueData')
+            ->where('monitoring_category_id', Category::query()->first()->id)
+            ->where('monitoring_object_id', ObjectData::query()->first()->id)
+            ->where('monitoring_id', $id)
+            ->get();
+        // return response()->json($inputs);
+        $monitoring = Monitoring::query()->find($id);
+        $object = ObjectData::query()->find($objectId);
+        $images = Image::query()->where('monitoring_id', $id)->get();
+        $employees = Employee::with('team')->whereHas('team', function($query) use($monitoring) {
+            $query->where('team_id', $monitoring->team_id);
+        })->orderBy('created_at', 'DESC')->get();
+        $token = User::find(Auth::guard('api')->id())->createToken('authentification')->plainTextToken;
+        $category = Category::query()->find($categoryId);
+        $logoBTP = base64_encode(file_get_contents(public_path('/images/').'logo-btp-jabar.png'));
+        $logoDishub = base64_encode(file_get_contents(public_path('/images/').'logo-dishub.png'));
+        $logoApp = base64_encode(file_get_contents(public_path('/images/').'logo.png'));
+        $logoDev = base64_encode(file_get_contents(public_path('/images/').'logo-dev.png'));
+        // return response()->json($inputs);
+        $data_response =  [
+            'object' => $object,
+            'images' => $images,
+            'token' => $token,
+            'category' => $category,
+            'inputs' => $inputs,
+            'list_employee' => $employees,
+            'menu_index' => $menuIndex,
+            'teams' => $teams,
+            'monitoring' => $monitoring,
+            'logoBTP' => $logoBTP,
+            'logoDishub' => $logoDishub,
+            'logoApp' => $logoApp,
+            'logoDev' => $logoDev,
+        ];
+        $pdf = Pdf::loadView('monitoring_pdf', $data_response);
+        $pdfName = 'pdf-'.Str::slug($monitoring->title, '-').'-'.time().'-'.uniqid().'.pdf';
+        return $pdf->download($pdfName);
     }
 }

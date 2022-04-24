@@ -11,6 +11,7 @@ use Illuminate\Support\Str;
 use Intervention\Image\Facades\Image;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Response;
 
 class InputValueController extends Controller
 {
@@ -149,5 +150,11 @@ class InputValueController extends Controller
         OptionValue::query()->where('monitoring_input_id', $id)->delete();
         $value->delete();
         return redirect()->back()->with('message', 'Input Value Berhasil Dihapus')->with('status', 'success');
+    }
+
+    public function download(Request $request)
+    {
+        $file = InputValue::query()->find($request->get('id'));
+        return Response::download(public_path('/monitoring/value/').$file->file_value);
     }
 }
