@@ -26,13 +26,13 @@
                     </div>
                     <div class="grid grid-cols-2">
                          <div class="col-span-2 md:col-span-1 p-7 border-b-2 md:border-b-0 border-gray-100 flex flex-nowrap">
-                            <img v-if="category.icon == null" src="@/Assets/defaults/category.png" class="h-12 w-auto inline-block" alt="Default Icon">
-                            <img v-else :src="'/monitoring/icon/'+category.icon" class="h-12 w-auto inline-block" alt="Default Icon">
+                            <img v-if="category.icon == null" src="@/Assets/defaults/category.png" class="h-12 w-12 rounded-lg object-cover object-center inline-block" alt="Default Icon">
+                            <img v-else :src="'/monitoring/icon/'+category.icon" class="h-12 w-12 rounded-lg object-cover object-center inline-block" alt="Default Icon">
                             <p class="self-center text-base md:text-lg text-gray-700 inline-block ml-4">{{ category.name }}</p>
                         </div>
                         <div class="col-span-2 md:col-span-1 p-7 flex flex-nowrap">
-                            <img v-if="object.icon == null" src="@/Assets/defaults/object.png" class="h-12 w-auto inline-block" alt="Default Icon">
-                            <img v-else :src="'/monitoring/icon/'+object.icon" class="h-12 w-auto inline-block" alt="Default Icon">
+                            <img v-if="object.icon == null" src="@/Assets/defaults/object.png" class="h-12 w-12 rounded-lg object-cover object-center inline-block" alt="Default Icon">
+                            <img v-else :src="'/monitoring/icon/'+object.icon" class="h-12 w-12 rounded-lg object-cover object-center inline-block" alt="Default Icon">
                             <p class="self-center text-base md:text-lg text-gray-700 inline-block ml-4">{{ object.name }}</p>
                         </div>
                     </div>
@@ -44,8 +44,24 @@
                                     Monitoring Sekarang
                                 </span>
                             </button>
+                            <button v-if="monitorings.data.length > 0" type="button" @click="onExportExcel()" class="w-full text-purple-700 border border-purple-700 hover:bg-gray-200 focus:ring-4 focus:outline-none focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">
+                                <file-icon size="18" class="inline-block mr-4"/>
+                                <span class="inline-block">
+                                    Export Excel
+                                </span>
+                            </button>
                         </div>
                         <h2 class="text-xl text-gray-700 my-2 font-semibold">Daftar Monitoring</h2>
+                        <div class="grid grid-cols-3 gap-x-4 mt-3">
+                            <div class="col-span-2">
+                                <input @keyup="onSearch()" placeholder="Cari berdasarkan judul monitoring" v-model="dataNeed.title" type="text" id="title-input" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                            </div>
+                            <div class="col-span-1">
+                                <select @change="onSearch()" id="sort-select" v-model="dataNeed.sort" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                                    <option v-for="(item, index) in sorts" :key="`value-sort-${index}`" :value="item.value">{{ item.label }}</option>
+                                </select>
+                            </div>
+                        </div>
                         <div v-if="monitorings.data.length > 0">
                             <div class="grid grid-cols-4 md:grid-cols-3 gap-6 mt-3">
                                 <div class="col-span-4 md:col-span-3" v-for="(item, index) in monitorings.data" :key="`object-${index}`">
@@ -55,7 +71,7 @@
                                                 <more-vertical-icon size="20"/>
                                             </button>
                                         </div>
-                                        <div class="w-10/12 text-left p-4 z-10">
+                                        <div class="w-10/12 text-left p-4 z-10" @click="gotoShowMonitoring(item.id)">
                                             <p class="text-lg font-semibold text-dark">{{ item.title }}</p>
                                             <div class="flex flex-nowrap mt-5 mb-5 md:mb-0">
                                                 <div class="self-center flex -space-x-4">
@@ -73,7 +89,6 @@
                                         </div>
                                     </div>
                                 </div>
-
                                 <div id="option-modal" tabindex="-1" :class="{'hidden' : !optionModal.show}" class="flex overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 w-full md:inset-0 bg-black/30 backdrop-blur h-screen md:h-full">
                                     <div class="relative p-4 w-full max-w-md h-full md:h-auto mx-auto self-center">
                                         <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
@@ -86,7 +101,7 @@
                                                 </button>
                                             </div>
                                             <div class="p-6 space-y-4">
-                                                <div role="button" @click="gotoMonitoring(category.id, objects[optionModal.index].id)" class="flex gap-x-4 w-full hover:bg-gray-50 p-2 rounded-lg">
+                                                <div v-if="optionModal.index != null" role="button" @click="gotoShowMonitoring(monitorings.data[optionModal.index].id)" class="flex gap-x-4 w-full hover:bg-gray-50 p-2 rounded-lg">
                                                     <div class="flex h-12 w-12 rounded-lg bg-purple-100 relative">
                                                         <eye-icon class="mx-auto text-purple-600 self-center" size="24"/>
                                                     </div>
@@ -159,7 +174,9 @@
                                         </div>
                                     </div>
                                 </div>
-
+                            </div>
+                            <div id="pagination-data" class="flex w-full mt-3 justify-end">
+                                <m-pagination-data :paginationData="monitorings" :data="dataNeed"/>
                             </div>
                         </div>
                         <div v-else class="text-center">
@@ -175,15 +192,17 @@
 <script>
 import { defineComponent } from 'vue'
 import MToast from '@/Components/MToast'
+import MPaginationData from '@/Components/MPaginationData'
 import AppLayout from '@/Layouts/AppLayout.vue'
 import moment from 'moment'
 import MUnderConstruction from '@/Components/MUnderConstruction'
-import { ArrowLeftIcon, PlusCircleIcon, FileTextIcon, ImageIcon, TrashIcon, MoreVerticalIcon, EditIcon, EyeIcon } from '@zhuowenli/vue-feather-icons'
+import { ArrowLeftIcon, PlusCircleIcon, FileIcon, FileTextIcon, ImageIcon, TrashIcon, MoreVerticalIcon, EditIcon, EyeIcon } from '@zhuowenli/vue-feather-icons'
 import MNoData from '@/Components/MNoData.vue'
 
 export default defineComponent({
     props: ['object', 'category', 'monitorings'],
     components: {
+        FileIcon,
         MoreVerticalIcon,
         EyeIcon,
         MToast,
@@ -193,12 +212,23 @@ export default defineComponent({
         MNoData,
         EditIcon,
         ArrowLeftIcon,
+        MPaginationData,
         ImageIcon,
         PlusCircleIcon,
         MUnderConstruction,
     },
     data() {
         return {
+            dataNeed: {
+                categoryId: this.category.id ,
+                objectId: this.object.id,
+                title: '',
+                sort: 'desc'
+            },
+            sorts: [
+                { value: 'desc', label: 'Paling baru' },
+                { value: 'asc', label: 'Paling lama' },
+            ],
             optionModal: {
                 show: false,
                 index: null,
@@ -221,6 +251,7 @@ export default defineComponent({
         }
     },
     mounted() {
+        console.log(this.category)
         this.toast.active = this.$page.props.flash.message != null || this.$page.props.flash.message != undefined ? true : false
         if(this.$page.props.flash.status == 'success') this.toast.color = 'green'
         else if(this.$page.props.flash.status == 'failed') this.toast.color = 'red'
@@ -245,6 +276,16 @@ export default defineComponent({
                 categoryId: this.category.id
             })
         },
+        onSearch() {
+            this.$inertia.get(this.route('app.monitoring.index'), {
+                categoryId: this.dataNeed.categoryId,
+                objectId: this.dataNeed.objectId,
+                title: this.dataNeed.title,
+                sort: this.dataNeed.sort,
+            }, {
+                preserveState: true
+            })
+        },
         initialsString(str) {
             let rgx = new RegExp(/(\p{L}{1})\p{L}+/, 'gu')
             let initials = [...str.matchAll(rgx)] || []
@@ -252,6 +293,9 @@ export default defineComponent({
                 (initials.shift()?.[1] || '') + (initials.pop()?.[1] || '')
             ).toUpperCase();
             return initials
+        },
+        onExportExcel() {
+            window.location.href = this.route('app.monitoring.export-excel')+'?categoryId='+this.category.id+'&objectId='+this.object.id
         },
         store() {
             if(this.formModal.mode == 'create') {
@@ -275,6 +319,16 @@ export default defineComponent({
             this.toggleOptionModal(false, this.optionModal.index, this.optionModal.item)
             this.$inertia.get(this.route('app.monitoring.edit', {
                 id: this.monitorings.data[this.optionModal.index].id,
+            }), {
+                categoryId: this.category.id,
+                menu_index: 0,
+                objectId: this.object.id
+            })
+        },
+        gotoShowMonitoring(itemId) {
+            this.toggleOptionModal(false, this.optionModal.index, this.optionModal.item)
+            this.$inertia.get(this.route('app.monitoring.show', {
+                id: itemId,
             }), {
                 categoryId: this.category.id,
                 menu_index: 0,
