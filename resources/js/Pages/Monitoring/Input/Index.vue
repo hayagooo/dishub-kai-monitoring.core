@@ -75,13 +75,13 @@
                         :class="{'col-span-2 md:col-span-1 border-b-2 md:border-b-0': datas.object != null && datas.object != undefined,
                         'col-span-2': datas.object == null || datas.monitoring == undefined}"
                         class="border-gray-100 flex flex-nowrap p-7">
-                            <img v-if="datas.category.icon == null" src="@/Assets/defaults/category.png" class="h-12 w-auto inline-block" alt="Default Icon">
-                            <img v-else :src="'/monitoring/icon/'+datas.category.icon" class="h-12 w-auto inline-block" alt="Default Icon">
+                            <img v-if="datas.category.icon == null" src="@/Assets/defaults/category.png" class="h-12 w-12 rounded-lg object-cover object-center inline-block" alt="Default Icon">
+                            <img v-else :src="'/monitoring/icon/'+datas.category.icon" class="h-12 w-12 rounded-lg object-cover object-center inline-block" alt="Default Icon">
                             <p class="self-center text-base md:text-lg text-gray-700 inline-block ml-4">{{ datas.category.name }}</p>
                         </div>
                         <div v-if="datas.object != null && datas.object != undefined" class="col-span-2 md:col-span-1 p-7 flex flex-nowrap">
-                            <img v-if="datas.object.icon == null" src="@/Assets/defaults/object.png" class="h-12 w-auto inline-block" alt="Default Icon">
-                            <img v-else :src="'/monitoring/icon/'+datas.object.icon" class="h-12 w-auto inline-block" alt="Default Icon">
+                            <img v-if="datas.object.icon == null" src="@/Assets/defaults/object.png" class="h-12 w-12 rounded-lg object-cover object-center inline-block" alt="Default Icon">
+                            <img v-else :src="'/monitoring/icon/'+datas.object.icon" class="h-12 w-12 rounded-lg object-cover object-center inline-block" alt="Default Icon">
                             <p class="self-center text-base md:text-lg text-gray-700 inline-block ml-4">{{ datas.object.name }}</p>
                         </div>
                     </div>

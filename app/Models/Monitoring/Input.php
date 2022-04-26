@@ -72,7 +72,7 @@ class Input extends Model
         return $this->belongsTo(ObjectData::class, 'monitoring_object_id', 'id');
     }
 
-    public function value(): HasMany
+    public function valueData(): HasMany
     {
         return $this->hasMany(InputValue::class, 'monitoring_input_id', 'id');
     }
@@ -80,5 +80,10 @@ class Input extends Model
     public function option(): HasMany
     {
         return $this->hasMany(InputOption::class, 'monitoring_input_id', 'id');
+    }
+
+    public function optionValue(): HasMany
+    {
+        return $this->hasMany(OptionValue::class, 'monitoring_input_id', 'id');
     }
 }

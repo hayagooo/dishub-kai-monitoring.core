@@ -5,7 +5,9 @@ namespace App\Http\Controllers\Api\Monitoring;
 use App\Http\Controllers\Controller;
 use App\Jobs\Monitoring\Category\EditData;
 use App\Jobs\Monitoring\Option\CreateData;
+use App\Models\Monitoring\Input;
 use App\Models\Monitoring\InputOption;
+use App\Models\Monitoring\OptionValue;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
@@ -77,15 +79,66 @@ class OptionController extends Controller
         $data = [
             'monitoring_input_id' => $request->input_id,
             'value' => $request->value,
-            'is_checked' => $request->is_checked,
         ];
+        $checkModeInput = Input::where('id', $request->input_id)->first();
+        $checkOption = InputOption::query()->find($id);
+        // return $this->jsonResponse([$checkModeInput, $checkOption, $request->is_checked]);
+        $optionValueCheck = OptionValue::where('monitoring_input_id', $request->input_id)
+                        ->where('monitoring_id', $request->monitoring_id)
+                        ->where('monitoring_input_option_id', $id)
+                        ->first();
+        $optionValueCheckSingle = OptionValue::where('monitoring_input_id', $request->input_id)
+                        ->where('monitoring_id', $request->monitoring_id)
+                        ->first();
+        InputOption::query()->where('id', $id)->update(array_merge($data, [
+            'is_checked' => $request->is_checked,
+        ]));
+        // return $this->jsonResponse($optionValueCheckSingle);
+        if($checkModeInput->type == 'checkbox') {
+            if($request->is_checked == 1 && $optionValueCheck == null) {
+                OptionValue::query()->create(array_merge($data, [
+                    'monitoring_id' => $request->monitoring_id,
+                    'monitoring_input_option_id' => $id,
+                ]));
+            }
+            if($request->is_checked == 0 && $optionValueCheck != null) {
+                OptionValue::query()->where('monitoring_id', $request->monitoring_id)
+                    ->where('monitoring_input_option_id', $id)
+                    ->where('monitoring_input_id', $request->input_id)
+                    ->delete();
+            }
+        } else {
+            // reset values
+            // return $this->jsonResponse($request->is_checked);
+            if($request->value != null && $request->value != '') {
+                if($optionValueCheckSingle != null) {
+                    OptionValue::query()->where('id', $optionValueCheckSingle->id)->update(array_merge($data, [
+                        'monitoring_id' => $request->monitoring_id,
+                        'monitoring_input_option_id' => $id,
+                    ]));
+                } else {
+                    if($request->is_checked == 1) {
+                        OptionValue::query()->create(array_merge($data, [
+                            'monitoring_id' => $request->monitoring_id,
+                            'monitoring_input_option_id' => $id,
+                        ]));
+                    }
+                }
+            } else {
+                OptionValue::query()->where('monitoring_id', $request->monitoring_id)
+                    ->where('monitoring_input_id', $request->input_id)
+                    ->delete();
+            }
+        }
+        // if($request->is_checked == 0 && $optionValueCheck != null) {
+        //     OptionValue::query()->where()
+        // }
         $validator = Validator::make($data, $rules);
         if($validator->fails()) {
             return $this->jsonResponse([
                 'messages' => $validator->errors(),
             ], 400, 'FAILED');
         }
-        InputOption::query()->where('id', $id)->update($data);
         $option = InputOption::query()->find($id);
         return $this->jsonResponse($option);
     }
@@ -99,6 +152,7 @@ class OptionController extends Controller
     public function destroy($id)
     {
         $option = InputOption::query()->find($id);
+        OptionValue::query()->where('monitoring_input_option_id', $id)->delete();
         $option->delete();
         return $this->jsonResponse($option);
     }

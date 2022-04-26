@@ -10,6 +10,7 @@ use App\Models\Monitoring\ObjectData;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Response;
 use Inertia\Inertia;
 
 class InputController extends Controller
@@ -115,5 +116,11 @@ class InputController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function download(Request $request)
+    {
+        $input = Input::query()->find($request->get('id'));
+        return Response::download(public_path('/monitoring/input/').$input->image);
     }
 }

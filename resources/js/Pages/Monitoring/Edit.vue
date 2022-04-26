@@ -26,13 +26,13 @@
                     </div>
                     <div class="grid grid-cols-2">
                          <div class="col-span-2 md:col-span-1 p-7 border-b-2 md:border-b-0 border-gray-100 flex flex-nowrap">
-                            <img v-if="category.icon == null" src="@/Assets/defaults/category.png" class="h-12 w-auto inline-block" alt="Default Icon">
-                            <img v-else :src="'/monitoring/icon/'+category.icon" class="h-12 w-auto inline-block" alt="Default Icon">
+                            <img v-if="category.icon == null" src="@/Assets/defaults/category.png" class="h-12 w-12 rounded-lg object-cover object-center inline-block" alt="Default Icon">
+                            <img v-else :src="'/monitoring/icon/'+category.icon" class="h-12 w-12 rounded-lg object-cover object-center inline-block" alt="Default Icon">
                             <p class="self-center text-base md:text-lg text-gray-700 inline-block ml-4">{{ category.name }}</p>
                         </div>
                         <div class="col-span-2 md:col-span-1 p-7 flex flex-nowrap">
-                            <img v-if="object.icon == null" src="@/Assets/defaults/object.png" class="h-12 w-auto inline-block" alt="Default Icon">
-                            <img v-else :src="'/monitoring/icon/'+object.icon" class="h-12 w-auto inline-block" alt="Default Icon">
+                            <img v-if="object.icon == null" src="@/Assets/defaults/object.png" class="h-12 w-12 rounded-lg object-cover object-center inline-block" alt="Default Icon">
+                            <img v-else :src="'/monitoring/icon/'+object.icon" class="h-12 w-12 rounded-lg object-cover object-center inline-block" alt="Default Icon">
                             <p class="self-center text-base md:text-lg text-gray-700 inline-block ml-4">{{ object.name }}</p>
                         </div>
                     </div>
@@ -87,7 +87,7 @@
                                 </div>
                                 <div class="mt-6">
                                     <label for="description-monitoring">Deskripsi Monitoring</label>
-                                    <div class="border-2 border-gray-300 rounded mt-3 hidden md:block">
+                                    <div class="rounded mt-3 hidden md:block">
                                         <ckeditor placeholder="e.g. Tujuan monitoring ini adalah untuk kepentingan bersama" :editor="editor" v-model="form.general.description"></ckeditor>
                                     </div>
                                     <div class="rounded mt-3 block md:hidden">
@@ -95,14 +95,23 @@
                                     </div>
                                 </div>
                                 <div class="mt-6">
-                                    <button type="submit" class="text-white w-full bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
-                                        Simpan & Lanjutkan
+                                    <button type="submit" :disabled="is_loading" class="text-white w-full bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
+                                        <span v-if="!loading_button">
+                                                Simpan
+                                            </span>
+                                            <span v-else>
+                                                <svg role="status" class="inline mr-3 w-4 h-4 text-white animate-spin" viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z" fill="#E5E7EB"/>
+                                                    <path d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z" fill="currentColor"/>
+                                                </svg>
+                                                Loading...
+                                            </span>
                                     </button>
                                 </div>
                             </form>
 
                             <div v-if="menuForms[menuIndex].name == 'category'">
-                                <form @submit.prevent="onSubmitInput" action="#">
+                                <form @submit.prevent="onSubmitInput('category')" action="#">
                                     <div v-if="inputs.category != null && inputs.category != undefined">
                                         <div v-for="(item, index) in inputs.category" :key="`category-form-${index}`" class="my-3">
                                             <label class="font-semibold" :for="`field-data-${index}`">{{ item.label }}</label>
@@ -113,14 +122,14 @@
                                                 <div v-if="item.type == 'text'">
                                                     <input :placeholder="item.placeholder == null ? 'Masukkan data '+item.label : item.placeholder"
                                                     :required="item.is_required == 1 ? true : false"
-                                                    type="text"
+                                                    type="text" v-model="values.category[index].string_value"
                                                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-purple-500 block w-full p-2.5">
                                                     <small v-if="item.description != null" v-html="item.description"></small>
                                                 </div>
 
                                                 <div v-if="item.type == 'textarea'">
-                                                    <ckeditor
-                                                    :required="item.is_required == 1 ? true : false"
+                                                    <ckeditor v-if="values.category[index]"
+                                                    :required="item.is_required == 1 ? true : false" v-model="values.category[index].text_value"
                                                     :placeholder="item.placeholder == null ? 'Masukkan data '+item.label : item.placeholder" :editor="editor"></ckeditor>
                                                     <small v-if="item.description != null" v-html="item.description"></small>
                                                 </div>
@@ -128,7 +137,7 @@
                                                 <div v-if="item.type == 'number'">
                                                     <input :placeholder="item.placeholder == null ? 'Masukkan data '+item.label : item.placeholder"
                                                     :required="item.is_required == 1 ? true : false"
-                                                    type="number"
+                                                    type="number" v-model="values.category[index].number_value"
                                                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-purple-500 block w-full p-2.5">
                                                     <small v-if="item.description != null" v-html="item.description"></small>
                                                 </div>
@@ -137,7 +146,7 @@
                                                     <div v-if="item.option.length > 0">
                                                         <div v-for="(option, indexOption) in item.option" :key="`option-${indexOption}`">
                                                             <div class="flex items-center mb-4">
-                                                                <input :id="`option-${index}-value-${indexOption}`" type="checkbox" :name="`option-checkbox-${index}-value`" :value="item.value" class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 focus:ring-2" :aria-labelledby="`option-${index}-${indexOption}-checkbox`" :aria-describedby="`option-${index}-${indexOption}-checkbox`">
+                                                                <input @change="updateOption(option, index, indexOption)" :id="`option-${index}-value-${indexOption}`" type="checkbox" :name="`option-checkbox-${index}-value`" :checked="option.option_value.length > 0" :value="item.value" class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 focus:ring-2" :aria-labelledby="`option-${index}-${indexOption}-checkbox`" :aria-describedby="`option-${index}-${indexOption}-checkbox`">
                                                                 <label :for="`option-${index}-value-${indexOption}`" class="block ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">
                                                                 {{ option.value }}
                                                                 </label>
@@ -152,7 +161,7 @@
                                                     <div class="flex gap-x-2 w-full">
                                                         <div class="self-center"><span>Yang lain :</span></div>
                                                         <div class="justify-self-stretch">
-                                                            <input placeholder="Apabila ada" type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-purple-500 block w-full p-2.5">
+                                                            <input v-if="values.category[index]" placeholder="Apabila ada" v-model="values.category[index].string_value" type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-purple-500 block w-full p-2.5">
                                                         </div>
                                                     </div>
                                                     <small v-if="item.description != null" v-html="item.description"></small>
@@ -162,7 +171,7 @@
                                                     <div v-if="item.option.length > 0">
                                                         <div v-for="(option, indexOption) in item.option" :key="`option-${indexOption}`">
                                                             <div class="flex items-center mb-4">
-                                                                <input :id="`option-${index}-value-${indexOption}`" type="radio" :name="`option-radio-${index}-value`" :value="item.value" class="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300" :aria-labelledby="`option-${index}-${indexOption}`" :aria-describedby="`option-${index}-${indexOption}`">
+                                                                <input :checked="option.option_value.length > 0" @change="onChangeReset(option, index, indexOption, 'category')" :id="`option-${index}-value-${indexOption}`" type="radio" :name="`option-radio-${index}-value`" :value="item.value" class="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300" :aria-labelledby="`option-${index}-${indexOption}`" :aria-describedby="`option-${index}-${indexOption}`">
                                                                 <label :for="`option-${index}-value-${indexOption}`" class="block ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">
                                                                 {{ option.value }}
                                                                 </label>
@@ -178,12 +187,19 @@
                                                 </div>
 
                                                 <div v-if="item.type == 'dropdown'">
-                                                    <select :placeholder="item.placeholder == null ? 'Masukkan data '+item.label : item.placeholder"
-                                                    type="text"
-                                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                                                        <option value="">{{ item.placeholder == null ? 'Pilih data '+item.label : item.placeholder }}</option>
-                                                        <option v-for="(option, indexOption) in item.option" :key="`option-${indexOption}`" :value="option.value">{{ option.value }}</option>
-                                                    </select>
+                                                    <div class="flex flex-wrap gap-4">
+                                                        <div class="justify-self-stretch place-self-auto shrink w-full" :class="{'w-7/12 md:w-9/12' : values.category[index].text_value != '', 'w-full': values.category[index].text_value == ''}">
+                                                            <select @change="onChangeSelect(index, 'category')" v-model="values.category[index].text_value" :placeholder="item.placeholder == null ? 'Masukkan data '+item.label : item.placeholder"
+                                                            type="text"
+                                                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                                                                <option value="">{{ item.placeholder == null ? 'Pilih data '+item.label : item.placeholder }}</option>
+                                                                <option :selected="option.option_value.length > 0" v-for="(option, indexOption) in item.option" :key="`option-${indexOption}`" :value="option.id">{{ option.value }}</option>
+                                                            </select>
+                                                        </div>
+                                                        <div v-if="values.category[index].text_value != ''" class="justify-self-end place-self-end">
+                                                            <button type="button" @click="onDeleteOptionValue(item, index)" class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2">Kosongkan</button>
+                                                        </div>
+                                                    </div>
                                                     <div v-if="item.option.length <= 0">
                                                         <div class="p-4 mb-4 text-sm text-red-700 bg-red-100 rounded-lg mt-2" role="alert">
                                                             <span class="font-medium">Perlu Diperthatikan! :</span> Opsi kosong, beritahu admin untuk mengisi opsi.
@@ -193,19 +209,33 @@
                                                 </div>
 
                                                 <div v-if="item.type == 'file'">
-                                                    <input :placeholder="item.placeholder == null ? 'Pilih data '+item.label : item.placeholder"
-                                                    :required="item.is_required == 1 ? true : false"
-                                                    type="file"
-                                                    class="block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent">
-                                                    <small v-if="item.description != null" v-html="item.description"></small>
+                                                    <div v-if="item.value_data.length > 0" class="bg-white p-4 rounded-lg shadow-lg gap-x-4 relative" :class="{'flex gap-x-4': item.value_data[0].type_file != 'image'}">
+                                                        <div @click="onRemoveFile(item.value_data[0].id)" role="button" class="absolute right-0 top-0 m-6">
+                                                            <x-circle-icon class="text-gray-600" size="20"/>
+                                                        </div>
+                                                        <div>
+                                                            <img v-if="item.value_data[0].type_file == 'image'" class="w-10/12 h-48 object-cover object-center rounded-lg" :src="`/monitoring/value/${item.value_data[0].file_value}`" :alt="item.value_data[0].type_file">
+                                                            <img v-else class="h-10 w-auto" :src="`/image/icon/${item.value_data[0].type_file}.png`" :alt="item.value_data[0].type_file">
+                                                        </div>
+                                                        <div class="justify-self-stretch self-center">
+                                                            {{ item.value_data[0].file_value }}
+                                                        </div>
+                                                    </div>
+                                                    <div v-else>
+                                                        <input @change="onUploadFileInput($event, item, index, 'category')" :placeholder="item.placeholder == null ? 'Pilih data '+item.label : item.placeholder"
+                                                        :required="item.is_required == 1 ? true : false"
+                                                        type="file" accept=".png,.jpeg,.jpg,.xlsx,.pdf,.doc,.docx,.xls,.csv,.ppt,.pptx"
+                                                        class="block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent">
+                                                        <small v-if="item.description != null" v-html="item.description"></small>
+                                                    </div>
                                                 </div>
 
                                                 <div v-if="item.type == 'date'">
                                                     <div class="relative">
                                                         <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
-                                                            <svg class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path></svg>
+                                                            <calendar-icon size="20" class="text-gray-700 dark:text-gray-400"/>
                                                         </div>
-                                                        <input
+                                                        <input v-model="values.category[index].date_value"
                                                         :required="item.is_required == 1 ? true : false"
                                                         :placeholder="item.placeholder == null ? 'Tentukan tanggal data '+item.label : item.placeholder" type="date" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5">
                                                         <small v-if="item.description != null" v-html="item.description"></small>
@@ -214,7 +244,10 @@
 
                                                 <div v-if="item.type == 'time'">
                                                     <div class="relative">
-                                                        <input
+                                                        <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
+                                                            <clock-icon size="20" class="text-gray-700 dark:text-gray-400"/>
+                                                        </div>
+                                                        <input v-model="values.category[index].time_value"
                                                         :required="item.is_required == 1 ? true : false"
                                                         :placeholder="item.placeholder == null ? 'Tentukan waktu data '+item.label : item.placeholder" type="time" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5">
                                                         <small v-if="item.description != null" v-html="item.description"></small>
@@ -239,15 +272,24 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <button type="submit" class="text-white w-full bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
-                                            Simpan & Lanjutkan
+                                        <button type="submit" :disabled="is_loading" class="text-white w-full bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
+                                            <span v-if="!loading_button">
+                                                Simpan
+                                            </span>
+                                            <span v-else>
+                                                <svg role="status" class="inline mr-3 w-4 h-4 text-white animate-spin" viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z" fill="#E5E7EB"/>
+                                                    <path d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z" fill="currentColor"/>
+                                                </svg>
+                                                Loading...
+                                            </span>
                                         </button>
                                     </div>
                                 </form>
                             </div>
 
                             <div v-if="menuForms[menuIndex].name == 'object'">
-                                <form @submit.prevent="onSubmitInput" action="#">
+                                <form @submit.prevent="onSubmitInput('object')" action="#">
                                     <div v-if="inputs.object != null && inputs.object != undefined">
                                         <div v-for="(item, index) in inputs.object" :key="`object-form-${index}`" class="my-3">
                                             <label class="font-semibold" :for="`field-data-${index}`">{{ item.label }}</label>
@@ -258,14 +300,14 @@
                                                 <div v-if="item.type == 'text'">
                                                     <input :placeholder="item.placeholder == null ? 'Masukkan data '+item.label : item.placeholder"
                                                     :required="item.is_required == 1 ? true : false"
-                                                    type="text"
+                                                    type="text" v-model="values.object[index].string_value"
                                                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-purple-500 block w-full p-2.5">
                                                     <small v-if="item.description != null" v-html="item.description"></small>
                                                 </div>
 
                                                 <div v-if="item.type == 'textarea'">
-                                                    <ckeditor
-                                                    :required="item.is_required == 1 ? true : false"
+                                                    <ckeditor v-if="values.object[index]"
+                                                    :required="item.is_required == 1 ? true : false" v-model="values.object[index].text_value"
                                                     :placeholder="item.placeholder == null ? 'Masukkan data '+item.label : item.placeholder" :editor="editor"></ckeditor>
                                                     <small v-if="item.description != null" v-html="item.description"></small>
                                                 </div>
@@ -273,7 +315,7 @@
                                                 <div v-if="item.type == 'number'">
                                                     <input :placeholder="item.placeholder == null ? 'Masukkan data '+item.label : item.placeholder"
                                                     :required="item.is_required == 1 ? true : false"
-                                                    type="number"
+                                                    type="number" v-model="values.object[index].number_value"
                                                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-purple-500 block w-full p-2.5">
                                                     <small v-if="item.description != null" v-html="item.description"></small>
                                                 </div>
@@ -282,7 +324,7 @@
                                                     <div v-if="item.option.length > 0">
                                                         <div v-for="(option, indexOption) in item.option" :key="`option-${indexOption}`">
                                                             <div class="flex items-center mb-4">
-                                                                <input :id="`option-${index}-value-${indexOption}`" type="checkbox" :name="`option-checkbox-${index}-value`" :value="item.value" class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 focus:ring-2" :aria-labelledby="`option-${index}-${indexOption}-checkbox`" :aria-describedby="`option-${index}-${indexOption}-checkbox`">
+                                                                <input @change="updateOption(option, index, indexOption)" :id="`option-${index}-value-${indexOption}`" type="checkbox" :name="`option-checkbox-${index}-value`" :checked="option.option_value.length > 0" :value="item.value" class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 focus:ring-2" :aria-labelledby="`option-${index}-${indexOption}-checkbox`" :aria-describedby="`option-${index}-${indexOption}-checkbox`">
                                                                 <label :for="`option-${index}-value-${indexOption}`" class="block ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">
                                                                 {{ option.value }}
                                                                 </label>
@@ -297,7 +339,7 @@
                                                     <div class="flex gap-x-2 w-full">
                                                         <div class="self-center"><span>Yang lain :</span></div>
                                                         <div class="justify-self-stretch">
-                                                            <input placeholder="Apabila ada" type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-purple-500 block w-full p-2.5">
+                                                            <input v-if="values.object[index]" placeholder="Apabila ada" v-model="values.object[index].string_value" type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-purple-500 block w-full p-2.5">
                                                         </div>
                                                     </div>
                                                     <small v-if="item.description != null" v-html="item.description"></small>
@@ -307,7 +349,7 @@
                                                     <div v-if="item.option.length > 0">
                                                         <div v-for="(option, indexOption) in item.option" :key="`option-${indexOption}`">
                                                             <div class="flex items-center mb-4">
-                                                                <input :id="`option-${index}-value-${indexOption}`" type="radio" :name="`option-radio-${index}-value`" :value="item.value" class="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300" :aria-labelledby="`option-${index}-${indexOption}`" :aria-describedby="`option-${index}-${indexOption}`">
+                                                                <input :checked="option.option_value.length > 0" @change="onChangeReset(option, index, indexOption, 'object')" :id="`option-${index}-value-${indexOption}`" type="radio" :name="`option-radio-${index}-value`" :value="item.value" class="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300" :aria-labelledby="`option-${index}-${indexOption}`" :aria-describedby="`option-${index}-${indexOption}`">
                                                                 <label :for="`option-${index}-value-${indexOption}`" class="block ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">
                                                                 {{ option.value }}
                                                                 </label>
@@ -323,12 +365,19 @@
                                                 </div>
 
                                                 <div v-if="item.type == 'dropdown'">
-                                                    <select :placeholder="item.placeholder == null ? 'Masukkan data '+item.label : item.placeholder"
-                                                    type="text"
-                                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                                                        <option value="">{{ item.placeholder == null ? 'Pilih data '+item.label : item.placeholder }}</option>
-                                                        <option v-for="(option, indexOption) in item.option" :key="`option-${indexOption}`" :value="option.value">{{ option.value }}</option>
-                                                    </select>
+                                                    <div class="flex flex-wrap gap-4">
+                                                        <div class="justify-self-stretch place-self-auto shrink w-full" :class="{'w-7/12 md:w-9/12' : values.object[index].text_value != '', 'w-full': values.object[index].text_value == ''}">
+                                                            <select @change="onChangeSelect(index, 'object')" v-model="values.object[index].text_value" :placeholder="item.placeholder == null ? 'Masukkan data '+item.label : item.placeholder"
+                                                            type="text"
+                                                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                                                                <option value="">{{ item.placeholder == null ? 'Pilih data '+item.label : item.placeholder }}</option>
+                                                                <option :selected="option.option_value.length > 0" v-for="(option, indexOption) in item.option" :key="`option-${indexOption}`" :value="option.id">{{ option.value }}</option>
+                                                            </select>
+                                                        </div>
+                                                        <div v-if="values.object[index].text_value != ''" class="justify-self-end place-self-end">
+                                                            <button type="button" @click="onDeleteOptionValue(item, index)" class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2">Kosongkan</button>
+                                                        </div>
+                                                    </div>
                                                     <div v-if="item.option.length <= 0">
                                                         <div class="p-4 mb-4 text-sm text-red-700 bg-red-100 rounded-lg mt-2" role="alert">
                                                             <span class="font-medium">Perlu Diperthatikan! :</span> Opsi kosong, beritahu admin untuk mengisi opsi.
@@ -338,19 +387,33 @@
                                                 </div>
 
                                                 <div v-if="item.type == 'file'">
-                                                    <input :placeholder="item.placeholder == null ? 'Pilih data '+item.label : item.placeholder"
-                                                    :required="item.is_required == 1 ? true : false"
-                                                    type="file"
-                                                    class="block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent">
-                                                    <small v-if="item.description != null" v-html="item.description"></small>
+                                                    <div v-if="item.value_data.length > 0" class="bg-white p-4 rounded-lg shadow-lg gap-x-4 relative" :class="{'flex gap-x-4': item.value_data[0].type_file != 'image'}">
+                                                        <div @click="onRemoveFile(item.value_data[0].id)" role="button" class="absolute right-0 top-0 m-6">
+                                                            <x-circle-icon class="text-gray-600" size="20"/>
+                                                        </div>
+                                                        <div>
+                                                            <img v-if="item.value_data[0].type_file == 'image'" class="w-10/12 h-48 object-cover object-center rounded-lg" :src="`/monitoring/value/${item.value_data[0].file_value}`" :alt="item.value_data[0].type_file">
+                                                            <img v-else class="h-10 w-auto" :src="`/image/icon/${item.value_data[0].type_file}.png`" :alt="item.value_data[0].type_file">
+                                                        </div>
+                                                        <div class="justify-self-stretch self-center">
+                                                            {{ item.value_data[0].file_value }}
+                                                        </div>
+                                                    </div>
+                                                    <div v-else>
+                                                        <input @change="onUploadFileInput($event, item, index, 'object')" :placeholder="item.placeholder == null ? 'Pilih data '+item.label : item.placeholder"
+                                                        :required="item.is_required == 1 ? true : false"
+                                                        type="file" accept=".png,.jpeg,.jpg,.xlsx,.pdf,.doc,.docx,.xls,.csv,.ppt,.pptx"
+                                                        class="block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent">
+                                                        <small v-if="item.description != null" v-html="item.description"></small>
+                                                    </div>
                                                 </div>
 
                                                 <div v-if="item.type == 'date'">
                                                     <div class="relative">
                                                         <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
-                                                            <svg class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path></svg>
+                                                            <calendar-icon size="20" class="text-gray-700 dark:text-gray-400"/>
                                                         </div>
-                                                        <input
+                                                        <input v-model="values.object[index].date_value"
                                                         :required="item.is_required == 1 ? true : false"
                                                         :placeholder="item.placeholder == null ? 'Tentukan tanggal data '+item.label : item.placeholder" type="date" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5">
                                                         <small v-if="item.description != null" v-html="item.description"></small>
@@ -359,7 +422,10 @@
 
                                                 <div v-if="item.type == 'time'">
                                                     <div class="relative">
-                                                        <input
+                                                        <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
+                                                            <clock-icon size="20" class="text-gray-700 dark:text-gray-400"/>
+                                                        </div>
+                                                        <input v-model="values.object[index].time_value"
                                                         :required="item.is_required == 1 ? true : false"
                                                         :placeholder="item.placeholder == null ? 'Tentukan waktu data '+item.label : item.placeholder" type="time" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5">
                                                         <small v-if="item.description != null" v-html="item.description"></small>
@@ -384,17 +450,28 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <button type="submit" class="text-white w-full bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
-                                            Simpan & Lanjutkan
+                                        <button type="submit" :disabled="is_loading" class="text-white w-full bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
+                                            <span v-if="!loading_button">
+                                                Simpan
+                                            </span>
+                                            <span v-else>
+                                                <svg role="status" class="inline mr-3 w-4 h-4 text-white animate-spin" viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z" fill="#E5E7EB"/>
+                                                    <path d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z" fill="currentColor"/>
+                                                </svg>
+                                                Loading...
+                                            </span>
                                         </button>
                                     </div>
                                 </form>
                             </div>
 
+
+
                             <div v-if="menuForms[menuIndex].name == 'monitoring'">
-                                <form @submit.prevent="onSubmitInput" action="#">
+                                <form @submit.prevent="onSubmitInput('monitoring')" action="#">
                                     <div v-if="inputs.monitoring != null && inputs.monitoring != undefined">
-                                        <div v-for="(item, index) in inputs.monitoring" :key="`category-form-${index}`" class="my-3">
+                                        <div v-for="(item, index) in inputs.monitoring" :key="`monitoring-form-${index}`" class="my-3">
                                             <label class="font-semibold" :for="`field-data-${index}`">{{ item.label }}</label>
                                             <div v-if="inputType(item.type)">
                                                 <div v-if="item.image != null">
@@ -403,14 +480,14 @@
                                                 <div v-if="item.type == 'text'">
                                                     <input :placeholder="item.placeholder == null ? 'Masukkan data '+item.label : item.placeholder"
                                                     :required="item.is_required == 1 ? true : false"
-                                                    type="text"
+                                                    type="text" v-model="values.monitoring[index].string_value"
                                                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-purple-500 block w-full p-2.5">
                                                     <small v-if="item.description != null" v-html="item.description"></small>
                                                 </div>
 
                                                 <div v-if="item.type == 'textarea'">
-                                                    <ckeditor
-                                                    :required="item.is_required == 1 ? true : false"
+                                                    <ckeditor v-if="values.monitoring[index]"
+                                                    :required="item.is_required == 1 ? true : false" v-model="values.monitoring[index].text_value"
                                                     :placeholder="item.placeholder == null ? 'Masukkan data '+item.label : item.placeholder" :editor="editor"></ckeditor>
                                                     <small v-if="item.description != null" v-html="item.description"></small>
                                                 </div>
@@ -418,7 +495,7 @@
                                                 <div v-if="item.type == 'number'">
                                                     <input :placeholder="item.placeholder == null ? 'Masukkan data '+item.label : item.placeholder"
                                                     :required="item.is_required == 1 ? true : false"
-                                                    type="number"
+                                                    type="number" v-model="values.monitoring[index].number_value"
                                                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-purple-500 block w-full p-2.5">
                                                     <small v-if="item.description != null" v-html="item.description"></small>
                                                 </div>
@@ -427,7 +504,7 @@
                                                     <div v-if="item.option.length > 0">
                                                         <div v-for="(option, indexOption) in item.option" :key="`option-${indexOption}`">
                                                             <div class="flex items-center mb-4">
-                                                                <input :id="`option-${index}-value-${indexOption}`" type="checkbox" :name="`option-checkbox-${index}-value`" :value="item.value" class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 focus:ring-2" :aria-labelledby="`option-${index}-${indexOption}-checkbox`" :aria-describedby="`option-${index}-${indexOption}-checkbox`">
+                                                                <input @change="updateOption(option, index, indexOption)" :id="`option-${index}-value-${indexOption}`" type="checkbox" :name="`option-checkbox-${index}-value`" :checked="option.option_value.length > 0" :value="item.value" class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 focus:ring-2" :aria-labelledby="`option-${index}-${indexOption}-checkbox`" :aria-describedby="`option-${index}-${indexOption}-checkbox`">
                                                                 <label :for="`option-${index}-value-${indexOption}`" class="block ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">
                                                                 {{ option.value }}
                                                                 </label>
@@ -442,7 +519,7 @@
                                                     <div class="flex gap-x-2 w-full">
                                                         <div class="self-center"><span>Yang lain :</span></div>
                                                         <div class="justify-self-stretch">
-                                                            <input placeholder="Apabila ada" type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-purple-500 block w-full p-2.5">
+                                                            <input v-if="values.monitoring[index]" placeholder="Apabila ada" v-model="values.monitoring[index].string_value" type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-purple-500 block w-full p-2.5">
                                                         </div>
                                                     </div>
                                                     <small v-if="item.description != null" v-html="item.description"></small>
@@ -452,7 +529,7 @@
                                                     <div v-if="item.option.length > 0">
                                                         <div v-for="(option, indexOption) in item.option" :key="`option-${indexOption}`">
                                                             <div class="flex items-center mb-4">
-                                                                <input :id="`option-${index}-value-${indexOption}`" type="radio" :name="`option-radio-${index}-value`" :value="item.value" class="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300" :aria-labelledby="`option-${index}-${indexOption}`" :aria-describedby="`option-${index}-${indexOption}`">
+                                                                <input :checked="option.option_value.length > 0" @change="onChangeReset(option, index, indexOption, 'monitoring')" :id="`option-${index}-value-${indexOption}`" type="radio" :name="`option-radio-${index}-value`" :value="item.value" class="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300" :aria-labelledby="`option-${index}-${indexOption}`" :aria-describedby="`option-${index}-${indexOption}`">
                                                                 <label :for="`option-${index}-value-${indexOption}`" class="block ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">
                                                                 {{ option.value }}
                                                                 </label>
@@ -468,12 +545,19 @@
                                                 </div>
 
                                                 <div v-if="item.type == 'dropdown'">
-                                                    <select :placeholder="item.placeholder == null ? 'Masukkan data '+item.label : item.placeholder"
-                                                    type="text"
-                                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                                                        <option value="">{{ item.placeholder == null ? 'Pilih data '+item.label : item.placeholder }}</option>
-                                                        <option v-for="(option, indexOption) in item.option" :key="`option-${indexOption}`" :value="option.value">{{ option.value }}</option>
-                                                    </select>
+                                                    <div class="flex flex-wrap gap-4">
+                                                        <div class="justify-self-stretch place-self-auto shrink w-full" :class="{'w-7/12 md:w-9/12' : values.monitoring[index].text_value != '', 'w-full': values.monitoring[index].text_value == ''}">
+                                                            <select @change="onChangeSelect(index, 'monitoring')" v-model="values.monitoring[index].text_value" :placeholder="item.placeholder == null ? 'Masukkan data '+item.label : item.placeholder"
+                                                            type="text"
+                                                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                                                                <option value="">{{ item.placeholder == null ? 'Pilih data '+item.label : item.placeholder }}</option>
+                                                                <option :selected="option.option_value.length > 0" v-for="(option, indexOption) in item.option" :key="`option-${indexOption}`" :value="option.id">{{ option.value }}</option>
+                                                            </select>
+                                                        </div>
+                                                        <div v-if="values.monitoring[index].text_value != ''" class="justify-self-end place-self-end">
+                                                            <button type="button" @click="onDeleteOptionValue(item, index)" class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2">Kosongkan</button>
+                                                        </div>
+                                                    </div>
                                                     <div v-if="item.option.length <= 0">
                                                         <div class="p-4 mb-4 text-sm text-red-700 bg-red-100 rounded-lg mt-2" role="alert">
                                                             <span class="font-medium">Perlu Diperthatikan! :</span> Opsi kosong, beritahu admin untuk mengisi opsi.
@@ -483,19 +567,33 @@
                                                 </div>
 
                                                 <div v-if="item.type == 'file'">
-                                                    <input :placeholder="item.placeholder == null ? 'Pilih data '+item.label : item.placeholder"
-                                                    :required="item.is_required == 1 ? true : false"
-                                                    type="file"
-                                                    class="block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent">
-                                                    <small v-if="item.description != null" v-html="item.description"></small>
+                                                    <div v-if="item.value_data.length > 0" class="bg-white p-4 rounded-lg shadow-lg gap-x-4 relative" :class="{'flex gap-x-4': item.value_data[0].type_file != 'image'}">
+                                                        <div @click="onRemoveFile(item.value_data[0].id)" role="button" class="absolute right-0 top-0 m-6">
+                                                            <x-circle-icon class="text-gray-600" size="20"/>
+                                                        </div>
+                                                        <div>
+                                                            <img v-if="item.value_data[0].type_file == 'image'" class="w-10/12 h-48 object-cover object-center rounded-lg" :src="`/monitoring/value/${item.value_data[0].file_value}`" :alt="item.value_data[0].type_file">
+                                                            <img v-else class="h-10 w-auto" :src="`/image/icon/${item.value_data[0].type_file}.png`" :alt="item.value_data[0].type_file">
+                                                        </div>
+                                                        <div class="justify-self-stretch self-center">
+                                                            {{ item.value_data[0].file_value }}
+                                                        </div>
+                                                    </div>
+                                                    <div v-else>
+                                                        <input @change="onUploadFileInput($event, item, index, 'monitoring')" :placeholder="item.placeholder == null ? 'Pilih data '+item.label : item.placeholder"
+                                                        :required="item.is_required == 1 ? true : false"
+                                                        type="file" accept=".png,.jpeg,.jpg,.xlsx,.pdf,.doc,.docx,.xls,.csv,.ppt,.pptx"
+                                                        class="block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent">
+                                                        <small v-if="item.description != null" v-html="item.description"></small>
+                                                    </div>
                                                 </div>
 
                                                 <div v-if="item.type == 'date'">
                                                     <div class="relative">
                                                         <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
-                                                            <svg class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path></svg>
+                                                            <calendar-icon size="20" class="text-gray-700 dark:text-gray-400"/>
                                                         </div>
-                                                        <input
+                                                        <input v-model="values.monitoring[index].date_value"
                                                         :required="item.is_required == 1 ? true : false"
                                                         :placeholder="item.placeholder == null ? 'Tentukan tanggal data '+item.label : item.placeholder" type="date" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5">
                                                         <small v-if="item.description != null" v-html="item.description"></small>
@@ -504,7 +602,10 @@
 
                                                 <div v-if="item.type == 'time'">
                                                     <div class="relative">
-                                                        <input
+                                                        <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
+                                                            <clock-icon size="20" class="text-gray-700 dark:text-gray-400"/>
+                                                        </div>
+                                                        <input v-model="values.monitoring[index].time_value"
                                                         :required="item.is_required == 1 ? true : false"
                                                         :placeholder="item.placeholder == null ? 'Tentukan waktu data '+item.label : item.placeholder" type="time" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5">
                                                         <small v-if="item.description != null" v-html="item.description"></small>
@@ -529,12 +630,23 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <button type="submit" class="text-white w-full bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
-                                            Simpan & Lanjutkan
+                                        <button type="submit" :disabled="is_loading" class="text-white w-full bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
+                                            <span v-if="!loading_button">
+                                                Simpan
+                                            </span>
+                                            <span v-else>
+                                                <svg role="status" class="inline mr-3 w-4 h-4 text-white animate-spin" viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z" fill="#E5E7EB"/>
+                                                    <path d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z" fill="currentColor"/>
+                                                </svg>
+                                                Loading...
+                                            </span>
                                         </button>
                                     </div>
                                 </form>
                             </div>
+
+
 
                             <div v-if="menuForms[menuIndex].name == 'image'">
                                 <button @click="toggleFormModal(true, 'create')" type="button" class="w-full mt-4 focus:outline-none text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2">
@@ -679,6 +791,11 @@
                                             <div v-if="optionModal.index != null">
                                                 <img :src="'/monitoring/data/'+images[optionModal.index].name" class="w-full h-auto rounded-lg" alt="Preview Image">
                                             </div>
+                                            <div class="flex flex-row-reverse items-center p-6 space-x-2 rounded-b border-t border-gray-200 dark:border-gray-600">
+                                                <button @click="modalImage = false" type="button" class="text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-200 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600">
+                                                    Tutup
+                                                </button>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -732,21 +849,25 @@ import CKEditor from '@ckeditor/ckeditor5-vue'
 import InlineEditor from '@ckeditor/ckeditor5-build-inline'
 import AppLayout from '@/Layouts/AppLayout.vue'
 import MUnderConstruction from '@/Components/MUnderConstruction'
-import { ArrowLeftIcon, PlusCircleIcon, FileTextIcon, ImageIcon, TrashIcon, MoreVerticalIcon, EditIcon, EyeIcon } from '@zhuowenli/vue-feather-icons'
+import { ArrowLeftIcon, CalendarIcon, ClockIcon, PlusCircleIcon, XCircleIcon, FileTextIcon, ImageIcon, TrashIcon, MoreVerticalIcon, EditIcon, EyeIcon,  } from '@zhuowenli/vue-feather-icons'
 import MToast from '@/Components/MToast'
 import MNoData from '@/Components/MNoData.vue'
 import YouTube from 'vue3-youtube'
+import moment from 'moment'
 
 export default defineComponent({
-    props: ['object', 'category', 'teams', 'inputs', 'monitoring', 'list_employee', 'menu_index', 'images'],
+    props: ['object', 'category', 'teams', 'inputs', 'monitoring', 'list_employee', 'menu_index', 'images', 'token'],
     components: {
         MoreVerticalIcon,
         FileTextIcon,
         EyeIcon,
         AppLayout,
         YouTube,
+        CalendarIcon,
+        ClockIcon,
         MToast,
         TrashIcon,
+        XCircleIcon,
         MNoData,
         EditIcon,
         ArrowLeftIcon,
@@ -760,7 +881,13 @@ export default defineComponent({
             editor: InlineEditor,
             menuIndex: 0,
             modalImage: false,
-            values: [],
+            files_input: null,
+            loading_button: false,
+            values: {
+                category: [],
+                object: [],
+                monitoring: [],
+            },
             formImage: this.$inertia.form({
                 label: '',
                 image: null,
@@ -848,6 +975,144 @@ export default defineComponent({
                 })
             }
         },
+        onChangeSelect(index, type) {
+            let mOptions
+            if(type == 'category') mOptions = this.inputs.category[index].option
+            else if(type == 'object') mOptions = this.inputs.object[index].option
+            else this.inputs.monitoring[index].option
+            if(mOptions.length > 0) {
+                mOptions.forEach((item) => {
+                    let fm = new FormData()
+                    fm.append('input_id', item.monitoring_input_id)
+                    fm.append('value', item.value)
+                    fm.append('is_checked', 0)
+                    fm.append('_method', 'PATCH')
+                    axios.post(this.route('api.option-input-monitoring.update', {
+                        id: item.id
+                    }), fm, {
+                        headers: {
+                            'Authorization': `Bearer ${this.token}`
+                        }
+                    })
+                })
+            }
+            let dataId
+            if(type == 'category') dataId = this.values.category[index].text_value
+            else if(type == 'object') dataId = this.values.object[index].text_value
+            else dataId = this.values.monitoring[index].text_value
+            // if(dataId != null && dataId != '' && dataId != undefined) {
+            let option = mOptions.find(item => item.id == dataId)
+            this.updateOption(option, index, null)
+            // }
+        },
+        onSubmitInput(type) {
+            let mValue = null
+            this.loading_button = true
+            if(type == 'category') mValue = this.values.category
+            else if(type == 'object') mValue = this.values.object
+            else if(type == 'monitoring') mValue = this.values.monitoring
+            mValue.forEach((item, index) => {
+                let fm = new FormData()
+                fm.append('input_id', item.monitoring_input_id)
+                fm.append('type', type)
+                fm.append('monitoring_id', this.monitoring.id)
+                fm.append('number_value', item.number_value)
+                fm.append('string_value', item.string_value)
+                fm.append('text_value', item.text_value)
+                fm.append('time_value', item.time_value)
+                if(item.date_value == '') fm.append('number_value', 0)
+                else fm.append('number_value', item.number_value)
+                if(item.date_value == '') fm.append('date_value', moment().format('YYYY-MM-DD'))
+                else fm.append('date_value', item.date_value)
+                if(item.time_value == '') fm.append('time_value', moment().format('HH:mm'))
+                else fm.append('time_value', item.time_value)
+                axios.post(this.route('api.value.store'), fm, {
+                    headers: {
+                        'Authorization': `Bearer ${this.token}`
+                    }
+                }).then((response) => {
+                    if(index == mValue.length - 1) {
+                        this.menuIndex++
+                        this.onToast('green', 'Berhasil disimpan')
+                        this.loading_button = false
+                    }
+                }).catch((error) => {
+                    if(index == mValue.length - 1) {
+                        this.onToast('red', 'Terjadi kesalahan: Ulangi')
+                        this.loading_button = false
+                    }
+                })
+            })
+        },
+        onUploadFileInput(e, item, index, type) {
+            let file = e.target.files[0]
+            this.files_input = file
+            let images_files = ['png', 'jpg', 'jpeg']
+            let docs_files = ['doc', 'docx']
+            let excels_files = ['xlsx', 'xls']
+            let ppt_files = ['ppt', 'pptx']
+            let result
+            let filename = file.name
+            let extension = filename.split('.').pop()
+            if(images_files.includes(extension)) {
+                result = 'image'
+            } else if(docs_files.includes(extension)) {
+                result = 'document'
+            } else if(excels_files.includes(extension)) {
+                result = 'excel'
+            } else if(ppt_files.includes(extension)) {
+                result = 'ppt'
+            } else if(extension == 'pdf') {
+                result = 'pdf'
+            } else {
+                alert('File format tidak didukung')
+                return false
+            }
+            let fm = new FormData()
+            fm.append('input_id', item.id)
+            fm.append('monitoring_id', this.monitoring.id)
+            fm.append('file', this.files_input)
+            fm.append('type_file', result)
+            fm.append('type', this.menuForms[this.menuIndex].name)
+            this.$inertia.post(this.route('app.value.store'), fm, { preserveState: true, preserveScroll: true,
+                onSuccess: () => {
+                    this.files_input = null
+                }
+            })
+        },
+        onChangeReset(option, index, index_option, type) {
+            let mOptions
+            if(type == 'category') mOptions = this.inputs.category[index].option
+            else if(type == 'object') mOptions = this.inputs.object[index].option
+            else this.inputs.monitoring[index].option
+            if(mOptions.length > 0) {
+                mOptions.forEach((item) => {
+                    let fm = new FormData()
+                    fm.append('input_id', item.monitoring_input_id)
+                    fm.append('value', item.value)
+                    fm.append('monitoring_id', this.monitoring.id)
+                    fm.append('is_checked', 0)
+                    fm.append('_method', 'PATCH')
+                    axios.post(this.route('api.option-input-monitoring.update', {
+                        id: item.id
+                    }), fm, {
+                        headers: {
+                            'Authorization': `Bearer ${this.token}`
+                        }
+                    })
+                })
+            }
+            this.updateOption(option, index, index_option)
+        },
+        onRemoveFile(id) {
+            this.$inertia.delete(this.route('app.value.destroy', {
+                id: id
+            }), { preserveState: true, preserveScroll: true,
+                onFinish: () => {
+                    this.files_input = null
+                }
+            })
+        },
         deleteData() {
             this.$inertia.delete(this.route('app.image.destroy', { id: this.images[this.optionModal.index].id  }),
             {
@@ -861,6 +1126,63 @@ export default defineComponent({
                 },
                 onSuccess: (response) => {
                     // this.onToast(response)
+                }
+            })
+        },
+        updateOption(option, index, index_option) {
+            let value
+            if(option.option_value.length > 0) value = 0
+            else value = 1
+            let fm = new FormData()
+            fm.append('_method', 'PATCH')
+            fm.append('input_id', option.monitoring_input_id)
+            fm.append('monitoring_id', this.monitoring.id)
+            fm.append('value', option.value)
+            fm.append('option_id', option.id)
+            fm.append('is_checked', value)
+            console.log(option)
+            console.log(value)
+            axios.post(this.route('api.option-input-monitoring.update', {
+                id: option.id
+            }), fm, {
+                headers: {
+                    'Authorization': `Bearer ${this.token}`
+                }
+            }).then((response) => {
+                this.$inertia.get(this.route('app.monitoring.edit', {
+                    id: this.monitoring.id
+                }), {
+                    categoryId: this.category.id,
+                    objectId: this.object.id,
+                }, {
+                    preserveState: true,
+                    preserveScroll: true
+                })
+            })
+        },
+        onDeleteOptionValue(item, index) {
+            let menuName = this.menuForms[this.menuIndex].name
+            let optionId
+            if(menuName == 'category') optionId = this.values.category[index].text_value
+            else if(menuName == 'object') optionId = this.values.object[index].text_value
+            else optionId = this.values.monitoring[index].text_value
+            console.log([{
+                monitoringId: this.monitoring.id,
+                optionId: optionId,
+            }])
+
+            // console.log(optionId)
+            // return
+            this.$inertia.post(this.route('app.input-option.destroy', {
+                id: item.id
+            }), {
+                _method: 'DELETE',
+                monitoringId: this.monitoring.id,
+                optionId: optionId,
+            }, {
+                preserveScroll: true,
+                onFinish: () => {
+                    this.values.category[index].text_value = ''
                 }
             })
         },
@@ -890,7 +1212,88 @@ export default defineComponent({
             })
         },
         setModelValues() {
-
+            if(this.inputs.category.length > 0) {
+                this.inputs.category.forEach((item, index) => {
+                    let value_dropdown = ''
+                    if(item.type == 'dropdown') {
+                        item.option.forEach((option, indexOption) => {
+                            let value_checked = option.option_value.find(item => item.monitoring_input_option_id == option.id)
+                            if(value_checked != undefined && value_checked != null) {
+                                value_dropdown = value_checked.monitoring_input_option_id
+                            }
+                        })
+                    }
+                    let lengthData = this.inputs.category[index].value_data.length > 0
+                    let dataValue =  this.inputs.category[index].value_data
+                    let data = {
+                        monitoring_input_id: item.id,
+                        type: 'category',
+                        monitoring_id: this.monitoring.id,
+                        string_value: dataValue[0] != null && lengthData && dataValue[0] != undefined ? dataValue[0].string_value : '',
+                        date_value: dataValue[0] != null && lengthData && dataValue[0] != undefined ? dataValue[0].date_value : '',
+                        file_value: '',
+                        time_value: dataValue[0] != null && lengthData && dataValue[0] != undefined ? dataValue[0].time_value : '',
+                        number_value: dataValue[0] != null && lengthData && dataValue[0] != undefined ? dataValue[0].number_value : '',
+                        text_value: dataValue[0] != null && lengthData && dataValue[0] != undefined ? dataValue[0].text_value : value_dropdown,
+                    }
+                    this.values.category.push(data)
+                })
+            }
+            if(this.inputs.object.length > 0) {
+                this.inputs.object.forEach((item, index) => {
+                    let value_dropdown = ''
+                    if(item.type == 'dropdown') {
+                        item.option.forEach((option, indexOption) => {
+                            let value_checked = option.option_value.find(item => item.monitoring_input_option_id == option.id)
+                            if(value_checked != undefined && value_checked != null) {
+                                value_dropdown = value_checked.monitoring_input_option_id
+                            }
+                        })
+                    }
+                    let lengthData = this.inputs.object[index].value_data.length > 0
+                    let dataValue =  this.inputs.object[index].value_data
+                    let data = {
+                        monitoring_input_id: item.id,
+                        type: 'object',
+                        monitoring_id: this.monitoring.id,
+                        string_value: dataValue[0] != null && lengthData && dataValue[0] != undefined ? dataValue[0].string_value : '',
+                        date_value: dataValue[0] != null && lengthData && dataValue[0] != undefined ? dataValue[0].date_value : '',
+                        file_value: '',
+                        time_value: dataValue[0] != null && lengthData && dataValue[0] != undefined ? dataValue[0].time_value : '',
+                        number_value: dataValue[0] != null && lengthData && dataValue[0] != undefined ? dataValue[0].number_value : '',
+                        text_value: dataValue[0] != null && lengthData && dataValue[0] != undefined ? dataValue[0].text_value : value_dropdown,
+                    }
+                    this.values.object.push(data)
+                })
+            }
+            if(this.inputs.monitoring.length > 0) {
+                this.inputs.monitoring.forEach((item, index) => {
+                    let value_dropdown = ''
+                    if(item.type == 'dropdown') {
+                        item.option.forEach((option, indexOption) => {
+                            let value_checked = option.option_value.find(item => item.monitoring_input_option_id == option.id)
+                            if(value_checked != undefined && value_checked != null) {
+                                value_dropdown = value_checked.monitoring_input_option_id
+                            }
+                        })
+                    }
+                    let lengthData = this.inputs.monitoring[index].value_data.length > 0
+                    let dataValue =  this.inputs.monitoring[index].value_data
+                    let data = {
+                        monitoring_input_id: item.id,
+                        type: 'monitoring',
+                        monitoring_id: this.monitoring.id,
+                        string_value: dataValue[0] != null && lengthData && dataValue[0] != undefined ? dataValue[0].string_value : '',
+                        date_value: dataValue[0] != null && lengthData && dataValue[0] != undefined ? dataValue[0].date_value : '',
+                        file_value: '',
+                        time_value: dataValue[0] != null && lengthData && dataValue[0] != undefined ? dataValue[0].time_value : '',
+                        number_value: dataValue[0] != null && lengthData && dataValue[0] != undefined ? dataValue[0].number_value : '',
+                        text_value: dataValue[0] != null && lengthData && dataValue[0] != undefined ? dataValue[0].text_value : value_dropdown,
+                    }
+                    this.values.monitoring.push(data)
+                })
+            }
+            console.log(this.values)
         },
         onReadyYoutube(index) {
             this.$refs['youtube-'+index].playVideo()
@@ -960,6 +1363,7 @@ export default defineComponent({
             })
         },
         submitGeneral() {
+            this.loading_button = true
             this.form.general
                 .transform(data => ({
                     ...data,
@@ -971,7 +1375,9 @@ export default defineComponent({
                     id: this.monitoring.id
                 }), {
                     onFinish:() => {
+                        this.onToast('green', 'Berhasil disimpan')
                         this.menuIndex = 1
+                        this.loading_button = false
                     }
                 })
         },

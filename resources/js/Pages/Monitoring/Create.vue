@@ -26,13 +26,13 @@
                     </div>
                     <div class="grid grid-cols-2">
                          <div class="col-span-2 md:col-span-1 p-7 border-b-2 md:border-b-0 border-gray-100 flex flex-nowrap">
-                            <img v-if="category.icon == null" src="@/Assets/defaults/category.png" class="h-12 w-auto inline-block" alt="Default Icon">
-                            <img v-else :src="'/monitoring/icon/'+category.icon" class="h-12 w-auto inline-block" alt="Default Icon">
+                            <img v-if="category.icon == null" src="@/Assets/defaults/category.png" class="h-12 w-12 rounded-lg object-cover object-center inline-block" alt="Default Icon">
+                            <img v-else :src="'/monitoring/icon/'+category.icon" class="h-12 w-12 rounded-lg object-cover object-center inline-block" alt="Default Icon">
                             <p class="self-center text-base md:text-lg text-gray-700 inline-block ml-4">{{ category.name }}</p>
                         </div>
                         <div class="col-span-2 md:col-span-1 p-7 flex flex-nowrap">
-                            <img v-if="object.icon == null" src="@/Assets/defaults/object.png" class="h-12 w-auto inline-block" alt="Default Icon">
-                            <img v-else :src="'/monitoring/icon/'+object.icon" class="h-12 w-auto inline-block" alt="Default Icon">
+                            <img v-if="object.icon == null" src="@/Assets/defaults/object.png" class="h-12 w-12 rounded-lg object-cover object-center inline-block" alt="Default Icon">
+                            <img v-else :src="'/monitoring/icon/'+object.icon" class="h-12 w-12 rounded-lg object-cover object-center inline-block" alt="Default Icon">
                             <p class="self-center text-base md:text-lg text-gray-700 inline-block ml-4">{{ object.name }}</p>
                         </div>
                     </div>

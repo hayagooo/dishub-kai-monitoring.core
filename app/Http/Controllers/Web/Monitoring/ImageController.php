@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Monitoring\Image;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Str;
 use Intervention\Image\Facades\Image as ImageIntervention;
 
@@ -129,5 +130,11 @@ class ImageController extends Controller
         }
         $image->delete();
         return redirect()->back()->with('message', 'Gambar berhasil dihapus')->with('status', 'success');
+    }
+
+    public function downloadImage(Request $request)
+    {
+        $image = Image::query()->find($request->get('id'));
+        return Response::download(public_path('/monitoring/data/').$image->name);
     }
 }
