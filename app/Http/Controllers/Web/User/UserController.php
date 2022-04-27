@@ -4,7 +4,8 @@ namespace App\Http\Controllers\Web\User;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
-use App\Jobs\Monitoring\Category\EditData;
+use App\Jobs\User\EditData;
+use App\Jobs\User\Createdata;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 
@@ -40,6 +41,16 @@ class UserController extends Controller
     public function store(Request $request)
     {
         //
+        $data = [
+            'name' => $request->name,
+            'email' => $request->email,
+            'code' => $request->code,
+            'password' => $request->password,
+            'level' => $request->level,
+        ];
+        CreateData::dispatch($data);
+        User::query()->create($data);
+        return redirect()->back()->with('message', 'Data Kategori baru berhasil disimpan')->with('status', 'success');
     }
 
     /**
@@ -97,5 +108,8 @@ class UserController extends Controller
     public function destroy($id)
     {
         //
+        $users = User::find($id);
+        $users->delete();
+        return redirect()->back()->with('message', 'Data objek berhasil dihapus')->with('status', 'success');
     }
 }
