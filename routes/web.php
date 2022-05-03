@@ -58,6 +58,7 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function() {
         Route::get('/monitoring/export/excel', [MonitoringController::class, 'export_excel'])->name('monitoring.export-excel');
         Route::get('/monitoring/export/{id}/pdf', [MonitoringController::class, 'export_pdf'])->name('monitoring.export-pdf');
         Route::resource('/information', InformationController::class);
+        Route::get('/information/download/data', [InformationController::class, 'download'])->name('information.download');
         Route::resource('/user', UserUserController::class);
         Route::resource('/team', TeamController::class);
     });
