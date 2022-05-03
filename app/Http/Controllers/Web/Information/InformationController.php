@@ -194,4 +194,10 @@ class InformationController extends Controller
         $information = Information::query()->find($request->get('id'));
         return Response::download(public_path('/information/data/').$information->document);
     }
+
+    public function download(Request $request)
+    {
+        $information = Information::query()->find($request->get('id'));
+        return Response::download(public_path('/information/data/').$information->document);
+    }
 }
