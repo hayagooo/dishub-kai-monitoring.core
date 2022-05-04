@@ -598,6 +598,10 @@ export default defineComponent({
                 }
             }, 250);
         },
+        onCheckValue(str) {
+            if(str == null || str == '' || str == undefined || str == 'null') return '-'
+            else return str
+        },
         onSubmitData() {
             this.loading_button = true
             this.form_inputs.forEach((value, index) => {
@@ -607,11 +611,11 @@ export default defineComponent({
                 fm.append('category_id', this.datas.category.id)
                 if(this.datas.object != undefined && this.datas.object != null) fm.append('object_id', this.datas.object.id)
                 if(this.datas.monitoring != undefined && this.datas.monitoring != null) fm.append('monitoring_id', this.datas.monitoring.id)
-                fm.append('type', value.type_input)
-                fm.append('link', value.link)
-                fm.append('label', value.label)
-                fm.append('placeholder', value.placeholder == null ? '' : value.placeholder)
-                fm.append('description', value.description == null ? '' : value.description)
+                fm.append('type', this.onCheckValue(value.type_input))
+                fm.append('link', this.onCheckValue(value.link))
+                fm.append('label', this.onCheckValue(value.label))
+                fm.append('placeholder', this.onCheckValue(value.placeholder))
+                fm.append('description', this.onCheckValue(value.description))
                 fm.append('is_required', value.is_required ? 1 : 0)
                 fm.append('image', value.image)
                 fm.append('options', JSON.stringify(value.options))

@@ -47,6 +47,7 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function() {
         Route::resource('/monitoring/input', InputController::class);
         Route::resource('/monitoring', MonitoringController::class);
         Route::resource('/information', InformationController::class);
+        Route::get('/information/download/data', [InformationController::class, 'download'])->name('information.download');
         Route::resource('/user', UserUserController::class);
         Route::resource('/employee', EmployeeController::class);
         Route::resource('/team', TeamController::class);

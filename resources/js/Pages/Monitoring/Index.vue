@@ -219,7 +219,12 @@ export default defineComponent({
     },
     data() {
         return {
-            dataNeed: { categoryId: this.category.id , objectId: this.object.id, title: '', sort: 'desc'},
+            dataNeed: {
+                categoryId: this.category.id ,
+                objectId: this.object.id,
+                title: '',
+                sort: 'desc'
+            },
             sorts: [
                 { value: 'desc', label: 'Paling baru' },
                 { value: 'asc', label: 'Paling lama' },

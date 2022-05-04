@@ -1005,6 +1005,10 @@ export default defineComponent({
             this.updateOption(option, index, null)
             // }
         },
+        onCheckValue(str) {
+            if(str == null || str == '' || str == undefined || str == 'null') return '-'
+            else return str
+        },
         onSubmitInput(type) {
             let mValue = null
             this.loading_button = true
@@ -1016,10 +1020,8 @@ export default defineComponent({
                 fm.append('input_id', item.monitoring_input_id)
                 fm.append('type', type)
                 fm.append('monitoring_id', this.monitoring.id)
-                fm.append('number_value', item.number_value)
-                fm.append('string_value', item.string_value)
-                fm.append('text_value', item.text_value)
-                fm.append('time_value', item.time_value)
+                fm.append('string_value', this.onCheckValue(item.string_value))
+                fm.append('text_value', this.onCheckValue(item.text_value))
                 if(item.date_value == '') fm.append('number_value', 0)
                 else fm.append('number_value', item.number_value)
                 if(item.date_value == '') fm.append('date_value', moment().format('YYYY-MM-DD'))
