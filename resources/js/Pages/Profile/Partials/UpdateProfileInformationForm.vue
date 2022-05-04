@@ -101,7 +101,7 @@
         data() {
             return {
                 form: this.$inertia.form({
-                    _method: 'PUT',
+                    _method: 'PATCH',
                     name: this.user.name,
                     email: this.user.email,
                     code: this.user.code,
@@ -118,7 +118,7 @@
                     this.form.photo = this.$refs.photo.files[0]
                 }
 
-                this.form.post(route('user-profile-information.update'), {
+                this.form.post(route('app.user.update', {id: this.user.id}), {
                     errorBag: 'updateProfileInformation',
                     preserveScroll: true,
                     onSuccess: () => (this.clearPhotoFileInput()),
