@@ -3,6 +3,9 @@
 namespace App\Http\Controllers\Web\User;
 
 use App\Http\Controllers\Controller;
+use App\Models\User;
+use App\Jobs\User\EditData;
+use App\Jobs\User\Createdata;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 
@@ -15,7 +18,8 @@ class UserController extends Controller
      */
     public function index()
     {
-        return Inertia::render('User/Index');
+        $users = User::query()->get();
+        return Inertia::render('User/Index', ['users' => $users]);
     }
 
     /**
@@ -37,6 +41,16 @@ class UserController extends Controller
     public function store(Request $request)
     {
         //
+        $data = [
+            'name' => $request->name,
+            'email' => $request->email,
+            'code' => $request->code,
+            'password' => $request->password,
+            'level' => $request->level,
+        ];
+        CreateData::dispatch($data);
+        User::query()->create($data);
+        return redirect()->back()->with('message', 'Data Kategori baru berhasil disimpan')->with('status', 'success');
     }
 
     /**
@@ -71,6 +85,18 @@ class UserController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $data = [
+            'name' => $request->name,
+            'email' => $request->email,
+            'code' => $request->code,
+            // 'password' => $required->password,
+            // 'level' => $required->level,
+        ];
+        // $validator = Validator::make($data, $rules);
+        $user = User::query()->find($id);
+        EditData::dispatch($data);
+        $user->update($data);
+        return redirect()->back()->with('message', 'Data kategori berhasil diedit')->with('status', 'success');
     }
 
     /**
@@ -82,5 +108,8 @@ class UserController extends Controller
     public function destroy($id)
     {
         //
+        $users = User::find($id);
+        $users->delete();
+        return redirect()->back()->with('message', 'Data objek berhasil dihapus')->with('status', 'success');
     }
 }

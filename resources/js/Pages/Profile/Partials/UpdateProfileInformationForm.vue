@@ -54,6 +54,13 @@
                 <jet-input id="email" type="email" class="mt-1 block w-full" v-model="form.email" />
                 <jet-input-error :message="form.errors.email" class="mt-2" />
             </div>
+
+            <!-- Code -->
+            <div class="col-span-6 sm:col-span-4">
+                <jet-label for="code" value="Code" />
+                <jet-input id="code" type="text" class="mt-1 block w-full" v-model="form.code" />
+                <jet-input-error :message="form.errors.code" class="mt-2" />
+            </div>
         </template>
 
         <template #actions>
@@ -97,6 +104,7 @@
                     _method: 'PUT',
                     name: this.user.name,
                     email: this.user.email,
+                    code: this.user.code,
                     photo: null,
                 }),
 
