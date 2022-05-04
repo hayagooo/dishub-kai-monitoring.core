@@ -36,7 +36,7 @@
                                                         <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
                                                     </button>
                                                 </div>
-                                                <form @submit.prevent="store()" action="#">
+                                                <form @submit.prevent="submitData()" action="#">
                                                     <div class="p-6 h-96 overflow-y-auto">
                                                         <div>
                                                             <input @change="changeFile" name="icon" id="image-info" type="file" class="hidden" accept=".jpg, .png, .jpeg">
@@ -148,7 +148,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <button v-if="informations_count > 3" class="relative w-full inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 focus:ring-4 focus:outline-none focus:ring-blue-300">
+                                    <button @click="gotoIndex('app.information.index')" v-if="informations_count > 3" class="relative w-full inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 focus:ring-4 focus:outline-none focus:ring-blue-300">
                                         <span class="relative w-full px-5 py-2.5 transition-all ease-in duration-75 bg-white rounded-md">
                                             Lebih Banyak
                                         </span>
@@ -416,9 +416,31 @@ export default defineComponent({
                 title: this.generateSlug(information.title)
             })
         },
-        store() {
-            this.form.information.post(this.route('app.information.store'), {
+        submitData() {
+            let route_url
+            if(this.formModal.mode == 'create') {
+                route_url = this.route('app.information.store')
+                this.form.information.post(route_url,  {
+                    onFinish: () => this.toggleFormModal(false)
+                })
+            }
+            else {
+                route_url = this.route('app.information.update', {id : this.informations.data[this.optionModal.index].id})
+                this.form.information.transform(
+                    data => ({
+                        ...data,
+                        _method: 'PATCH'
+                    })
+                ).post(route_url, {
                 onFinish: () => this.toggleFormModal(false)
+            })
+            }
+        },
+        deleteData() {
+            this.$inertia.delete(this.route('app.information.destroy', {
+                id: this.informations.data[this.optionModal.index].id
+            }), {
+                onFinish: () => this.toggleDeleteModal(false, null),
             })
         },
         onUploadFileInput(e) {
@@ -453,13 +475,15 @@ export default defineComponent({
             this.setOverflow(status)
             if(indexId != null) {
                 let document_info = this.informations.data[indexId].document
-                let get_type = document_info.split('.').pop()
+                if(document_info != null) {
+                    let get_type = document_info.split('.').pop()
+                    this.form.information.type_document = get_type
+                    this.form.information.document = document_info
+                }
                 this.form.information.title = this.informations.data[indexId].title
                 this.form.information.link = this.informations.data[indexId].link
                 this.form.information.image = this.informations.data[indexId].image
                 this.form.information.preview = `/information/image/${this.informations.data[indexId].image}`
-                this.form.information.type_document = get_type
-                this.form.information.document = document_info
                 this.form.information.description = this.informations.data[indexId].description
             } else this.setNullForm()
             this.formModal.show = status
