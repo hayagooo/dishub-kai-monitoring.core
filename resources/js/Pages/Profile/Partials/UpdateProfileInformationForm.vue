@@ -1,11 +1,11 @@
 <template>
     <jet-form-section @submitted="updateProfileInformation">
         <template #title>
-            Profile Information
+            Informasi Profil
         </template>
 
         <template #description>
-            Update your account's profile information and email address.
+            Perbarui informasi profil dan alamat email akun Anda.
         </template>
 
         <template #form>

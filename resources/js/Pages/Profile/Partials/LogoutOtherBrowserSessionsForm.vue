@@ -1,16 +1,16 @@
 <template>
     <jet-action-section>
         <template #title>
-            Browser Sessions
+            Sesi Peramban
         </template>
 
         <template #description>
-            Manage and log out your active sessions on other browsers and devices.
+            Kelola dan keluar dari sesi aktif Anda di browser dan perangkat lain.
         </template>
 
         <template #content>
             <div class="max-w-xl text-sm text-gray-600">
-                If necessary, you may log out of all of your other browser sessions across all of your devices. Some of your recent sessions are listed below; however, this list may not be exhaustive. If you feel your account has been compromised, you should also update your password.
+                Jika perlu, Anda dapat keluar dari semua sesi browser lainnya di semua perangkat Anda. Beberapa sesi terakhir Anda tercantum di bawah ini; namun, daftar ini mungkin tidak lengkap. Jika Anda merasa akun Anda telah disusupi, Anda juga harus memperbarui kata sandi Anda.
             </div>
 
             <!-- Other Browser Sessions -->
@@ -45,7 +45,7 @@
 
             <div class="flex items-center mt-5">
                 <jet-button @click="confirmLogout">
-                    Log Out Other Browser Sessions
+                    KELUAR DARI SEMUA PERANGKAT
                 </jet-button>
 
                 <jet-action-message :on="form.recentlySuccessful" class="ml-3">

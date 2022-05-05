@@ -93,6 +93,10 @@
                                             Manage Account
                                         </div>
 
+                                        <jet-dropdown-link :href="route('dashboard')">
+                                            Dashboard
+                                        </jet-dropdown-link>
+
                                         <jet-dropdown-link :href="route('profile.show')">
                                             Profil
                                         </jet-dropdown-link>
