@@ -7,7 +7,10 @@ use App\Models\Employee;
 use App\Models\Team;
 use App\Jobs\Team\CreateData;
 use App\Jobs\Team\EditData;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Validator;
 use Inertia\Inertia;
 
 class TeamController extends Controller
@@ -17,12 +20,22 @@ class TeamController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $teams = Team::query()->with(['employee' => function($query){
-            $query->where('employee_id', null);
-        }])->get();
-        return Inertia::render('Team/Index', ['teams' => $teams]);
+        $teams = Team::query()
+        ->with('employee')
+        ->when($request->get('name') != null, function($query) use($request) {
+            $query->where('name', 'LIKE', '%'.$request->get('name').'%');
+        });
+        $exploding = explode("-", $request->get('sort', 'id-desc'));
+        if($exploding[0] == 'id') $teams->orderBy('id', $exploding[1]);
+        else $teams->withCount('employee')->orderBy('employee_count', $exploding[1]);
+        $data = $teams->paginate(10);
+        $token = User::find(Auth::guard('api')->id())->createToken('authentification')->plainTextToken;
+        $employees = Employee::query()->when($request->get('name_employee') != null, function($query) use($request) {
+            $query->where('name', 'LIKE', '%'.$request->get('name_employee').'%');
+        })->with('team')->get();
+        return Inertia::render('Team/Index', ['teams' => $data, 'employees' => $employees, 'token' => $token]);
     }
 
     /**
@@ -55,7 +68,7 @@ class TeamController extends Controller
         //
         $data = [
             'name' => $request->name,
-            'description' => $request->descrition,
+            'description' => $request->description,
             'goals' => $request->goals,
             'note' => $request->note,
         ];
@@ -71,9 +84,14 @@ class TeamController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Request $request, $id)
     {
-        //
+        $name = str_replace('-', ' ', $request->get('name'));
+        $employees = Employee::query()->when($request->get('name_employee') != null, function($query) use($request) {
+            $query->where('name', 'LIKE', '%'.$request->get('name_employee').'%');
+        })->with('team')->paginate(10);
+        $team = Team::query()->with('employee')->where('id', $id)->orWhere('name', 'LIKE', '%'.$name.'%')->first();
+        return Inertia::render('Team/Show', ['team' => $team, 'employees' => $employees, 'team_name' => $name]);
     }
 
     /**
@@ -123,18 +141,25 @@ class TeamController extends Controller
         return redirect()->back()->with('message', 'Data team telah berhasil dihapus')->with('status', 'success');
     }
 
-    public function addEmployee()
+    public function addEmployee(Request $request, $id)
     {
+        $rules = [
+            'employeeId' => 'required',
+        ];
+        Validator::make($request->all(), $rules)->validate();
         Team::query()->find($id)->employee()->attach($request->employeeId);
-        $teams = Team::query()->with('employee')->find($id);
-        return redirect()->back()->with('message', 'Data Employee telah berhasil ditambahkan ke dalam Team')->with('status', 'success');
-
+        Team::query()->with('employee')->find($id);
+        return redirect()->back()->with('message', 'Pegawai berhasil ditambahkan')->with('status', 'success');
     }
 
-    public function removeEmployee()
+    public function removeEmployee(Request $request, $id)
     {
+        $rules = [
+            'employeeId' => 'required',
+        ];
+        Validator::make($request->all(), $rules)->validate();
         Team::query()->find($id)->employee()->detach($request->employeeId);
-        $teams = Team::query()->with('employee')->find($id);
-        return redirect()->back()->with('message', 'Data Employee telah berhasil dihapus dari Team')->with('status', 'success');
+        Team::query()->with('employee')->find($id);
+        return redirect()->back()->with('message', 'Pegawai berhasil dihapus')->with('status', 'success');
     }
 }

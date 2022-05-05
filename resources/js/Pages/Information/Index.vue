@@ -362,8 +362,6 @@ export default defineComponent({
         },
         onSearch() {
             this.$inertia.get(this.route('app.information.index'), {
-                categoryId: this.dataNeed.categoryId,
-                objectId: this.dataNeed.objectId,
                 title: this.dataNeed.title,
                 sort: this.dataNeed.sort,
             }, {

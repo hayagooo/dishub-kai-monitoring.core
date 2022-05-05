@@ -7,6 +7,7 @@ use App\Models\User;
 use App\Jobs\User\EditData;
 use App\Jobs\User\Createdata;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 use Inertia\Inertia;
 
 class UserController extends Controller
@@ -92,10 +93,15 @@ class UserController extends Controller
             // 'password' => $required->password,
             // 'level' => $required->level,
         ];
+        $rules = [
+            'name' => 'required',
+            'email' => 'required|email',
+            'code' => 'required',
+        ];
+        Validator::make($data, $rules)->validate();
         // $validator = Validator::make($data, $rules);
-        $user = User::query()->find($id);
+        User::query()->where('id', $id)->update($data);
         EditData::dispatch($data);
-        $user->update($data);
         return redirect()->back()->with('message', 'Data kategori berhasil diedit')->with('status', 'success');
     }
 

@@ -51,6 +51,8 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function() {
         Route::resource('/user', UserUserController::class);
         Route::resource('/employee', EmployeeController::class);
         Route::resource('/team', TeamController::class);
+        Route::post('/team/{id}/add/employee', [TeamController::class, 'addEmployee'])->name('team.add.employee');
+        Route::post('/team/{id}/remove/employee', [TeamController::class, 'removeEmployee'])->name('team.remove.employee');
     });
 });
 

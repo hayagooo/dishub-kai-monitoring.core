@@ -1,6 +1,6 @@
 <template>
     <app-layout title='Manage team'>
-        <template>
+        <template #header>
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
                 Manage Tim
             </h2>
@@ -9,7 +9,7 @@
         <div class="py-12">
             <div class="max-w-3xl mx-auto sm:px-6 lg:px-8">
                 <div class="bg-white overflow-hidden shadow-xl sm:rounded-xl">
-                    <div class="p-7">
+                    <div class="p-7 border-b-2 border-gray-100">
                         <button @click="goHome()" type="button" class="py-2.5 px-5 mr-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-purple-700 focus:z-10 focus:ring-4 focus:ring-gray-200">
                             <arrow-left-icon size="18" class="inline-block mr-3"/>
                             <span class="inline-block">Kembali</span>
@@ -17,79 +17,89 @@
                         <div class="mt-6 realtive">
                             <img src="@/Assets/features/team.png" class="inline-block h-16 md:h-20 w-auto" alt="User">
                             <span class="inline-block text-lg md:text-2xl text-gray-600 ml-6 font-semibold">
-                                Management Team
+                                Manage Tim
                             </span>
                         </div>
                     </div>
+                    <div class="p-7">
+                        <div class="flex w-9/12 gap-x-4">
+                            <div class="self-center flex gap-x-4">
+                                <div>
+                                    <img class="w-14 h-14 border-2 border-white rounded-full dark:border-gray-800" :src="`https://via.placeholder.com/300x300/6c2bd9/ffffff.png?text=${initialsString(team.name)}`" alt="">
+                                </div>
+                                <div>
+                                    <p class="text-base md:text-lg font-semibold">{{ team.name }}</p>
+                                    <small>{{ team.employee.length <= 0 ? 'Tidak ada' : team.employee.length }} pegawai</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div v-if="menuShow.length > 0" class="text-sm w-full font-medium text-center text-gray-500 border-b border-gray-200">
+                        <ul class="flex items-stretch flex-wrap -mb-px">
+                            <li class="mr-2" v-for="(item, index) in menuShow" :key="`menu-${index}`">
+                                <span class="inline-block p-4 rounded-t-lg border-b-2"
+                                @click="clickMenu(item, index)"
+                                role="button"
+                                :class="{'text-purple-600 border-purple-600 active': index == menuIndex,
+                                'border-transparent hover:text-gray-600 hover:border-gray-300': index != menuIndex}" a
+                                ria-current="page">
+                                    {{ item.label }}
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
                     <div class="bg-gray-50 relative sm:rounded-xl p-7">
-                        <button @click="toggleFormModal(true, 'create')" type="button" class="w-full mt-4 focus:outline-none text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2">
-                            <plus-circle-icon size="18" class="inline-block mr-4"/>
-                            <span class="inline-block">
-                                Tambah Pegawai
-                            </span>
-                        </button>
-                        <div id="formModal" tabindex="-1" aria-hidden="true" :class="{'hidden' : !formModal.show}" class="flex overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 w-full md:inset-0 bg-black/30 backdrop-blur h-screen md:h-full">
-                            <div class="relative p-4 w-full max-w-2xl h-full md:h-auto mx-auto self-center">
-                                <div class="relative bg-white rounded-lg shadow">
-                                    <div class="flex justify-between items-start p-5 rounded-t border-b">
-                                        <h3 class="text-xl font-semibold text-gray-900 lg:text-2xl">
-                                        <div>
-                                            Tambah Pegawai
+                        <div v-if="menuIndex == 0">
+                            <div id="description-team-content" class="border-b-2 border-gray-200 pb-3">
+                                <label for="description-content" class="mb-2 inline-block font-semibold">Deskripsi Tim</label>
+                                <div id="description-content">
+                                    <div v-if="team.description != null" v-html="team.description"></div>
+                                    <div v-else>-</div>
+                                </div>
+                            </div>
+                            <div id="goals-team-content" class="border-b-2 border-gray-200 pb-3 mt-3">
+                                <label for="goals-content" class="mb-2 inline-block font-semibold">Tujuan Tim</label>
+                                <div id="goals-content">
+                                    <div v-if="team.goals != null" v-html="team.goals"></div>
+                                    <div v-else>-</div>
+                                </div>
+                            </div>
+                            <div id="note-team-content" class="mt-3">
+                                <label for="note-content" class="mb-2 inline-block font-semibold">Catatan Tim</label>
+                                <div id="note-content">
+                                    <div v-if="team.note != null" v-html="team.note"></div>
+                                    <div v-else>-</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div v-if="menuIndex == 1">
+                            <div>
+                                <input @keyup="onSearchEmployee(false)" placeholder="Cari berdasarkan nama pegawai" v-model="input.name_employee" type="text" id="name-employee-input" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                            </div>
+                            <div v-if="team.employee.length > 0">
+                                <div v-for="(item, index) in team.employee" :key="index" :class="{'mb-2': index + 1 != team.employee.length, 'mt-2': index == 0}" class="p-3 relative transition-all hover:shadow-lg bg-white rounded-lg mb-2">
+                                    <p class="text-lg font-semibold">{{ item.name }}</p>
+                                    <p class="text-base text-gray-500" v-if="item.position != null || item.profession != null">
+                                        <span>{{ item.position != null ? item.position : '' }}</span>
+                                        <span class="mx-2" v-if="item.position != null && item.profession != null">-</span>
+                                        <span>{{ item.profession != null ? item.profession : '' }}</span>
+                                    </p>
+                                    <p class="text-base text-gray-500" v-if="item.division != null || item.branch != null">
+                                        <span class="mr-2" v-if="item.division != null || item.branch != null">at</span>
+                                        <span>{{ item.division != null ? item.division : '' }}</span>
+                                        <span class="mx-2" v-if="item.division != null && item.branch != null">-</span>
+                                        <span>{{ item.branch != null ? item.branch : '' }}</span>
+                                    </p>
+                                    <div role="button" class="absolute inset-y-10 right-10 z-30" @click="removeEmployee(item.id)">
+                                        <div class="flex items-center mb-4">
+                                            <x-circle-icon size="20" class="text-gray-600"/>
                                         </div>
-                                        </h3>
-                                        <button @click="toggleFormModal(false, 'create')" type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center">
-                                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-                                        </button>
                                     </div>
-                                    <form @submit.prevent="store()" action="#">
-                                        <div v-if="formModal.mode == 'create'">
-                                            <div class="p-6">
-                                                <div class="mt-2" v-for="item, index in employees" :key="index" :value="item.id">
-                                                    <!-- <label for="name-team">Nama Pegawai</label> -->
-                                                    <div >
-                                                        <input name="employee" type="checkbox" class="mt-3 focus:ring-purple-500 focus:border-purple-500 pl-4 sm:text-sm border-gray-300 rounded-md">
-                                                        <label for="name-team">{{form.name}}</label>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="flex gap-x-4 items-center flex-row-reverse p-6 space-x-2 rounded-b border-t border-gray-200 dark:border-gray-600">
-                                                <button type="submit" class="text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
-                                                    Simpan
-                                                </button>
-                                                <button @click="toggleFormModal(false, 'create')" type="button" class="text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-purple-300 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10">
-                                                    Batal
-                                                </button>
-                                            </div>
-                                        </div>
-                                        <div v-else>
-                                            <div class="p-6">
-                                                <div class="mt-2">
-                                                    <label for="name-team">Nama Team</label>
-                                                    <input required name="name" id="name-team" v-model="form.name" type="text" placeholder="Masukkan nama team" class="mt-3 focus:ring-purple-500 focus:border-purple-500 block w-full pl-4 sm:text-sm border-gray-300 rounded-md">
-                                                </div>
-                                                <div class="mt-2">
-                                                    <label for="description-team">Description</label>
-                                                    <textarea required name="description" id="description-team" v-model="form.description" placeholder="Masukkan description" class="mt-3 focus:ring-purple-500 focus:border-purple-500 block w-full pl-4 sm:text-sm border-gray-300 rounded-md"></textarea>
-                                                </div>
-                                                <div class="mt-2">
-                                                    <label for="goals-team">Goal</label>
-                                                    <textarea required name="goals" id="goals-team" v-model="form.goals" placeholder="Masukkan Goal" class="mt-3 focus:ring-purple-500 focus:border-purple-500 block w-full pl-4 sm:text-sm border-gray-300 rounded-md" ></textarea>
-                                                </div>
-                                                <div class="mt-2">
-                                                    <label for="note-team">Note</label>
-                                                    <textarea required name="note" id="note-team" v-model="form.note" placeholder="Masukkan Note" class="mt-3 focus:ring-purple-500 focus:border-purple-500 block w-full pl-4 sm:text-sm border-gray-300 rounded-md" ></textarea>
-                                                </div>
-                                            </div>
-                                            <div class="flex gap-x-4 items-center flex-row-reverse p-6 space-x-2 rounded-b border-t border-gray-200 dark:border-gray-600">
-                                                <button type="submit" class="text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
-                                                    Simpan
-                                                </button>
-                                                <button @click="toggleFormModal(false, 'create')" type="button" class="text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-purple-300 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10">
-                                                    Batal
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </form>
+                                </div>
+                            </div>
+                            <div v-else class="pt-4">
+                                <div class="p-4 mb-4 text-sm text-red-700 bg-red-100 rounded-lg dark:bg-red-200 dark:text-red-800" role="alert">
+                                    <span class="font-medium">Tidak ada data</span> Pegawai tidak ditemukan.
                                 </div>
                             </div>
                         </div>
@@ -102,24 +112,33 @@
 
 <script>
 import { defineComponent } from 'vue'
+import MPaginationData from '@/Components/MPaginationData'
 import AppLayout from '@/Layouts/AppLayout.vue'
 import MUnderConstruction from '@/Components/MUnderConstruction'
-import { ArrowLeftIcon, PlusCircleIcon, FileTextIcon, ImageIcon, TrashIcon, MoreVerticalIcon, EditIcon, EyeIcon } from '@zhuowenli/vue-feather-icons'
+import { ArrowLeftIcon, XCircleIcon, PlusCircleIcon, FileTextIcon, ImageIcon, TrashIcon, MoreVerticalIcon, EditIcon, EyeIcon } from '@zhuowenli/vue-feather-icons'
 
 export default defineComponent({
-    props: ['employees', 'teams'],
+    props: ['employees', 'team', 'team_name'],
     components: {
         AppLayout,
-        ArrowLeftIcon, 
-        PlusCircleIcon, 
-        FileTextIcon, 
-        TrashIcon, 
-        MoreVerticalIcon, 
-        EditIcon, 
+        ArrowLeftIcon,
+        PlusCircleIcon,
+        FileTextIcon,
+        TrashIcon,
+        XCircleIcon,
+        MoreVerticalIcon,
+        MPaginationData,
+        EditIcon,
         EyeIcon,
     },
     data() {
         return {
+            menuIndex: 1,
+            dataNeed: [],
+            menuShow: [
+                {name: 'general', label: 'Umum'},
+                {name: 'employee', label: 'Pegawai'},
+            ],
             formModal : {
                 show: false,
                 mode: 'create',
@@ -130,6 +149,9 @@ export default defineComponent({
                 index: null,
                 item: null,
             },
+            input: this.$inertia.form({
+                name_employee: '',
+            }),
             deleteModal: {
                 show: false,
                 index: null
@@ -147,14 +169,37 @@ export default defineComponent({
         }
     },
     methods: {
-        goHome() {
-            this.$inertia.get(this.route('dashboard'))
-        },
-        gotoShow(team_id) {
-            this.toggleOptionModal(false)
-            this.$inertia.get(this.route('app.team.create'), {
-                teamId: team_id
+        onSearchEmployee(inModal) {
+            this.input.transform((data) => ({
+                ...data,
+                name: this.team_name,
+            })).get(this.route('app.team.show', {
+                id: this.team.id
+            }), {
+                preserveState: true,
+                preserveScroll: true,
+                onFinish: () => {
+                    if(inModal) this.toggleEmployeeModal(true, this.optionModal.index)
+                }
             })
+        },
+        initialsString(str) {
+            let rgx = new RegExp(/(\p{L}{1})\p{L}+/, 'gu')
+            let initials = [...str.matchAll(rgx)] || []
+            initials = (
+                (initials.shift()?.[1] || '') + (initials.pop()?.[1] || '')
+            ).toUpperCase();
+            return initials
+        },
+        removeEmployee(dataId) {
+            this.$inertia.post(this.route('app.team.remove.employee', {
+                id: this.team.id
+            }), {
+                employeeId: dataId
+            })
+        },
+        goHome() {
+            this.$inertia.get(this.route('app.team.index'))
         },
         onToast(response) {
             this.toast.active = response.props.flash.message != null || response.props.flash.message != undefined ? true : false
@@ -205,6 +250,9 @@ export default defineComponent({
             this.formModal.show = status
             if(!status) this.setNullForm()
             this.formModal.mode = mode
+        },
+        clickMenu(item, index) {
+            this.menuIndex = index
         },
         toggleOptionModal(status, index = null, item = null) {
             this.setOverflow(status)

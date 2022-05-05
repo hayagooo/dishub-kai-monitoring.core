@@ -1316,6 +1316,10 @@ input:checked + .toggle-bg {
   top: 0px;
   bottom: 0px;
 }
+.inset-y-10 {
+  top: 2.5rem;
+  bottom: 2.5rem;
+}
 .inset-x-0 {
   left: 0px;
   right: 0px;
@@ -1340,6 +1344,9 @@ input:checked + .toggle-bg {
 }
 .right-6 {
   right: 1.5rem;
+}
+.right-10 {
+  right: 2.5rem;
 }
 .left-1\/2 {
   left: 50%;
@@ -1370,6 +1377,9 @@ input:checked + .toggle-bg {
 }
 .z-20 {
   z-index: 20;
+}
+.z-30 {
+  z-index: 30;
 }
 .col-span-6 {
   grid-column: span 6 / span 6;
@@ -1638,6 +1648,9 @@ input:checked + .toggle-bg {
 .h-36 {
   height: 9rem;
 }
+.max-h-96 {
+  max-height: 24rem;
+}
 .min-h-screen {
   min-height: 100vh;
 }
@@ -1746,14 +1759,11 @@ input:checked + .toggle-bg {
 .max-w-sm {
   max-width: 24rem;
 }
-.max-w-3xl {
-  max-width: 48rem;
-}
-.max-w-5xl {
-  max-width: 64rem;
-}
 .max-w-4xl {
   max-width: 56rem;
+}
+.max-w-3xl {
+  max-width: 48rem;
 }
 .flex-1 {
   flex: 1 1 0%;
@@ -2331,11 +2341,11 @@ input:checked + .toggle-bg {
 .p-8 {
   padding: 2rem;
 }
-.p-7 {
-  padding: 1.75rem;
-}
 .p-2\.5 {
   padding: 0.625rem;
+}
+.p-7 {
+  padding: 1.75rem;
 }
 .px-4 {
   padding-left: 1rem;
@@ -3122,6 +3132,10 @@ input:checked + .toggle-bg {
   --tw-bg-opacity: 1;
   background-color: rgb(55 65 81 / var(--tw-bg-opacity));
 }
+.dark .dark\:bg-red-200 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(251 213 213 / var(--tw-bg-opacity));
+}
 .dark .dark\:bg-blue-600 {
   --tw-bg-opacity: 1;
   background-color: rgb(28 100 242 / var(--tw-bg-opacity));
@@ -3148,9 +3162,16 @@ input:checked + .toggle-bg {
   --tw-text-opacity: 1;
   color: rgb(209 213 219 / var(--tw-text-opacity));
 }
+.dark .dark\:text-red-800 {
+  --tw-text-opacity: 1;
+  color: rgb(155 28 28 / var(--tw-text-opacity));
+}
 .dark .dark\:text-blue-500 {
   --tw-text-opacity: 1;
   color: rgb(63 131 248 / var(--tw-text-opacity));
+}
+.dark .dark\:ring-offset-gray-800 {
+  --tw-ring-offset-color: #1F2937;
 }
 .dark .dark\:hover\:bg-gray-700:hover {
   --tw-bg-opacity: 1;
@@ -3183,6 +3204,10 @@ input:checked + .toggle-bg {
 .dark .dark\:focus\:ring-gray-600:focus {
   --tw-ring-opacity: 1;
   --tw-ring-color: rgb(75 85 99 / var(--tw-ring-opacity));
+}
+.dark .dark\:focus\:ring-blue-600:focus {
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(28 100 242 / var(--tw-ring-opacity));
 }
 @media (min-width: 640px) {
 
