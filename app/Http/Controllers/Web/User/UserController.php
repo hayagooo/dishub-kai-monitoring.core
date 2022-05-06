@@ -17,9 +17,17 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $users = User::query()->get();
+        $users = User::query()
+        ->when($request->get('name') != null, function($query) use($request) {
+            $query->where('name', 'LIKE', '%'.$request->get('name').'%');
+        })
+        ->when($request->get('level') != null, function($query) use($request) {
+            $query->where('level', $request->get('level'));
+        })
+        ->orderBy('id', $request->get('sort', 'DESC'))
+        ->paginate(10);
         return Inertia::render('User/Index', ['users' => $users]);
     }
 

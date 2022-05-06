@@ -248,7 +248,7 @@
                                     </div>
                                 </div>
                                 <div class="col-span-1 lg:col-span-1 my-3">
-                                    <div @click="gotoIndex('app.information.index')" class="transition-all ease-in hover:scale-110" role="button">
+                                    <div class="transition-all ease-in opacity-50">
                                         <img src="@/Assets/features/information.png" class="inline-block h-20 w-auto" alt="Monitoring">
                                         <div>
                                             <p class="text-lg inline-block font-semibold">Sistem Informasi</p>
