@@ -37,7 +37,7 @@
                         </div>
                     </div>
                     <div id="objects" class="bg-gray-50 relative sm:rounded-xl p-7">
-                        <div v-if="$page.props.user.level != 'user'">
+                        <div>
                             <button @click="goCreate()" type="button" class="w-full mb-4 focus:outline-none text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2">
                                 <plus-circle-icon size="18" class="inline-block mr-4"/>
                                 <span class="inline-block">
