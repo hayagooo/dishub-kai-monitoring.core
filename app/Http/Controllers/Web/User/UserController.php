@@ -98,18 +98,22 @@ class UserController extends Controller
             'name' => $request->name,
             'email' => $request->email,
             'code' => $request->code,
-            // 'password' => $required->password,
-            // 'level' => $required->level,
+            'password' => $request->password,
+            'level' => $request->level,
         ];
         $rules = [
             'name' => 'required',
             'email' => 'required|email',
             'code' => 'required',
+            'level' => 'required',
+            'password' => 'nullable|max:8'
         ];
         Validator::make($data, $rules)->validate();
-        // $validator = Validator::make($data, $rules);
+        if($request->password == null || $request->password == '') {
+            unset($data['password']);
+            unset($rules['password']);
+        }
         User::query()->where('id', $id)->update($data);
-        EditData::dispatch($data);
         return redirect()->back()->with('message', 'Data kategori berhasil diedit')->with('status', 'success');
     }
 

@@ -53,6 +53,12 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function() {
         Route::resource('/team', TeamController::class);
         Route::post('/team/{id}/add/employee', [TeamController::class, 'addEmployee'])->name('team.add.employee');
         Route::post('/team/{id}/remove/employee', [TeamController::class, 'removeEmployee'])->name('team.remove.employee');
+        Route::get('/export/team', [TeamController::class, 'exportExcel'])->name('team.export-excel');
+        Route::post('/import/team', [TeamController::class, 'importExcel'])->name('team.import-excel');
+        Route::delete('/delete/all/team', [TeamController::class, 'destroyAll'])->name('team.delete-all');
+        Route::get('/export/employee', [EmployeeController::class, 'exportExcel'])->name('employee.export-excel');
+        Route::post('/import/employee', [EmployeeController::class, 'importExcel'])->name('employee.import-excel');
+        Route::delete('/delete/all/employee', [EmployeeController::class, 'destroyAll'])->name('employee.delete-all');
     });
 });
 

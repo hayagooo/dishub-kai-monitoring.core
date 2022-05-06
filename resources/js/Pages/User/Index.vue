@@ -85,7 +85,8 @@
                                                 </div>
                                                 <div class="mt-3">
                                                     <label for="password-user">Password</label>
-                                                    <input required :readonly="formModal.mode == 'show'" name="password-field" id="password-user" v-model="form.password" type="password" placeholder="Masukkan password" :class="{'bg-gray-100': formModal.mode == 'show'}" class="mt-2 focus:ring-purple-500 focus:border-purple-500 block w-full pl-4 sm:text-sm border-gray-300 rounded-md">
+                                                    <input :required="formModal.mode == 'create'" :readonly="formModal.mode == 'show'" name="password-field" id="password-user" v-model="form.password" type="password" placeholder="Masukkan password" :class="{'bg-gray-100': formModal.mode == 'show'}" class="mt-2 focus:ring-purple-500 focus:border-purple-500 block w-full pl-4 sm:text-sm border-gray-300 rounded-md">
+                                                    <small id="hint-password" v-if="formModal.mode == 'edit'">Abaikan untuk tidak mengganti password</small>
                                                 </div>
                                                 <div class="mt-3">
                                                     <label for="level-select-in-modal">Level</label>

@@ -15,7 +15,6 @@ class TeamImport implements ToCollection
     public function collection(Collection $collection)
     {
         foreach($collection as $index => $item) {
-            Log::debug($item);
             if($index == 0) continue;
             else {
                 Team::query()->create([

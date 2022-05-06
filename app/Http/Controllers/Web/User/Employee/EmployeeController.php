@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers\Web\User\Employee;
 
+use App\Exports\EmployeeExport;
 use App\Http\Controllers\Controller;
+use App\Imports\EmployeeImport;
 use App\Models\Employee;
 use App\Jobs\Employee\CreateData;
 use App\Jobs\EMployee\EditData;
@@ -12,7 +14,9 @@ use App\Models\Monitoring\InputValue;
 use App\Models\Monitoring\Monitoring;
 use App\Models\Monitoring\OptionValue;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 use Inertia\Inertia;
+use Maatwebsite\Excel\Facades\Excel;
 
 class EmployeeController extends Controller
 {
@@ -138,6 +142,46 @@ class EmployeeController extends Controller
         }
         $employees->delete();
         return redirect()->back()->with('message', 'Data objek berhasil dihapus')->with('status', 'success');
+    }
 
+    public function exportExcel()
+    {
+        $excelName = 'excel-employee-'.time().'.xlsx';
+        return Excel::download(new EmployeeExport, $excelName);
+    }
+
+    public function importExcel(Request $request)
+    {
+        $data = [
+            'document' => $request->file('document'),
+        ];
+        $rules = [
+            'document' => 'required|mimes:xlsx,xls'
+        ];
+        Validator::make($data, $rules)->validate();
+        $is_reset = (int) $request->is_reset;
+        if($is_reset == 1) {
+            $employees = Employee::query()->get();
+            foreach($employees as $item) {
+                $employee = Employee::query()->with('team')->find($item->id);
+                $employee->team()->sync([]);
+                Monitoring::query()->where('team_id', $item->id)->delete();
+                $employee->delete();
+            }
+        }
+        Excel::import(new EmployeeImport, $request->file('document'));
+        return redirect()->back()->with('message', 'Import data berhasil')->with('status', 'success');
+    }
+
+    public function destroyAll()
+    {
+        $employees = Employee::query()->get();
+        foreach($employees as $item) {
+            $employee = Employee::query()->with('team')->find($item->id);
+            $employee->team()->sync([]);
+            Monitoring::query()->where('team_id', $item->id)->delete();
+            $employee->delete();
+        }
+        return redirect()->back()->with('message', 'Hapus data berhasil')->with('status', 'success');
     }
 }
