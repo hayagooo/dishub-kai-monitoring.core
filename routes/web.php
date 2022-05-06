@@ -49,8 +49,16 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function() {
         Route::resource('/information', InformationController::class);
         Route::get('/information/download/data', [InformationController::class, 'download'])->name('information.download');
         Route::resource('/user', UserUserController::class);
+        Route::resource('/monitoring/image', ImageController::class);
+        Route::get('/monitoring/download/image', [ImageController::class, 'downloadImage'])->name('image.download');
+        Route::get('/monitoring/export/excel', [MonitoringController::class, 'export_excel'])->name('monitoring.export-excel');
+        Route::get('/monitoring/export/{id}/pdf', [MonitoringController::class, 'export_pdf'])->name('monitoring.export-pdf');
         Route::resource('/employee', EmployeeController::class);
         Route::resource('/team', TeamController::class);
+        Route::resource('/monitoring/input-option', InputOptionController::class);
+        Route::resource('/monitoring/input/value', InputValueController::class);
+        Route::get('/monitoring/input-download/image', [InputController::class, 'download'])->name('input-image.download');
+        Route::get('/monitoring/input-download/value', [InputValueController::class, 'download'])->name('value.download');
         Route::post('/team/{id}/add/employee', [TeamController::class, 'addEmployee'])->name('team.add.employee');
         Route::post('/team/{id}/remove/employee', [TeamController::class, 'removeEmployee'])->name('team.remove.employee');
         Route::get('/export/team', [TeamController::class, 'exportExcel'])->name('team.export-excel');
