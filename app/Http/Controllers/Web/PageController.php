@@ -16,7 +16,8 @@ class PageController extends Controller
 
     public function dashboard()
     {
-        $informations = Information::query()->paginate(3);
-        return Inertia::render('Dashboard', ['informations' => $informations]);
+        $informations = Information::query()->orderBy('created_at', 'DESC')->paginate(3);
+        $informations_count = Information::query()->count();
+        return Inertia::render('Dashboard', ['informations' => $informations, 'informations_count' => $informations_count]);
     }
 }

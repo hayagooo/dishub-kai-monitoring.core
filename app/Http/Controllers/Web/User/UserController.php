@@ -3,7 +3,11 @@
 namespace App\Http\Controllers\Web\User;
 
 use App\Http\Controllers\Controller;
+use App\Models\User;
+use App\Jobs\User\EditData;
+use App\Jobs\User\Createdata;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 use Inertia\Inertia;
 
 class UserController extends Controller
@@ -13,9 +17,18 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        return Inertia::render('User/Index');
+        $users = User::query()
+        ->when($request->get('name') != null, function($query) use($request) {
+            $query->where('name', 'LIKE', '%'.$request->get('name').'%');
+        })
+        ->when($request->get('level') != null, function($query) use($request) {
+            $query->where('level', $request->get('level'));
+        })
+        ->orderBy('id', $request->get('sort', 'DESC'))
+        ->paginate(10);
+        return Inertia::render('User/Index', ['users' => $users]);
     }
 
     /**
@@ -37,6 +50,16 @@ class UserController extends Controller
     public function store(Request $request)
     {
         //
+        $data = [
+            'name' => $request->name,
+            'email' => $request->email,
+            'code' => $request->code,
+            'password' => $request->password,
+            'level' => $request->level,
+        ];
+        CreateData::dispatch($data);
+        User::query()->create($data);
+        return redirect()->back()->with('message', 'Data Kategori baru berhasil disimpan')->with('status', 'success');
     }
 
     /**
@@ -71,6 +94,27 @@ class UserController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $data = [
+            'name' => $request->name,
+            'email' => $request->email,
+            'code' => $request->code,
+            'password' => $request->password,
+            'level' => $request->level,
+        ];
+        $rules = [
+            'name' => 'required',
+            'email' => 'required|email',
+            'code' => 'required',
+            'level' => 'required',
+            'password' => 'nullable|max:8'
+        ];
+        Validator::make($data, $rules)->validate();
+        if($request->password == null || $request->password == '') {
+            unset($data['password']);
+            unset($rules['password']);
+        }
+        User::query()->where('id', $id)->update($data);
+        return redirect()->back()->with('message', 'Data kategori berhasil diedit')->with('status', 'success');
     }
 
     /**
@@ -82,5 +126,8 @@ class UserController extends Controller
     public function destroy($id)
     {
         //
+        $users = User::find($id);
+        $users->delete();
+        return redirect()->back()->with('message', 'Data objek berhasil dihapus')->with('status', 'success');
     }
 }

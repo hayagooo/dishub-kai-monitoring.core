@@ -1,11 +1,11 @@
 <template>
     <jet-form-section @submitted="updateProfileInformation">
         <template #title>
-            Profile Information
+            Informasi Profil
         </template>
 
         <template #description>
-            Update your account's profile information and email address.
+            Perbarui informasi profil dan alamat email akun Anda.
         </template>
 
         <template #form>
@@ -54,6 +54,13 @@
                 <jet-input id="email" type="email" class="mt-1 block w-full" v-model="form.email" />
                 <jet-input-error :message="form.errors.email" class="mt-2" />
             </div>
+
+            <!-- Code -->
+            <div class="col-span-6 sm:col-span-4">
+                <jet-label for="code" value="Code" />
+                <jet-input id="code" type="text" class="mt-1 block w-full" v-model="form.code" />
+                <jet-input-error :message="form.errors.code" class="mt-2" />
+            </div>
         </template>
 
         <template #actions>
@@ -94,9 +101,10 @@
         data() {
             return {
                 form: this.$inertia.form({
-                    _method: 'PUT',
+                    _method: 'PATCH',
                     name: this.user.name,
                     email: this.user.email,
+                    code: this.user.code,
                     photo: null,
                 }),
 
@@ -110,7 +118,7 @@
                     this.form.photo = this.$refs.photo.files[0]
                 }
 
-                this.form.post(route('user-profile-information.update'), {
+                this.form.post(route('app.user.update', {id: this.user.id}), {
                     errorBag: 'updateProfileInformation',
                     preserveScroll: true,
                     onSuccess: () => (this.clearPhotoFileInput()),

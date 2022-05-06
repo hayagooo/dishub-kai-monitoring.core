@@ -791,6 +791,11 @@
                                             <div v-if="optionModal.index != null">
                                                 <img :src="'/monitoring/data/'+images[optionModal.index].name" class="w-full h-auto rounded-lg" alt="Preview Image">
                                             </div>
+                                            <div class="flex flex-row-reverse items-center p-6 space-x-2 rounded-b border-t border-gray-200 dark:border-gray-600">
+                                                <button @click="modalImage = false" type="button" class="text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-200 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600">
+                                                    Tutup
+                                                </button>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -1000,6 +1005,10 @@ export default defineComponent({
             this.updateOption(option, index, null)
             // }
         },
+        onCheckValue(str) {
+            if(str == null || str == '' || str == undefined || str == 'null') return '-'
+            else return str
+        },
         onSubmitInput(type) {
             let mValue = null
             this.loading_button = true
@@ -1011,10 +1020,8 @@ export default defineComponent({
                 fm.append('input_id', item.monitoring_input_id)
                 fm.append('type', type)
                 fm.append('monitoring_id', this.monitoring.id)
-                fm.append('number_value', item.number_value)
-                fm.append('string_value', item.string_value)
-                fm.append('text_value', item.text_value)
-                fm.append('time_value', item.time_value)
+                fm.append('string_value', this.onCheckValue(item.string_value))
+                fm.append('text_value', this.onCheckValue(item.text_value))
                 if(item.date_value == '') fm.append('number_value', 0)
                 else fm.append('number_value', item.number_value)
                 if(item.date_value == '') fm.append('date_value', moment().format('YYYY-MM-DD'))

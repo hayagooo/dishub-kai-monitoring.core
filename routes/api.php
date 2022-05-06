@@ -44,8 +44,8 @@ Route::name('api.')->group(function() {
         Route::resource('/user', UserController::class);
         Route::post('/input-value', [InputValueController::class, 'store'])->name('value.store');
         Route::resource('/team', TeamController::class);
-        Route::post('/team/{id}/add/employee', [TeamController::class, 'addEmployee']);
-        Route::post('/team/{id}/remove/employee', [TeamController::class, 'removeEmployee']);
+        Route::post('/team/{id}/add/employee', [TeamController::class, 'addEmployee'])->name('team.add.employee');
+        Route::post('/team/{id}/remove/employee', [TeamController::class, 'removeEmployee'])->name('team.remove.employee');
         Route::post('/category-monitoring/{id}/add/object', [CategoryController::class, 'addObject']);
         Route::post('/category-monitoring/{id}/remove/object', [CategoryController::class, 'removeObject']);
     });
