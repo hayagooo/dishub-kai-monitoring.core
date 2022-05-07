@@ -1,5 +1,8 @@
 <template>
     <app-layout title="Dashboard">
+        <m-toast :color="toast.color"
+            :is_active="toast.active"
+            :message="$page.props.flash.message"/>
         <template #header>
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
                 Informasi & Pemberitahuan
@@ -65,7 +68,8 @@
                                                     </div>
                                                     <div class="mt-6">
                                                         <label for="title-info">Judul Pemberitahuan</label>
-                                                        <input required name="name" id="title-info" v-model="form.information.title" type="text" placeholder="Masukkan judul informasi" class="mt-3 focus:ring-purple-500 focus:border-purple-500 block w-full pl-4 sm:text-sm border-gray-300 rounded-md">
+                                                        <input maxlength="100" required name="name" id="title-info" v-model="form.information.title" type="text" placeholder="Masukkan judul informasi" class="mt-3 focus:ring-purple-500 focus:border-purple-500 block w-full pl-4 sm:text-sm border-gray-300 rounded-md">
+                                                        <small>Maksimal 100 karakter</small>
                                                     </div>
                                                     <div class="my-6">
                                                         <label for="description-info">Deskripsi Pemberitahuan</label>
@@ -92,11 +96,11 @@
                                                                     <img class="h-10 w-auto" :src="`/image/icon/${form.information.type_document}.png`" :alt="form.information.type_document">
                                                                 </div>
                                                                 <div class="justify-self-stretch self-center pr-6">
-                                                                    {{ formModal.mode == 'create' ? form.information.document.name : form.information.document }}
+                                                                    {{ truncatingFileName(formModal.mode == 'create' ? form.information.document.name : form.information.document, 24, '...') }}
                                                                 </div>
                                                             </div>
                                                             <div v-else class="mt-3">
-                                                                <input @change="onUploadFileInput($event)"
+                                                                <input @change="onUploadFileInput($event)" required
                                                                 type="file" accept=".xlsx,.pdf,.doc,.docx,.xls,.csv,.ppt,.pptx"
                                                                 class="block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent">
                                                             </div>
@@ -332,12 +336,26 @@ export default defineComponent({
         PlusCircleIcon,
     },
     methods: {
+        truncatingFileName(text, length, suffix) {
+            if(text != null && text != undefined && typeof text === 'string') {
+                var arr_text = text.split(".")
+                return this.truncating(text, length, suffix) + arr_text.pop()
+            } else return ''
+        },
         truncating(text, length, suffix) {
             if (text.length > length) {
                 return text.substring(0, length) + suffix;
             } else {
                 return text;
             }
+        },
+        onToast(color, message) {
+            this.toast.active = true
+            this.toast.message = message
+            this.toast.color = color
+            setTimeout(() => {
+                this.toast.active = false
+            }, 5000);
         },
         generateSlug(text) {
             return text.toString().toLowerCase()
@@ -375,13 +393,26 @@ export default defineComponent({
             this.optionModal.item = item
         },
         onRemoveFile() {
-            if(this.formModal.mode == 'create') {
+            // if(this.formModal.mode == 'create') {
                 this.form.information.document = null
-            }
+            // }
         },
         removeImageInfo() {
-            this.form.information.image = null
-            this.form.information.preview = null
+            if(this.formModal.mode == 'create') {
+                this.form.information.image = null
+                this.form.information.preview = null
+            } else {
+                if(this.informations.data[this.optionModal.index].image != null) {
+                    this.$inertia.post(this.route('app.information.delete-image', {
+                        id: this.informations.data[this.optionModal.index].id
+                    }), {
+                        preserveState: true,
+                        preserveScroll: true,
+                    })
+                }
+                this.form.information.image = null
+                this.form.information.preview = null
+            }
         },
         clickFile() {
             document.getElementById('image-info').click()
@@ -413,7 +444,8 @@ export default defineComponent({
             if(this.formModal.mode == 'create') {
                 route_url = this.route('app.information.store')
                 this.form.information.post(route_url,  {
-                    onFinish: () => this.toggleFormModal(false)
+                    onFinish: () => this.toggleFormModal(false),
+                    onSuccess: () => this.onToast('green', 'Pemberitahuan informasi berhasil disimpan')
                 })
             }
             else {
@@ -424,8 +456,9 @@ export default defineComponent({
                         _method: 'PATCH'
                     })
                 ).post(route_url, {
-                onFinish: () => this.toggleFormModal(false)
-            })
+                    onFinish: () => this.toggleFormModal(false),
+                    onSuccess: () => this.onToast('green', 'Pemberitahuan informasi berhasil diedit')
+                })
             }
         },
         deleteData() {
@@ -433,6 +466,7 @@ export default defineComponent({
                 id: this.informations.data[this.optionModal.index].id
             }), {
                 onFinish: () => this.toggleDeleteModal(false, null),
+                onSuccess: () => this.onToast('green', 'Pemberitahuan informasi berhasil dihapus')
             })
         },
         onUploadFileInput(e) {
@@ -475,6 +509,8 @@ export default defineComponent({
                 this.form.information.title = this.informations.data[indexId].title
                 this.form.information.link = this.informations.data[indexId].link
                 this.form.information.image = this.informations.data[indexId].image
+                if(this.form.information.link != null && this.form.information.link != undefined) this.form.information.type = 'link'
+                else this.form.information.type = 'document'
                 this.form.information.preview = `/information/image/${this.informations.data[indexId].image}`
                 this.form.information.description = this.informations.data[indexId].description
             } else this.setNullForm()

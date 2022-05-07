@@ -65,7 +65,8 @@
                                                         </div>
                                                         <div class="mt-6">
                                                             <label for="title-info">Judul Pemberitahuan</label>
-                                                            <input required name="name" id="title-info" v-model="form.information.title" type="text" placeholder="Masukkan judul informasi" class="mt-3 focus:ring-purple-500 focus:border-purple-500 block w-full pl-4 sm:text-sm border-gray-300 rounded-md">
+                                                            <input maxlength="100" required name="name" id="title-info" v-model="form.information.title" type="text" placeholder="Masukkan judul informasi" class="mt-3 focus:ring-purple-500 focus:border-purple-500 block w-full pl-4 sm:text-sm border-gray-300 rounded-md">
+                                                            <small>Maksimal 100 karakter</small>
                                                         </div>
                                                         <div class="my-6">
                                                             <label for="description-info">Deskripsi Pemberitahuan</label>
@@ -84,7 +85,7 @@
                                                         <div class="mt-6">
                                                             <div v-if="form.information.type == 'document'">
                                                                 <label for="link-info">Dokumen Pemberitahuan</label>
-                                                                <div v-if="form.information.document != null" class="flex bg-white p-4 mt-3 rounded-lg shadow-lg gap-x-4 relative">
+                                                                <div v-if="form.information.document != null && form.information.document != undefined" class="flex bg-white p-4 mt-3 rounded-lg shadow-lg gap-x-4 relative">
                                                                     <div @click="onRemoveFile()" role="button" class="absolute right-0 top-0 m-6">
                                                                         <x-circle-icon class="text-gray-600" size="20"/>
                                                                     </div>
@@ -92,11 +93,11 @@
                                                                         <img class="h-10 w-auto" :src="`/image/icon/${form.information.type_document}.png`" :alt="form.information.type_document">
                                                                     </div>
                                                                     <div class="justify-self-stretch self-center pr-6">
-                                                                        {{ formModal.mode == 'create' ? form.information.document.name : form.information.document }}
+                                                                        {{ truncatingFileName(formModal.mode == 'create' ? form.information.document.name : form.information.document, 24, '...') }}
                                                                     </div>
                                                                 </div>
                                                                 <div v-else class="mt-3">
-                                                                    <input @change="onUploadFileInput($event)"
+                                                                    <input @change="onUploadFileInput($event)" required
                                                                     type="file" accept=".xlsx,.pdf,.doc,.docx,.xls,.csv,.ppt,.pptx"
                                                                     class="block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent">
                                                                 </div>
@@ -351,12 +352,26 @@ export default defineComponent({
         PlusCircleIcon,
     },
     methods: {
+        truncatingFileName(text, length, suffix) {
+            if(text != null && text != undefined && typeof text === 'string') {
+                var arr_text = text.split(".")
+                return this.truncating(text, length, suffix) + arr_text.pop()
+            } else return ''
+        },
         truncating(text, length, suffix) {
             if (text.length > length) {
                 return text.substring(0, length) + suffix;
             } else {
                 return text;
             }
+        },
+        onToast(color, message) {
+            this.toast.active = true
+            this.toast.message = message
+            this.toast.color = color
+            setTimeout(() => {
+                this.toast.active = false
+            }, 5000);
         },
         generateSlug(text) {
             return text.toString().toLowerCase()
@@ -383,13 +398,26 @@ export default defineComponent({
             this.optionModal.item = item
         },
         onRemoveFile() {
-            if(this.formModal.mode == 'create') {
-                this.form.information.document = null
-            }
+            // if(this.formModal.mode == 'create') {
+            this.form.information.document = null
+            // }
         },
         removeImageInfo() {
-            this.form.information.image = null
-            this.form.information.preview = null
+            if(this.formModal.mode == 'create') {
+                this.form.information.image = null
+                this.form.information.preview = null
+            } else {
+                if(this.informations.data[this.optionModal.index].image != null) {
+                    this.$inertia.post(this.route('app.information.delete-image', {
+                        id: this.informations.data[this.optionModal.index].id
+                    }), {
+                        preserveState: true,
+                        preserveScroll: true,
+                    })
+                }
+                this.form.information.image = null
+                this.form.information.preview = null
+            }
         },
         clickFile() {
             document.getElementById('image-info').click()
@@ -421,7 +449,8 @@ export default defineComponent({
             if(this.formModal.mode == 'create') {
                 route_url = this.route('app.information.store')
                 this.form.information.post(route_url,  {
-                    onFinish: () => this.toggleFormModal(false)
+                    onFinish: () => this.toggleFormModal(false),
+                    onSuccess: () => this.onToast('green', 'Pemberitahuan informasi berhasil disimpan')
                 })
             }
             else {
@@ -432,8 +461,9 @@ export default defineComponent({
                         _method: 'PATCH'
                     })
                 ).post(route_url, {
-                onFinish: () => this.toggleFormModal(false)
-            })
+                    onFinish: () => this.toggleFormModal(false),
+                    onSuccess: () => this.onToast('green', 'Pemberitahuan informasi berhasil diedit')
+                })
             }
         },
         deleteData() {
@@ -441,6 +471,7 @@ export default defineComponent({
                 id: this.informations.data[this.optionModal.index].id
             }), {
                 onFinish: () => this.toggleDeleteModal(false, null),
+                onSuccess: () => this.onToast('green', 'Pemberitahuan informasi berhasil dihapus')
             })
         },
         onUploadFileInput(e) {
@@ -475,13 +506,29 @@ export default defineComponent({
             this.setOverflow(status)
             if(indexId != null) {
                 let document_info = this.informations.data[indexId].document
+                let images_files = ['png', 'jpg', 'jpeg']
+                let docs_files = ['doc', 'docx']
+                let excels_files = ['xlsx', 'xls']
+                let ppt_files = ['ppt', 'pptx']
                 if(document_info != null) {
-                    let get_type = document_info.split('.').pop()
-                    this.form.information.type_document = get_type
+                    let extension = document_info.split('.').pop()
+                    let result
+                    if(images_files.includes(extension)) result = 'image'
+                    else if(docs_files.includes(extension)) result = 'document'
+                    else if(excels_files.includes(extension)) result = 'excel'
+                    else if(ppt_files.includes(extension)) result = 'ppt'
+                    else if(extension == 'pdf') result = 'pdf'
+                    else {
+                        alert('File format tidak didukung')
+                        return false
+                    }
+                    this.form.information.type_document = result
                     this.form.information.document = document_info
                 }
                 this.form.information.title = this.informations.data[indexId].title
                 this.form.information.link = this.informations.data[indexId].link
+                if(this.form.information.link != null && this.form.information.link != undefined) this.form.information.type = 'link'
+                else this.form.information.type = 'document'
                 this.form.information.image = this.informations.data[indexId].image
                 this.form.information.preview = `/information/image/${this.informations.data[indexId].image}`
                 this.form.information.description = this.informations.data[indexId].description

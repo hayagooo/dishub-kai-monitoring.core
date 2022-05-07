@@ -194,4 +194,15 @@ class InformationController extends Controller
         $information = Information::query()->find($request->get('id'));
         return Response::download(public_path('/information/data/').$information->document);
     }
+
+    public function deleteImage($id)
+    {
+        $information = Information::query()->find($id);
+        if($information->image != null) {
+            if(File::exists(public_path('/information/image/'))) unlink(public_path('/information/image/').$information->image);
+        }
+        $information->image = null;
+        $information->save();
+        return redirect()->back()->with('message', 'Gambar informasi berhasil dihapus')->with('status', 'success');
+    }
 }
