@@ -112,7 +112,7 @@
                 this.$inertia.get(route('under.construction'))
             },
             onToast(color, message) {
-              this.toast.active = true
+                this.toast.active = true
                 this.toast.message = message
                 this.toast.color = color
                 setTimeout(() => {
@@ -134,7 +134,7 @@
                         this.is_disable = true
                     },
                     onFinish: () => {
-                        this.onToast('green', 'Verifikasi Berhasil : Selamat datang kembali')
+                        this.onToast(this.$page.props.flash.status == 'failed' ? 'red' : 'green', 'Verifikasi Berhasil : Selamat datang kembali')
                     },
                     onSuccess:() => {
                         if(this.is_save == true) {

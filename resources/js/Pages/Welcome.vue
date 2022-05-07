@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="container mx-auto px-14">
+        <div class="container mx-auto px-7 md:px-14">
             <div class="columns-1">
                 <div id="nav" class="py-6 grid grid-cols-2">
                     <div>
@@ -38,11 +38,11 @@
             </div>
         </div>
         <div class="bg-gray-100 mt-4 py-12">
-            <div class="container mx-auto px-14">
+            <div class="container mx-auto px-7 md:px-14">
                 <div class="columns-1">
                     <p class="text-4xl font-bold">Fitur Inovatif</p>
                 </div>
-                <div class="grid grid-cols-4 gap-4 mt-8">
+                <div class="grid justify-center justify-items-center grid-cols-4 gap-4 mt-8">
 
                     <div class="col-span-4 sm:col-span-2 md:col-span-1">
                         <div class="block w-full p-6 max-w-sm bg-white rounded-xl border border-gray-100 hover:text-purple-700">
@@ -104,7 +104,7 @@
                             <img src="@/Assets/logo-dishub.png" class="w-14 inline-block mx-2" alt="Logo Dishub">
                         </div> -->
                     </div>
-                    <div class="col-span-2 sm:col-span-1 justify-self-end text-slate-300">
+                    <div class="col-span-2 md:mt-0 mt-4 sm:col-span-1 justify-self-end text-slate-300">
                         2022 Developed by <a href="https://sidescript.id" class="underline" target="_blank">Sidescript Indonesia</a>.
                         <!-- <div class="mt-4">
                             <img src="@/Assets/logo-dev.png" class="w-16 inline-block mr-2" alt="Logo BTP Jabar">
