@@ -43,6 +43,7 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function() {
     Route::post('/verify', [UserController::class, 'verification'])->name('app.verification');
     Route::namespace('App')->prefix('app')->name('app.')->group(function() {
         Route::resource('/monitoring/category', CategoryController::class);
+        Route::post('/monitoring/category/image/{id}/delete', [CategoryController::class, 'deleteImage'])->name('category.delete-image');
         Route::resource('/monitoring/object', ObjectController::class);
         Route::resource('/monitoring/input', InputController::class);
         Route::resource('/monitoring', MonitoringController::class);

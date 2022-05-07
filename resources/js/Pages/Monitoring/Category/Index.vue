@@ -64,7 +64,7 @@
                                                 </div>
                                                 <div>
                                                     <label for="name-category">Nama Kategori</label>
-                                                    <input required name="name" id="name-category" v-model="form.name" type="text" placeholder="Masukkan nama kategori" class="mt-3 focus:ring-purple-500 focus:border-purple-500 block w-full pl-4 sm:text-sm border-gray-300 rounded-md">
+                                                    <input maxlength="100" required name="name" id="name-category" v-model="form.name" type="text" placeholder="Masukkan nama kategori" class="mt-3 focus:ring-purple-500 focus:border-purple-500 block w-full pl-4 sm:text-sm border-gray-300 rounded-md">
                                                 </div>
                                                 <div class="mt-6">
                                                     <div class="flex justify-between mb-3">
@@ -72,7 +72,7 @@
                                                             <label for="icon-category">Icon Kategori</label>
                                                         </div>
                                                         <div v-if="form.icon != null">
-                                                            <p role="button" @click="form.preview = null, form.icon = null" class="text-red-600">Hapus Icon</p>
+                                                            <p role="button" @click="onDeleteImage()" class="text-red-600">Hapus Icon</p>
                                                         </div>
                                                     </div>
                                                     <input @change="changeFile" name="icon" id="icon-category" type="file" class="hidden" accept=".jpg, .png, .jpeg">
@@ -113,7 +113,7 @@
                                             <img src="@/Assets/defaults/category.png" class="h-12 w-auto inline-block self-center" alt="Default Icon">
                                         </div>
                                         <div class="self-center">
-                                            <p class="text-base md:text-lg font-semibold">{{ item.name }}</p>
+                                            <p class="text-base md:text-lg font-semibold">{{ truncating(item.name, 40, '...') }}</p>
                                         </div>
                                     </div>
                                     <div v-if="$page.props.user.level != 'user'" class="absolute right-0 top-0 p-4">
@@ -274,6 +274,30 @@ export default defineComponent({
         }
     },
     methods: {
+        truncating(text, length, suffix) {
+            if (text.length > length) {
+                return text.substring(0, length) + suffix;
+            } else {
+                return text;
+            }
+        },
+        onDeleteImage() {
+            if(this.formModal.mode == 'create') {
+                this.form.preview = null
+                this.form.icon = null
+            } else {
+                if(this.categories[this.optionModal.index].icon != null) {
+                    this.$inertia.post(this.route('app.category.delete-image', {
+                        id: this.categories[this.optionModal.index].id
+                    }), {
+                        preserveState: true,
+                        preserveScroll: true,
+                    })
+                }
+                this.form.preview = null
+                this.form.icon = null
+            }
+        },
         goHome() {
             this.$inertia.get(this.route('dashboard'))
         },
@@ -298,6 +322,7 @@ export default defineComponent({
                     onFinish: () => this.toggleFormModal(false),
                     onSuccess: (response) => {
                         this.onToast(response)
+                        this.setNullForm()
                     }
                 })
             } else {
@@ -309,6 +334,7 @@ export default defineComponent({
                     onFinish: () => this.toggleFormModal(false),
                     onSuccess: (response) => {
                         this.onToast(response)
+                        this.setNullForm()
                     }
                 })
             }
@@ -319,6 +345,7 @@ export default defineComponent({
                 onFinish: () => this.toggleDeleteModal(false),
                 onSuccess: (response) => {
                     this.onToast(response)
+                    this.setNullForm()
                 }
             })
         },
@@ -332,6 +359,7 @@ export default defineComponent({
         },
         setNullForm() {
             this.form.name = ''
+            this.form.preview = null
             this.form.icon = null
         },
         gotoObject(category_id) {
@@ -343,13 +371,12 @@ export default defineComponent({
         toggleFormModal(status, mode = 'create', indexId = null) {
             this.toggleOptionModal(false, this.optionModal.index, this.optionModal.item)
             this.setOverflow(status)
-            if(indexId != null) {
+            if(indexId != null && mode == 'edit') {
                 this.form.name = this.categories[indexId].name
                 this.form.icon = this.categories[indexId].icon
                 this.form.preview = '/monitoring/icon/'+this.categories[indexId].icon
             } else this.setNullForm()
             this.formModal.show = status
-            if(!status) this.setNullForm()
             this.formModal.mode = mode
         },
         toggleOptionModal(status, index = null, item = null) {

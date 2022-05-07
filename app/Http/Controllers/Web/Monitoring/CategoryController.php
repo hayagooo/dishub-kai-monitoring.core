@@ -105,4 +105,15 @@ class CategoryController extends Controller
         $category->delete();
         return redirect()->back()->with('message', 'Data kategori berhasil dihapus')->with('status', 'success');
     }
+
+    public function deleteImage($id)
+    {
+        $category = Category::find($id);
+        if(File::exists(public_path('/monitoring/icon/').$category->icon)) {
+            File::delete(public_path('/monitoring/icon/').$category->icon);
+        }
+        $category->icon = null;
+        $category->save();
+        return redirect()->back()->with('message', 'Gambar kategori berhasil dihapus')->with('status', 'success');
+    }
 }
