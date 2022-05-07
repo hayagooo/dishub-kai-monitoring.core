@@ -150,7 +150,7 @@
                             this.is_disable = true
                         },
                         onFinish: () => {
-                            this.onToast('green', 'Login Berhasil')
+                            this.onToast(this.$page.props.flash.status == 'failed' ? 'red' : 'green', this.$page.props.flash.message)
                         },
                         onError: (error) => {
                             window.location.reload()
