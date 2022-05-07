@@ -45,6 +45,7 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function() {
         Route::resource('/monitoring/category', CategoryController::class);
         Route::post('/monitoring/category/image/{id}/delete', [CategoryController::class, 'deleteImage'])->name('category.delete-image');
         Route::resource('/monitoring/object', ObjectController::class);
+        Route::post('/monitoring/object/image/{id}/delete', [ObjectController::class, 'deleteImage'])->name('object.delete-image');
         Route::resource('/monitoring/input', InputController::class);
         Route::resource('/monitoring', MonitoringController::class);
         Route::resource('/information', InformationController::class);

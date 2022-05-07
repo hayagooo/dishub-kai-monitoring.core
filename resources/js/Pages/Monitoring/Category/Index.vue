@@ -84,7 +84,7 @@
                                                             Click File or Drag and drop <br>
                                                             <small>Rekomendasi ukuran : 48 x 48 pixel</small>
                                                         </p>
-                                                        <p v-else>{{ form.icon.name }}</p>
+                                                        <p v-else>{{ formModal.mode == 'create' ? form.icon.name : form.icon }}</p>
                                                     </div>
                                                     <small> {{ formModal.mode == 'create' ? 'Abaikan untuk membuat icon default' : 'Abaikan untuk tidak mengganti icon' }} </small>
                                                 </div>
@@ -317,7 +317,10 @@ export default defineComponent({
         },
         store() {
             if(this.formModal.mode == 'create') {
-                this.form.post(this.route('app.category.store'),
+                this.form.transform(data => ({
+                    ... data,
+                    _method: 'POST'
+                })).post(this.route('app.category.store'),
                 {
                     onFinish: () => this.toggleFormModal(false),
                     onSuccess: (response) => {

@@ -27,7 +27,7 @@
                     <div class="p-7 flex flex-nowrap">
                         <img v-if="category.icon == null" src="@/Assets/defaults/category.png" class="h-12 w-12 rounded-lg object-cover object-center inline-block" alt="Default Icon">
                         <img v-else :src="'/monitoring/icon/'+category.icon" class="h-12 w-12 rounded-lg object-cover object-center inline-block" alt="Default Icon">
-                        <p class="self-center text-base md:text-lg text-gray-700 inline-block ml-4">{{ category.name }}</p>
+                        <p class="self-center text-base md:text-lg text-gray-700 inline-block ml-4">{{ truncating(category.name, 20, '...') }}</p>
                     </div>
                     <div id="objects" class="bg-gray-50 relative sm:rounded-xl p-7">
                         <h2 class="text-xl text-gray-700 font-semibold">Objek Monitoring</h2>
@@ -76,7 +76,7 @@
                                                         </div>
                                                         <div>
                                                             <label for="name-object">Nama Objek</label>
-                                                            <input required name="name" id="name-object" v-model="form.name" type="text" placeholder="Masukkan nama objek" class="mt-3 focus:ring-purple-500 focus:border-purple-500 block w-full pl-4 sm:text-sm border-gray-300 rounded-md">
+                                                            <input maxlength="100" required name="name" id="name-object" v-model="form.name" type="text" placeholder="Masukkan nama objek" class="mt-3 focus:ring-purple-500 focus:border-purple-500 block w-full pl-4 sm:text-sm border-gray-300 rounded-md">
                                                         </div>
                                                         <div class="mt-6">
                                                             <div class="flex justify-between mb-3">
@@ -84,7 +84,7 @@
                                                                     <label for="icon-category">Icon Objek</label>
                                                                 </div>
                                                                 <div v-if="form.icon != null">
-                                                                    <p role="button" @click="form.preview = null, form.icon = null" class="text-red-600">Hapus Icon</p>
+                                                                    <p role="button" @click="onDeleteImage()" class="text-red-600">Hapus Icon</p>
                                                                 </div>
                                                             </div>
                                                             <input @change="changeFile" name="icon" id="icon-category" type="file" class="hidden" accept=".jpg, .png, .jpeg">
@@ -96,7 +96,7 @@
                                                                     Click File or Drag and drop <br>
                                                                     <small>Rekomendasi ukuran : 48 x 48 pixel</small>
                                                                 </p>
-                                                                <p v-else>{{ form.icon.name }}</p>
+                                                                <p v-else>{{ formModal.mode == 'create' ? form.icon.name : form.icon }}</p>
                                                             </div>
                                                             <small> {{ formModal.mode == 'create' ? 'Abaikan untuk membuat icon default' : 'Abaikan untuk tidak mengganti icon' }} </small>
                                                         </div>
@@ -127,7 +127,7 @@
                                         </div>
                                     </div>
                                     <div role="button" class="pt-2 text-center" @click="goMonitoring(item.id)">
-                                        <p class="text-lg font-semibold">{{ item.name }}</p>
+                                        <p class="text-lg font-semibold">{{ truncating(item.name, 20, '...') }}</p>
                                     </div>
                                 </div>
 
@@ -280,6 +280,13 @@ export default defineComponent({
         }
     },
     methods: {
+        truncating(text, length, suffix) {
+            if (text.length > length) {
+                return text.substring(0, length) + suffix;
+            } else {
+                return text;
+            }
+        },
         goBack() {
             this.$inertia.get(this.route('app.category.index'))
         },
@@ -297,6 +304,23 @@ export default defineComponent({
                 objectId: object_id,
             })
         },
+        onDeleteImage() {
+            if(this.formModal.mode == 'create') {
+                this.form.preview = null
+                this.form.icon = null
+            } else {
+                if(this.objects[this.optionModal.index].icon != null) {
+                    this.$inertia.post(this.route('app.object.delete-image', {
+                        id: this.objects[this.optionModal.index].id
+                    }), {
+                        preserveState: true,
+                        preserveScroll: true,
+                    })
+                }
+                this.form.preview = null
+                this.form.icon = null
+            }
+        },
         onToast(response) {
             this.toast.active = response.props.flash.message != null || response.props.flash.message != undefined ? true : false
             if(response.props.flash.status == 'success') this.toast.color = 'green'
@@ -307,7 +331,10 @@ export default defineComponent({
         },
         store() {
             if(this.formModal.mode == 'create') {
-                this.form.post(this.route('app.object.store'), {
+                this.form.transform(data => ({
+                    ... data,
+                    _method: 'POST'
+                })).post(this.route('app.object.store'), {
                     onFinish: () => this.toggleFormModal(false),
                     onSuccess: (response) => {
                         this.onToast(response)
@@ -348,6 +375,7 @@ export default defineComponent({
         },
         setNullForm() {
             this.form.name = ''
+            this.form.preview = null
             this.form.icon = null
         },
         toggleFormModal(status, mode, indexId = null) {

@@ -111,4 +111,15 @@ class ObjectController extends Controller
         $object->delete();
         return redirect()->back()->with('message', 'Data objek berhasil dihapus')->with('status', 'success');
     }
+
+    public function deleteImage($id)
+    {
+        $object = ObjectData::find($id);
+        if(File::exists(public_path('/monitoring/icon/').$object->icon)) {
+            File::delete(public_path('/monitoring/icon/').$object->icon);
+        }
+        $object->icon = null;
+        $object->save();
+        return redirect()->back()->with('message', 'Data objek berhasil dihapus')->with('status', 'success');
+    }
 }
