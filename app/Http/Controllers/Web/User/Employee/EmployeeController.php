@@ -68,7 +68,7 @@ class EmployeeController extends Controller
         ];
         CreateData::dispatch($data);
         Employee::query()->create($data);
-        return redirect()->back()->with('message', 'Data Kategori baru berhasil disimpan')->with('status', 'success');
+        return redirect()->back()->with('message', 'Data pegawai baru berhasil disimpan')->with('status', 'success');
     }
 
     /**
@@ -116,7 +116,7 @@ class EmployeeController extends Controller
         $employee = Employee::query()->find($id);
         EditData::dispatch($data);
         $employee->update($data);
-        return redirect()->back()->with('message', 'Data Kategori baru berhasil disimpan')->with('status', 'success');
+        return redirect()->back()->with('message', 'Data pegawai berhasil diedit')->with('status', 'success');
     }
 
     /**
@@ -141,7 +141,7 @@ class EmployeeController extends Controller
             $data->delete();
         }
         $employees->delete();
-        return redirect()->back()->with('message', 'Data objek berhasil dihapus')->with('status', 'success');
+        return redirect()->back()->with('message', 'Data pegawai berhasil dihapus')->with('status', 'success');
     }
 
     public function exportExcel()
@@ -161,27 +161,31 @@ class EmployeeController extends Controller
         Validator::make($data, $rules)->validate();
         $is_reset = (int) $request->is_reset;
         if($is_reset == 1) {
-            $employees = Employee::query()->get();
-            foreach($employees as $item) {
-                $employee = Employee::query()->with('team')->find($item->id);
-                $employee->team()->sync([]);
-                Monitoring::query()->where('team_id', $item->id)->delete();
-                $employee->delete();
-            }
+            $this->destroyAll();
         }
         Excel::import(new EmployeeImport, $request->file('document'));
-        return redirect()->back()->with('message', 'Import data berhasil')->with('status', 'success');
+        return redirect()->back()->with('message', 'Import data pegawai berhasil')->with('status', 'success');
     }
 
     public function destroyAll()
     {
         $employees = Employee::query()->get();
         foreach($employees as $item) {
-            $employee = Employee::query()->with('team')->find($item->id);
+            $employee = Employee::query()->with(['team', 'monitoring'])->find($item->id);
+            $monitorings = Monitoring::query()->where('employee_id', $employee->id)->get();
+            if($monitorings != null && count($monitorings) > 0) {
+                foreach($monitorings as $item) {
+                    $monitoring = Monitoring::query()->find($item->id);
+                    $monitoring->image()->delete();
+                    $monitoring->input()->delete();
+                    $monitoring->valueData()->delete();
+                    $monitoring->optionValue()->delete();
+                    $monitoring->delete();
+                }
+            }
             $employee->team()->sync([]);
-            Monitoring::query()->where('team_id', $item->id)->delete();
             $employee->delete();
         }
-        return redirect()->back()->with('message', 'Hapus data berhasil')->with('status', 'success');
+        return redirect()->back()->with('message', 'Hapus data pegawai berhasil')->with('status', 'success');
     }
 }

@@ -1,5 +1,8 @@
 <template>
     <app-layout title="Manage Pegawai">
+        <m-toast :color="toast.color"
+            :is_active="toast.active"
+            :message="$page.props.flash.message"/>
         <template #header>
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
                 Manage Pegawai
@@ -77,31 +80,31 @@
                                                 <div class="p-6 max-h-96 overflow-y-auto space-y-4">
                                                     <div>
                                                         <label for="name-employee">Nama Pegawai</label>
-                                                        <input required :readonly="formModal.mode == 'show'" :class="{'bg-gray-100': formModal.mode == 'show'}" name="name" id="name-employee" v-model="form.name" type="text" placeholder="Masukkan nama employee" class="mt-2 focus:ring-purple-500 focus:border-purple-500 block w-full pl-4 sm:text-sm border-gray-300 rounded-md">
+                                                        <input maxlength="150" required :readonly="formModal.mode == 'show'" :class="{'bg-gray-100': formModal.mode == 'show'}" name="name" id="name-employee" v-model="form.name" type="text" placeholder="Masukkan nama employee" class="mt-2 focus:ring-purple-500 focus:border-purple-500 block w-full pl-4 sm:text-sm border-gray-300 rounded-md">
                                                     </div>
                                                     <div class="mt-3">
                                                         <label for="email-employee">Email</label>
-                                                        <input required :readonly="formModal.mode == 'show'" :class="{'bg-gray-100': formModal.mode == 'show'}" name="email" id="email-employee" v-model="form.email" type="email" placeholder="Masukkan email employee" class="mt-2 focus:ring-purple-500 focus:border-purple-500 block w-full pl-4 sm:text-sm border-gray-300 rounded-md">
+                                                        <input maxlength="150" required :readonly="formModal.mode == 'show'" :class="{'bg-gray-100': formModal.mode == 'show'}" name="email" id="email-employee" v-model="form.email" type="email" placeholder="Masukkan email employee" class="mt-2 focus:ring-purple-500 focus:border-purple-500 block w-full pl-4 sm:text-sm border-gray-300 rounded-md">
                                                     </div>
                                                     <div class="mt-3">
                                                         <label for="phone_number-employee">No Telp</label>
-                                                        <input required :readonly="formModal.mode == 'show'" :class="{'bg-gray-100': formModal.mode == 'show'}" name="phone_number" id="phone_number-employee" v-model="form.phone_number" type="tel" placeholder="Masukkan nomor telepon" class="mt-2 focus:ring-purple-500 focus:border-purple-500 block w-full pl-4 sm:text-sm border-gray-300 rounded-md">
+                                                        <input maxlength="150" required :readonly="formModal.mode == 'show'" :class="{'bg-gray-100': formModal.mode == 'show'}" name="phone_number" id="phone_number-employee" v-model="form.phone_number" type="tel" placeholder="Masukkan nomor telepon" class="mt-2 focus:ring-purple-500 focus:border-purple-500 block w-full pl-4 sm:text-sm border-gray-300 rounded-md">
                                                     </div>
                                                     <div class="mt-3">
                                                         <label for="division-employee">Divisi</label>
-                                                        <input required :readonly="formModal.mode == 'show'" :class="{'bg-gray-100': formModal.mode == 'show'}" name="division" id="division-employee" v-model="form.division" type="text" placeholder="Masukkan nama divisi" class="mt-2 focus:ring-purple-500 focus:border-purple-500 block w-full pl-4 sm:text-sm border-gray-300 rounded-md">
+                                                        <input maxlength="150" required :readonly="formModal.mode == 'show'" :class="{'bg-gray-100': formModal.mode == 'show'}" name="division" id="division-employee" v-model="form.division" type="text" placeholder="Masukkan nama divisi" class="mt-2 focus:ring-purple-500 focus:border-purple-500 block w-full pl-4 sm:text-sm border-gray-300 rounded-md">
                                                     </div>
                                                     <div class="mt-3">
                                                         <label for="branch-employee">Cabang</label>
-                                                        <input required :readonly="formModal.mode == 'show'" :class="{'bg-gray-100': formModal.mode == 'show'}" name="branch" id="branch-employee" v-model="form.branch" type="text" placeholder="Masukkan nama cabang" class="mt-2 focus:ring-purple-500 focus:border-purple-500 block w-full pl-4 sm:text-sm border-gray-300 rounded-md">
+                                                        <input maxlength="150" required :readonly="formModal.mode == 'show'" :class="{'bg-gray-100': formModal.mode == 'show'}" name="branch" id="branch-employee" v-model="form.branch" type="text" placeholder="Masukkan nama cabang" class="mt-2 focus:ring-purple-500 focus:border-purple-500 block w-full pl-4 sm:text-sm border-gray-300 rounded-md">
                                                     </div>
                                                     <div class="mt-3">
                                                         <label for="position-employee">Posisi</label>
-                                                        <input required :readonly="formModal.mode == 'show'" :class="{'bg-gray-100': formModal.mode == 'show'}" name="position" id="position-employee" v-model="form.position" type="text" placeholder="Masukkan posisi" class="mt-2 focus:ring-purple-500 focus:border-purple-500 block w-full pl-4 sm:text-sm border-gray-300 rounded-md">
+                                                        <input maxlength="150" required :readonly="formModal.mode == 'show'" :class="{'bg-gray-100': formModal.mode == 'show'}" name="position" id="position-employee" v-model="form.position" type="text" placeholder="Masukkan posisi" class="mt-2 focus:ring-purple-500 focus:border-purple-500 block w-full pl-4 sm:text-sm border-gray-300 rounded-md">
                                                     </div>
                                                     <div class="mt-3">
                                                         <label for="proffesion-employee">Pekerjaan</label>
-                                                        <input required :readonly="formModal.mode == 'show'" :class="{'bg-gray-100': formModal.mode == 'show'}" name="profession" id="profession-employee" v-model="form.profession" type="text" placeholder="Masukkan nama pekerjaan" class="mt-2 focus:ring-purple-500 focus:border-purple-500 block w-full pl-4 sm:text-sm border-gray-300 rounded-md">
+                                                        <input maxlength="150" required :readonly="formModal.mode == 'show'" :class="{'bg-gray-100': formModal.mode == 'show'}" name="profession" id="profession-employee" v-model="form.profession" type="text" placeholder="Masukkan nama pekerjaan" class="mt-2 focus:ring-purple-500 focus:border-purple-500 block w-full pl-4 sm:text-sm border-gray-300 rounded-md">
                                                     </div>
                                                 </div>
                                                 <div v-if="formModal.mode != 'show'" class="flex gap-x-4 items-center flex-row-reverse p-6 space-x-2 rounded-b border-t border-gray-200 dark:border-gray-600">
@@ -201,7 +204,7 @@
                                                 <p class="text-lg font-semi-bold text-gray-700 pt-2">Import data</p>
                                             </div>
                                         </div>
-                                        <div role="button" @click="onExportExcel()" class="flex gap-x-4 w-full hover:bg-gray-50 p-2 rounded-lg">
+                                        <div role="button" @click="onExportExcel()" v-if="employees.data.length > 0" class="flex gap-x-4 w-full hover:bg-gray-50 p-2 rounded-lg">
                                             <div class="flex h-12 w-12 rounded-lg bg-purple-100 relative">
                                                 <download-icon class="mx-auto text-purple-600 self-center" size="24"/>
                                             </div>
@@ -347,12 +350,14 @@ import AppLayout from '@/Layouts/AppLayout.vue'
 import MUnderConstruction from '@/Components/MUnderConstruction'
 import { ArrowLeftIcon, UploadIcon, DownloadIcon, PlusCircleIcon, FileIcon, FileTextIcon, ImageIcon, TrashIcon, MoreVerticalIcon, EditIcon, EyeIcon } from '@zhuowenli/vue-feather-icons'
 import MPaginationData from '@/Components/MPaginationData'
+import MToast from '@/Components/MToast'
 import MNoData from '@/Components/MNoData.vue'
 
 export default defineComponent({
     props: ['employees'],
     components: {
         AppLayout,
+        MToast,
         UploadIcon,
         FileIcon,
         DownloadIcon,
@@ -422,8 +427,17 @@ export default defineComponent({
             fm.append('document', this.importModal.document)
             fm.append('is_reset', this.importModal.reset == true ? 1 : 0)
             this.$inertia.post(this.route('app.employee.import-excel'), fm, {
-                onFinish: () => this.toggleImportModal(false)
+                onFinish: () => this.toggleImportModal(false),
+                onSuccess: () => this.onToast('green', 'Import data pegawai berhasil')
             })
+        },
+        onToast(color, message) {
+            this.toast.active = true
+            this.toast.message = message
+            this.toast.color = color
+            setTimeout(() => {
+                this.toast.active = false
+            }, 5000);
         },
         clickFileImport() {
             document.getElementById('file-import-data').click()
@@ -474,14 +488,6 @@ export default defineComponent({
                 employeeId: employee_id
             })
         },
-        onToast(response) {
-            this.toast.active = response.props.flash.message != null || response.props.flash.message != undefined ? true : false
-            if(response.props.flash.status == 'success') this.toast.color = 'green'
-            else if(response.props.flash.status == 'failed') this.toast.color = 'red'
-            setTimeout(() => {
-                this.toast.active = false
-            }, 5000);
-        },
         setOverflow(status) {
             let body = document.querySelector('body').classList
             if(status == true)  body.add('overflow-hidden')
@@ -489,12 +495,13 @@ export default defineComponent({
         },
         store() {
             if(this.formModal.mode == 'create') {
-                this.form.post(this.route('app.employee.store'),
+                this.form.transform(data => ({
+                    ... data,
+                    _method: 'POST'
+                })).post(this.route('app.employee.store'),
                 {
                     onFinish: () => this.toggleFormModal(false),
-                    onSuccess: (response) => {
-                        this.onToast(response)
-                    }
+                    onSuccess: (response) => this.onToast('green', 'Data pegawai berhasil disimpan')
                 })
             } else {
                 this.form.transform(data => ({
@@ -503,9 +510,7 @@ export default defineComponent({
                 })).post(this.route('app.employee.update', { id: this.employees.data[this.optionModal.index].id }),
                 {
                     onFinish: () => this.toggleFormModal(false),
-                    onSuccess: (response) => {
-                        this.onToast(response)
-                    }
+                    onSuccess: (response) => this.onToast('green', 'Data pegawai berhasil diedit')
                 })
             }
         },
@@ -514,17 +519,13 @@ export default defineComponent({
                 this.$inertia.delete(this.route('app.employee.destroy', { id: this.employees.data[this.optionModal.index].id  }),
                 {
                     onFinish: () => this.toggleDeleteModal(false),
-                    onSuccess: (response) => {
-                        this.onToast(response)
-                    }
+                    onSuccess: (response) => this.onToast('green', 'Data pegawai berhasil dihapus')
                 })
             } else {
                 this.$inertia.delete(this.route('app.employee.delete-all'),
                 {
                     onFinish: () => this.toggleDeleteModal(false),
-                    onSuccess: (response) => {
-                        this.onToast(response)
-                    }
+                    onSuccess: (response) => this.onToast('green', 'Data pegawai berhasil dihapus')
                 })
             }
         },
