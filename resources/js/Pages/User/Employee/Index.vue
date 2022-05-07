@@ -231,20 +231,20 @@
                         </div>
                         <div v-if="employees.data.length > 0">
                             <div class="mt-3 mb-4" v-for="(item, index) in employees.data" :key="`user-${index}`">
-                                <div role="button" class="transition-all ease-in-out relative flex gap-x-4 rounded-lg bg-white hover:shadow-lg">
+                                <div role="button" class="transition-all break-all ease-in-out relative flex gap-x-4 rounded-lg bg-white hover:shadow-lg">
                                     <div role="button" class="flex w-9/12 gap-x-4 p-4">
                                         <div class="self-center mt-1">
                                             <p class="text-lg font-semibold">{{ item.name }}</p>
                                             <p class="text-base text-gray-500" v-if="item.position != null || item.profession != null">
-                                                <span>{{ item.position != null ? item.position : '' }}</span>
+                                                <span>{{ item.position != null ? truncating(item.position, 16, '...') : '' }}</span>
                                                 <span class="mx-2" v-if="item.position != null && item.profession != null">-</span>
-                                                <span>{{ item.profession != null ? item.profession : '' }}</span>
+                                                <span>{{ item.profession != null ? truncating(item.profession, 16, '...') : '' }}</span>
                                             </p>
                                             <p class="text-base text-gray-500" v-if="item.division != null || item.branch != null">
                                                 <span class="mr-2" v-if="item.division != null || item.branch != null">at</span>
-                                                <span>{{ item.division != null ? item.division : '' }}</span>
+                                                <span>{{ item.division != null ? truncating(item.division, 16, '...') : '' }}</span>
                                                 <span class="mx-2" v-if="item.division != null && item.branch != null">-</span>
-                                                <span>{{ item.branch != null ? item.branch : '' }}</span>
+                                                <span>{{ item.branch != null ? truncating(item.branch, 16, '...') : '' }}</span>
                                             </p>
                                         </div>
                                         <div class="absolute right-0 top-0 p-4">
@@ -434,6 +434,13 @@ export default defineComponent({
                     this.onToast('green', 'Import data pegawai berhasil')
                 }
             })
+        },
+        truncating(text, length, suffix) {
+            if (text.length > length) {
+                return text.substring(0, length) + suffix;
+            } else {
+                return text;
+            }
         },
         onToast(color, message) {
             this.toast.active = true

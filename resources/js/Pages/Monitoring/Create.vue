@@ -56,7 +56,7 @@
                         <form @submit.prevent="submitGeneral" action="#">
                             <div class="mt-6">
                                 <label for="title-monitoring">Judul Monitoring</label>
-                                <input required name="title" id="title-monitoring" v-model="form.general.title" type="text" placeholder="e.g. Monitoring Jembatan Bandung" class="mt-3 focus:ring-purple-500 focus:border-purple-500 block w-full pl-4 sm:text-sm border-gray-300 rounded-md">
+                                <input maxlength="100" required name="title" id="title-monitoring" v-model="form.general.title" type="text" placeholder="e.g. Monitoring Jembatan Bandung" class="mt-3 focus:ring-purple-500 focus:border-purple-500 block w-full pl-4 sm:text-sm border-gray-300 rounded-md">
                             </div>
                             <div class="mt-6">
                                 <label for="team-monitoring">Tim Monitoring</label>

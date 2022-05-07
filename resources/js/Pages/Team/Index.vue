@@ -199,8 +199,8 @@
                                             <div>
                                                 <img class="w-14 h-14 border-2 border-white rounded-full dark:border-gray-800" :src="`https://via.placeholder.com/300x300/6c2bd9/ffffff.png?text=${initialsString(item.name)}`" alt="">
                                             </div>
-                                            <div>
-                                                <p class="text-base md:text-lg font-semibold">{{ item.name }}</p>
+                                            <div class="break-all">
+                                                <p class="text-base md:text-lg font-semibold">{{ truncating(item.name, 30, '...') }}</p>
                                                 <small>{{ item.employee.length <= 0 ? 'Tidak ada' : item.employee.length }} pegawai</small>
                                             </div>
                                         </div>
@@ -261,19 +261,19 @@
                                                 <div>
                                                     <input @keyup="onSearchEmployee()" placeholder="Cari berdasarkan nama pegawai" v-model="input.name_employee" type="text" id="name-employee-input" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
                                                 </div>
-                                                <div v-if="employees.length > 0">
+                                                <div v-if="employees.length > 0" class="break-all">
                                                     <div v-for="(item, index) in employees" :key="index" @click="toggleCheckbox(index)" :class="{'mb-2': index + 1 != employees.length, 'mt-2': index == 0}" class="p-3 relative transition-all hover:shadow-lg bg-white rounded-lg mb-2">
-                                                        <p class="text-lg font-semibold">{{ item.name }}</p>
+                                                        <p class="text-lg font-semibold">{{ truncating(item.name, 24, '...') }}</p>
                                                         <p class="text-base text-gray-500" v-if="item.position != null || item.profession != null">
-                                                            <span>{{ item.position != null ? item.position : '' }}</span>
+                                                            <span>{{ item.position != null ? truncating(item.position, 16, '...') : '' }}</span>
                                                             <span class="mx-2" v-if="item.position != null && item.profession != null">-</span>
-                                                            <span>{{ item.profession != null ? item.profession : '' }}</span>
+                                                            <span>{{ item.profession != null ? truncating(item.profession, 16, '...') : '' }}</span>
                                                         </p>
                                                         <p class="text-base text-gray-500" v-if="item.division != null || item.branch != null">
                                                             <span class="mr-2" v-if="item.division != null || item.branch != null">at</span>
-                                                            <span>{{ item.division != null ? item.division : '' }}</span>
+                                                            <span>{{ item.division != null ? truncating(item.division, 16, '...') : '' }}</span>
                                                             <span class="mx-2" v-if="item.division != null && item.branch != null">-</span>
-                                                            <span>{{ item.branch != null ? item.branch : '' }}</span>
+                                                            <span>{{ item.branch != null ? truncating(item.branch, 16, '...') : '' }}</span>
                                                         </p>
                                                         <div class="absolute inset-y-10 right-10 z-30" v-if="checkboxes.length > 0">
                                                             <div class="flex items-center mb-4">
@@ -484,6 +484,13 @@ export default defineComponent({
             setTimeout(() => {
                 this.toast.active = false
             }, 5000);
+        },
+        truncating(text, length, suffix) {
+            if (text.length > length) {
+                return text.substring(0, length) + suffix;
+            } else {
+                return text;
+            }
         },
         clickFileImport() {
             document.getElementById('file-import-data').click()

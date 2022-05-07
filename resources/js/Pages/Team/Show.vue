@@ -22,13 +22,13 @@
                         </div>
                     </div>
                     <div class="p-7">
-                        <div class="flex w-9/12 gap-x-4">
+                        <div class="flex w-full gap-x-4">
                             <div class="self-center flex gap-x-4">
                                 <div>
                                     <img class="w-14 h-14 border-2 border-white rounded-full dark:border-gray-800" :src="`https://via.placeholder.com/300x300/6c2bd9/ffffff.png?text=${initialsString(team.name)}`" alt="">
                                 </div>
-                                <div>
-                                    <p class="text-base md:text-lg font-semibold">{{ team.name }}</p>
+                                <div class="break-all">
+                                    <p class="text-base md:text-lg font-semibold">{{ truncating(team.name, 50, '...') }}</p>
                                     <small>{{ team.employee.length <= 0 ? 'Tidak ada' : team.employee.length }} pegawai</small>
                                 </div>
                             </div>
@@ -48,7 +48,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="bg-gray-50 relative sm:rounded-xl p-7">
+                    <div class="bg-gray-50 relative break-all sm:rounded-xl p-7">
                         <div v-if="menuIndex == 0">
                             <div id="description-team-content" class="border-b-2 border-gray-200 pb-3">
                                 <label for="description-content" class="mb-2 inline-block font-semibold">Deskripsi Tim</label>
@@ -78,17 +78,17 @@
                             </div>
                             <div v-if="team.employee.length > 0">
                                 <div v-for="(item, index) in team.employee" :key="index" :class="{'mb-2': index + 1 != team.employee.length, 'mt-2': index == 0}" class="p-3 relative transition-all hover:shadow-lg bg-white rounded-lg mb-2">
-                                    <p class="text-lg font-semibold">{{ item.name }}</p>
+                                    <p class="text-lg font-semibold">{{ truncating(item.name, 24, '...') }}</p>
                                     <p class="text-base text-gray-500" v-if="item.position != null || item.profession != null">
-                                        <span>{{ item.position != null ? item.position : '' }}</span>
+                                        <span>{{ item.position != null ? truncating(item.position, 16, '...') : '' }}</span>
                                         <span class="mx-2" v-if="item.position != null && item.profession != null">-</span>
-                                        <span>{{ item.profession != null ? item.profession : '' }}</span>
+                                        <span>{{ item.profession != null ? truncating(item.profession, 16, '...') : '' }}</span>
                                     </p>
                                     <p class="text-base text-gray-500" v-if="item.division != null || item.branch != null">
                                         <span class="mr-2" v-if="item.division != null || item.branch != null">at</span>
-                                        <span>{{ item.division != null ? item.division : '' }}</span>
+                                        <span>{{ item.division != null ? truncating(item.division, 16, '...') : '' }}</span>
                                         <span class="mx-2" v-if="item.division != null && item.branch != null">-</span>
-                                        <span>{{ item.branch != null ? item.branch : '' }}</span>
+                                        <span>{{ item.branch != null ? truncating(item.branch, 16, '...') : '' }}</span>
                                     </p>
                                     <div role="button" class="absolute inset-y-10 right-10 z-30" @click="removeEmployee(item.id)">
                                         <div class="flex items-center mb-4">
@@ -253,6 +253,13 @@ export default defineComponent({
         },
         clickMenu(item, index) {
             this.menuIndex = index
+        },
+        truncating(text, length, suffix) {
+            if (text.length > length) {
+                return text.substring(0, length) + suffix;
+            } else {
+                return text;
+            }
         },
         toggleOptionModal(status, index = null, item = null) {
             this.setOverflow(status)

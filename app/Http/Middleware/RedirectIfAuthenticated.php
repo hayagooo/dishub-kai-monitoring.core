@@ -29,7 +29,7 @@ class RedirectIfAuthenticated
                 if ($user->verified_at == null) {
                     return redirect()->route('index.verification');
                 } else {
-                    return redirect(RouteServiceProvider::HOME);
+                    return redirect()->route('dashboard');
                 }
             }
         }

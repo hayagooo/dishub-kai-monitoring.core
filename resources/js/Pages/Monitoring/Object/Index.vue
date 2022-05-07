@@ -124,7 +124,7 @@
                                         </div>
                                     </div>
                                     <div role="button" class="pt-2 text-center" @click="goMonitoring(item.id)">
-                                        <p class="text-lg font-semibold">{{ truncating(item.name, 20, '...') }}</p>
+                                        <p class="text-lg font-semibold">{{ truncating(item.name, 16, '...') }}</p>
                                     </div>
                                 </div>
 

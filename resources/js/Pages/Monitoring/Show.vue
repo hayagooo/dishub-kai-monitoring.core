@@ -77,25 +77,25 @@
                             <div v-if="menuForms[menuIndex].name == 'general'" action="#">
                                 <div class="mt-6">
                                     <label for="title-monitoring">Judul Monitoring</label>
-                                    <div class="fill-monitoring-data border-2 border-gray-300 bg-gray-100 rounded-lg p-4">
+                                    <div class="fill-monitoring-data break-all border-2 border-gray-300 bg-gray-100 rounded-lg p-4">
                                         <p class="text-lg font-semibold">{{ form.general.title != null && form.general.title != '' ? form.general.title : '-'  }}</p>
                                     </div>
                                 </div>
                                 <div class="mt-6">
                                     <label for="team-monitoring">Tim Monitoring</label>
-                                    <div class="fill-monitoring-data border-2 border-gray-300 bg-gray-100 rounded-lg p-4">
+                                    <div class="fill-monitoring-data break-all border-2 border-gray-300 bg-gray-100 rounded-lg p-4">
                                         <p class="text-lg font-semibold">{{ form.general.team_id != null && form.general.team_id != '' ? teams.find(item => item.id == form.general.team_id).name : '-'  }}</p>
                                     </div>
                                 </div>
                                 <div v-if="form.general.team_id != 0 && (employees && employees.length > 0)" class="mt-6">
                                     <label for="employee-monitoring">Subjek Monitoring</label>
-                                    <div class="fill-monitoring-data border-2 border-gray-300 bg-gray-100 rounded-lg p-4">
+                                    <div class="fill-monitoring-data break-all border-2 border-gray-300 bg-gray-100 rounded-lg p-4">
                                         <p class="text-lg font-semibold">{{ form.general.employee_id != null && form.general.employee_id != '' ? employees.find(item => item.id == form.general.employee_id).name : '-'  }}</p>
                                     </div>
                                 </div>
                                 <div class="mt-6">
                                     <label for="description-monitoring">Deskripsi Monitoring</label>
-                                    <div class="fill-monitoring-data border-2 border-gray-300 bg-gray-100 rounded-lg p-4">
+                                    <div class="fill-monitoring-data break-all border-2 border-gray-300 bg-gray-100 rounded-lg p-4">
                                         <div v-if="form.general.description != null && form.general.description != ''" v-html="form.general.description"></div>
                                         <div v-else class="text-2xl font-semibold">-</div>
                                     </div>
@@ -126,14 +126,14 @@
                                                     <img class="object-cover object-center w-full h-auto rounded-lg h-48 my-3" :src="'/monitoring/input/'+item.image" :alt="item.image">
                                                 </div>
                                                 <div v-if="item.type == 'text'">
-                                                    <div class="fill-monitoring-data border-2 border-gray-300 bg-gray-100 rounded-lg p-4">
+                                                    <div class="fill-monitoring-data break-all border-2 border-gray-300 bg-gray-100 rounded-lg p-4">
                                                         <p class="text-lg font-semibold">{{ values.category[index].string_value != null && values.category[index].string_value != '' ? values.category[index].string_value : '-'  }}</p>
                                                     </div>
                                                     <small v-if="item.description != null" v-html="item.description"></small>
                                                 </div>
 
                                                 <div v-if="item.type == 'textarea'">
-                                                    <div class="fill-monitoring-data border-2 border-gray-300 bg-gray-100 rounded-lg p-4">
+                                                    <div class="fill-monitoring-data break-all border-2 border-gray-300 bg-gray-100 rounded-lg p-4">
                                                         <div v-if="values.category[index].text_value != null && values.category[index].text_value != ''" v-html="values.category[index].text_value"></div>
                                                         <div v-else class="text-2xl font-semibold">-</div>
                                                     </div>
@@ -141,14 +141,14 @@
                                                 </div>
 
                                                 <div v-if="item.type == 'number'">
-                                                    <div class="fill-monitoring-data border-2 border-gray-300 bg-gray-100 rounded-lg p-4">
+                                                    <div class="fill-monitoring-data break-all border-2 border-gray-300 bg-gray-100 rounded-lg p-4">
                                                         <p class="text-lg font-semibold">{{ values.category[index].number_value != null && values.category[index].number_value != '' ? values.category[index].number_value : '-'  }}</p>
                                                     </div>
                                                     <small v-if="item.description != null" v-html="item.description"></small>
                                                 </div>
 
                                                 <div v-if="item.type == 'checkbox'">
-                                                    <div class="fill-monitoring-data border-2 border-gray-300 bg-gray-100 rounded-lg p-4">
+                                                    <div class="fill-monitoring-data break-all border-2 border-gray-300 bg-gray-100 rounded-lg p-4">
                                                         <div v-if="item.option.length > 0">
                                                             <div v-for="(option, indexOption) in item.option" :key="`option-${indexOption}`">
                                                                 <div class="flex items-center mb-4">
@@ -175,7 +175,7 @@
                                                 </div>
 
                                                 <div v-if="item.type == 'radio'">
-                                                    <div class="fill-monitoring-data border-2 border-gray-300 bg-gray-100 rounded-lg p-4">
+                                                    <div class="fill-monitoring-data break-all border-2 border-gray-300 bg-gray-100 rounded-lg p-4">
                                                         <div v-if="item.option.length > 0">
                                                             <div v-for="(option, indexOption) in item.option" :key="`option-${indexOption}`">
                                                                 <div class="flex items-center mb-4">
@@ -196,7 +196,7 @@
                                                 </div>
 
                                                 <div v-if="item.type == 'dropdown'">
-                                                    <div class="fill-monitoring-data border-2 border-gray-300 bg-gray-100 rounded-lg p-4">
+                                                    <div class="fill-monitoring-data break-all border-2 border-gray-300 bg-gray-100 rounded-lg p-4">
                                                         <p class="text-lg font-semibold">{{ values.category[index].text_value != null && values.category[index].text_value != '' ? item.option.find(item => item.id == values.category[index].text_value).value : '-'  }}</p>
                                                     </div>
                                                     <div v-if="item.option.length <= 0">
@@ -227,7 +227,7 @@
                                                 </div>
 
                                                 <div v-if="item.type == 'date'">
-                                                    <div class="relative gap-4 flex fill-monitoring-data border-2 border-gray-300 bg-gray-100 rounded-lg p-4">
+                                                    <div class="relative gap-4 flex fill-monitoring-data break-all border-2 border-gray-300 bg-gray-100 rounded-lg p-4">
                                                         <div class="flex">
                                                             <calendar-icon size="30" class="text-gray-700 dark:text-gray-400"/>
                                                         </div>
@@ -239,7 +239,7 @@
                                                 </div>
 
                                                 <div v-if="item.type == 'time'">
-                                                    <div class="relative gap-4 flex fill-monitoring-data border-2 border-gray-300 bg-gray-100 rounded-lg p-4">
+                                                    <div class="relative gap-4 flex fill-monitoring-data break-all border-2 border-gray-300 bg-gray-100 rounded-lg p-4">
                                                         <div class="flex">
                                                             <clock-icon size="30" class="text-gray-700 dark:text-gray-400"/>
                                                         </div>
@@ -295,14 +295,14 @@
                                                     <img class="object-cover object-center w-full h-auto rounded-lg h-48 my-3" :src="'/monitoring/input/'+item.image" :alt="item.image">
                                                 </div>
                                                 <div v-if="item.type == 'text'">
-                                                    <div class="fill-monitoring-data border-2 border-gray-300 bg-gray-100 rounded-lg p-4">
+                                                    <div class="fill-monitoring-data break-all border-2 border-gray-300 bg-gray-100 rounded-lg p-4">
                                                         <p class="text-lg font-semibold">{{ values.object[index].string_value != null && values.object[index].string_value != '' ? values.object[index].string_value : '-'  }}</p>
                                                     </div>
                                                     <small v-if="item.description != null" v-html="item.description"></small>
                                                 </div>
 
                                                 <div v-if="item.type == 'textarea'">
-                                                    <div class="fill-monitoring-data border-2 border-gray-300 bg-gray-100 rounded-lg p-4">
+                                                    <div class="fill-monitoring-data break-all border-2 border-gray-300 bg-gray-100 rounded-lg p-4">
                                                         <div v-if="values.object[index].text_value != null && values.object[index].text_value != ''" v-html="values.object[index].text_value"></div>
                                                         <div v-else class="text-2xl font-semibold">-</div>
                                                     </div>
@@ -310,14 +310,14 @@
                                                 </div>
 
                                                 <div v-if="item.type == 'number'">
-                                                    <div class="fill-monitoring-data border-2 border-gray-300 bg-gray-100 rounded-lg p-4">
+                                                    <div class="fill-monitoring-data break-all border-2 border-gray-300 bg-gray-100 rounded-lg p-4">
                                                         <p class="text-lg font-semibold">{{ values.object[index].number_value != null && values.object[index].number_value != '' ? values.object[index].number_value : '-'  }}</p>
                                                     </div>
                                                     <small v-if="item.description != null" v-html="item.description"></small>
                                                 </div>
 
                                                 <div v-if="item.type == 'checkbox'">
-                                                    <div class="fill-monitoring-data border-2 border-gray-300 bg-gray-100 rounded-lg p-4">
+                                                    <div class="fill-monitoring-data break-all border-2 border-gray-300 bg-gray-100 rounded-lg p-4">
                                                         <div v-if="item.option.length > 0">
                                                             <div v-for="(option, indexOption) in item.option" :key="`option-${indexOption}`">
                                                                 <div class="flex items-center mb-4">
@@ -344,7 +344,7 @@
                                                 </div>
 
                                                 <div v-if="item.type == 'radio'">
-                                                    <div class="fill-monitoring-data border-2 border-gray-300 bg-gray-100 rounded-lg p-4">
+                                                    <div class="fill-monitoring-data break-all border-2 border-gray-300 bg-gray-100 rounded-lg p-4">
                                                         <div v-if="item.option.length > 0">
                                                             <div v-for="(option, indexOption) in item.option" :key="`option-${indexOption}`">
                                                                 <div class="flex items-center mb-4">
@@ -365,7 +365,7 @@
                                                 </div>
 
                                                 <div v-if="item.type == 'dropdown'">
-                                                    <div class="fill-monitoring-data border-2 border-gray-300 bg-gray-100 rounded-lg p-4">
+                                                    <div class="fill-monitoring-data break-all border-2 border-gray-300 bg-gray-100 rounded-lg p-4">
                                                         <p class="text-lg font-semibold">{{ values.object[index].text_value != null && values.object[index].text_value != '' ? item.option.find(item => item.id == values.object[index].text_value).value : '-'  }}</p>
                                                     </div>
                                                     <div v-if="item.option.length <= 0">
@@ -396,7 +396,7 @@
                                                 </div>
 
                                                 <div v-if="item.type == 'date'">
-                                                    <div class="relative gap-4 flex fill-monitoring-data border-2 border-gray-300 bg-gray-100 rounded-lg p-4">
+                                                    <div class="relative gap-4 flex fill-monitoring-data break-all border-2 border-gray-300 bg-gray-100 rounded-lg p-4">
                                                         <div class="flex">
                                                             <calendar-icon size="30" class="text-gray-700 dark:text-gray-400"/>
                                                         </div>
@@ -408,7 +408,7 @@
                                                 </div>
 
                                                 <div v-if="item.type == 'time'">
-                                                    <div class="relative gap-4 flex fill-monitoring-data border-2 border-gray-300 bg-gray-100 rounded-lg p-4">
+                                                    <div class="relative gap-4 flex fill-monitoring-data break-all border-2 border-gray-300 bg-gray-100 rounded-lg p-4">
                                                         <div class="flex">
                                                             <clock-icon size="30" class="text-gray-700 dark:text-gray-400"/>
                                                         </div>
@@ -466,14 +466,14 @@
                                                     <img class="object-cover object-center w-full h-auto rounded-lg h-48 my-3" :src="'/monitoring/input/'+item.image" :alt="item.image">
                                                 </div>
                                                 <div v-if="item.type == 'text'">
-                                                    <div class="fill-monitoring-data border-2 border-gray-300 bg-gray-100 rounded-lg p-4">
+                                                    <div class="fill-monitoring-data break-all border-2 border-gray-300 bg-gray-100 rounded-lg p-4">
                                                         <p class="text-lg font-semibold">{{ values.monitoring[index].string_value != null && values.monitoring[index].string_value != '' ? values.monitoring[index].string_value : '-'  }}</p>
                                                     </div>
                                                     <small v-if="item.description != null" v-html="item.description"></small>
                                                 </div>
 
                                                 <div v-if="item.type == 'textarea'">
-                                                    <div class="fill-monitoring-data border-2 border-gray-300 bg-gray-100 rounded-lg p-4">
+                                                    <div class="fill-monitoring-data break-all border-2 border-gray-300 bg-gray-100 rounded-lg p-4">
                                                         <div v-if="values.monitoring[index].text_value != null && values.monitoring[index].text_value != ''" v-html="values.monitoring[index].text_value"></div>
                                                         <div v-else class="text-2xl font-semibold">-</div>
                                                     </div>
@@ -481,14 +481,14 @@
                                                 </div>
 
                                                 <div v-if="item.type == 'number'">
-                                                    <div class="fill-monitoring-data border-2 border-gray-300 bg-gray-100 rounded-lg p-4">
+                                                    <div class="fill-monitoring-data break-all border-2 border-gray-300 bg-gray-100 rounded-lg p-4">
                                                         <p class="text-lg font-semibold">{{ values.monitoring[index].number_value != null && values.monitoring[index].number_value != '' ? values.monitoring[index].number_value : '-'  }}</p>
                                                     </div>
                                                     <small v-if="item.description != null" v-html="item.description"></small>
                                                 </div>
 
                                                 <div v-if="item.type == 'checkbox'">
-                                                    <div class="fill-monitoring-data border-2 border-gray-300 bg-gray-100 rounded-lg p-4">
+                                                    <div class="fill-monitoring-data break-all border-2 border-gray-300 bg-gray-100 rounded-lg p-4">
                                                         <div v-if="item.option.length > 0">
                                                             <div v-for="(option, indexOption) in item.option" :key="`option-${indexOption}`">
                                                                 <div class="flex items-center mb-4">
@@ -515,7 +515,7 @@
                                                 </div>
 
                                                 <div v-if="item.type == 'radio'">
-                                                    <div class="fill-monitoring-data border-2 border-gray-300 bg-gray-100 rounded-lg p-4">
+                                                    <div class="fill-monitoring-data break-all border-2 border-gray-300 bg-gray-100 rounded-lg p-4">
                                                         <div v-if="item.option.length > 0">
                                                             <div v-for="(option, indexOption) in item.option" :key="`option-${indexOption}`">
                                                                 <div class="flex items-center mb-4">
@@ -536,7 +536,7 @@
                                                 </div>
 
                                                 <div v-if="item.type == 'dropdown'">
-                                                    <div class="fill-monitoring-data border-2 border-gray-300 bg-gray-100 rounded-lg p-4">
+                                                    <div class="fill-monitoring-data break-all border-2 border-gray-300 bg-gray-100 rounded-lg p-4">
                                                         <p class="text-lg font-semibold">{{ values.monitoring[index].text_value != null && values.monitoring[index].text_value != '' ? item.option.find(item => item.id == values.monitoring[index].text_value).value : '-'  }}</p>
                                                     </div>
                                                     <div v-if="item.option.length <= 0">
@@ -567,7 +567,7 @@
                                                 </div>
 
                                                 <div v-if="item.type == 'date'">
-                                                    <div class="relative gap-4 flex fill-monitoring-data border-2 border-gray-300 bg-gray-100 rounded-lg p-4">
+                                                    <div class="relative gap-4 flex fill-monitoring-data break-all border-2 border-gray-300 bg-gray-100 rounded-lg p-4">
                                                         <div class="flex">
                                                             <calendar-icon size="30" class="text-gray-700 dark:text-gray-400"/>
                                                         </div>
@@ -579,7 +579,7 @@
                                                 </div>
 
                                                 <div v-if="item.type == 'time'">
-                                                    <div class="relative gap-4 flex fill-monitoring-data border-2 border-gray-300 bg-gray-100 rounded-lg p-4">
+                                                    <div class="relative gap-4 flex fill-monitoring-data break-all border-2 border-gray-300 bg-gray-100 rounded-lg p-4">
                                                         <div class="flex">
                                                             <clock-icon size="30" class="text-gray-700 dark:text-gray-400"/>
                                                         </div>

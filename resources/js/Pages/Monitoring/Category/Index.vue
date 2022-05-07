@@ -113,7 +113,7 @@
                                             <img src="@/Assets/defaults/category.png" class="h-12 w-auto inline-block self-center" alt="Default Icon">
                                         </div>
                                         <div class="self-center">
-                                            <p class="text-base md:text-lg font-semibold">{{ truncating(item.name, 40, '...') }}</p>
+                                            <p class="text-base md:text-lg font-semibold">{{ truncating(item.name, 25, '...') }}</p>
                                         </div>
                                     </div>
                                     <div v-if="$page.props.user.level != 'user'" class="absolute right-0 top-0 p-4">

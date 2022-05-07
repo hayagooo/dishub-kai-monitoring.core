@@ -71,7 +71,7 @@
                                                 <more-vertical-icon size="20"/>
                                             </button>
                                         </div>
-                                        <div class="w-10/12 text-left p-4 z-10" @click="gotoShowMonitoring(item.id)">
+                                        <div class="w-10/12 text-left p-4 z-10 break-all" @click="gotoShowMonitoring(item.id)">
                                             <p class="text-lg font-semibold text-dark">{{ item.title }}</p>
                                             <div class="flex flex-nowrap mt-5 mb-5 md:mb-0">
                                                 <div class="self-center flex -space-x-4">
@@ -79,8 +79,8 @@
                                                     <img class="w-12 h-12 border-2 border-white rounded-full dark:border-gray-800" src="@/Assets/avatar/male.png" alt="User Avatar">
                                                 </div>
                                                 <div class="self-center ml-4">
-                                                    <p class="text-base">{{ item.team.name }}</p>
-                                                    <p class="text-sm text-gray-500">{{ item.employee.name }}</p>
+                                                    <p class="text-base">{{ truncating(item.team.name, 20, '...') }}</p>
+                                                    <p class="text-sm text-gray-500">{{ truncating(item.employee.name, 20, '...') }}</p>
                                                 </div>
                                             </div>
                                         </div>

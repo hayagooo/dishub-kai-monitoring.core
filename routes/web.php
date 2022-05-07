@@ -38,7 +38,7 @@ Route::get('/', function () {
 })->name('home');
 
 Route::get('under/construction', [PageController::class, 'index'])->name('under.construction');
-Route::get('/login', [UserController::class, 'indexLogin'])->name('login');
+Route::get('/login', [UserController::class, 'indexLogin'])->name('login')->middleware('guest');
 Route::post('/app/login', [UserController::class, 'login'])->name('app.login');
     Route::middleware(['auth:sanctum', 'verified'])->group(function() {
     Route::get('/dashboard', [PageController::class, 'dashboard'])->name('dashboard');

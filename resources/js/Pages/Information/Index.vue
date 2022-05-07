@@ -1,5 +1,5 @@
 <template>
-    <app-layout title="Dashboard">
+    <app-layout title="Informasi & Pemberitahuan">
         <m-toast :color="toast.color"
             :is_active="toast.active"
             :message="$page.props.flash.message"/>
@@ -148,7 +148,7 @@
                                         <img v-else class="object-cover absolute top-0 bottom-0 left-0 h-full w-full rounded-l-lg" :src="`/information/image/${item.image}`" alt="Pemberitahuan">
                                     </div>
                                     <div class="col-span-2 justify-between p-4 leading-normal">
-                                        <div class="h-28 md:h-20 pr-6">
+                                        <div class="h-28 md:h-20 break-all pr-6">
                                             <h5 class="text-lg font-bold tracking-tight text-gray-900">{{ truncating(item.title, 80, '...') }}</h5>
                                             <small>{{ showTimestamps(item.created_at) }}</small>
                                         </div>

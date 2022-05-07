@@ -130,7 +130,7 @@
                         </div>
                         <div v-if="users.data.length > 0">
                             <div class="mt-3 mb-4" v-for="(item, index) in users.data" :key="`user-${index}`">
-                                <div role="button" class="transition-all ease-in-out relative flex gap-x-4 rounded-lg bg-white hover:shadow-lg">
+                                <div role="button" class="transition-all break-all ease-in-out relative flex gap-x-4 rounded-lg bg-white hover:shadow-lg">
                                     <div role="button" class="flex w-9/12 gap-x-4 p-4">
                                         <div class="self-center">
                                             <p class="text-base md:text-lg font-semibold">{{ item.name }}</p>

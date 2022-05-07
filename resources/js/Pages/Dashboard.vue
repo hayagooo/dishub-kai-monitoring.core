@@ -135,7 +135,7 @@
                                             <img v-else class="object-cover absolute top-0 bottom-0 left-0 h-full w-full rounded-l-lg" :src="`/information/image/${item.image}`" alt="Pemberitahuan">
                                         </div>
                                         <div class="col-span-2 justify-between p-4 leading-normal">
-                                            <div class="h-28 md:h-20 pr-6">
+                                            <div class="h-28 md:h-20 pr-6 break-all">
                                                 <h5 class="text-lg font-bold tracking-tight text-gray-900">{{ truncating(item.title, 80, '...') }}</h5>
                                                 <small>{{ showTimestamps(item.created_at) }}</small>
                                             </div>
@@ -507,7 +507,7 @@ export default defineComponent({
         toggleFormModal(status, mode = 'create', indexId = null) {
             this.toggleOptionModal(false, this.optionModal.index, this.optionModal.item)
             this.setOverflow(status)
-            if(indexId != null) {
+            if(indexId != null && mode == 'edit') {
                 let document_info = this.informations.data[indexId].document
                 let images_files = ['png', 'jpg', 'jpeg']
                 let docs_files = ['doc', 'docx']
@@ -528,13 +528,13 @@ export default defineComponent({
                     this.form.information.type_document = result
                     this.form.information.document = document_info
                 }
-                this.form.information.title = this.informations.data[indexId].title
-                this.form.information.link = this.informations.data[indexId].link
+                this.form.information.title = this.informations.data[indexId].title == null ? '' : this.informations.data[indexId].title
+                this.form.information.link = this.informations.data[indexId].link == null ? null : this.informations.data[indexId].link
                 if(this.form.information.link != null && this.form.information.link != undefined) this.form.information.type = 'link'
                 else this.form.information.type = 'document'
                 this.form.information.image = this.informations.data[indexId].image
                 this.form.information.preview = `/information/image/${this.informations.data[indexId].image}`
-                this.form.information.description = this.informations.data[indexId].description
+                this.form.information.description = this.informations.data[indexId].description == null ? '' : this.informations.data[indexId].description
             } else this.setNullForm()
             this.formModal.show = status
             if(!status) this.setNullForm()
