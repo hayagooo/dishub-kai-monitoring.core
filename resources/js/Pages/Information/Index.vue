@@ -443,7 +443,10 @@ export default defineComponent({
             let route_url
             if(this.formModal.mode == 'create') {
                 route_url = this.route('app.information.store')
-                this.form.information.post(route_url,  {
+                this.form.information.transform(data => ({
+                    ... data,
+                    _method: 'POST'
+                })).post(route_url,  {
                     onFinish: () => this.toggleFormModal(false),
                     onSuccess: () => this.onToast('green', 'Pemberitahuan informasi berhasil disimpan')
                 })

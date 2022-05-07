@@ -59,7 +59,7 @@ class UserController extends Controller
         ];
         CreateData::dispatch($data);
         User::query()->create($data);
-        return redirect()->back()->with('message', 'Data Kategori baru berhasil disimpan')->with('status', 'success');
+        return redirect()->back()->with('message', 'Data pengguna baru berhasil disimpan')->with('status', 'success');
     }
 
     /**
@@ -114,7 +114,7 @@ class UserController extends Controller
             unset($rules['password']);
         }
         User::query()->where('id', $id)->update($data);
-        return redirect()->back()->with('message', 'Data kategori berhasil diedit')->with('status', 'success');
+        return redirect()->back()->with('message', 'Data pengguna berhasil diedit')->with('status', 'success');
     }
 
     /**
@@ -128,6 +128,6 @@ class UserController extends Controller
         //
         $users = User::find($id);
         $users->delete();
-        return redirect()->back()->with('message', 'Data objek berhasil dihapus')->with('status', 'success');
+        return redirect()->back()->with('message', 'Data pengguna berhasil dihapus')->with('status', 'success');
     }
 }

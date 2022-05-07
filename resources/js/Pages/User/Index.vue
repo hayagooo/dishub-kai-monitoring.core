@@ -1,5 +1,8 @@
 <template>
     <app-layout title="Manage Pengguna">
+        <m-toast :color="toast.color"
+            :is_active="toast.active"
+            :message="$page.props.flash.message"/>
         <template #header>
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
                 Manage Pengguna
@@ -73,19 +76,19 @@
                                             <div class="p-6 max-h-96 overflow-y-auto space-y-4">
                                                 <div>
                                                     <label for="name-user">Nama Pengguna</label>
-                                                    <input required :readonly="formModal.mode == 'show'" name="name-field" id="name-user" v-model="form.name" type="text" placeholder="Masukkan nama pengguna" :class="{'bg-gray-100': formModal.mode == 'show'}" class="mt-2 focus:ring-purple-500 focus:border-purple-500 block w-full pl-4 sm:text-sm border-gray-300 rounded-md">
+                                                    <input maxlength="100" required :readonly="formModal.mode == 'show'" name="name-field" id="name-user" v-model="form.name" type="text" placeholder="Masukkan nama pengguna" :class="{'bg-gray-100': formModal.mode == 'show'}" class="mt-2 focus:ring-purple-500 focus:border-purple-500 block w-full pl-4 sm:text-sm border-gray-300 rounded-md">
                                                 </div>
                                                 <div class="mt-3">
                                                     <label for="email-user">Email</label>
-                                                    <input required :readonly="formModal.mode == 'show'" name="email-field" id="email-user" v-model="form.email" type="email" placeholder="Masukkan email" :class="{'bg-gray-100': formModal.mode == 'show'}" class="mt-2 focus:ring-purple-500 focus:border-purple-500 block w-full pl-4 sm:text-sm border-gray-300 rounded-md">
+                                                    <input maxlength="100" required :readonly="formModal.mode == 'show'" name="email-field" id="email-user" v-model="form.email" type="email" placeholder="Masukkan email" :class="{'bg-gray-100': formModal.mode == 'show'}" class="mt-2 focus:ring-purple-500 focus:border-purple-500 block w-full pl-4 sm:text-sm border-gray-300 rounded-md">
                                                 </div>
                                                 <div class="mt-3">
                                                     <label for="code-user">Code</label>
-                                                    <input required :readonly="formModal.mode == 'show'" name="code-field" id="code-user" v-model="form.code" type="text" placeholder="Masukkan code" :class="{'bg-gray-100': formModal.mode == 'show'}" class="mt-2 focus:ring-purple-500 focus:border-purple-500 block w-full pl-4 sm:text-sm border-gray-300 rounded-md">
+                                                    <input maxlength="100" required :readonly="formModal.mode == 'show'" name="code-field" id="code-user" v-model="form.code" type="text" placeholder="Masukkan code" :class="{'bg-gray-100': formModal.mode == 'show'}" class="mt-2 focus:ring-purple-500 focus:border-purple-500 block w-full pl-4 sm:text-sm border-gray-300 rounded-md">
                                                 </div>
                                                 <div class="mt-3">
                                                     <label for="password-user">Password</label>
-                                                    <input :required="formModal.mode == 'create'" :readonly="formModal.mode == 'show'" name="password-field" id="password-user" v-model="form.password" type="password" placeholder="Masukkan password" :class="{'bg-gray-100': formModal.mode == 'show'}" class="mt-2 focus:ring-purple-500 focus:border-purple-500 block w-full pl-4 sm:text-sm border-gray-300 rounded-md">
+                                                    <input maxlength="100" :required="formModal.mode == 'create'" :readonly="formModal.mode == 'show'" name="password-field" id="password-user" v-model="form.password" type="password" placeholder="Masukkan password" :class="{'bg-gray-100': formModal.mode == 'show'}" class="mt-2 focus:ring-purple-500 focus:border-purple-500 block w-full pl-4 sm:text-sm border-gray-300 rounded-md">
                                                     <small id="hint-password" v-if="formModal.mode == 'edit'">Abaikan untuk tidak mengganti password</small>
                                                 </div>
                                                 <div class="mt-3">
@@ -234,6 +237,7 @@
 <script>
 import { defineComponent } from 'vue'
 import AppLayout from '@/Layouts/AppLayout.vue'
+import MToast from '@/Components/MToast'
 import MUnderConstruction from '@/Components/MUnderConstruction'
 import { ArrowLeftIcon, PlusCircleIcon, FileTextIcon, ImageIcon, TrashIcon, MoreVerticalIcon, EditIcon, EyeIcon } from '@zhuowenli/vue-feather-icons'
 import MNoData from '@/Components/MNoData.vue'
@@ -243,6 +247,7 @@ export default defineComponent({
     props: ['users'],
     components: {
         AppLayout,
+        MToast,
         MUnderConstruction,
         ArrowLeftIcon,
         EditIcon,
@@ -265,6 +270,11 @@ export default defineComponent({
                 {value: 'desc', label: 'Paling baru'},
                 {value: 'asc', label: 'Paling lama'},
             ],
+            toast: {
+                color: 'purple',
+                active: false,
+                message: '',
+            },
             levels: [
                 {value: 'user', label: 'Pegawai'},
                 {value: 'admin', label: 'Admin'},
@@ -293,6 +303,14 @@ export default defineComponent({
             },
         }
     },
+    mounted() {
+        this.toast.active = this.$page.props.flash.message != null || this.$page.props.flash.message != undefined ? true : false
+        if(this.$page.props.flash.status == 'success') this.toast.color = 'green'
+        else if(this.$page.props.flash.status == 'failed') this.toast.color = 'red'
+        setTimeout(() => {
+            this.toast.active = false
+        }, 5000);
+    },
     methods: {
         goHome() {
             this.$inertia.get(this.route('dashboard'))
@@ -306,16 +324,16 @@ export default defineComponent({
                 preserveState: true
             })
         },
-        goEmployee() {
-            this.$inertia.get(this.route('app.employee.index'))
-        },
-        onToast(response) {
-            this.toast.active = response.props.flash.message != null || response.props.flash.message != undefined ? true : false
-            if(response.props.flash.status == 'success') this.toast.color = 'green'
-            else if(response.props.flash.status == 'failed') this.toast.color = 'red'
+        onToast(color, message) {
+            this.toast.active = true
+            this.toast.message = message
+            this.toast.color = color
             setTimeout(() => {
                 this.toast.active = false
             }, 5000);
+        },
+        goEmployee() {
+            this.$inertia.get(this.route('app.employee.index'))
         },
         setOverflow(status) {
             let body = document.querySelector('body').classList
@@ -324,12 +342,13 @@ export default defineComponent({
         },
         store() {
             if(this.formModal.mode == 'create') {
-                this.form.post(this.route('app.user.store'),
+                this.form.transform(data => ({
+                    ... data,
+                    _method: 'POST'
+                })).post(this.route('app.user.store'),
                 {
                     onFinish: () => this.toggleFormModal(false),
-                    onSuccess: (response) => {
-                        this.onToast(response)
-                    }
+                    onSuccess: () => this.onToast('green', 'Pengguna berhasil dihapus')
                 })
             } else {
                 this.form.transform(data => ({
@@ -338,9 +357,7 @@ export default defineComponent({
                 })).post(this.route('app.user.update', { id: this.users.data[this.optionModal.index].id }),
                 {
                     onFinish: () => this.toggleFormModal(false),
-                    onSuccess: (response) => {
-                        this.onToast(response)
-                    }
+                    onSuccess: () => this.onToast('green', 'Pengguna berhasil dihapus')
                 })
             }
         },
@@ -352,6 +369,8 @@ export default defineComponent({
             this.form.level = ''
         },
         toggleFormModal(status, mode = 'edit', indexId = null) {
+            this.formModal.show = status
+            this.formModal.mode = mode
             this.toggleOptionModal(false, this.optionModal.index, this.optionModal.item)
             this.setOverflow(status)
             if(indexId != null) {
@@ -360,9 +379,7 @@ export default defineComponent({
                 this.form.code = this.users.data[indexId].code != null ? this.users.data[indexId].code : ''
                 this.form.level = this.users.data[indexId].level != null ? this.users.data[indexId].level : 'user'
             } else this.setNullForm()
-            this.formModal.show = status
             if(!status) this.setNullForm()
-            this.formModal.mode = mode
         },
         toggleOptionModal(status, index = null, item = null) {
             this.setOverflow(status)
@@ -374,9 +391,7 @@ export default defineComponent({
             this.$inertia.delete(this.route('app.user.destroy', { id: this.users.data[this.optionModal.index].id  }),
             {
                 onFinish: () => this.toggleDeleteModal(false),
-                onSuccess: (response) => {
-                    this.onToast(response)
-                }
+                onSuccess: () => this.onToast('green', 'Pengguna berhasil dihapus')
             })
         },
         toggleDeleteModal(status, index = null) {
