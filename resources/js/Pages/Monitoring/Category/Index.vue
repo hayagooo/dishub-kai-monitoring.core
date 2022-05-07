@@ -212,7 +212,7 @@
 
                         </div>
                         <div v-else class="text-center">
-                            <m-no-data text="Tidak ada kategori"/>
+                            <m-no-data text="Tidak ada kategori" link_route="app.category.index"/>
                         </div>
                     </div>
                 </div>

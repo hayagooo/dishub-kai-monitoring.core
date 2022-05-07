@@ -356,7 +356,7 @@
                             </div>
                         </div>
                         <div v-else class="text-center">
-                            <m-no-data text="Tim tidak ditemukan"/>
+                            <m-no-data text="Tim tidak ditemukan" link_route="app.team.index"/>
                         </div>
                     </div>
                 </div>

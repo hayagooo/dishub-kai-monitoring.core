@@ -31,9 +31,6 @@
                     </div>
                     <div id="objects" class="bg-gray-50 relative sm:rounded-xl p-7">
                         <h2 class="text-xl text-gray-700 font-semibold">Objek Monitoring</h2>
-                        <div v-if="$page.props.user.level != 'user'">
-
-                        </div>
                         <div>
                             <div class="grid grid-cols-4 md:grid-cols-3 gap-6 mt-3">
                                 <div v-if="$page.props.user.level != 'user'" class="col-span-2 md:col-span-1">
@@ -216,7 +213,9 @@
                                         </div>
                                     </div>
                                 </div>
-
+                                <!-- <div class="text-center">
+                                    <m-no-data text="Tidak ada objek" link_route="app.object.index"/>
+                                </div> -->
                             </div>
                         </div>
 

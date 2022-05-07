@@ -233,7 +233,7 @@
 
                                 </div>
                                 <div v-else class="text-center">
-                                    <m-no-data text="Tidak ada pemberitahuan"/>
+                                    <m-no-data text="Tidak ada pemberitahuan" link_route="dashboard"/>
                                 </div>
                             </div>
                         </div>

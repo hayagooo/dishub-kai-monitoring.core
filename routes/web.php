@@ -2,7 +2,10 @@
 
 use App\Http\Controllers\Web\Information\InformationController;
 use App\Http\Controllers\Web\Monitoring\CategoryController;
+use App\Http\Controllers\Web\Monitoring\ImageController;
 use App\Http\Controllers\Web\Monitoring\InputController;
+use App\Http\Controllers\Web\Monitoring\InputOptionController;
+use App\Http\Controllers\Web\Monitoring\InputValueController;
 use App\Http\Controllers\Web\Monitoring\MonitoringController;
 use App\Http\Controllers\Web\Monitoring\ObjectController;
 use App\Http\Controllers\Web\PageController;

@@ -225,7 +225,7 @@
                             </div>
                         </div>
                         <div v-else class="text-center">
-                            <m-no-data text="Pengguna tidak ditemukan"/>
+                            <m-no-data text="Pengguna tidak ditemukan" link_route="app.user.index"/>
                         </div>
                     </div>
                 </div>

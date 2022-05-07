@@ -334,7 +334,7 @@
                             </div>
                         </div>
                         <div v-else class="text-center">
-                            <m-no-data text="Pegawai tidak ditemukan"/>
+                            <m-no-data text="Pegawai tidak ditemukan" link_route="app.employee.index"/>
                         </div>
                     </div>
 

@@ -180,7 +180,7 @@
                             </div>
                         </div>
                         <div v-else class="text-center">
-                            <m-no-data text="Belum ada kegiatan monitoring"/>
+                            <m-no-data text="Belum ada kegiatan monitoring" link_route="app.monitoring.index" :data_route="{categoryId: category.id, objectId: object.id}"/>
                         </div>
                     </div>
                 </div>

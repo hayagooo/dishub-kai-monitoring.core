@@ -244,7 +244,7 @@
                                 </div>
                             </div>
                             <div v-else class="text-center">
-                                <m-no-data text="Tidak ada pemberitahuan"/>
+                                <m-no-data text="Tidak ada pemberitahuan" link_route="app.information.index"/>
                             </div>
                         </div>
                     </div>
