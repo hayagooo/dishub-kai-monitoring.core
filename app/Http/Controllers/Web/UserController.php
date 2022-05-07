@@ -121,7 +121,7 @@ class UserController extends Controller
 
     public function indexVerification()
     {
-        $user = Auth::user();
+        $user = User::query()->find(Auth::id());
         return Inertia::render('Auth/Verify', ['user' => $user]);
     }
 

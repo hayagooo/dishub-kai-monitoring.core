@@ -24,7 +24,10 @@
                     <input v-model="form.code" required type="text" name="code" id="code-input" class="focus:ring-purple-500 focus:border-purple-500 block w-full pl-10 pr-12 sm:text-sm border-gray-300 rounded-md" placeholder="XXXX-XXXX">
                 </div>
             </div>
-
+            <div class="flex items-center mb-4">
+                <input id="is_save-code-checkbox" v-model="is_save" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500">
+                <label for="is_save-code-checkbox" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Simpan kode di perangkat ini.</label>
+            </div>
             <div>
                 <button type="submit" class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-purple-600 hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500">
                 <span class="absolute left-0 inset-y-0 flex items-center pl-3">
@@ -73,13 +76,15 @@
                     active: false,
                     message: '',
                 },
+                is_save: false,
                 form: this.$inertia.form({
-                    code: ''
+                    code: '',
                 })
             }
         },
 
         mounted() {
+            this.checkLocalCode()
             this.toast.active = this.$page.props.flash.message != null || this.$page.props.flash.message != undefined ? true : false
             if(this.$page.props.flash.status == 'success') this.toast.color = 'green'
             else if(this.$page.props.flash.status == 'failed') this.toast.color = 'red'
@@ -89,6 +94,17 @@
         },
 
         methods: {
+            checkLocalCode() {
+                let local_code = localStorage.getItem('user-code')
+                if(local_code != this.$page.props.user.code && local_code == null && local_code == undefined) {
+                    localStorage.removeItem('user-code')
+                    this.form.code = ''
+                }
+                else {
+                    this.form.code = local_code
+                    this.submit()
+                }
+            },
             onSubmit() {
                 this.$inertia.get(route('under.construction'))
             },
@@ -117,6 +133,12 @@
                                 this.toast.active = false
                             }, 2000);
                             this.is_disable = false
+                        },
+                        onSuccess:() => {
+                            if(this.is_save) {
+                                console.log(this.form)
+                                localStorage.setItem('user-code', this.form.code)
+                            }
                         },
                         onError: (error) => {
                             console.log(error)
