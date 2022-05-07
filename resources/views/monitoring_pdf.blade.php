@@ -34,8 +34,13 @@
         }
         * {
             font-family: 'Montserrat', Arial, sans-serif;
+            word-break: break-all !important;
+        }
+        span {
+            word-break: break-all !important;
         }
         a {
+            word-break: break-all !important;
             color: #2D2A70;
             text-decoration: none;
         }
@@ -43,6 +48,7 @@
             padding: .5rem;
             background-color: rgb(245, 245, 245);
             border-radius: .25rem;
+            word-break: break-all !important;
             border: 2px solid rgb(224, 224, 224);
             margin-bottom: 12px;
         }

@@ -118,7 +118,7 @@
                             <div v-if="menuForms[menuIndex].name == 'category'">
                                 <form @submit.prevent="onSubmitInput('category')" action="#">
                                     <div v-if="inputs.category != null && inputs.category != undefined">
-                                        <div v-for="(item, index) in inputs.category" :key="`category-form-${index}`" class="my-3">
+                                        <div v-for="(item, index) in inputs.category" :key="`category-form-${index}`" class="my-3 break-all">
                                             <label class="font-semibold" :for="`field-data-${index}`">{{ item.label }}</label>
                                             <div v-if="inputType(item.type)">
                                                 <div v-if="item.image != null">
@@ -296,7 +296,7 @@
                             <div v-if="menuForms[menuIndex].name == 'object'">
                                 <form @submit.prevent="onSubmitInput('object')" action="#">
                                     <div v-if="inputs.object != null && inputs.object != undefined">
-                                        <div v-for="(item, index) in inputs.object" :key="`object-form-${index}`" class="my-3">
+                                        <div v-for="(item, index) in inputs.object" :key="`object-form-${index}`" class="my-3 break-all">
                                             <label class="font-semibold" :for="`field-data-${index}`">{{ item.label }}</label>
                                             <div v-if="inputType(item.type)">
                                                 <div v-if="item.image != null">
@@ -476,7 +476,7 @@
                             <div v-if="menuForms[menuIndex].name == 'monitoring'">
                                 <form @submit.prevent="onSubmitInput('monitoring')" action="#">
                                     <div v-if="inputs.monitoring != null && inputs.monitoring != undefined">
-                                        <div v-for="(item, index) in inputs.monitoring" :key="`monitoring-form-${index}`" class="my-3">
+                                        <div v-for="(item, index) in inputs.monitoring" :key="`monitoring-form-${index}`" class="my-3 break-all">
                                             <label class="font-semibold" :for="`field-data-${index}`">{{ item.label }}</label>
                                             <div v-if="inputType(item.type)">
                                                 <div v-if="item.image != null">
@@ -661,13 +661,13 @@
                                     </span>
                                 </button>
                                 <div>
-                                    <div v-if="images.length > 0" class="w-full grid grid-cols-2 gap-x-4">
+                                    <div v-if="images.length > 0" class="w-full grid grid-cols-2 gap-x-4 break-all">
                                         <div v-for="(image, index) in images" :key="`image-${index}`" class="my-3">
                                             <div @click="toggleOptionModal(true, index, image)" v-if="image != null && image != undefined">
                                                 <div class="rounded-lg overflow-hidden bg-purple-600 w-full h-32">
                                                     <img v-if="image.name != undefined" :src="'/monitoring/data/'+image.name" class="transition-all rounded-lg object-cover object-center w-full h-32 hover:opacity-75 hover:scale-105" :alt="image.name">
                                                 </div>
-                                                <p class="text-base">{{ image.label != undefined ? image.label : '-' }}</p>
+                                                <p class="text-base">{{ image.label != undefined ? truncating(image.label, 24, '...') : '-' }}</p>
                                             </div>
                                         </div>
                                     </div>
@@ -740,7 +740,7 @@
                                                 <div class="p-6 max-h-96 overflow-y-auto">
                                                     <div>
                                                         <label for="name-image">Nama Gambar</label>
-                                                        <input required name="name" id="name-image" v-model="formImage.label" type="text" placeholder="Masukkan label gambar" class="mt-3 focus:ring-purple-500 focus:border-purple-500 block w-full pl-4 sm:text-sm border-gray-300 rounded-md">
+                                                        <input maxlength="100" required name="name" id="name-image" v-model="formImage.label" type="text" placeholder="Masukkan label gambar" class="mt-3 focus:ring-purple-500 focus:border-purple-500 block w-full pl-4 sm:text-sm border-gray-300 rounded-md">
                                                     </div>
                                                     <div class="mt-6">
                                                         <div class="flex justify-between mb-3">

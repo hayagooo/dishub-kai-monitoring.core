@@ -74,15 +74,15 @@
                         <div v-if="datas.category != null && datas.category != undefined"
                         :class="{'col-span-2 md:col-span-1 border-b-2 md:border-b-0': datas.object != null && datas.object != undefined,
                         'col-span-2': datas.object == null || datas.monitoring == undefined}"
-                        class="border-gray-100 flex flex-nowrap p-7">
+                        class="border-gray-100 flex flex-nowrap break-all p-7">
                             <img v-if="datas.category.icon == null" src="@/Assets/defaults/category.png" class="h-12 w-12 rounded-lg object-cover object-center inline-block" alt="Default Icon">
                             <img v-else :src="'/monitoring/icon/'+datas.category.icon" class="h-12 w-12 rounded-lg object-cover object-center inline-block" alt="Default Icon">
-                            <p class="self-center text-base md:text-lg text-gray-700 inline-block ml-4">{{ datas.category.name }}</p>
+                            <p class="self-center text-base md:text-lg text-gray-700 inline-block ml-4">{{ truncating(datas.category.name, 20, '...') }}</p>
                         </div>
-                        <div v-if="datas.object != null && datas.object != undefined" class="col-span-2 md:col-span-1 p-7 flex flex-nowrap">
+                        <div v-if="datas.object != null && datas.object != undefined" class="col-span-2 md:col-span-1 p-7 flex flex-nowrap break-all">
                             <img v-if="datas.object.icon == null" src="@/Assets/defaults/object.png" class="h-12 w-12 rounded-lg object-cover object-center inline-block" alt="Default Icon">
                             <img v-else :src="'/monitoring/icon/'+datas.object.icon" class="h-12 w-12 rounded-lg object-cover object-center inline-block" alt="Default Icon">
-                            <p class="self-center text-base md:text-lg text-gray-700 inline-block ml-4">{{ datas.object.name }}</p>
+                            <p class="self-center text-base md:text-lg text-gray-700 inline-block ml-4">{{ truncating(datas.object.name, 20, '...') }}</p>
                         </div>
                     </div>
                     <div id="objects" class="bg-gray-50 relative sm:rounded-xl p-7">
@@ -154,7 +154,7 @@
                                                 <div>
                                                     <label :for="`input-label-${index}`" class="block mb-2 text-sm font-medium text-gray-900">Label</label>
                                                     <div class="flex gap-x-4">
-                                                        <input :id="`input-label-${index}`" @focus="focusIn(index)" @blur="focusOut()" placeholder="e.g Kondisi Penambat" type="text" v-model="item.label" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-purple-500 block w-full p-2.5">
+                                                        <input maxlength="100" :id="`input-label-${index}`" @focus="focusIn(index)" @blur="focusOut()" placeholder="e.g Kondisi Penambat" type="text" v-model="item.label" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-purple-500 block w-full p-2.5">
                                                         <input class="hidden" :id="`input-image-${index}`" type="file" @change="changeFileInput($event, index)">
                                                         <button @click="clickFileInput(index)" @focus="focusIn(index)" @blur="focusOut()" type="button" class="self-center py-2.5 px-5 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200">
                                                             <image-icon size="16"/>
@@ -212,7 +212,7 @@
                                                     </div>
                                                     <div v-if="item.options.length > 0">
                                                         <div class="flex my-2" v-for="(option, indexOption) in item.options" :key="`option-${indexOption}`">
-                                                            <input @focus="focusIn(index)" @blur="focusOut()" :placeholder="`Opsi ${indexOption + 1}`" type="text" v-model="option.value" :id="`input-${index}-option-${indexOption}`" class="bg-gray-50 w-1/2 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-purple-500 block w-full p-2.5">
+                                                            <input maxlength="100" @focus="focusIn(index)" @blur="focusOut()" :placeholder="`Opsi ${indexOption + 1}`" type="text" v-model="option.value" :id="`input-${index}-option-${indexOption}`" class="bg-gray-50 w-1/2 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-purple-500 block w-full p-2.5">
                                                             <button @click="removeOption(index, indexOption, option)" @focus="focusIn(index)" @blur="focusOut()" type="button" class="text-gray-900 bg-white text-center focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-2 py-2">
                                                                 <trash-icon size="20" class="inline-block"/>
                                                             </button>
@@ -280,7 +280,7 @@
                                                     </div>
                                                     <label :for="`input-label-${index}`" class="block mb-2 text-sm font-medium text-gray-900">Subjek Gambar</label>
                                                     <div class="relative">
-                                                        <input :id="`input-label-${index}`" @focus="focusIn(index)" @blur="focusOut()" placeholder="e.g Gambar Penambat" type="text" v-model="item.label" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-purple-500 block w-full p-2.5">
+                                                        <input maxlength="100" :id="`input-label-${index}`" @focus="focusIn(index)" @blur="focusOut()" placeholder="e.g Gambar Penambat" type="text" v-model="item.label" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-purple-500 block w-full p-2.5">
                                                     </div>
                                                 </div>
                                                 <div class="mt-3" v-if="item.description != null">
@@ -307,7 +307,7 @@
                                                 <div>
                                                     <label :for="`input-label-${index}`" class="block mb-2 text-sm font-medium text-gray-900">Subjek</label>
                                                     <div class="relative">
-                                                        <input :id="`input-label-${index}`" @focus="focusIn(index)" @blur="focusOut()" placeholder="e.g Subjek Deskripsi" type="text" v-model="item.label" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-purple-500 block w-full p-2.5">
+                                                        <input maxlength="100" :id="`input-label-${index}`" @focus="focusIn(index)" @blur="focusOut()" placeholder="e.g Subjek Deskripsi" type="text" v-model="item.label" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-purple-500 block w-full p-2.5">
                                                     </div>
                                                 </div>
                                                 <div class="mt-3">
@@ -352,7 +352,7 @@
                                                     </div>
                                                     <div class="relative mt-3">
                                                         <label :for="`input-label-${index}`" class="block mb-2 text-sm font-medium text-gray-900">Subjek</label>
-                                                        <input :id="`input-label-${index}`" @focus="focusIn(index)" @blur="focusOut()" placeholder="e.g Subjek" type="text" v-model="item.label" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-purple-500 block w-full p-2.5">
+                                                        <input maxlength="100" :id="`input-label-${index}`" @focus="focusIn(index)" @blur="focusOut()" placeholder="e.g Subjek" type="text" v-model="item.label" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-purple-500 block w-full p-2.5">
                                                     </div>
                                                 </div>
                                                 <div class="mt-3" v-if="item.description != null">
@@ -805,6 +805,13 @@ export default defineComponent({
                 }))
             }
         },
+        truncating(text, length, suffix) {
+            if (text.length > length) {
+                return text.substring(0, length) + suffix;
+            } else {
+                return text;
+            }
+        },
         deleteData() {
             this.$inertia.delete(this.route('app.object.destroy', {
                 id: this.objects[this.optionModal.index].id
@@ -814,6 +821,7 @@ export default defineComponent({
                }
             })
         },
+
         setOverflow(status) {
             let body = document.querySelector('body').classList
             if(status == true)  body.add('overflow-hidden')
