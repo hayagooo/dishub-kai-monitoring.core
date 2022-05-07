@@ -119,6 +119,7 @@
 <script>
 import { MonitorIcon, DatabaseIcon, FileTextIcon, UserIcon, UsersIcon, MapIcon } from "@zhuowenli/vue-feather-icons"
 export default {
+    props: ['reload'],
     components: {
         DatabaseIcon,
         FileTextIcon,
@@ -126,9 +127,19 @@ export default {
         UserIcon,
         MapIcon,
     },
+    mounted() {
+        this.checkUrlReload()
+    },
     methods: {
+        checkUrlReload() {
+            let url = new URL(window.location.href)
+            let searchParams = new URLSearchParams(url.search)
+            if(searchParams.get('reload') == 1) {
+                window.location.href = '/'
+            } else return false
+        },
         gotoLogin() {
-            this.$inertia.get(route('index.login'))
+            this.$inertia.get(route('login'))
         }
     }
 }

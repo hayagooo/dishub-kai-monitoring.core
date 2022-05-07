@@ -127,7 +127,7 @@ class UserController extends Controller
         $user->save();
         Session::flush();
 
-        return redirect()->route('home');
+        return redirect()->route('home', ['reload' => true]);
     }
 
     public function indexVerification(Request $request)
@@ -150,7 +150,7 @@ class UserController extends Controller
             $user->save();
             return redirect()->route('dashboard')->with('message', 'Verifikasi Berhasil : Selamat datang kembali')->with('status', 'success');
         } else {
-            return redirect()->back()->with('message', 'Kode verifikasi tidak sesuai')->with('status', 'failed');
+            return redirect()->route('index.verification')->with('message', 'Kode verifikasi tidak sesuai')->with('status', 'failed');
         }
     }
 }

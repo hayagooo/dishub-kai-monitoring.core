@@ -39,7 +39,7 @@
                 </button>
             </div>
         </form>
-         <button type="button" @click="backLogout()" class="mt-4 group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-gray-900 bg-gray-100 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-200">
+         <button type="button" id="button-submit" @click="backLogout()" class="mt-4 group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-gray-900 bg-gray-100 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-200">
         Kembali
         </button>
     </div>
@@ -85,10 +85,6 @@
         },
 
         mounted() {
-            if(this.code != null && this.code != undefined) {
-                this.form.code = this.code
-                this.submit()
-            }
             this.checkLocalCode()
             this.toast.active = this.$page.props.flash.message != null || this.$page.props.flash.message != undefined ? true : false
             if(this.$page.props.flash.status == 'success') this.toast.color = 'green'
@@ -101,54 +97,55 @@
         methods: {
             checkLocalCode() {
                 let local_code = localStorage.getItem('user-code')
-                if(local_code != this.$page.props.user.code && local_code == null && local_code == undefined) {
+                if(local_code != this.$page.props.user.code) {
                     localStorage.removeItem('user-code')
                     this.form.code = ''
                 }
                 else {
-                    this.form.code = local_code
-                    this.submit()
+                    if(local_code != null && local_code != undefined) {
+                        this.form.code = local_code
+                        document.getElementById('button-submit').click()
+                    }
                 }
             },
             onSubmit() {
                 this.$inertia.get(route('under.construction'))
             },
+            onToast(color, message) {
+              this.toast.active = true
+                this.toast.message = message
+                this.toast.color = color
+                setTimeout(() => {
+                    this.toast.active = false
+                }, 5000);
+            },
             backLogout() {
                 this.$inertia.post(this.route('logout'))
             },
             submit() {
+                // alert('test')
                 this.form
-                    .transform(data => ({
-                        ... data,
-                        remember: this.form.remember ? 'on' : ''
-                    }))
-                    .post(this.route('app.verification'), {
-                        onStart: () => {
-                            this.is_disable = true
-                        },
-                        onFinish: () => {
-                            this.form.reset('password')
-                            if(this.$page.props.flash.status == 'failed') {
-                                this.toast.color = 'red'
-                            }
-                            else if(this.$page.props.flash.status == 'success') this.toast.color = 'green'
-                            else this.toast.color = 'purple'
-                            this.toast.active = true
-                            setTimeout(() => {
-                                this.toast.active = false
-                            }, 2000);
-                            this.is_disable = false
-                        },
-                        onSuccess:() => {
-                            if(this.is_save) {
-                                console.log(this.form)
-                                localStorage.setItem('user-code', this.form.code)
-                            }
-                        },
-                        onError: (error) => {
-                            console.log(error)
+                .transform(data => ({
+                    ... data,
+                    _method: 'POST'
+                }))
+                .post(this.route('verification'), {
+                    onStart: () => {
+                        this.is_disable = true
+                    },
+                    onFinish: () => {
+                        this.onToast('green', 'Verifikasi Berhasil : Selamat datang kembali')
+                    },
+                    onSuccess:() => {
+                        if(this.is_save == true) {
+                            console.log(this.form)
+                            localStorage.setItem('user-code', this.form.code)
                         }
-                    })
+                    },
+                    onError: (error) => {
+                        window.location.reload()
+                    }
+                })
             }
         }
     })

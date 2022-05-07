@@ -38,13 +38,13 @@ Route::get('/', function () {
 })->name('home');
 
 Route::get('under/construction', [PageController::class, 'index'])->name('under.construction');
-Route::get('/login', [UserController::class, 'indexLogin'])->name('index.login');
-Route::post('/app/login', [UserController::class, 'login'])->name('login');
-Route::get('/verify', [UserController::class, 'indexVerification'])->name('index.verification');
+Route::get('/login', [UserController::class, 'indexLogin'])->name('login');
+Route::post('/app/login', [UserController::class, 'login'])->name('app.login');
     Route::middleware(['auth:sanctum', 'verified'])->group(function() {
     Route::get('/dashboard', [PageController::class, 'dashboard'])->name('dashboard');
     Route::post('/logout', [UserController::class, 'logout'])->name('logout');
-    Route::post('/app/verify', [UserController::class, 'verification'])->name('app.verification');
+    Route::get('/verify', [UserController::class, 'indexVerification'])->name('index.verification');
+    Route::post('/app/verify', [UserController::class, 'verification'])->name('verification');
     Route::namespace('App')->prefix('app')->name('app.')->group(function() {
         Route::resource('/monitoring/category', CategoryController::class);
         Route::post('/monitoring/category/image/{id}/delete', [CategoryController::class, 'deleteImage'])->name('category.delete-image');

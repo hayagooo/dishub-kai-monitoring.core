@@ -2,7 +2,7 @@
     <Head title="Masuk" />
     <m-toast :color="toast.color"
         :is_active="toast.active"
-        :message="$page.props.flash.message"/>
+        :message="toast.message"/>
     <div class="min-h-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
         <div class="max-w-md w-full space-y-8">
             <div>
@@ -62,7 +62,7 @@
                     </button>
                 </div>
             </form>
-            <button type="button" @click="goHome()" class="mt-4 group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-gray-900 bg-gray-100 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-200">
+            <button id="button-submit" type="button" @click="goHome()" class="mt-4 group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-gray-900 bg-gray-100 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-200">
             Kembali ke beranda
             </button>
         </div>
@@ -100,7 +100,7 @@
                 toast: {
                     color: 'purple',
                     active: false,
-                    message: '',
+                    message: 'Ulangi login sekali lagi',
                 },
                 password: 'password',
                 form: this.$inertia.form({
@@ -119,7 +119,7 @@
                     this.form.email = this.data_login.email
                     this.form.password = this.data_login.password
                     this.form.remember = this.data_login.remember
-                    this.submit()
+                    document.getElementById('button-submit').click()
                 }
             },
             onSubmit() {
@@ -128,31 +128,32 @@
             goHome() {
                 this.$inertia.get(this.route('home'))
             },
+            onToast(color, message) {
+              this.toast.active = true
+                this.toast.message = message
+                this.toast.color = color
+                setTimeout(() => {
+                    this.toast.active = false
+                }, 5000);
+            },
             submit() {
                 this.form
                     .transform(data => ({
                         ... data,
+                        _method: 'POST',
                         remember: this.form.remember ? 'on' : ''
                     }))
-                    .post(this.route('login', {
+                    .post(this.route('app.login', {
                         code: this.data_login.code
                     }), {
                         onStart: () => {
                             this.is_disable = true
                         },
                         onFinish: () => {
-                            this.form.reset('password')
-                            if(this.$page.props.flash.status == 'failed') this.toast.color = 'red'
-                            else if(this.$page.props.flash.status == 'success') this.toast.color = 'green'
-                            else this.toast.color = 'purple'
-                            this.toast.active = true
-                            setTimeout(() => {
-                                this.toast.active = false
-                            }, 2000)
-                            this.is_disable = false
+                            this.onToast('green', 'Login Berhasil')
                         },
                         onError: (error) => {
-                            console.log(error)
+                            window.location.reload()
                         }
                     })
             }
