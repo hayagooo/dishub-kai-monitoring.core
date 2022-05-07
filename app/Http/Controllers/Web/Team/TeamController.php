@@ -128,7 +128,7 @@ class TeamController extends Controller
         $teams = Team::query()->find($id);
         EditData::dispatch($data);
         $teams->update($data);
-        return redirect()->back()->with('message', 'Data team telah berhasil diubah')->with('status', 'success');
+        return redirect()->back()->with('message', 'Data team berhasil diedit')->with('status', 'success');
     }
 
     /**
@@ -142,7 +142,7 @@ class TeamController extends Controller
         //
         $teams = Team::find($id);
         $teams->delete();
-        return redirect()->back()->with('message', 'Data team telah berhasil dihapus')->with('status', 'success');
+        return redirect()->back()->with('message', 'Data team berhasil dihapus')->with('status', 'success');
     }
 
     public function addEmployee(Request $request, $id)
@@ -184,27 +184,31 @@ class TeamController extends Controller
         Validator::make($data, $rules)->validate();
         $is_reset = (int) $request->is_reset;
         if($is_reset == 1) {
-            $teams = Team::query()->get();
-            foreach($teams as $item) {
-                $team = Team::query()->with('employee')->find($item->id);
-                $team->employee()->sync([]);
-                Monitoring::query()->where('team_id', $item->id)->delete();
-                $team->delete();
-            }
+            $this->destroyAll();
         }
         Excel::import(new TeamImport, $request->file('document'));
-        return redirect()->back()->with('message', 'Import data berhasil')->with('status', 'success');
+        return redirect()->back()->with('message', 'Import data tim berhasil')->with('status', 'success');
     }
 
     public function destroyAll()
     {
         $teams = Team::query()->get();
         foreach($teams as $item) {
-            $team = Team::query()->with('employee')->find($item->id);
+            $team = Team::query()->with(['employee', 'monitoring'])->find($item->id);
+            $monitorings = Monitoring::query()->where('team_id', $team->id)->get();
+            if($monitorings != null && count($monitorings) > 0) {
+                foreach($monitorings as $item) {
+                    $monitoring = Monitoring::query()->find($item->id);
+                    $monitoring->image()->delete();
+                    $monitoring->input()->delete();
+                    $monitoring->valueData()->delete();
+                    $monitoring->optionValue()->delete();
+                    $monitoring->delete();
+                }
+            }
             $team->employee()->sync([]);
-            Monitoring::query()->where('team_id', $item->id)->delete();
             $team->delete();
         }
-        return redirect()->back()->with('message', 'Hapus data berhasil')->with('status', 'success');
+        return redirect()->back()->with('message', 'Hapus data tim berhasil')->with('status', 'success');
     }
 }

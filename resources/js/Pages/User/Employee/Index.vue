@@ -428,7 +428,11 @@ export default defineComponent({
             fm.append('is_reset', this.importModal.reset == true ? 1 : 0)
             this.$inertia.post(this.route('app.employee.import-excel'), fm, {
                 onFinish: () => this.toggleImportModal(false),
-                onSuccess: () => this.onToast('green', 'Import data pegawai berhasil')
+                onSuccess: () => {
+                    this.importModal.document = null
+                    this.importModal.reset = false
+                    this.onToast('green', 'Import data pegawai berhasil')
+                }
             })
         },
         onToast(color, message) {

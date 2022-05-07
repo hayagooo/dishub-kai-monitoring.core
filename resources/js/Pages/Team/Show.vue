@@ -133,7 +133,7 @@ export default defineComponent({
     },
     data() {
         return {
-            menuIndex: 1,
+            menuIndex: 0,
             dataNeed: [],
             menuShow: [
                 {name: 'general', label: 'Umum'},
