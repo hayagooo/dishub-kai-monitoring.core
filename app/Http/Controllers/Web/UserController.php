@@ -139,7 +139,7 @@ class UserController extends Controller
     public function verification(Request $request)
     {
         $data = [
-            'code' => $request->code,
+            'code' => $request->code != null ? $request->code : '',
         ];
         Validator::make($data, [
             'code' => 'required',

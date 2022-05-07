@@ -44,7 +44,7 @@ Route::get('/verify', [UserController::class, 'indexVerification'])->name('index
     Route::middleware(['auth:sanctum', 'verified'])->group(function() {
     Route::get('/dashboard', [PageController::class, 'dashboard'])->name('dashboard');
     Route::post('/logout', [UserController::class, 'logout'])->name('logout');
-    Route::post('/verify', [UserController::class, 'verification'])->name('app.verification');
+    Route::post('/app/verify', [UserController::class, 'verification'])->name('app.verification');
     Route::namespace('App')->prefix('app')->name('app.')->group(function() {
         Route::resource('/monitoring/category', CategoryController::class);
         Route::post('/monitoring/category/image/{id}/delete', [CategoryController::class, 'deleteImage'])->name('category.delete-image');

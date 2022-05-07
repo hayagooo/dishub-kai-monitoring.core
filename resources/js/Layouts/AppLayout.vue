@@ -97,6 +97,18 @@
                                             Dashboard
                                         </jet-dropdown-link>
 
+                                        <jet-dropdown-link :href="route('app.category.index')">
+                                            Monitoring
+                                        </jet-dropdown-link>
+
+                                        <jet-dropdown-link v-if="$page.props.user.level == 'coordinator'" :href="route('app.user.index')">
+                                            Manage User
+                                        </jet-dropdown-link>
+
+                                        <jet-dropdown-link v-if="$page.props.user.level == 'coordinator'" :href="route('app.team.index')">
+                                            Manage Tim
+                                        </jet-dropdown-link>
+
                                         <jet-dropdown-link :href="route('profile.show')">
                                             Profil
                                         </jet-dropdown-link>

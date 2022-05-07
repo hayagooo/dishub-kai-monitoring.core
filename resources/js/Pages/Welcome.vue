@@ -128,7 +128,7 @@ export default {
     },
     methods: {
         gotoLogin() {
-            this.$inertia.get(route('login'))
+            this.$inertia.get(route('index.login'))
         }
     }
 }
