@@ -100,12 +100,12 @@ class ImageController extends Controller
         if($request->hasFile('image')) {
             $file = $request->file('image');
             $filename = 'data-'.Str::slug($request->label).'-'.time().'-'.uniqid().'.'.$file->extension();
-            $image = ImageIntervention::make($file->path());
+            $img = ImageIntervention::make($file->path());
             $this->checkDirectory('/monitoring/data');
             if(File::exists(public_path('/monitoring/data/').$image->name)) {
                 File::delete(public_path('/monitoring/data/').$image->name);
             }
-            $image->resize(780, 780, function($constraint) {
+            $img->resize(780, 780, function($constraint) {
                 $constraint->aspectRatio();
             })->save(public_path('/monitoring/data/').$filename);
             $data['name'] = $filename;

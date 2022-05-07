@@ -72,6 +72,11 @@
                                     <option v-for="(item, index) in employees" :key="`employee-${index}`" :value="item.id">{{ item.name }}</option>
                                 </select>
                             </div>
+                            <div v-if="form.general.team_id != 0 && (employees == null || employees.length <= 0)">
+                                <div class="p-4 mb-4 mt-2 text-sm text-red-700 bg-red-100 rounded-lg dark:bg-red-200 dark:text-red-800" role="alert">
+                                    <span class="font-semibold">Monitoring tidak bisa dilanjutkan !</span> Tidak ada pegawai di dalam tim ini.
+                                </div>
+                            </div>
                             <div class="mt-6">
                                 <label for="description-monitoring">Deskripsi Monitoring</label>
                                 <div class="border-2 border-gray-300 rounded mt-3 hidden md:block">
@@ -208,6 +213,7 @@ export default defineComponent({
             })
         },
         submitGeneral() {
+            if(this.form.general.employee_id == 0) return
             this.form.general
                 .transform(data => ({
                     ...data,

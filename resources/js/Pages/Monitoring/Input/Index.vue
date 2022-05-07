@@ -267,8 +267,8 @@
                                                     </div>
                                                 </div>
                                                 <div>
-                                                    <input class="hidden" :id="`input-image-${index}`" type="file" @change="changeFileInput($event, index)">
-                                                    <div  v-if="item.preview == null && item.image == null" @click="clickFileInput(index)" role="button">
+                                                    <input accept=".png,.jpg,.jpeg" class="hidden" :id="`input-image-${index}`" type="file" @change="changeFileInput($event, index)">
+                                                    <div v-if="item.preview == null && item.image == null" @click="clickFileInput(index)" role="button">
                                                         <div class="flex gap-x-4 w-full justify-center h-36 mb-2 text-lg border-dashed border-2 border-purple-600 rounded-lg transition-all ease-in-out hover:bg-gray-200">
                                                             <span class="self-center text-center">
                                                                 <image-icon class="text-purple-600" size="2.5x"/>
@@ -598,8 +598,8 @@ export default defineComponent({
                 }
             }, 250);
         },
-        onCheckValue(str) {
-            if(str == null || str == '' || str == undefined || str == 'null') return '-'
+        onCheckValue(str, suffix) {
+            if(str == null || str == '' || str == undefined || str == 'null') return suffix
             else return str
         },
         onSubmitData() {
@@ -611,11 +611,11 @@ export default defineComponent({
                 fm.append('category_id', this.datas.category.id)
                 if(this.datas.object != undefined && this.datas.object != null) fm.append('object_id', this.datas.object.id)
                 if(this.datas.monitoring != undefined && this.datas.monitoring != null) fm.append('monitoring_id', this.datas.monitoring.id)
-                fm.append('type', this.onCheckValue(value.type_input))
-                fm.append('link', this.onCheckValue(value.link))
-                fm.append('label', this.onCheckValue(value.label))
-                fm.append('placeholder', this.onCheckValue(value.placeholder))
-                fm.append('description', this.onCheckValue(value.description))
+                fm.append('type', this.onCheckValue(value.type_input, '-'))
+                fm.append('link', this.onCheckValue(value.link, '#'))
+                fm.append('label', this.onCheckValue(value.label, ''))
+                fm.append('placeholder', this.onCheckValue(value.placeholder, ''))
+                fm.append('description', this.onCheckValue(value.description, ''))
                 fm.append('is_required', value.is_required ? 1 : 0)
                 fm.append('image', value.image)
                 fm.append('options', JSON.stringify(value.options))

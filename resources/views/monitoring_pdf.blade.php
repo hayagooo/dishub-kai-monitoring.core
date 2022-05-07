@@ -379,7 +379,7 @@
             @endforeach
         @endif
 
-        @if (count($inputs['object']) > 0)
+        @if (count($inputs['monitoring']) > 0)
             <div style="margin-top: 24px; padding-top: 20px; border-top: 3px solid gainsboro; padding-left: 10px">
                 <p style="font-size: 1rem; font-weight: bold; margin: 0 0 0px 0;">Formulir {{ $monitoring->title }}</p>
                 <p style="font-size: .9rem; margin: 6px 0 20px 0;">Formulir berdasarkan data monitoring</p>
@@ -525,21 +525,23 @@
         @endif
 
         @if (count($images) > 0)
-        <div style="margin-top: 24px; padding-top: 20px; border-top: 3px solid gainsboro; padding-left: 10px">
-            <p style="font-size: 1rem; font-weight: bold; margin: 0 0 0px 0;">Data gambar dokumentasi</p>
-            <p style="font-size: .9rem; margin: 6px 0 20px 0;">Data dokumentasi formulir</p>
-        </div>
-        @foreach ($images as $image)
-            <ol style="list-style: none">
-                <li style="margin-bottom: 8px"><u>{{ $image->label }} :</u></li>
-                <li class="value-input">
-                    <span style="display: inline-block; font-weight: bold">File Gambar - </span>
-                    <a style="display: inline-block" href="{{ route('app.image.download', ['id' => $image->id]) }}">
-                        {{ $image->name }}
-                    </a>
-                </li>
-            </ol>
-        @endforeach
+            <div style="margin-top: 24px; padding-top: 20px; border-top: 3px solid gainsboro; padding-left: 10px">
+                <p style="font-size: 1rem; font-weight: bold; margin: 0 0 0px 0;">Data gambar dokumentasi</p>
+                <p style="font-size: .9rem; margin: 6px 0 20px 0;">Data dokumentasi formulir</p>
+            </div>
+
+            @foreach ($images as $image)
+                <ol style="list-style: none">
+                    <li style="margin-bottom: 8px"><u>{{ $image->label }} :</u></li>
+                    <li class="value-input">
+                        <span style="display: inline-block; font-weight: bold">File Gambar - </span>
+                        <a style="display: inline-block" href="{{ route('app.image.download', ['id' => $image->id]) }}">
+                            {{ $image->name }}
+                        </a>
+                    </li>
+                </ol>
+            @endforeach
+
         @endif
     </div>
     <div style="text-align: center; margin-top: 30px">

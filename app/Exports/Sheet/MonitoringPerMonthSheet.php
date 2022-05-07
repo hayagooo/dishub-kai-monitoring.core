@@ -34,7 +34,11 @@ class MonitoringPerMonthSheet implements FromCollection, WithTitle, WithHeadings
     */
     public function collection()
     {
-        return Monitoring::query()->with('input', 'input.option', 'input.option.optionValue', 'input.valueData', 'team', 'employee', 'object', 'category')->whereYear('created_at', $this->year)->get();
+        return Monitoring::query()->with('input', 'input.option', 'input.option.optionValue', 'input.valueData', 'team', 'employee', 'object', 'category')
+        ->where('monitoring_category_id', $this->category_id)
+        ->where('monitoring_object_id', $this->object_id)
+        ->whereYear('created_at', $this->year)
+        ->get();
     }
 
     public function map($monitoring): array

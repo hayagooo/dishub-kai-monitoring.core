@@ -73,17 +73,22 @@
                                 </div>
                                 <div class="mt-6">
                                     <label for="team-monitoring">Tim Monitoring</label>
-                                    <select @change="getEmployee()" required name="team_id" id="team-monitoring" v-model="form.general.team_id" type="text" class="mt-3 focus:ring-purple-500 focus:border-purple-500 block w-full pl-4 sm:text-sm border-gray-300 rounded-md">
+                                    <select @change="getEmployee()" required name="team_id" id="team-monitoring" v-model="form.general.team_id" class="mt-3 focus:ring-purple-500 focus:border-purple-500 block w-full pl-4 sm:text-sm border-gray-300 rounded-md">
                                         <option :value="0">Pilih Tim Monitoring</option>
                                         <option v-for="(item, index) in teams" :key="`team-${index}`" :value="item.id">{{ item.name }}</option>
                                     </select>
                                 </div>
                                 <div v-if="form.general.team_id != 0 && (employees && employees.length > 0)" class="mt-6">
                                     <label for="employee-monitoring">Subjek Monitoring</label>
-                                    <select required name="employee_id" id="employee-monitoring" v-model="form.general.employee_id" type="text" class="mt-3 focus:ring-purple-500 focus:border-purple-500 block w-full pl-4 sm:text-sm border-gray-300 rounded-md">
+                                    <select required name="employee_id" id="employee-monitoring" v-model="form.general.employee_id" class="mt-3 focus:ring-purple-500 focus:border-purple-500 block w-full pl-4 sm:text-sm border-gray-300 rounded-md">
                                         <option :value="0">Pilih Pegawai atau Subjek</option>
                                         <option v-for="(item, index) in employees" :key="`employee-${index}`" :value="item.id">{{ item.name }}</option>
                                     </select>
+                                </div>
+                                <div v-if="form.general.team_id != 0 && (employees == null || employees.length <= 0)">
+                                    <div class="p-4 mb-4 mt-2 text-sm text-red-700 bg-red-100 rounded-lg dark:bg-red-200 dark:text-red-800" role="alert">
+                                        <span class="font-semibold">Monitoring tidak bisa dilanjutkan !</span> Tidak ada pegawai di dalam tim ini.
+                                    </div>
                                 </div>
                                 <div class="mt-6">
                                     <label for="description-monitoring">Deskripsi Monitoring</label>
@@ -95,7 +100,7 @@
                                     </div>
                                 </div>
                                 <div class="mt-6">
-                                    <button type="submit" :disabled="is_loading" class="text-white w-full bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
+                                    <button type="submit" :disabled="loading_button" class="text-white w-full bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
                                         <span v-if="!loading_button">
                                                 Simpan
                                             </span>
@@ -272,7 +277,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <button type="submit" :disabled="is_loading" class="text-white w-full bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
+                                        <button type="submit" :disabled="loading_button" class="text-white w-full bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
                                             <span v-if="!loading_button">
                                                 Simpan
                                             </span>
@@ -450,7 +455,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <button type="submit" :disabled="is_loading" class="text-white w-full bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
+                                        <button type="submit" :disabled="loading_button" class="text-white w-full bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
                                             <span v-if="!loading_button">
                                                 Simpan
                                             </span>
@@ -630,7 +635,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <button type="submit" :disabled="is_loading" class="text-white w-full bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
+                                        <button type="submit" :disabled="loading_button" class="text-white w-full bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
                                             <span v-if="!loading_button">
                                                 Simpan
                                             </span>
@@ -746,7 +751,7 @@
                                                                 <p role="button" @click="clickFile()" class="text-green-600">Ganti Gambar</p>
                                                             </div>
                                                         </div>
-                                                        <input @change="changeFile($event)" name="icon" id="image-file" type="file" class="hidden" accept=".jpg, .png, .jpeg">
+                                                        <input required @change="changeFile($event)" name="icon" id="image-file" type="file" class="hidden" accept=".jpg, .png, .jpeg">
                                                         <div v-if="formImage.image == null" @click="clickFile()" role="button" class="w-full text-center p-6 border-2 border-dashed border-purple-500 rounded-lg">
                                                             <div class="w-full">
                                                                 <image-icon size="3x" class="inline-block text-purple-600"/>
@@ -1016,13 +1021,15 @@ export default defineComponent({
             else if(type == 'object') mValue = this.values.object
             else if(type == 'monitoring') mValue = this.values.monitoring
             mValue.forEach((item, index) => {
+                console.log(item.number_value)
+                // return false
                 let fm = new FormData()
                 fm.append('input_id', item.monitoring_input_id)
                 fm.append('type', type)
                 fm.append('monitoring_id', this.monitoring.id)
                 fm.append('string_value', this.onCheckValue(item.string_value))
                 fm.append('text_value', this.onCheckValue(item.text_value))
-                if(item.date_value == '') fm.append('number_value', 0)
+                if(item.number_value == '' || item.number_value == null) fm.append('number_value', 0)
                 else fm.append('number_value', item.number_value)
                 if(item.date_value == '') fm.append('date_value', moment().format('YYYY-MM-DD'))
                 else fm.append('date_value', item.date_value)
@@ -1365,6 +1372,7 @@ export default defineComponent({
             })
         },
         submitGeneral() {
+            if(this.form.general.employee_id == 0) return
             this.loading_button = true
             this.form.general
                 .transform(data => ({

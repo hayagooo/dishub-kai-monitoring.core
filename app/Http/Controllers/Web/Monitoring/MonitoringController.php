@@ -44,7 +44,7 @@ class MonitoringController extends Controller
             ->paginate($request->get('pagination', 10));
         $object = ObjectData::query()->find($objectId);
         $category = Category::query()->find($categoryId);
-        return Inertia::render('Monitoring/Index');
+        return Inertia::render('Monitoring/Index', ['monitorings' => $monitorings, 'category' => $category, 'object' => $object]);
     }
 
     /**
@@ -95,7 +95,14 @@ class MonitoringController extends Controller
         ];
         CreateData::dispatch($data);
         $monitoring = Monitoring::query()->create($data);
-        return redirect()->route('app.monitoring.edit', $monitoring->id)->with('message', 'Data monitoring berhasil disimpan')->with('status', 'success');
+        return redirect()->route('app.monitoring.edit', [
+            'monitoring' => $monitoring->id,
+            'categoryId' => $request->category_id,
+            'objectId' => $request->object_id,
+        ])->with('message', 'Data monitoring berhasil disimpan')->with('status', 'success')->withInput([
+            'categoryId' => $request->category_id,
+            'objectId' => $request->object_id,
+        ]);
     }
 
     /**
@@ -121,12 +128,22 @@ class MonitoringController extends Controller
             ->where('monitoring_category_id', $categoryId)
             ->where('monitoring_object_id', null)
             ->get();
-        $inputs['object'] = Input::query()->with('option',  'option.optionValue', 'valueData')
+        $inputs['object'] = Input::query()->with(['option',
+        'option.optionValue' => function($query) use($id) {
+            $query->where('monitoring_id', $id);
+        }, 'valueData' => function($query) use($id) {
+            $query->where('monitoring_id', $id);
+        }])
             ->where('monitoring_category_id', $categoryId)
             ->where('monitoring_object_id', $objectId)
             ->where('monitoring_id', null)
             ->get();
-        $inputs['monitoring'] = Input::query()->with('option',  'option.optionValue', 'valueData')
+        $inputs['monitoring'] = Input::query()->with(['option',
+        'option.optionValue' => function($query) use($id) {
+            $query->where('monitoring_id', $id);
+        }, 'valueData' => function($query) use($id) {
+            $query->where('monitoring_id', $id);
+        }])
             ->where('monitoring_category_id', $categoryId)
             ->where('monitoring_object_id', $objectId)
             ->where('monitoring_id', $id)
@@ -177,12 +194,22 @@ class MonitoringController extends Controller
             ->where('monitoring_category_id', $categoryId)
             ->where('monitoring_object_id', null)
             ->get();
-        $inputs['object'] = Input::query()->with('option',  'option.optionValue', 'valueData')
+        $inputs['object'] = Input::query()->with(['option',
+        'option.optionValue' => function($query) use($id) {
+            $query->where('monitoring_id', $id);
+        }, 'valueData' => function($query) use($id) {
+            $query->where('monitoring_id', $id);
+        }])
             ->where('monitoring_category_id', $categoryId)
             ->where('monitoring_object_id', $objectId)
             ->where('monitoring_id', null)
             ->get();
-        $inputs['monitoring'] = Input::query()->with('option',  'option.optionValue', 'valueData')
+        $inputs['monitoring'] = Input::query()->with(['option',
+        'option.optionValue' => function($query) use($id) {
+            $query->where('monitoring_id', $id);
+        }, 'valueData' => function($query) use($id) {
+            $query->where('monitoring_id', $id);
+        }])
             ->where('monitoring_category_id', $categoryId)
             ->where('monitoring_object_id', $objectId)
             ->where('monitoring_id', $id)
