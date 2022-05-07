@@ -38,11 +38,12 @@ Route::get('/', function () {
 })->name('home');
 
 Route::get('under/construction', [PageController::class, 'index'])->name('under.construction');
-Route::post('/app/login', [UserController::class, 'login'])->name('app.login');
-Route::middleware(['auth:sanctum', 'verified'])->group(function() {
+Route::get('/login', [UserController::class, 'indexLogin'])->name('index.login');
+Route::post('/app/login', [UserController::class, 'login'])->name('login');
+Route::get('/verify', [UserController::class, 'indexVerification'])->name('index.verification');
+    Route::middleware(['auth:sanctum', 'verified'])->group(function() {
     Route::get('/dashboard', [PageController::class, 'dashboard'])->name('dashboard');
     Route::post('/logout', [UserController::class, 'logout'])->name('logout');
-    Route::get('/verify', [UserController::class, 'indexVerification'])->name('index.verification');
     Route::post('/verify', [UserController::class, 'verification'])->name('app.verification');
     Route::namespace('App')->prefix('app')->name('app.')->group(function() {
         Route::resource('/monitoring/category', CategoryController::class);

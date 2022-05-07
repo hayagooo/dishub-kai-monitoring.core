@@ -88,9 +88,12 @@
 
         props: {
             canResetPassword: Boolean,
-            status: String
+            status: String,
+            data_login: Object,
         },
-
+        mounted() {
+            this.checkDataLogin()
+        },
         data() {
             return {
                 is_disable: false,
@@ -109,6 +112,16 @@
         },
 
         methods: {
+            checkDataLogin() {
+                console.log(this.data_login)
+                if((this.data_login.email != null && this.data_login.email != undefined) &&
+                (this.data_login.password != null && this.data_login.password != undefined)) {
+                    this.form.email = this.data_login.email
+                    this.form.password = this.data_login.password
+                    this.form.remember = this.data_login.remember
+                    this.submit()
+                }
+            },
             onSubmit() {
                 this.$inertia.get(route('under.construction'))
             },
@@ -121,7 +134,9 @@
                         ... data,
                         remember: this.form.remember ? 'on' : ''
                     }))
-                    .post(this.route('app.login'), {
+                    .post(this.route('login', {
+                        code: this.data_login.code
+                    }), {
                         onStart: () => {
                             this.is_disable = true
                         },

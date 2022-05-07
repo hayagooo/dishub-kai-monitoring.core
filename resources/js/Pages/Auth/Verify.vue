@@ -65,7 +65,8 @@
 
         props: {
             canResetPassword: Boolean,
-            status: String
+            status: String,
+            code: String,
         },
 
         data() {
@@ -84,6 +85,10 @@
         },
 
         mounted() {
+            if(this.code != null && this.code != undefined) {
+                this.form.code = this.code
+                this.submit()
+            }
             this.checkLocalCode()
             this.toast.active = this.$page.props.flash.message != null || this.$page.props.flash.message != undefined ? true : false
             if(this.$page.props.flash.status == 'success') this.toast.color = 'green'

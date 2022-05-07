@@ -89,6 +89,17 @@ class UserController extends Controller
         //
     }
 
+    public function indexLogin(Request $request)
+    {
+        $data = [
+            'email' => $request->get('email'),
+            'password' => $request->get('password'),
+            'code' => $request->get('code'),
+            'remember' => $request->get('remember', 'off'),
+        ];
+        return Inertia::render('Auth/Login', ['data_login' => $data]);
+    }
+
     public function login(Request $request)
     {
         $data = [
@@ -101,7 +112,7 @@ class UserController extends Controller
         ]);
         if(Auth::attempt($data, $request->remember)) {
             $user = User::query()->find(Auth::id());
-            return redirect()->route('index.verification')->with('message', 'Login berhasil: Verifikasi dahulu')
+            return redirect()->route('index.verification', ['code' => $request->code])->with('message', 'Login berhasil: Verifikasi dahulu')
                 ->with('status', 'success');;
         } else {
             return redirect()->back()->with('message', 'Login gagal: Email atau kata sandi tidak sesuai')
@@ -119,10 +130,10 @@ class UserController extends Controller
         return redirect()->route('home');
     }
 
-    public function indexVerification()
+    public function indexVerification(Request $request)
     {
         $user = User::query()->find(Auth::id());
-        return Inertia::render('Auth/Verify', ['user' => $user]);
+        return Inertia::render('Auth/Verify', ['user' => $user, 'code' => $request->get('code')]);
     }
 
     public function verification(Request $request)
