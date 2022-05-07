@@ -690,7 +690,7 @@
                                                     <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
                                                 </button>
                                             </div>
-                                            <div class="p-6 space-y-4">
+                                            <div class="p-6 max-h-96 overflow-y-auto space-y-4">
                                                 <div role="button" @click="modalImage = true" class="flex gap-x-4 w-full hover:bg-gray-50 p-2 rounded-lg">
                                                     <div class="flex h-12 w-12 rounded-lg bg-purple-100 relative">
                                                         <eye-icon class="mx-auto text-purple-600 self-center" size="24"/>
@@ -737,7 +737,7 @@
                                                 </button>
                                             </div>
                                             <form @submit.prevent="storeImage()" action="#">
-                                                <div class="p-6">
+                                                <div class="p-6 max-h-96 overflow-y-auto">
                                                     <div>
                                                         <label for="name-image">Nama Gambar</label>
                                                         <input required name="name" id="name-image" v-model="formImage.label" type="text" placeholder="Masukkan label gambar" class="mt-3 focus:ring-purple-500 focus:border-purple-500 block w-full pl-4 sm:text-sm border-gray-300 rounded-md">
@@ -793,7 +793,7 @@
                                                     <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
                                                 </button>
                                             </div>
-                                            <div v-if="optionModal.index != null">
+                                            <div class="max-h-96 overflow-y-auto" v-if="optionModal.index != null">
                                                 <img :src="'/monitoring/data/'+images[optionModal.index].name" class="w-full h-auto rounded-lg" alt="Preview Image">
                                             </div>
                                             <div class="flex flex-row-reverse items-center p-6 space-x-2 rounded-b border-t border-gray-200 dark:border-gray-600">
@@ -816,7 +816,7 @@
                                                     <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
                                                 </button>
                                             </div>
-                                            <div class="p-6 space-y-4">
+                                            <div class="p-6 max-h-96 overflow-y-auto space-y-4">
                                                 <div class="flex justify-center">
                                                     <div class="flex h-14 w-14 rounded-lg bg-red-100 relative">
                                                         <trash-icon class="text-red-600 self-center mx-auto" size="30"/>

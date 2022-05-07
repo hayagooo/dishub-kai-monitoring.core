@@ -52,7 +52,7 @@
                                     </div>
                                     <form @submit.prevent="store()" action="#">
                                         <div>
-                                            <div class="p-6 h-96 overflow-y-auto">
+                                            <div class="p-6 max-h-96 overflow-y-auto">
                                                 <div>
                                                     <label for="name-team">Nama tim</label>
                                                     <input maxlength="150" required name="name" id="name-team" v-model="form.name" type="text" placeholder="Masukkan nama team" class="mt-2 focus:ring-purple-500 focus:border-purple-500 block w-full pl-4 sm:text-sm border-gray-300 rounded-md">
@@ -257,7 +257,7 @@
                                             </button>
                                         </div>
                                         <div>
-                                            <div class="p-6 h-96 overflow-y-auto">
+                                            <div class="p-6 max-h-96 overflow-y-auto">
                                                 <div>
                                                     <input @keyup="onSearchEmployee()" placeholder="Cari berdasarkan nama pegawai" v-model="input.name_employee" type="text" id="name-employee-input" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
                                                 </div>
