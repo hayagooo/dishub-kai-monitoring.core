@@ -606,7 +606,6 @@ export default defineComponent({
             this.loading_button = true
             this.form_inputs.forEach((value, index) => {
                 let fm = new FormData()
-                console.log(this.form_inputs)
                 let url
                 fm.append('category_id', this.datas.category.id)
                 if(this.datas.object != undefined && this.datas.object != null) fm.append('object_id', this.datas.object.id)
@@ -738,7 +737,6 @@ export default defineComponent({
             this.onRedirectLabel()
         },
         setRequired(index) {
-            console.log(this.form_inputs[index].is_required)
             this.form_inputs[index].is_required = !this.form_inputs[index].is_required
         },
         setFormInput(mode) {

@@ -1082,8 +1082,6 @@ export default defineComponent({
             fm.append('value', option.value)
             fm.append('option_id', option.id)
             fm.append('is_checked', value)
-            console.log(option)
-            console.log(value)
             axios.post(this.route('api.option-input-monitoring.update', {
                 id: option.id
             }), fm, {
@@ -1108,13 +1106,6 @@ export default defineComponent({
             if(menuName == 'category') optionId = this.values.category[index].text_value
             else if(menuName == 'object') optionId = this.values.object[index].text_value
             else optionId = this.values.monitoring[index].text_value
-            console.log([{
-                monitoringId: this.monitoring.id,
-                optionId: optionId,
-            }])
-
-            // console.log(optionId)
-            // return
             this.$inertia.post(this.route('app.input-option.destroy', {
                 id: item.id
             }), {
@@ -1242,7 +1233,6 @@ export default defineComponent({
                     this.values.monitoring.push(data)
                 })
             }
-            console.log(this.values)
         },
         onReadyYoutube(index) {
             setTimeout(() => {

@@ -251,7 +251,6 @@ export default defineComponent({
         }
     },
     mounted() {
-        console.log(this.category)
         this.toast.active = this.$page.props.flash.message != null || this.$page.props.flash.message != undefined ? true : false
         if(this.$page.props.flash.status == 'success') this.toast.color = 'green'
         else if(this.$page.props.flash.status == 'failed') this.toast.color = 'red'
