@@ -93,7 +93,7 @@
                                                                     Click File or Drag and drop <br>
                                                                     <small>Rekomendasi ukuran : 48 x 48 pixel</small>
                                                                 </p>
-                                                                <p v-else>{{ formModal.mode == 'create' ? form.icon.name : form.icon }}</p>
+                                                                <p v-else>{{ truncating(formModal.mode == 'create' ? form.icon.name : form.icon, 50, '...') }}</p>
                                                             </div>
                                                             <small> {{ formModal.mode == 'create' ? 'Abaikan untuk membuat icon default' : 'Abaikan untuk tidak mengganti icon' }} </small>
                                                         </div>
