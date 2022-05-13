@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Web\User;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use App\Jobs\User\EditData;
-use App\Jobs\User\Createdata;
+use App\Jobs\User\CreateData;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Inertia\Inertia;

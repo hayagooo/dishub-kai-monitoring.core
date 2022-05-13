@@ -7,7 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Imports\EmployeeImport;
 use App\Models\Employee;
 use App\Jobs\Employee\CreateData;
-use App\Jobs\EMployee\EditData;
+use App\Jobs\Employee\EditData;
 use App\Models\Monitoring\Image;
 use App\Models\Monitoring\Input;
 use App\Models\Monitoring\InputValue;
