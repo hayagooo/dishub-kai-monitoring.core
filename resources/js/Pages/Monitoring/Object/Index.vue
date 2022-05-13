@@ -90,7 +90,7 @@
                                                                     <image-icon size="3x" class="inline-block text-purple-600"/>
                                                                 </div>
                                                                 <p v-if="form.icon == null" class="mt-3 font-semibold text-gray-600">
-                                                                    Click File or Drag and drop <br>
+                                                                    Browse File<br>
                                                                     <small>Rekomendasi ukuran : 48 x 48 pixel</small>
                                                                 </p>
                                                                 <p v-else>{{ truncating(formModal.mode == 'create' ? form.icon.name : form.icon, 50, '...') }}</p>
