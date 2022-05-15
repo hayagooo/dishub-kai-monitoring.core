@@ -49,7 +49,7 @@
                                                                     <image-icon size="3x" class="inline-block text-purple-600"/>
                                                                 </div>
                                                                 <p v-if="form.information.image == null" class="mt-3 font-semibold text-gray-600">
-                                                                    Click File or Drag and drop
+                                                                    Browse File
                                                                 </p>
                                                             </div>
                                                             <small> {{ formModal.mode == 'create' ? 'Abaikan untuk membuat gambar default' : 'Abaikan untuk tidak mengganti gambar' }} </small>

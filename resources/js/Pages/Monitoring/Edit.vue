@@ -757,7 +757,7 @@
                                                                 <image-icon size="3x" class="inline-block text-purple-600"/>
                                                             </div>
                                                             <p class="mt-3 font-semibold text-gray-600">
-                                                                Click or Drag and drop <br>
+                                                                Browse File <br>
                                                             </p>
                                                         </div>
                                                         <div v-else>
