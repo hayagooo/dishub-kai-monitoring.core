@@ -3,6 +3,9 @@
         <m-toast :color="toast.color"
             :is_active="toast.active"
             :message="$page.props.flash.message"/>
+        <m-error-toast
+            :is_active="error.active"
+            :message="error.message"/>
         <template #header>
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
                 Monitoring
@@ -84,7 +87,7 @@
                                                             Browse File<br>
                                                             <small>Rekomendasi ukuran : 48 x 48 pixel</small>
                                                         </p>
-                                                        <p v-else>{{ truncating(formModal.mode == 'create' ? form.icon.name : form.icon, 50, '...') }}</p>
+                                                        <p v-else>{{ truncating(formModal.mode == 'create' ? form.icon.name : form.icon.name != null && form.icon.name != undefined ? form.icon.name : form.icon, 50, '...') }}</p>
                                                     </div>
                                                     <small> {{ formModal.mode == 'create' ? 'Abaikan untuk membuat icon default' : 'Abaikan untuk tidak mengganti icon' }} </small>
                                                 </div>
@@ -227,6 +230,7 @@ import AppLayout from '@/Layouts/AppLayout.vue'
 import MUnderConstruction from '@/Components/MUnderConstruction'
 import { ArrowLeftIcon, PlusCircleIcon, FileTextIcon, ImageIcon, TrashIcon, MoreVerticalIcon, EditIcon, EyeIcon } from '@zhuowenli/vue-feather-icons'
 import MToast from '@/Components/MToast'
+import MErrorToast from '@/Components/MErrorToast'
 import MNoData from '@/Components/MNoData.vue'
 
 export default defineComponent({
@@ -238,6 +242,7 @@ export default defineComponent({
         AppLayout,
         TrashIcon,
         MNoData,
+        MErrorToast,
         EditIcon,
         ArrowLeftIcon,
         ImageIcon,
@@ -263,6 +268,10 @@ export default defineComponent({
             },
             toast: {
                 color: 'purple',
+                active: false,
+                message: '',
+            },
+            error: {
                 active: false,
                 message: '',
             },
@@ -315,6 +324,14 @@ export default defineComponent({
                 this.toast.active = false
             }, 5000);
         },
+        onErrorToast(errors) {
+            console.log(errors)
+            this.error.message = errors
+            this.error.active = true
+            setTimeout(() => {
+                this.error.active = false
+            }, 5000);
+        },
         store() {
             if(this.formModal.mode == 'create') {
                 this.form.transform(data => ({
@@ -326,7 +343,8 @@ export default defineComponent({
                     onSuccess: (response) => {
                         this.onToast(response)
                         this.setNullForm()
-                    }
+                    },
+                    onError: (errors) => { this.onErrorToast(errors) }
                 })
             } else {
                 this.form.transform(data => ({
@@ -338,7 +356,8 @@ export default defineComponent({
                     onSuccess: (response) => {
                         this.onToast(response)
                         this.setNullForm()
-                    }
+                    },
+                    onError: (errors) => { this.onErrorToast(errors) }
                 })
             }
         },

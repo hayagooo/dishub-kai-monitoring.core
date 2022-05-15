@@ -9,6 +9,7 @@ use App\Models\Monitoring\Category;
 use Intervention\Image\Facades\Image;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Validator;
 use Inertia\Inertia;
 use Illuminate\Support\Str;
 
@@ -39,6 +40,11 @@ class CategoryController extends Controller
             'name' => $request->name,
             'icon' => $request->file('icon'),
         ];
+        $rules = [
+            'name' => 'required',
+            'icon' => 'nullable|image|max:2048',
+        ];
+        Validator::make($data, $rules)->validate();
         if($request->hasFile('icon')) {
             $file = $request->file('icon');
             $filename = 'icon-'.Str::slug($request->name).'-'.uniqid().'.'.$file->extension();
@@ -69,6 +75,11 @@ class CategoryController extends Controller
             'name' => $request->name,
             'icon' => $request->file('icon'),
         ];
+        $rules = [
+            'name' => 'required',
+            'icon' => 'nullable|image|max:2048',
+        ];
+        Validator::make($data, $rules)->validate();
         $category = Category::query()->find($id);
         if($request->hasFile('icon')) {
             $file = $request->file('icon');
