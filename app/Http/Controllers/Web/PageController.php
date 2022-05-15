@@ -14,8 +14,11 @@ class PageController extends Controller
         return Inertia::render('UnderConstruction');
     }
 
-    public function dashboard()
+    public function dashboard(Request $request)
     {
+        $menu = $request->get('menu');
+        if($menu == 'monitoring') return redirect()->route('app.category.index');
+
         $informations = Information::query()->orderBy('created_at', 'DESC')->paginate(3);
         $informations_count = Information::query()->count();
         return Inertia::render('Dashboard', ['informations' => $informations, 'informations_count' => $informations_count]);

@@ -26,6 +26,7 @@ class ObjectController extends Controller
         $objects = ObjectData::with(['input' => function($query) {
             $query->where('monitoring_id', null);
         }])->get();
+        // return response()->json($objects);
         $category = Category::query()->with('input')->find($categoryId);
         return Inertia::render('Monitoring/Object/Index', [
             'objects' => $objects,

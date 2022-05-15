@@ -48,6 +48,7 @@ Route::post('/app/login', [UserController::class, 'login'])->name('app.login');
     Route::get('/dashboard', [PageController::class, 'dashboard'])->name('dashboard');
     Route::post('/logout', [UserController::class, 'logout'])->name('logout');
     Route::namespace('App')->prefix('app')->name('app.')->group(function() {
+        Route::get('/logout', [UserController::class, 'logout'])->name('logout');
         Route::resource('/monitoring/category', CategoryController::class);
         Route::post('/monitoring/category/image/{id}/delete', [CategoryController::class, 'deleteImage'])->name('category.delete-image');
         Route::resource('/monitoring/object', ObjectController::class);

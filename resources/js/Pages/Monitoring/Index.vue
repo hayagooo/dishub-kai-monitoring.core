@@ -114,7 +114,7 @@
                                                         <file-text-icon class="mx-auto text-indigo-600 self-center" size="24"/>
                                                     </div>
                                                     <div class="self-center">
-                                                        <p class="text-lg font-semi-bold text-gray-700">Formulir Object</p>
+                                                        <p class="text-lg font-semi-bold text-gray-700">Formulir Monitoring</p>
                                                         <small v-if="monitorings.data[optionModal.index] != undefined">{{ monitorings.data[optionModal.index].input.length }} Data</small>
                                                     </div>
                                                 </div>

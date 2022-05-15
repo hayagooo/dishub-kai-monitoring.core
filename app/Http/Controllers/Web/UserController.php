@@ -96,6 +96,7 @@ class UserController extends Controller
             'password' => $request->get('password'),
             'code' => $request->get('code'),
             'remember' => $request->get('remember', 'off'),
+            'menu' => $request->get('menu'),
         ];
         return Inertia::render('Auth/Login', ['data_login' => $data]);
     }
@@ -112,7 +113,7 @@ class UserController extends Controller
         ]);
         if(Auth::attempt($data, $request->remember)) {
             $user = User::query()->find(Auth::id());
-            return redirect()->route('index.verification', ['code' => $request->code])->with('message', 'Login berhasil: Verifikasi dahulu')
+            return redirect()->route('index.verification', ['code' => $request->code, 'menu' => $request->menu])->with('message', 'Login berhasil: Verifikasi dahulu')
                 ->with('status', 'success');;
         } else {
             return redirect()->back()->with('message', 'Login gagal: Email atau kata sandi tidak sesuai')
@@ -134,8 +135,12 @@ class UserController extends Controller
 
     public function indexVerification(Request $request)
     {
+        $data = [
+            'code' => $request->get('code'),
+            'menu' => $request->get('menu'),
+        ];
         $user = User::query()->find(Auth::id());
-        return Inertia::render('Auth/Verify', ['user' => $user, 'code' => $request->get('code'), 'menu' => $request->get('menu')]);
+        return Inertia::render('Auth/Verify', ['user' => $user, 'data_login' => $data]);
     }
 
     public function verification(Request $request)
@@ -152,7 +157,7 @@ class UserController extends Controller
             // $user->verified_at = Carbon::now();
             // $user->save();
             return redirect()->route('dashboard', ['menu' => $data['menu']])->with('message', 'Verifikasi Berhasil : Selamat datang kembali')->with('status', 'success');
-        } else {
+            } else {
             return redirect()->route('index.verification')->with('message', 'Kode verifikasi tidak sesuai')->with('status', 'failed');
         }
     }

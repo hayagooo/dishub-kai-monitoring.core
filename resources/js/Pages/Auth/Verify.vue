@@ -53,7 +53,6 @@
     import { MailIcon, LockIcon, EyeOffIcon, EyeIcon } from '@zhuowenli/vue-feather-icons'
 
     export default defineComponent({
-        props: ['code'],
         components: {
             Head,
             MailIcon,
@@ -67,7 +66,7 @@
         props: {
             canResetPassword: Boolean,
             status: String,
-            code: String,
+            data_login: Object,
         },
 
         data() {
@@ -86,8 +85,9 @@
         },
 
         mounted() {
-            if(this.code != null && this.code != undefined) {
-                this.form.code = this.code
+            console.log(this.data_login)
+            if(this.data_login.code != null && this.data_login.code != undefined) {
+                this.form.code = this.data_login.code
                 this.submit()
             }
             this.checkLocalCode()
@@ -131,7 +131,8 @@
                 this.form
                 .transform(data => ({
                     ... data,
-                    _method: 'POST'
+                    _method: 'POST',
+                    menu: this.data_login.menu
                 }))
                 .post(this.route('verification'), {
                     onStart: () => {

@@ -63,7 +63,6 @@ class MonitoringController extends Controller
             ->where('monitoring_object_id', null)
             ->get();
         $inputs['object'] = Input::query()->with('option')
-            ->where('monitoring_category_id', $categoryId)
             ->where('monitoring_object_id', $objectId)
             ->where('monitoring_id', null)
             ->get();
@@ -134,7 +133,6 @@ class MonitoringController extends Controller
         }, 'valueData' => function($query) use($id) {
             $query->where('monitoring_id', $id);
         }])
-            ->where('monitoring_category_id', $categoryId)
             ->where('monitoring_object_id', $objectId)
             ->where('monitoring_id', null)
             ->get();
@@ -144,8 +142,6 @@ class MonitoringController extends Controller
         }, 'valueData' => function($query) use($id) {
             $query->where('monitoring_id', $id);
         }])
-            ->where('monitoring_category_id', $categoryId)
-            ->where('monitoring_object_id', $objectId)
             ->where('monitoring_id', $id)
             ->get();
         // return response()->json($inputs);

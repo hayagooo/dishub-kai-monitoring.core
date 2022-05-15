@@ -92,6 +92,7 @@
             data_login: Object,
         },
         mounted() {
+            console.log(this.data_login)
             this.checkDataLogin()
         },
         data() {
@@ -143,7 +144,8 @@
                         remember: this.form.remember ? 'on' : ''
                     }))
                     .post(this.route('app.login', {
-                        code: this.data_login.code
+                        code: this.data_login.code,
+                        menu: this.data_login.menu
                     }), {
                         onStart: () => {
                             this.is_disable = true

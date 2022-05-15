@@ -32,21 +32,26 @@ class InputController extends Controller
         if($request->get('monitoringId')) {
             $datas['monitoring'] = Monitoring::query()->find($request->get('monitoringId'));
         }
-        $inputs = Input::query()->with('monitoring', 'option', 'category', 'object')
-        ->when($request->get('categoryId') != null, function($query) use($request) {
-            $query->where('monitoring_category_id', $request->get('categoryId'));
-            $query->where('monitoring_object_id', $request->get('objectId', null));
-        })
-        ->when($request->get('objectId') != null, function($query) use($request) {
-            $query->where('monitoring_category_id', $request->get('categoryId', Category::query()->first()->id));
-            $query->where('monitoring_object_id', $request->get('objectId', ObjectData::query()->first()->id));
-            $query->where('monitoring_id', $request->get('monitoringId', null));
-        })
-        ->when($request->get('monitoringId') != null, function($query) use($request) {
-            $query->where('monitoring_category_id', $request->get('categoryId', Category::query()->first()->id));
-            $query->where('monitoring_object_id', $request->get('objectId', ObjectData::query()->first()->id));
-            $query->where('monitoring_id', $request->get('monitoringId', Monitoring::query()->first()->id));
-        })->get();
+        if($request->get('categoryId') != null && $request->get('categoryId')) {
+            $inputs = Input::query()->with('monitoring', 'option', 'category', 'object')
+            ->when($request->get('categoryId') != null, function($query) use($request) {
+                $query->where('monitoring_category_id', $request->get('categoryId'));
+                $query->where('monitoring_object_id', $request->get('objectId', null));
+            })->get();
+        }
+        if($request->get('objectId') && $request->get('objectId')) {
+            $inputs = Input::query()->with('monitoring', 'option', 'category', 'object')
+            ->when($request->get('objectId') != null, function($query) use($request) {
+                $query->where('monitoring_object_id', $request->get('objectId', ObjectData::query()->first()->id));
+                $query->where('monitoring_id', $request->get('monitoringId', null));
+            })->get();
+        }
+        if($request->get('monitoringId') && $request->get('monitoringId')) {
+            $inputs = Input::query()->with('monitoring', 'option', 'category', 'object')
+            ->when($request->get('monitoringId') != null, function($query) use($request) {
+                $query->where('monitoring_id', $request->get('monitoringId', Monitoring::query()->first()->id));
+            })->get();
+        }
         $token = User::find(Auth::guard('api')->id())->createToken('authentification')->plainTextToken;
         return Inertia::render('Monitoring/Input/Index', ['inputs' => $inputs, 'datas' => $datas, 'token' => $token]);
     }
