@@ -3,6 +3,9 @@
         <m-toast :color="toast.color"
             :is_active="toast.active"
             :message="$page.props.flash.message"/>
+        <m-error-toast
+            :is_active="error.active"
+            :message="error.message"/>
         <template #header>
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
                 Monitoring
@@ -231,6 +234,7 @@ import { defineComponent } from 'vue'
 import AppLayout from '@/Layouts/AppLayout.vue'
 import MUnderConstruction from '@/Components/MUnderConstruction'
 import { ArrowLeftIcon, PlusIcon, FileTextIcon, ImageIcon, TrashIcon, MoreVerticalIcon, EditIcon, EyeIcon } from '@zhuowenli/vue-feather-icons'
+import MErrorToast from '@/Components/MErrorToast'
 import MToast from '@/Components/MToast'
 import MNoData from '@/Components/MNoData.vue'
 
@@ -241,6 +245,7 @@ export default defineComponent({
         MToast,
         EyeIcon,
         FileTextIcon,
+        MErrorToast,
         AppLayout,
         TrashIcon,
         MNoData,
@@ -271,6 +276,10 @@ export default defineComponent({
                 name: '',
                 icon: null,
             }),
+            error: {
+                active: false,
+                message: '',
+            },
             toast: {
                 color: 'purple',
                 active: false,
@@ -328,6 +337,14 @@ export default defineComponent({
                 this.toast.active = false
             }, 5000);
         },
+        onErrorToast(errors) {
+            console.log(errors)
+            this.error.message = errors
+            this.error.active = true
+            setTimeout(() => {
+                this.error.active = false
+            }, 5000);
+        },
         store() {
             if(this.formModal.mode == 'create') {
                 this.form.transform(data => ({
@@ -337,7 +354,8 @@ export default defineComponent({
                     onFinish: () => this.toggleFormModal(false),
                     onSuccess: (response) => {
                         this.onToast(response)
-                    }
+                    },
+                    onError: (errors) => { this.onErrorToast(errors) }
                 })
             } else {
                 this.form.transform(data => ({
@@ -349,7 +367,8 @@ export default defineComponent({
                     onFinish: () => this.toggleFormModal(false),
                     onSuccess: (response) => {
                         this.onToast(response)
-                    }
+                    },
+                    onError: (errors) => { this.onErrorToast(errors) }
                 })
             }
         },
