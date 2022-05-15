@@ -612,7 +612,7 @@ export default defineComponent({
                 if(this.datas.monitoring != undefined && this.datas.monitoring != null) fm.append('monitoring_id', this.datas.monitoring.id)
                 fm.append('type', this.onCheckValue(value.type_input, '-'))
                 fm.append('link', this.onCheckValue(value.link, '#'))
-                fm.append('label', this.onCheckValue(value.label, ''))
+                fm.append('label', this.onCheckValue(value.label, '-'))
                 fm.append('placeholder', this.onCheckValue(value.placeholder, ''))
                 fm.append('description', this.onCheckValue(value.description, ''))
                 fm.append('is_required', value.is_required ? 1 : 0)
@@ -636,6 +636,9 @@ export default defineComponent({
                     if(index == this.form_inputs.length - 1) {
                         this.loading_button = false
                         this.onToast('green', 'Formulir Monitoring Berhasil Disimpan')
+                        setTimeout(() => {
+                            window.location.reload()
+                        }, 1000);
                     }
                 })
             })

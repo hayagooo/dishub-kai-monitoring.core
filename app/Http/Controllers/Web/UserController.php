@@ -135,13 +135,14 @@ class UserController extends Controller
     public function indexVerification(Request $request)
     {
         $user = User::query()->find(Auth::id());
-        return Inertia::render('Auth/Verify', ['user' => $user, 'code' => $request->get('code')]);
+        return Inertia::render('Auth/Verify', ['user' => $user, 'code' => $request->get('code'), 'menu' => $request->get('menu')]);
     }
 
     public function verification(Request $request)
     {
         $data = [
             'code' => $request->code != null ? $request->code : '',
+            'menu' => $request->menu != null ? $request->menu : '',
         ];
         Validator::make($data, [
             'code' => 'required',
@@ -150,7 +151,7 @@ class UserController extends Controller
         if($user->code == $request->code) {
             // $user->verified_at = Carbon::now();
             // $user->save();
-            return redirect()->route('dashboard')->with('message', 'Verifikasi Berhasil : Selamat datang kembali')->with('status', 'success');
+            return redirect()->route('dashboard', ['menu' => $data['menu']])->with('message', 'Verifikasi Berhasil : Selamat datang kembali')->with('status', 'success');
         } else {
             return redirect()->route('index.verification')->with('message', 'Kode verifikasi tidak sesuai')->with('status', 'failed');
         }

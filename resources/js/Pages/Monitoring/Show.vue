@@ -219,9 +219,9 @@
                                                     </a>
                                                     <div v-else>
                                                         <input readonly @change="onUploadFileInput($event, item, index, 'category')" :placeholder="item.placeholder == null ? 'Pilih data '+item.label : item.placeholder"
-                                                        :required="item.is_required == 1 ? true : false"
+                                                        :required="item.is_required == 1 ? true : false" disabled
                                                         type="file" accept=".png,.jpeg,.jpg,.xlsx,.pdf,.doc,.docx,.xls,.csv,.ppt,.pptx"
-                                                        class="block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent">
+                                                        class="block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer pointer-events-none dark:text-gray-400 focus:outline-none focus:border-transparent">
                                                         <small v-if="item.description != null" v-html="item.description"></small>
                                                     </div>
                                                 </div>
@@ -388,9 +388,9 @@
                                                     </div>
                                                     <div v-else>
                                                         <input readonly @change="onUploadFileInput($event, item, index, 'object')" :placeholder="item.placeholder == null ? 'Pilih data '+item.label : item.placeholder"
-                                                        :required="item.is_required == 1 ? true : false"
+                                                        :required="item.is_required == 1 ? true : false" disabled
                                                         type="file" accept=".png,.jpeg,.jpg,.xlsx,.pdf,.doc,.docx,.xls,.csv,.ppt,.pptx"
-                                                        class="block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent">
+                                                        class="block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer pointer-events-none dark:text-gray-400 focus:outline-none focus:border-transparent">
                                                         <small v-if="item.description != null" v-html="item.description"></small>
                                                     </div>
                                                 </div>
@@ -559,9 +559,9 @@
                                                     </div>
                                                     <div v-else>
                                                         <input readonly @change="onUploadFileInput($event, item, index, 'monitoring')" :placeholder="item.placeholder == null ? 'Pilih data '+item.label : item.placeholder"
-                                                        :required="item.is_required == 1 ? true : false"
+                                                        :required="item.is_required == 1 ? true : false" disabled
                                                         type="file" accept=".png,.jpeg,.jpg,.xlsx,.pdf,.doc,.docx,.xls,.csv,.ppt,.pptx"
-                                                        class="block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent">
+                                                        class="block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer pointer-events-none dark:text-gray-400 focus:outline-none focus:border-transparent">
                                                         <small v-if="item.description != null" v-html="item.description"></small>
                                                     </div>
                                                 </div>
@@ -711,7 +711,7 @@
                                                                 <p role="button" @click="clickFile()" class="text-green-600">Ganti Gambar</p>
                                                             </div>
                                                         </div>
-                                                        <input readonly @change="changeFile($event)" name="icon" id="image-file" type="file" class="hidden" accept=".jpg, .png, .jpeg">
+                                                        <input readonly @change="changeFile($event)" name="icon" id="image-file" type="file" disabled class="hidden" accept=".jpg, .png, .jpeg">
                                                         <div v-if="formImage.image == null" @click="clickFile()" role="button" class="w-full text-center p-6 border-2 border-dashed border-purple-500 rounded-lg">
                                                             <div class="w-full">
                                                                 <image-icon size="3x" class="inline-block text-purple-600"/>

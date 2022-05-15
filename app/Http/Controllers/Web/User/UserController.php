@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\User;
 use App\Jobs\User\EditData;
 use App\Jobs\User\Createdata;
+use Illuminate\Contracts\Auth\UserProvider;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Inertia\Inertia;
@@ -109,11 +110,15 @@ class UserController extends Controller
             'password' => 'nullable|max:8'
         ];
         Validator::make($data, $rules)->validate();
+        User::query()->where('id', $id)->update($data);
         if($request->password == null || $request->password == '') {
             unset($data['password']);
             unset($rules['password']);
+        } else {
+            $user = User::query()->find($id);
+            $user->password = $data['password'];
+            $user->save();
         }
-        User::query()->where('id', $id)->update($data);
         return redirect()->back()->with('message', 'Data pengguna berhasil diedit')->with('status', 'success');
     }
 
