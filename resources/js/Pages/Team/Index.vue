@@ -442,6 +442,10 @@ export default defineComponent({
             cogModal: {
                 show: false,
             },
+            error: {
+                active: false,
+                message: '',
+            },
             employeeModal: {
                 show: false,
                 index: null

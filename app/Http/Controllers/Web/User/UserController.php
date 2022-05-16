@@ -111,7 +111,7 @@ class UserController extends Controller
         ];
         $rules = [
             'name' => 'required',
-            'email' => 'required|email|unique:users,email',
+            'email' => 'required|email|unique:users,email,'.$id,
             'code' => 'required',
             'level' => 'required',
             'password' => 'nullable|min:8'

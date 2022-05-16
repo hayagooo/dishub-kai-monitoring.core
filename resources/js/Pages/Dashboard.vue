@@ -107,7 +107,7 @@
                                                             </div>
                                                             <div v-if="form.information.type == 'link'">
                                                                 <label for="link-info">Tautan Dokumen Pemberitahuan</label>
-                                                                <input required name="name" id="link-info" v-model="form.information.link" type="text" placeholder="Masukkan tautan kategori" class="mt-3 focus:ring-purple-500 focus:border-purple-500 block w-full pl-4 sm:text-sm border-gray-300 rounded-md">
+                                                                <input required name="name" id="link-info" v-model="form.information.link" type="text" placeholder="Masukkan tautan" class="mt-3 focus:ring-purple-500 focus:border-purple-500 block w-full pl-4 sm:text-sm border-gray-300 rounded-md">
                                                             </div>
                                                         </div>
                                                     </div>

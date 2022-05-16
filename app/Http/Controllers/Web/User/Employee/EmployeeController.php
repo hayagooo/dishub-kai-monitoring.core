@@ -68,7 +68,7 @@ class EmployeeController extends Controller
         ];
         $rules = [
             'name' => 'required|max:100',
-            'email' => 'required|email',
+            'email' => 'required|email|unique:employees,email',
             'phone_number' => 'required|unique:employees,phone_number',
             'branch' => 'nullable|max:100',
             'position' => 'nullable|max:100',
@@ -123,8 +123,8 @@ class EmployeeController extends Controller
         ];
         $rules = [
             'name' => 'required|max:100',
-            'email' => 'required|email',
-            'phone_number' => 'required|unique:employees,phone_number',
+            'email' => 'required|email|unique:employees,email,'.$id,
+            'phone_number' => 'required|unique:employees,phone_number,'.$id,
             'branch' => 'nullable|max:100',
             'position' => 'nullable|max:100',
             'profession' => 'nullable|max:100',

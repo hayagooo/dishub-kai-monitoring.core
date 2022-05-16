@@ -9,6 +9,7 @@ use App\Models\Employee;
 use App\Models\Team;
 use App\Jobs\Team\CreateData;
 use App\Jobs\Team\EditData;
+use App\Models\Monitoring\Input;
 use App\Models\Monitoring\Monitoring;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -213,13 +214,21 @@ class TeamController extends Controller
                 foreach($monitorings as $item) {
                     $monitoring = Monitoring::query()->find($item->id);
                     $monitoring->image()->delete();
+                    if($monitoring->input()->get() != null && count($monitoring->input()->get()) > 0) {
+                        foreach($monitoring->input()->get() as $input_item) {
+                            $input = Input::query()->find($input_item->id);
+                            $input->valueData()->delete();
+                            $input->option()->delete();
+                            $input->optionValue()->delete();
+                        }
+                    }
                     $monitoring->input()->delete();
                     $monitoring->valueData()->delete();
                     $monitoring->optionValue()->delete();
                     $monitoring->delete();
                 }
             }
-            $team->employee()->sync([]);
+            $team->employee()->detach();
             $team->delete();
         }
         return redirect()->back()->with('message', 'Hapus data tim berhasil')->with('status', 'success');
