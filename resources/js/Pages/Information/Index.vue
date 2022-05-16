@@ -466,8 +466,10 @@ export default defineComponent({
                         _method: 'POST'
                     })
                 ).post(route_url,  {
-                    onFinish: () => this.toggleFormModal(false),
-                    onSuccess: () => this.onToast('green', 'Pemberitahuan informasi berhasil disimpan'),
+                    onSuccess: () => {
+                        this.onToast('green', 'Pemberitahuan informasi berhasil disimpan')
+                        this.toggleFormModal(false)
+                    },
                     onError: (errors) => { this.onErrorToast(errors) }
                 })
             }
@@ -479,8 +481,10 @@ export default defineComponent({
                         _method: 'PATCH'
                     })
                 ).post(route_url, {
-                    onFinish: () => this.toggleFormModal(false),
-                    onSuccess: () => this.onToast('green', 'Pemberitahuan informasi berhasil diedit'),
+                    onSuccess: () => {
+                        this.onToast('green', 'Pemberitahuan informasi berhasil diedit')
+                        this.toggleFormModal(false)
+                    },
                     onError: (errors) => { this.onErrorToast(errors) }
                 })
             }
@@ -489,8 +493,10 @@ export default defineComponent({
             this.$inertia.delete(this.route('app.information.destroy', {
                 id: this.informations.data[this.optionModal.index].id
             }), {
-                onFinish: () => this.toggleDeleteModal(false, null),
-                onSuccess: () => this.onToast('green', 'Pemberitahuan informasi berhasil dihapus')
+                onSuccess: () => {
+                    this.toggleDeleteModal(false, null)
+                    this.onToast('green', 'Pemberitahuan informasi berhasil dihapus')
+                }
             })
         },
         onUploadFileInput(e) {

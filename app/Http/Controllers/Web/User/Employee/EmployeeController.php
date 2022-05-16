@@ -66,7 +66,15 @@ class EmployeeController extends Controller
             'position' => $request->position,
             'profession' => $request->profession,
         ];
-        CreateData::dispatch($data);
+        $rules = [
+            'name' => 'required|max:100',
+            'email' => 'required|email',
+            'phone_number' => 'required|unique:employees,phone_number',
+            'branch' => 'nullable|max:100',
+            'position' => 'nullable|max:100',
+            'profession' => 'nullable|max:100',
+        ];
+        Validator::make($data, $rules)->validate();
         Employee::query()->create($data);
         return redirect()->back()->with('message', 'Data pegawai baru berhasil disimpan')->with('status', 'success');
     }
@@ -113,8 +121,16 @@ class EmployeeController extends Controller
             'position' => $request->position,
             'profession' => $request->profession,
         ];
+        $rules = [
+            'name' => 'required|max:100',
+            'email' => 'required|email',
+            'phone_number' => 'required|unique:employees,phone_number',
+            'branch' => 'nullable|max:100',
+            'position' => 'nullable|max:100',
+            'profession' => 'nullable|max:100',
+        ];
+        Validator::make($data, $rules)->validate();
         $employee = Employee::query()->find($id);
-        EditData::dispatch($data);
         $employee->update($data);
         return redirect()->back()->with('message', 'Data pegawai berhasil diedit')->with('status', 'success');
     }

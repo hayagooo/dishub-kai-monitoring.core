@@ -76,7 +76,13 @@ class TeamController extends Controller
             'goals' => $request->goals,
             'note' => $request->note,
         ];
-        CreateData::dispatch($data);
+        $rules = [
+            'name' => 'required|max:100',
+            'description' => 'nullable',
+            'goals' => 'nullable',
+            'note' => 'nullable',
+        ];
+        Validator::make($data, $rules)->validate();
         Team::query()->create($data);
         return redirect()->back()->with('message', 'Data team baru berhasil disimpan')->with('status', 'success');
 
@@ -125,6 +131,13 @@ class TeamController extends Controller
             'goals' => $request->goals,
             'note' => $request->note,
         ];
+        $rules = [
+            'name' => 'required|max:100',
+            'description' => 'nullable',
+            'goals' => 'nullable',
+            'note' => 'nullable',
+        ];
+        Validator::make($data, $rules)->validate();
         $teams = Team::query()->find($id);
         EditData::dispatch($data);
         $teams->update($data);

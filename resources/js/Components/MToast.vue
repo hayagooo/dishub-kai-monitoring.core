@@ -1,6 +1,6 @@
 <template>
     <div class="transition duration-300 ease-in-out" :class="{'inline-block': is_active, 'invisible': !is_active}">
-        <div class="fixed z-50 top-8 right-8">
+        <div class="fixed top-8 right-8" style="z-index: 100 !important;">
             <div id="toast-danger" class="flex items-center w-full max-w-xs p-4 mb-4 text-gray-500 bg-white rounded-lg shadow" role="alert">
                 <div class="inline-flex items-center justify-center flex-shrink-0 w-8 h-8 rounded-lg"
                     :class="`bg-${color}-100 text-${color}-500`">

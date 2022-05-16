@@ -3,6 +3,9 @@
         <m-toast :color="toast.color"
             :is_active="toast.active"
             :message="$page.props.flash.message"/>
+        <m-error-toast
+            :is_active="error.active"
+            :message="error.message"/>
         <template #header>
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
                 Manage Tim
@@ -372,6 +375,7 @@ import MUnderConstruction from '@/Components/MUnderConstruction'
 import { ArrowLeftIcon, DownloadIcon, PlusCircleIcon, FileIcon, UploadIcon, UserCheckIcon ,FileTextIcon, ImageIcon, TrashIcon, MoreVerticalIcon, EditIcon, EyeIcon } from '@zhuowenli/vue-feather-icons'
 import MPaginationData from '@/Components/MPaginationData'
 import MNoData from '@/Components/MNoData.vue'
+import MErrorToast from '@/Components/MErrorToast'
 import CKEditor from '@ckeditor/ckeditor5-vue'
 import MToast from '@/Components/MToast'
 import InlineEditor from '@ckeditor/ckeditor5-build-inline'
@@ -383,6 +387,7 @@ export default defineComponent({
         MUnderConstruction,
         MToast,
         ArrowLeftIcon,
+        MErrorToast,
         UploadIcon,
         DownloadIcon,
         UserCheckIcon,
@@ -464,13 +469,21 @@ export default defineComponent({
         this.setCheckboxModel()
     },
     methods: {
+        onErrorToast(errors) {
+            console.log(errors)
+            this.error.message = errors
+            this.error.active = true
+            setTimeout(() => {
+                this.error.active = false
+            }, 5000);
+        },
         onImport() {
             let fm = new FormData()
             fm.append('document', this.importModal.document)
             fm.append('is_reset', this.importModal.reset == true ? 1 : 0)
             this.$inertia.post(this.route('app.team.import-excel'), fm, {
-                onFinish: () => this.toggleImportModal(false),
                 onSuccess: () => {
+                    this.toggleImportModal(false)
                     this.importModal.document = null
                     this.importModal.reset = false
                     this.onToast('green', 'Import data tim berhasil')
@@ -539,7 +552,7 @@ export default defineComponent({
             })).get(this.route('app.team.index'), {
                 preserveState: true,
                 preserveScroll: true,
-                onFinish: () => this.toggleEmployeeModal(true, this.optionModal.index)
+                onSuccess: () => this.toggleEmployeeModal(true, this.optionModal.index)
             })
         },
         setCheckboxModel() {
@@ -583,7 +596,7 @@ export default defineComponent({
                     employeeId: this.employees[index].id
                 }, {
                     preserveScroll: true,
-                    onFinish: () => {
+                    onSuccess: () => {
                         this.input.reset()
                         this.onSearchEmployee()
                     }
@@ -596,7 +609,7 @@ export default defineComponent({
                 }, {
                     preserveState: true,
                     preserveScroll: true,
-                    onFinish: () => {
+                    onSuccess: () => {
                         this.input.reset()
                         this.onSearchEmployee()
                     }
@@ -639,8 +652,11 @@ export default defineComponent({
                     _method: 'POST'
                 })).post(this.route('app.team.store'),
                 {
-                    onFinish: () => this.toggleFormModal(false),
-                    onSuccess: (response) => this.onToast('green', 'Data tim berhasil disimpan')
+                    onSuccess: (response) => {
+                        this.onToast('green', 'Data tim berhasil disimpan')
+                        this.toggleFormModal(false)
+                    },
+                    onError: (errors) => this.onErrorToast(errors)
                 })
             } else {
                 this.form.transform(data => ({
@@ -648,8 +664,11 @@ export default defineComponent({
                     _method: 'PATCH'
                 })).post(this.route('app.team.update', { id: this.teams.data[this.optionModal.index].id }),
                 {
-                    onFinish: () => this.toggleFormModal(false),
-                    onSuccess: (response) => this.onToast('green', 'Data tim berhasil diedit')
+                    onSuccess: (response) => {
+                        this.onToast('green', 'Data tim berhasil diedit')
+                        this.toggleFormModal(false)
+                    },
+                    onError: (errors) => this.onErrorToast(errors)
                 })
             }
         },
@@ -682,14 +701,18 @@ export default defineComponent({
             if(this.optionModal.index != null) {
                 this.$inertia.delete(this.route('app.team.destroy', { id: this.teams.data[this.optionModal.index].id  }),
                 {
-                    onFinish: () => this.toggleDeleteModal(false),
-                    onSuccess: (response) => this.onToast('green', 'Data tim berhasil dihapus')
+                    onSuccess: (response) => {
+                        this.toggleDeleteModal(false),
+                        this.onToast('green', 'Data tim berhasil dihapus')
+                    }
                 })
             } else {
                 this.$inertia.delete(this.route('app.team.delete-all'),
                 {
-                    onFinish: () => this.toggleDeleteModal(false),
-                    onSuccess: (response) => this.onToast('green', 'Data tim berhasil dihapus')
+                    onSuccess: (response) => {
+                        this.toggleDeleteModal(false),
+                        this.onToast('green', 'Data tim berhasil dihapus')
+                    }
                 })
             }
         },

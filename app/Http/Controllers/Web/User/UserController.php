@@ -58,7 +58,14 @@ class UserController extends Controller
             'password' => $request->password,
             'level' => $request->level,
         ];
-        CreateData::dispatch($data);
+        $rules = [
+            'name' => 'required',
+            'email' => 'required|email|unique:users,email',
+            'code' => 'required',
+            'level' => 'required',
+            'password' => 'nullable|min:8'
+        ];
+        Validator::make($data, $rules)->validate();
         User::query()->create($data);
         return redirect()->back()->with('message', 'Data pengguna baru berhasil disimpan')->with('status', 'success');
     }
@@ -104,10 +111,10 @@ class UserController extends Controller
         ];
         $rules = [
             'name' => 'required',
-            'email' => 'required|email',
+            'email' => 'required|email|unique:users,email',
             'code' => 'required',
             'level' => 'required',
-            'password' => 'nullable|max:8'
+            'password' => 'nullable|min:8'
         ];
         Validator::make($data, $rules)->validate();
         if($request->password != null && $request->password == '') {

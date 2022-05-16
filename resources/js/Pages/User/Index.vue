@@ -3,6 +3,9 @@
         <m-toast :color="toast.color"
             :is_active="toast.active"
             :message="$page.props.flash.message"/>
+        <m-error-toast
+            :is_active="error.active"
+            :message="error.message"/>
         <template #header>
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
                 Manage Pengguna
@@ -240,6 +243,7 @@ import AppLayout from '@/Layouts/AppLayout.vue'
 import MToast from '@/Components/MToast'
 import MUnderConstruction from '@/Components/MUnderConstruction'
 import { ArrowLeftIcon, PlusCircleIcon, FileTextIcon, ImageIcon, TrashIcon, MoreVerticalIcon, EditIcon, EyeIcon } from '@zhuowenli/vue-feather-icons'
+import MErrorToast from '@/Components/MErrorToast'
 import MNoData from '@/Components/MNoData.vue'
 import MPaginationData from '@/Components/MPaginationData'
 
@@ -249,6 +253,7 @@ export default defineComponent({
         AppLayout,
         MToast,
         MUnderConstruction,
+        MErrorToast,
         ArrowLeftIcon,
         EditIcon,
         MNoData,
@@ -272,6 +277,10 @@ export default defineComponent({
             ],
             toast: {
                 color: 'purple',
+                active: false,
+                message: '',
+            },
+            error: {
                 active: false,
                 message: '',
             },
@@ -312,6 +321,14 @@ export default defineComponent({
         }, 5000);
     },
     methods: {
+        onErrorToast(errors) {
+            console.log(errors)
+            this.error.message = errors
+            this.error.active = true
+            setTimeout(() => {
+                this.error.active = false
+            }, 5000);
+        },
         goHome() {
             this.$inertia.get(this.route('dashboard'))
         },
@@ -347,8 +364,11 @@ export default defineComponent({
                     _method: 'POST'
                 })).post(this.route('app.user.store'),
                 {
-                    onFinish: () => this.toggleFormModal(false),
-                    onSuccess: () => this.onToast('green', 'Pengguna berhasil dihapus')
+                    onSuccess: () => {
+                        this.toggleFormModal(false)
+                        this.onToast('green', 'Pengguna berhasil dihapus')
+                    },
+                    onError: (errors) => this.onErrorToast(errors)
                 })
             } else {
                 this.form.transform(data => ({
@@ -356,8 +376,11 @@ export default defineComponent({
                     _method: 'PATCH'
                 })).post(this.route('app.user.update', { id: this.users.data[this.optionModal.index].id }),
                 {
-                    onFinish: () => this.toggleFormModal(false),
-                    onSuccess: () => this.onToast('green', 'Pengguna berhasil dihapus')
+                    onSuccess: () => {
+                        this.toggleFormModal(false)
+                        this.onToast('green', 'Pengguna berhasil dihapus')
+                    },
+                    onError: (errors) => this.onErrorToast(errors)
                 })
             }
         },
@@ -390,8 +413,10 @@ export default defineComponent({
         deleteData() {
             this.$inertia.delete(this.route('app.user.destroy', { id: this.users.data[this.optionModal.index].id  }),
             {
-                onFinish: () => this.toggleDeleteModal(false),
-                onSuccess: () => this.onToast('green', 'Pengguna berhasil dihapus')
+                onSuccess: () => {
+                    this.onToast('green', 'Pengguna berhasil dihapus')
+                    this.toggleDeleteModal(false)
+                }
             })
         },
         toggleDeleteModal(status, index = null) {

@@ -3,6 +3,9 @@
         <m-toast :color="toast.color"
             :is_active="toast.active"
             :message="$page.props.flash.message"/>
+        <m-error-toast
+            :is_active="error.active"
+            :message="error.message"/>
         <template #header>
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
                 Manage Pegawai
@@ -349,6 +352,7 @@ import { defineComponent } from 'vue'
 import AppLayout from '@/Layouts/AppLayout.vue'
 import MUnderConstruction from '@/Components/MUnderConstruction'
 import { ArrowLeftIcon, UploadIcon, DownloadIcon, PlusCircleIcon, FileIcon, FileTextIcon, ImageIcon, TrashIcon, MoreVerticalIcon, EditIcon, EyeIcon } from '@zhuowenli/vue-feather-icons'
+import MErrorToast from '@/Components/MErrorToast'
 import MPaginationData from '@/Components/MPaginationData'
 import MToast from '@/Components/MToast'
 import MNoData from '@/Components/MNoData.vue'
@@ -363,6 +367,7 @@ export default defineComponent({
         DownloadIcon,
         MUnderConstruction,
         ArrowLeftIcon,
+        MErrorToast,
         EditIcon,
         PlusCircleIcon,
         MPaginationData,
@@ -390,6 +395,10 @@ export default defineComponent({
             },
             toast: {
                 color: 'purple',
+                active: false,
+                message: '',
+            },
+            error: {
                 active: false,
                 message: '',
             },
@@ -422,13 +431,21 @@ export default defineComponent({
         }
     },
     methods: {
+        onErrorToast(errors) {
+            console.log(errors)
+            this.error.message = errors
+            this.error.active = true
+            setTimeout(() => {
+                this.error.active = false
+            }, 5000);
+        },
         onImport() {
             let fm = new FormData()
             fm.append('document', this.importModal.document)
             fm.append('is_reset', this.importModal.reset == true ? 1 : 0)
             this.$inertia.post(this.route('app.employee.import-excel'), fm, {
-                onFinish: () => this.toggleImportModal(false),
                 onSuccess: () => {
+                    this.toggleImportModal(false)
                     this.importModal.document = null
                     this.importModal.reset = false
                     this.onToast('green', 'Import data pegawai berhasil')
@@ -511,8 +528,11 @@ export default defineComponent({
                     _method: 'POST'
                 })).post(this.route('app.employee.store'),
                 {
-                    onFinish: () => this.toggleFormModal(false),
-                    onSuccess: (response) => this.onToast('green', 'Data pegawai berhasil disimpan')
+                    onSuccess: (response) => {
+                        this.toggleFormModal(false),
+                        this.onToast('green', 'Data pegawai berhasil disimpan')
+                    },
+                    onError: (errors) => this.onErrorToast(errors)
                 })
             } else {
                 this.form.transform(data => ({
@@ -520,8 +540,11 @@ export default defineComponent({
                     _method: 'PATCH'
                 })).post(this.route('app.employee.update', { id: this.employees.data[this.optionModal.index].id }),
                 {
-                    onFinish: () => this.toggleFormModal(false),
-                    onSuccess: (response) => this.onToast('green', 'Data pegawai berhasil diedit')
+                    onSuccess: (response) => {
+                        this.onToast('green', 'Data pegawai berhasil diedit')
+                        this.toggleFormModal(false)
+                    },
+                    onError: (errors) => this.onErrorToast(errors)
                 })
             }
         },
@@ -529,14 +552,18 @@ export default defineComponent({
             if(this.optionModal.index != null) {
                 this.$inertia.delete(this.route('app.employee.destroy', { id: this.employees.data[this.optionModal.index].id  }),
                 {
-                    onFinish: () => this.toggleDeleteModal(false),
-                    onSuccess: (response) => this.onToast('green', 'Data pegawai berhasil dihapus')
+                    onSuccess: (response) => {
+                        this.toggleDeleteModal(false),
+                        this.onToast('green', 'Data pegawai berhasil dihapus')
+                    }
                 })
             } else {
                 this.$inertia.delete(this.route('app.employee.delete-all'),
                 {
-                    onFinish: () => this.toggleDeleteModal(false),
-                    onSuccess: (response) => this.onToast('green', 'Data pegawai berhasil dihapus')
+                    onSuccess: (response) => {
+                        this.toggleDeleteModal(false),
+                        this.onToast('green', 'Data pegawai berhasil dihapus')
+                    }
                 })
             }
         },

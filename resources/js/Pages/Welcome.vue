@@ -26,15 +26,15 @@
                     </div>
                     <div class="my-8 col-span-2 lg:col-span-1">
                         <div class="flex flex-nowrap">
-                            <img src="https://images.unsplash.com/photo-1622599656962-59ea819860aa?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=326&q=80"
+                            <img src="/images/wallpaper3.jpg"
                                 alt="Kereta Api Indonesia"
-                                class="w-6/12 rounded-xl mr-2">
-                            <img src="https://images.unsplash.com/photo-1634553492003-ceecfb2323bc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
+                                class="w-6/12 object-cover object-center rounded-xl mr-2">
+                            <img src="/images/wallpaper1.jpg"
                                 alt="Kereta Api Indonesia"
-                                class="w-6/12 rounded-xl mx-2">
-                            <img src="https://images.unsplash.com/photo-1628453297537-d3f3819691f1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=327&q=80"
+                                class="w-6/12 object-cover object-center rounded-xl mx-2">
+                            <img src="/images/wallpaper2.jpg"
                                 alt="Kereta Api Indonesia"
-                                class="w-6/12 rounded-xl mx-2">
+                                class="w-6/12 object-cover object-center rounded-xl mx-2">
                         </div>
                     </div>
                 </div>

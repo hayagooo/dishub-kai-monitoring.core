@@ -60,7 +60,7 @@
                                                         <div class="h-20 w-20 inline-block relative rounded-lg overflow-hidden">
                                                             <div class="h-20 w-20 inline-block relative rounded-lg overflow-hidden">
                                                                 <img v-if="form.icon == null" src="@/Assets/defaults/category.png" class="h-20 w-auto inline-block" alt="Default Icon">
-                                                                <img v-else :src="form.preview" class="h-20 w-auto inline-block" alt="Default Icon">
+                                                                <img v-else :src="form.preview" class="h-20 w-20 rounded-lg object-cover object-center inline-block" alt="Default Icon">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -339,8 +339,8 @@ export default defineComponent({
                     _method: 'POST'
                 })).post(this.route('app.category.store'),
                 {
-                    onFinish: () => this.toggleFormModal(false),
                     onSuccess: (response) => {
+                        this.toggleFormModal(false)
                         this.onToast(response)
                         this.setNullForm()
                     },
@@ -352,9 +352,9 @@ export default defineComponent({
                     _method: 'PATCH'
                 })).post(this.route('app.category.update', { id: this.categories[this.optionModal.index].id }),
                 {
-                    onFinish: () => this.toggleFormModal(false),
                     onSuccess: (response) => {
                         this.onToast(response)
+                        this.toggleFormModal(false)
                         this.setNullForm()
                     },
                     onError: (errors) => { this.onErrorToast(errors) }
@@ -364,8 +364,8 @@ export default defineComponent({
         deleteData() {
             this.$inertia.delete(this.route('app.category.destroy', { id: this.categories[this.optionModal.index].id  }),
             {
-                onFinish: () => this.toggleDeleteModal(false),
                 onSuccess: (response) => {
+                    this.toggleDeleteModal(false)
                     this.onToast(response)
                     this.setNullForm()
                 }

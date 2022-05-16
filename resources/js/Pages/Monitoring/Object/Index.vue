@@ -96,7 +96,7 @@
                                                                     Browse File<br>
                                                                     <small>Rekomendasi ukuran : 48 x 48 pixel</small>
                                                                 </p>
-                                                                <p v-else>{{ truncating(formModal.mode == 'create' ? form.icon.name : form.icon, 50, '...') }}</p>
+                                                                <p v-else>{{ truncating(formModal.mode == 'create' ? form.icon.name : form.icon.name != null && form.icon.name != undefined ? form.icon.name : form.icon, 50, '...') }}</p>
                                                             </div>
                                                             <small> {{ formModal.mode == 'create' ? 'Abaikan untuk membuat icon default' : 'Abaikan untuk tidak mengganti icon' }} </small>
                                                         </div>
@@ -351,8 +351,8 @@ export default defineComponent({
                     ... data,
                     _method: 'POST'
                 })).post(this.route('app.object.store'), {
-                    onFinish: () => this.toggleFormModal(false),
                     onSuccess: (response) => {
+                        this.toggleFormModal(false)
                         this.onToast(response)
                     },
                     onError: (errors) => { this.onErrorToast(errors) }
@@ -364,8 +364,8 @@ export default defineComponent({
                 })).post(this.route('app.object.update', {
                     id: this.objects[this.optionModal.index].id
                 }), {
-                    onFinish: () => this.toggleFormModal(false),
                     onSuccess: (response) => {
+                        this.toggleFormModal(false)
                         this.onToast(response)
                     },
                     onError: (errors) => { this.onErrorToast(errors) }
@@ -377,8 +377,8 @@ export default defineComponent({
                 id: this.objects[this.optionModal.index].id
             }),
             {
-                onFinish: () => this.toggleDeleteModal(false),
                 onSuccess: (response) => {
+                    this.toggleDeleteModal(false)
                     this.onToast(response)
                 }
             })
