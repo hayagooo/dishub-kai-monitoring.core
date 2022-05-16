@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\EmployeeController;
+use App\Http\Controllers\Api\Information\InformationController;
 use App\Http\Controllers\Api\Monitoring\CategoryController;
 use App\Http\Controllers\Api\Monitoring\ImageController;
 use App\Http\Controllers\Api\Monitoring\InputController;
@@ -44,6 +45,8 @@ Route::name('api.')->group(function() {
         Route::resource('/user', UserController::class);
         Route::post('/input-value', [InputValueController::class, 'store'])->name('value.store');
         Route::resource('/team', TeamController::class);
+        Route::resource('/information', InformationController::class);
+        Route::post('/information/image/{id}/delete', [InformationController::class, 'deleteImage']);
         Route::post('/team/{id}/add/employee', [TeamController::class, 'addEmployee'])->name('team.add.employee');
         Route::post('/team/{id}/remove/employee', [TeamController::class, 'removeEmployee'])->name('team.remove.employee');
         Route::post('/category-monitoring/{id}/add/object', [CategoryController::class, 'addObject']);
