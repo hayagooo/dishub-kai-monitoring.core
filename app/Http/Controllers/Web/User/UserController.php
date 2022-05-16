@@ -110,15 +110,14 @@ class UserController extends Controller
             'password' => 'nullable|max:8'
         ];
         Validator::make($data, $rules)->validate();
-        User::query()->where('id', $id)->update($data);
-        if($request->password == null || $request->password == '') {
-            unset($data['password']);
-            unset($rules['password']);
-        } else {
+        if($request->password != null && $request->password == '') {
             $user = User::query()->find($id);
             $user->password = $data['password'];
             $user->save();
         }
+        unset($data['password']);
+        unset($rules['password']);
+        User::query()->where('id', $id)->update($data);
         return redirect()->back()->with('message', 'Data pengguna berhasil diedit')->with('status', 'success');
     }
 

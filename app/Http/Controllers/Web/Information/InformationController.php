@@ -59,7 +59,7 @@ class InformationController extends Controller
             'title' => 'required',
             'link' => 'nullable',
             'description' => 'nullable',
-            'image' => 'nullable|image|mimes:jpg,png,jpeg',
+            'image' => 'nullable|image|max:2048',
             'document' => 'nullable|mimes:pdf,ppt,pptx,doc,docx,xls,xlsx'
         ];
         Validator::make($data, $rules)->validate();

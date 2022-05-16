@@ -3,6 +3,9 @@
         <m-toast :color="toast.color"
             :is_active="toast.active"
             :message="$page.props.flash.message"/>
+        <m-error-toast
+            :is_active="error.active"
+            :message="error.message"/>
         <template #header>
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
                 Dashboard
@@ -286,6 +289,7 @@ import { defineComponent } from 'vue'
 import { PlusCircleIcon, ArrowRightIcon, ImageIcon, XCircleIcon, MoreVerticalIcon, EyeIcon, EditIcon, TrashIcon } from '@zhuowenli/vue-feather-icons'
 import MToast from '@/Components/MToast'
 import AppLayout from '@/Layouts/AppLayout.vue'
+import MErrorToast from '@/Components/MErrorToast'
 import moment from 'moment'
 import MNoData from '@/Components/MNoData.vue'
 import CKEditor from '@ckeditor/ckeditor5-vue'
@@ -305,6 +309,10 @@ export default defineComponent({
                 show: false,
                 mode: 'create',
                 index: null,
+            },
+            error: {
+                active: false,
+                message: '',
             },
             deleteModal: {
                 show: false,
@@ -340,6 +348,7 @@ export default defineComponent({
     components: {
         AppLayout,
         ArrowRightIcon,
+        MErrorToast,
         XCircleIcon,
         MoreVerticalIcon,
         EyeIcon,
@@ -422,6 +431,14 @@ export default defineComponent({
         clickFile() {
             document.getElementById('image-info').click()
         },
+        onErrorToast(errors) {
+            console.log(errors)
+            this.error.message = errors
+            this.error.active = true
+            setTimeout(() => {
+                this.error.active = false
+            }, 5000);
+        },
         changeFile(e) {
             let file = e.target.files[0]
             this.form.information.image = file
@@ -453,7 +470,8 @@ export default defineComponent({
                     _method: 'POST'
                 })).post(route_url,  {
                     onFinish: () => this.toggleFormModal(false),
-                    onSuccess: () => this.onToast('green', 'Pemberitahuan informasi berhasil disimpan')
+                    onSuccess: () => this.onToast('green', 'Pemberitahuan informasi berhasil disimpan'),
+                    onError: (errors) => { this.onErrorToast(errors) }
                 })
             }
             else {
@@ -465,7 +483,8 @@ export default defineComponent({
                     })
                 ).post(route_url, {
                     onFinish: () => this.toggleFormModal(false),
-                    onSuccess: () => this.onToast('green', 'Pemberitahuan informasi berhasil diedit')
+                    onSuccess: () => this.onToast('green', 'Pemberitahuan informasi berhasil diedit'),
+                    onError: (errors) => { this.onErrorToast(errors) }
                 })
             }
         },

@@ -3,6 +3,9 @@
         <m-toast :color="toast.color"
             :is_active="toast.active"
             :message="$page.props.flash.message"/>
+        <m-error-toast
+            :is_active="error.active"
+            :message="error.message"/>
         <template #header>
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
                 Informasi & Pemberitahuan
@@ -258,6 +261,7 @@
 import { defineComponent } from 'vue'
 import { PlusCircleIcon, ArrowRightIcon, ArrowLeftIcon, ImageIcon, XCircleIcon, MoreVerticalIcon, EyeIcon, EditIcon, TrashIcon } from '@zhuowenli/vue-feather-icons'
 import MToast from '@/Components/MToast'
+import MErrorToast from '@/Components/MErrorToast'
 import AppLayout from '@/Layouts/AppLayout.vue'
 import moment from 'moment'
 import MPaginationData from '@/Components/MPaginationData'
@@ -280,6 +284,10 @@ export default defineComponent({
             editor: InlineEditor,
             toast: {
                 color: 'purple',
+                active: false,
+                message: '',
+            },
+            error: {
                 active: false,
                 message: '',
             },
@@ -327,6 +335,7 @@ export default defineComponent({
         XCircleIcon,
         MoreVerticalIcon,
         EyeIcon,
+        MErrorToast,
         EditIcon,
         TrashIcon,
         ImageIcon,
@@ -364,6 +373,14 @@ export default defineComponent({
             .replace(/\s+/g, '-')
             .replace(/\-\-+/g, '-')
             .replace(/[^\w\-]+/g, '');
+        },
+        onErrorToast(errors) {
+            console.log(errors)
+            this.error.message = errors
+            this.error.active = true
+            setTimeout(() => {
+                this.error.active = false
+            }, 5000);
         },
         showTimestamps(timestamp) {
             return moment(timestamp).format('dddd, DD MMMM YYYY')
@@ -450,7 +467,8 @@ export default defineComponent({
                     })
                 ).post(route_url,  {
                     onFinish: () => this.toggleFormModal(false),
-                    onSuccess: () => this.onToast('green', 'Pemberitahuan informasi berhasil disimpan')
+                    onSuccess: () => this.onToast('green', 'Pemberitahuan informasi berhasil disimpan'),
+                    onError: (errors) => { this.onErrorToast(errors) }
                 })
             }
             else {
@@ -462,7 +480,8 @@ export default defineComponent({
                     })
                 ).post(route_url, {
                     onFinish: () => this.toggleFormModal(false),
-                    onSuccess: () => this.onToast('green', 'Pemberitahuan informasi berhasil diedit')
+                    onSuccess: () => this.onToast('green', 'Pemberitahuan informasi berhasil diedit'),
+                    onError: (errors) => { this.onErrorToast(errors) }
                 })
             }
         },
