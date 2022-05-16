@@ -75,7 +75,11 @@
                                                             <label for="icon-category">Icon Kategori</label>
                                                         </div>
                                                         <div v-if="form.icon != null">
-                                                            <p role="button" @click="onDeleteImage()" class="text-red-600">Hapus Icon</p>
+                                                            <div class="text-right">
+                                                                <button type="button" @click="onDeleteImage()" class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 d-inline-block focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 text-right">
+                                                                    Hapus icon
+                                                                </button>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                     <input @change="changeFile" name="icon" id="icon-category" type="file" class="hidden" accept=".jpg, .png, .jpeg">
@@ -84,7 +88,7 @@
                                                             <image-icon size="3x" class="inline-block text-purple-600"/>
                                                         </div>
                                                         <p v-if="form.icon == null" class="mt-3 font-semibold text-gray-600">
-                                                            Browse File<br>
+                                                            Tambahkan Gambar<br>
                                                             <small>Rekomendasi ukuran : 48 x 48 pixel</small>
                                                         </p>
                                                         <p v-else>{{ truncating(formModal.mode == 'create' ? form.icon.name : form.icon.name != null && form.icon.name != undefined ? form.icon.name : form.icon, 50, '...') }}</p>

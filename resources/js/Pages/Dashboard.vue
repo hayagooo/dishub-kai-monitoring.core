@@ -49,7 +49,7 @@
                                                                         <image-icon size="3x" class="inline-block text-purple-600"/>
                                                                     </div>
                                                                     <p v-if="form.information.image == null" class="mt-3 font-semibold text-gray-600">
-                                                                        Browse File
+                                                                        Tambahkan Gambar
                                                                     </p>
                                                                 </div>
                                                                 <small> {{ formModal.mode == 'create' ? 'Abaikan untuk membuat gambar default' : 'Abaikan untuk tidak mengganti gambar' }} </small>
@@ -61,7 +61,9 @@
                                                                         <small> Klik gambar untuk mengganti gambar </small>
                                                                     </div>
                                                                     <div class="text-right text-red-500">
-                                                                        <span @click="removeImageInfo()" role="button"><x-circle-icon class="inline-block" size="20"/> Hapus gambar</span>
+                                                                        <button type="button" @click="removeImageInfo()" class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 d-inline-block focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 text-right">
+                                                                            Hapus gambar
+                                                                        </button>
                                                                     </div>
                                                                 </div>
                                                             </div>

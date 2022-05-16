@@ -57,7 +57,7 @@ class InformationController extends Controller
         ];
         $rules = [
             'title' => 'required',
-            'link' => 'nullable',
+            'link' => 'nullable|url',
             'description' => 'nullable',
             'image' => 'nullable|image|max:2048',
             'document' => 'nullable|mimes:pdf,ppt,pptx,doc,docx,xls,xlsx'
@@ -131,7 +131,7 @@ class InformationController extends Controller
         ];
         $rules = [
             'title' => 'required',
-            'link' => 'nullable',
+            'link' => 'nullable|url',
             'description' => 'nullable',
             'image' => 'nullable|image|mimes:jpg,png,jpeg',
             'document' => 'nullable|mimes:pdf,ppt,pptx,doc,docx,xls,xlsx'

@@ -3,6 +3,9 @@
         <m-toast :color="toast.color"
             :is_active="toast.active"
             :message="toast.message"/>
+        <m-error-toast
+            :is_active="error.active"
+            :message="error.message"/>
         <template #header>
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
                 Monitoring
@@ -144,10 +147,12 @@
                                                     <img :src="item.preview" class="object-cover object-center w-full h-48 rounded-lg" :alt="item.preview">
                                                     <div class="grid grid-cols-2 mb-3">
                                                         <div class="text-gray-600">
-                                                            <small>Rekomendasi ukuran : 1920 x 1080 pixel</small>
+                                                            <small>Rekomendasi ukuran : 1024 x 256 pixel</small>
                                                         </div>
-                                                        <div role="button" @click="removeImage(index, item)" class="text-red-600 text-right">
-                                                            <p>Hapus gambar</p>
+                                                        <div class="text-right mt-2">
+                                                            <button type="button" @click="removeImage(index, item)" class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 d-inline-block focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 text-right">
+                                                                Hapus gambar
+                                                            </button>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -155,7 +160,7 @@
                                                     <label :for="`input-label-${index}`" class="block mb-2 text-sm font-medium text-gray-900">Label</label>
                                                     <div class="flex gap-x-4">
                                                         <input maxlength="100" :id="`input-label-${index}`" @focus="focusIn(index)" @blur="focusOut()" placeholder="e.g Kondisi Penambat" type="text" v-model="item.label" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-purple-500 block w-full p-2.5">
-                                                        <input class="hidden" :id="`input-image-${index}`" type="file" @change="changeFileInput($event, index)">
+                                                        <input accept=".png,.jpg,.jpeg" class="hidden" :id="`input-image-${index}`" type="file" @change="changeFileInput($event, index)">
                                                         <button @click="clickFileInput(index)" @focus="focusIn(index)" @blur="focusOut()" type="button" class="self-center py-2.5 px-5 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200">
                                                             <image-icon size="16"/>
                                                         </button>
@@ -261,8 +266,10 @@
                                                 <div class="my-3" v-if="item.preview != null && item.image != null">
                                                     <img :src="item.preview" class="object-cover object-center w-full h-auto rounded-lg" :alt="item.preview">
                                                     <div class="grid grid-cols-1 mb-3">
-                                                        <div role="button" @click="removeImage(index, item)" class="text-red-600 text-right">
-                                                            <p>Hapus gambar</p>
+                                                        <div class="text-right mt-2">
+                                                            <button type="button" @click="removeImage(index, item)" class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 d-inline-block focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 text-right">
+                                                                Hapus gambar
+                                                            </button>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -407,6 +414,7 @@ import axios from 'axios'
 import CKEditor from '@ckeditor/ckeditor5-vue'
 import InlineEditor from '@ckeditor/ckeditor5-build-inline'
 import MUnderConstruction from '@/Components/MUnderConstruction'
+import MErrorToast from '@/Components/MErrorToast'
 import { ArrowLeftIcon, DivideIcon, ListIcon, ChevronUpIcon, CalendarIcon, ClockIcon, UploadIcon, CheckCircleIcon, CheckSquareIcon, PlusCircleIcon, FileIcon, AlignLeftIcon, YoutubeIcon, ItalicIcon, TypeIcon, FileTextIcon, ImageIcon, TrashIcon, MoreVerticalIcon, EditIcon, EyeIcon } from '@zhuowenli/vue-feather-icons'
 import MNoData from '@/Components/MNoData.vue'
 
@@ -416,6 +424,7 @@ export default defineComponent({
         FileIcon,
         YoutubeIcon,
         MoreVerticalIcon,
+        MErrorToast,
         ItalicIcon,
         EyeIcon,
         ChevronUpIcon,
@@ -483,8 +492,14 @@ export default defineComponent({
             focus_dropdown: null,
             focus_option: null,
             form_inputs: [],
+            error: {
+                active: false,
+                message: '',
+            },
             loading_button: false,
             show_back: false,
+            errors: [],
+            exceptions: [],
             editor: InlineEditor,
             optionModal: {
                 show: false,
@@ -599,19 +614,18 @@ export default defineComponent({
             }, 250);
         },
         onCheckValue(str, suffix) {
-            if(str == null || str == '' || str == undefined || str == 'null') return suffix
+            if(str == null || str == '' || str == undefined || str == 'null' || str == undefined) return suffix
             else return str
         },
         onSubmitData() {
-            this.loading_button = true
-            this.form_inputs.forEach((value, index) => {
+            this.form_inputs.map((value, index) => {
                 let fm = new FormData()
                 let url
                 fm.append('category_id', this.datas.category.id)
                 if(this.datas.object != undefined && this.datas.object != null) fm.append('object_id', this.datas.object.id)
                 if(this.datas.monitoring != undefined && this.datas.monitoring != null) fm.append('monitoring_id', this.datas.monitoring.id)
                 fm.append('type', this.onCheckValue(value.type_input, '-'))
-                fm.append('link', this.onCheckValue(value.link, '#'))
+                fm.append('link', this.onCheckValue(value.link, ''))
                 fm.append('label', this.onCheckValue(value.label, '-'))
                 fm.append('placeholder', this.onCheckValue(value.placeholder, ''))
                 fm.append('description', this.onCheckValue(value.description, ''))
@@ -634,16 +648,27 @@ export default defineComponent({
                     }
                 }).then((response) => {
                     if(index == this.form_inputs.length - 1) {
-                        this.loading_button = false
                         this.onToast('green', 'Formulir Monitoring Berhasil Disimpan')
-                        setTimeout(() => {
-                            window.location.reload()
-                        }, 1000);
+                        this.loading_button = false
+                        // setTimeout(() => {
+                        //     window.location.reload()
+                        // }, 2000);
+                    }
+                }).catch((errors) => {
+                    if(errors.response.data.errors.image != undefined && errors.response.data.errors.image != null && errors.response.data.errors.image.length > 0) {
+                        this.errors.push(...errors.response.data.errors.image)
+                    }
+                    if(errors.response.data.errors.link != undefined && errors.response.data.errors.link != null && errors.response.data.errors.link.length > 0) {
+                        this.errors.push(...errors.response.data.errors.link)
+                    }
+                    this.exceptions = [...new Set(this.errors)]
+                    if(this.exceptions.length > 0) {
+                        this.onErrorToast(this.exceptions)
                     }
                 })
             })
             setTimeout(() => {
-                this.goInput('changed')
+                // this.goInput('changed')
             }, 1000);
         },
         onToast(color, message) {
@@ -652,6 +677,14 @@ export default defineComponent({
             this.toast.color = color
             setTimeout(() => {
                 this.toast.active = false
+            }, 5000);
+        },
+        onErrorToast(errors) {
+            console.log(errors)
+            this.error.message = errors
+            this.error.active = true
+            setTimeout(() => {
+                this.error.active = false
             }, 5000);
         },
         goInput(feedback) {
@@ -746,7 +779,6 @@ export default defineComponent({
             let type_input = ''
             if(mode == 'input') type_input = 'text'
             else type_input = mode
-
             let data = {
                 id: '',
                 mode: mode,

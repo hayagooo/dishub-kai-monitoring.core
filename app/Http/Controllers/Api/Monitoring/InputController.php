@@ -45,9 +45,15 @@ class InputController extends Controller
     {
         $rules = [
             'monitoring_category_id' => 'required',
+            'monitoring_object_id' => 'nullable',
+            'monitoring_id' => 'nullable',
             'label' => 'required',
-            'image' => 'image|mimes:jpeg,png,jpg',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
             'type' => 'required',
+            'is_required' => 'required',
+            'link' => 'nullable|url',
+            'placeholder' => 'nullable',
+            'description' => 'nullable',
         ];
         $data = [
             'monitoring_category_id' => $request->category_id,
@@ -61,6 +67,7 @@ class InputController extends Controller
             'placeholder' => $request->placeholder,
             'description' => $request->description,
         ];
+        Validator::make($data, $rules)->validate();
         if($request->hasFile('image')) {
             $file = $request->file('image');
             $fileName = 'input-'.Str::slug($request->label).'-'.time().'-'.uniqid().'.'.$file->extension();
@@ -72,12 +79,6 @@ class InputController extends Controller
             })->save(public_path('/monitoring/input/'.$fileName));
             $data['image'] = $fileName;
         }
-        // $validator = Validator::make($data, $rules);
-        // if($validator->fails()) {
-        //     return $this->jsonResponse([
-        //         'messages' => $validator->errors(),
-        //     ], 400, 'FAILED');
-        // }
         $input = Input::query()->create($data);
         $decodeOptions = json_decode($request->options);
         if(count($decodeOptions) > 0) {
@@ -115,9 +116,15 @@ class InputController extends Controller
     {
         $rules = [
             'monitoring_category_id' => 'required',
+            'monitoring_object_id' => 'nullable',
+            'monitoring_id' => 'nullable',
             'label' => 'required',
-            'image' => 'image|mimes:jpeg,png,jpg',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
             'type' => 'required',
+            'is_required' => 'required',
+            'link' => 'nullable|url',
+            'placeholder' => 'nullable',
+            'description' => 'nullable',
         ];
         $data = [
             'monitoring_category_id' => $request->category_id,
@@ -131,6 +138,7 @@ class InputController extends Controller
             'placeholder' => $request->placeholder,
             'description' => $request->description,
         ];
+        Validator::make($data, $rules)->validate();
         $input = Input::query()->find($id);
         if($request->hasFile('image')) {
             $file = $request->file('image');
@@ -149,12 +157,6 @@ class InputController extends Controller
         } else {
             unset($data['image']);
         }
-        $validator = Validator::make($data, $rules);
-        // if($validator->fails()) {
-        //     return $this->jsonResponse([
-        //         'messages' => $validator->errors(),
-        //     ], 400, 'FAILED');
-        // }
         Input::query()->where('id', $id)->update($data);
         $decodeOptions = json_decode($request->options);
         if(count($decodeOptions) > 0) {
