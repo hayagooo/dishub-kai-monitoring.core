@@ -3,6 +3,9 @@
         <m-toast :color="toast.color"
             :is_active="toast.active"
             :message="toast.message"/>
+        <m-error-toast
+            :is_active="error.active"
+            :message="error.message"/>
         <template #header>
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
                 Monitoring
@@ -751,22 +754,26 @@
                                                                 <p role="button" @click="clickFile()" class="text-green-600">Ganti Gambar</p>
                                                             </div>
                                                         </div>
-                                                        <input required @change="changeFile($event)" name="icon" id="image-file" type="file" class="hidden" accept=".jpg, .png, .jpeg">
+                                                        <input @change="changeFile($event)" name="icon" id="image-file" type="file" class="hidden" accept=".jpg, .png, .jpeg">
                                                         <div v-if="formImage.image == null" @click="clickFile()" role="button" class="w-full text-center p-6 border-2 border-dashed border-purple-500 rounded-lg">
                                                             <div class="w-full">
                                                                 <image-icon size="3x" class="inline-block text-purple-600"/>
                                                             </div>
                                                             <p class="mt-3 font-semibold text-gray-600">
-                                                                Browse File <br>
+                                                                Tambahkan Gambar <br>
+                                                                <small>Maksimal 2mb</small>
                                                             </p>
                                                         </div>
                                                         <div v-else>
                                                             <img :src="formImage.preview" class="w-full h-40 object-cover rounded-lg object-center inline-block" alt="Default Icon">
+                                                            <p class="mt-3 font-semibold text-gray-600">
+                                                                <small>Maksimal 2mb</small>
+                                                            </p>
                                                         </div>
                                                     </div>
                                                     <div class="mt-6">
                                                         <label for="name-image">Deskripsi Gambar</label>
-                                                        <textarea required name="description" id="description-image" v-model="formImage.description" type="text" placeholder="Masukkan deskripsi" class="mt-3 focus:ring-purple-500 focus:border-purple-500 block w-full pl-4 sm:text-sm border-gray-300 rounded-md"></textarea>
+                                                        <textarea name="description" id="description-image" v-model="formImage.description" type="text" placeholder="Masukkan deskripsi" class="mt-3 focus:ring-purple-500 focus:border-purple-500 block w-full pl-4 sm:text-sm border-gray-300 rounded-md"></textarea>
                                                     </div>
                                                 </div>
                                                 <div class="flex gap-x-4 items-center flex-row-reverse p-6 space-x-2 rounded-b border-t border-gray-200 dark:border-gray-600">
@@ -851,6 +858,7 @@
 import { defineComponent } from 'vue'
 import axios from 'axios'
 import CKEditor from '@ckeditor/ckeditor5-vue'
+import MErrorToast from '@/Components/MErrorToast'
 import InlineEditor from '@ckeditor/ckeditor5-build-inline'
 import AppLayout from '@/Layouts/AppLayout.vue'
 import MUnderConstruction from '@/Components/MUnderConstruction'
@@ -865,6 +873,7 @@ export default defineComponent({
     components: {
         MoreVerticalIcon,
         FileTextIcon,
+        MErrorToast,
         EyeIcon,
         AppLayout,
         YouTube,
@@ -903,6 +912,10 @@ export default defineComponent({
                 show: false,
                 mode: 'create',
                 index: null,
+            },
+            error: {
+                active: false,
+                message: '',
             },
             menuForms: [
             {   name: 'general',
@@ -955,7 +968,19 @@ export default defineComponent({
                 return text;
             }
         },
+        onErrorToast(errors) {
+            console.log(errors)
+            this.error.message = errors
+            this.error.active = true
+            setTimeout(() => {
+                this.error.active = false
+            }, 5000);
+        },
         storeImage() {
+            if(this.formImage.image == null) {
+                this.onToast('red', 'Gambar tidak boleh kosong')
+                return false
+            }
             if(this.formModal.mode == 'create') {
                 this.formImage.transform(data => ({
                     ... data,
@@ -1367,7 +1392,10 @@ export default defineComponent({
             })
         },
         submitGeneral() {
-            if(this.form.general.employee_id == 0) return
+            if(this.form.general.employee_id == 0) {
+                this.onToast('red', 'Subjek monitoring / pegawai tidak boleh kosong')
+                return false
+            }
             this.loading_button = true
             this.form.general
                 .transform(data => ({

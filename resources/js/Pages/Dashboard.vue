@@ -50,15 +50,15 @@
                                                                     </div>
                                                                     <p v-if="form.information.image == null" class="mt-3 font-semibold text-gray-600">
                                                                         Tambahkan Gambar
-                                                                    </p>
+                                                                    </p> <br>
                                                                 </div>
-                                                                <small> {{ formModal.mode == 'create' ? 'Abaikan untuk membuat gambar default' : 'Abaikan untuk tidak mengganti gambar' }} </small>
+                                                                <small> {{ formModal.mode == 'create' ? 'Abaikan untuk membuat gambar default' : 'Abaikan untuk tidak mengganti gambar' }}, Maksimal 2mb</small>
                                                             </div>
                                                             <div v-else>
                                                                 <img role="button" @click="clickFile()" class="object-cover h-48 w-full object-center rounded-lg" :src="form.information.preview" :alt="form.information.image">
                                                                 <div class="grid grid-cols-2 mt-2">
                                                                     <div>
-                                                                        <small> Klik gambar untuk mengganti gambar </small>
+                                                                        <small> Klik gambar untuk mengganti gambar, Maksimal 2mb</small>
                                                                     </div>
                                                                     <div class="text-right text-red-500">
                                                                         <button type="button" @click="removeImageInfo()" class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 d-inline-block focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 text-right">

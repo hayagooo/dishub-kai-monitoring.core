@@ -84,16 +84,19 @@
                                                     </div>
                                                     <input @change="changeFile" name="icon" id="icon-category" type="file" class="hidden" accept=".jpg, .png, .jpeg">
                                                     <div @click="clickFile()" role="button" class="w-full text-center p-6 border-2 border-dashed border-purple-500 rounded-lg">
-                                                        <div class="w-full">
-                                                            <image-icon size="3x" class="inline-block text-purple-600"/>
-                                                        </div>
-                                                        <p v-if="form.icon == null" class="mt-3 font-semibold text-gray-600">
-                                                            Tambahkan Gambar<br>
-                                                            <small>Rekomendasi ukuran : 48 x 48 pixel</small>
-                                                        </p>
-                                                        <p v-else>{{ truncating(formModal.mode == 'create' ? form.icon.name : form.icon.name != null && form.icon.name != undefined ? form.icon.name : form.icon, 50, '...') }}</p>
-                                                    </div>
-                                                    <small> {{ formModal.mode == 'create' ? 'Abaikan untuk membuat icon default' : 'Abaikan untuk tidak mengganti icon' }} </small>
+                                                                <div class="w-full">
+                                                                    <image-icon size="3x" class="inline-block text-purple-600"/>
+                                                                </div>
+                                                                <p v-if="form.icon == null" class="mt-3 font-semibold text-gray-600">
+                                                                    Tambahkan Gambar<br>
+                                                                    <small>Rekomendasi ukuran : 48 x 48 pixel, Maksimal 2mb</small>
+                                                                </p>
+                                                                <p v-else>
+                                                                    {{ truncating(formModal.mode == 'create' ? form.icon.name : form.icon.name != null && form.icon.name != undefined ? form.icon.name : form.icon, 50, '...') }} <br>
+                                                                    <small>Rekomendasi ukuran : 48 x 48 pixel, Maksimal 2mb</small>
+                                                                </p>
+                                                            </div>
+                                                            <small> {{ formModal.mode == 'create' ? 'Abaikan untuk membuat icon default' : 'Abaikan untuk tidak mengganti icon, Maksimal 2mb' }}</small>
                                                 </div>
                                             </div>
                                             <div class="flex gap-x-4 items-center flex-row-reverse p-6 space-x-2 rounded-b border-t border-gray-200 dark:border-gray-600">

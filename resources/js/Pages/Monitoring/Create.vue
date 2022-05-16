@@ -3,6 +3,9 @@
         <m-toast :color="toast.color"
             :is_active="toast.active"
             :message="toast.message"/>
+        <m-error-toast
+            :is_active="error.active"
+            :message="error.message"/>
         <template #header>
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
                 Monitoring
@@ -105,6 +108,7 @@ import axios from 'axios'
 import CKEditor from '@ckeditor/ckeditor5-vue'
 import InlineEditor from '@ckeditor/ckeditor5-build-inline'
 import AppLayout from '@/Layouts/AppLayout.vue'
+import MErrorToast from '@/Components/MErrorToast'
 import MUnderConstruction from '@/Components/MUnderConstruction'
 import { ArrowLeftIcon, PlusCircleIcon, FileTextIcon, ImageIcon, TrashIcon, MoreVerticalIcon, EditIcon, EyeIcon } from '@zhuowenli/vue-feather-icons'
 import MToast from '@/Components/MToast'
@@ -123,6 +127,7 @@ export default defineComponent({
         EditIcon,
         ArrowLeftIcon,
         ImageIcon,
+        MErrorToast,
         PlusCircleIcon,
         MUnderConstruction,
         ckeditor: CKEditor.component
@@ -140,6 +145,10 @@ export default defineComponent({
                 show: false,
                 index: null,
                 item: null,
+            },
+            error: {
+                active: false,
+                message: '',
             },
             toast: {
                 color: 'purple',
@@ -170,6 +179,14 @@ export default defineComponent({
         }, 5000);
     },
     methods: {
+        onErrorToast(errors) {
+            console.log(errors)
+            this.error.message = errors
+            this.error.active = true
+            setTimeout(() => {
+                this.error.active = false
+            }, 5000);
+        },
         truncating(text, length, suffix) {
             if (text.length > length) {
                 return text.substring(0, length) + suffix;
@@ -220,7 +237,10 @@ export default defineComponent({
             })
         },
         submitGeneral() {
-            if(this.form.general.employee_id == 0) return
+            if(this.form.general.employee_id == 0) {
+                this.onToast('red', 'Subjek monitoring / pegawai tidak boleh kosong')
+                return false
+            }
             this.form.general
                 .transform(data => ({
                     ...data,

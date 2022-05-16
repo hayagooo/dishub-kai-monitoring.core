@@ -147,7 +147,7 @@
                                                     <img :src="item.preview" class="object-cover object-center w-full h-48 rounded-lg" :alt="item.preview">
                                                     <div class="grid grid-cols-2 mb-3">
                                                         <div class="text-gray-600">
-                                                            <small>Rekomendasi ukuran : 1024 x 256 pixel</small>
+                                                            <small>Rekomendasi ukuran : 1024 x 256 pixel, Maksimal 2mb</small>
                                                         </div>
                                                         <div class="text-right mt-2">
                                                             <button type="button" @click="removeImage(index, item)" class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 d-inline-block focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 text-right">
@@ -265,7 +265,10 @@
                                             <div class="my-4 px-4">
                                                 <div class="my-3" v-if="item.preview != null && item.image != null">
                                                     <img :src="item.preview" class="object-cover object-center w-full h-auto rounded-lg" :alt="item.preview">
-                                                    <div class="grid grid-cols-1 mb-3">
+                                                    <div class="grid grid-cols-2 mb-3">
+                                                        <div class="text-gray-600">
+                                                            <small>Maksimal 2mb</small>
+                                                        </div>
                                                         <div class="text-right mt-2">
                                                             <button type="button" @click="removeImage(index, item)" class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 d-inline-block focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 text-right">
                                                                 Hapus gambar
@@ -281,7 +284,8 @@
                                                                 <image-icon class="text-purple-600" size="2.5x"/>
                                                             </span>
                                                             <div class="self-center text-purple-600">
-                                                                Tambahkan Gambar
+                                                                Tambahkan Gambar <br>
+                                                                <small>Maksimal 2mb</small>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -650,9 +654,9 @@ export default defineComponent({
                     if(index == this.form_inputs.length - 1) {
                         this.onToast('green', 'Formulir Monitoring Berhasil Disimpan')
                         this.loading_button = false
-                        // setTimeout(() => {
-                        //     window.location.reload()
-                        // }, 2000);
+                        setTimeout(() => {
+                            window.location.reload()
+                        }, 2500);
                     }
                 }).catch((errors) => {
                     if(errors.response.data.errors.image != undefined && errors.response.data.errors.image != null && errors.response.data.errors.image.length > 0) {
@@ -668,7 +672,7 @@ export default defineComponent({
                 })
             })
             setTimeout(() => {
-                // this.goInput('changed')
+                this.goInput('changed')
             }, 1000);
         },
         onToast(color, message) {
