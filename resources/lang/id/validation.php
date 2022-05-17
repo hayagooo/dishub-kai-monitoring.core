@@ -167,5 +167,11 @@ return [
         'level' => 'Role user',
         'employeeId' => 'Pegawai',
         'objectId' => 'Object',
+        'text_value' => 'Input paragraf',
+        'number_value' => 'Input angka',
+        'file_value' => 'Input file upload',
+        'date_value' => 'Input tanggal',
+        'time_value' => 'Input waktu',
+        'string_value' => 'Input jawaban singkat',
     ],
 ];

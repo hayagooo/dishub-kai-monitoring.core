@@ -60,7 +60,7 @@ class InformationController extends Controller
             'link' => 'nullable|url',
             'description' => 'nullable',
             'image' => 'nullable|image|max:2048',
-            'document' => 'nullable|mimes:pdf,ppt,pptx,doc,docx,xls,xlsx'
+            'document' => 'nullable|mimes:pdf,ppt,pptx,doc,docx,xls,xlsx|max:30720'
         ];
         Validator::make($data, $rules)->validate();
         if($request->hasFile('image')) {

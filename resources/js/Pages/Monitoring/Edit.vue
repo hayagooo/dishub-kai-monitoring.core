@@ -922,6 +922,8 @@ export default defineComponent({
                 label: 'Umum',
             }],
             employees: [],
+            errors: [],
+            exceptions: [],
             optionModal: {
                 show: false,
                 index: null,
@@ -1075,7 +1077,30 @@ export default defineComponent({
                         this.onToast('green', 'Berhasil disimpan')
                         this.loading_button = false
                     }
-                }).catch((error) => {
+                }).catch((errors) => {
+                    console.log(errors.response)
+                    if(errors.response.data.errors.string_value != undefined && errors.response.data.errors.string_value != null && errors.response.data.errors.string_value.length > 0) {
+                        this.errors.push(...errors.response.data.errors.string_value)
+                    }
+                    if(errors.response.data.errors.file_value != undefined && errors.response.data.errors.file_value != null && errors.response.data.errors.file_value.length > 0) {
+                        this.errors.push(...errors.response.data.errors.file_value)
+                    }
+                    if(errors.response.data.errors.text_value != undefined && errors.response.data.errors.text_value != null && errors.response.data.errors.text_value.length > 0) {
+                        this.errors.push(...errors.response.data.errors.text_value)
+                    }
+                    if(errors.response.data.errors.number_value != undefined && errors.response.data.errors.number_value != null && errors.response.data.errors.number_value.length > 0) {
+                        this.errors.push(...errors.response.data.errors.number_value)
+                    }
+                    if(errors.response.data.errors.date_value != undefined && errors.response.data.errors.date_value != null && errors.response.data.errors.date_value.length > 0) {
+                        this.errors.push(...errors.response.data.errors.date_value)
+                    }
+                    if(errors.response.data.errors.time_value != undefined && errors.response.data.errors.time_value != null && errors.response.data.errors.time_value.length > 0) {
+                        this.errors.push(...errors.response.data.errors.time_value)
+                    }
+                    this.exceptions = [...new Set(this.errors)]
+                    if(this.exceptions.length > 0) {
+                        this.onErrorToast(this.exceptions)
+                    }
                     if(index == mValue.length - 1) {
                         this.onToast('red', 'Terjadi kesalahan: Ulangi')
                         this.loading_button = false

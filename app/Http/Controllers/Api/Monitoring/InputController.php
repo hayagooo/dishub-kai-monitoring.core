@@ -204,6 +204,7 @@ class InputController extends Controller
         if(File::exists(public_path('/monitoring/icon/').$input->image)) {
             File::delete(public_path('/monitoring/icon/').$input->image);
         }
+        $input->valueData()->delete();
         $input->option()->delete();
         $input->delete();
         return $this->jsonResponse($input);

@@ -8,6 +8,7 @@ use App\Models\Monitoring\InputValue;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Artisan;
+use Illuminate\Support\Facades\Validator;
 use Intervention\Image\Facades\Image;
 
 class InputValueController extends Controller
@@ -15,6 +16,7 @@ class InputValueController extends Controller
     public function store(Request $request)
     {
         // Artisan::call('cache:clear');
+        $input = Input::query()->find($request->input_id);
         $data = [
             'monitoring_input_id' => $request->input_id,
             'type' => $request->type,
@@ -27,6 +29,18 @@ class InputValueController extends Controller
             'file_value' => $request->file('file'),
             'type_file' => $request->type_file,
         ];
+        $rules = [
+            'monitoring_input_id' => 'required',
+            'type' => 'required',
+            'monitoring_id' => 'required',
+            'string_value' => $input->type == 'text' && $input->is_required == 1 ? 'required' : 'nullable',
+            'text_value' => $input->type == 'textarea' && $input->is_required == 1 ? 'required' : 'nullable',
+            'number_value' => $input->type == 'number' && $input->is_required == 1 ? 'required|integer' : 'nullable|integer',
+            'date_value' => $input->type == 'date' && $input->is_required == 1 ? 'required' : 'nullable',
+            'time_value' => $input->type == 'time' && $input->is_required == 1 ? 'required' : 'nullable',
+            'file_value' => $input->type == 'file' && $input->is_required == 1 ? 'nullable|mimes:png,jpg,jpeg,xlsx,pdf,doc,docx,xls,csv,ppt,pptx|max:30720' : 'nullable|mimes:png,jpg,jpeg,xlsx,pdf,doc,docx,xls,csv,ppt,pptx|max:30720',
+        ];
+        Validator::make($data, $rules)->validate();
         $input = Input::query()->find($request->input_id);
         $extensionArray = ['image', 'media-youtube', 'description', 'file', 'radio', 'dropdown'];
         if(in_array($input->type, $extensionArray, true)) {
