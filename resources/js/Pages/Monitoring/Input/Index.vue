@@ -622,24 +622,24 @@ export default defineComponent({
             else return str
         },
         onSubmitData() {
-            this.form_inputs.map((value, index) => {
+            for(let i = 0; i < this.form_inputs.length; i++) {
                 let fm = new FormData()
                 let url
                 fm.append('category_id', this.datas.category.id)
                 if(this.datas.object != undefined && this.datas.object != null) fm.append('object_id', this.datas.object.id)
                 if(this.datas.monitoring != undefined && this.datas.monitoring != null) fm.append('monitoring_id', this.datas.monitoring.id)
-                fm.append('type', this.onCheckValue(value.type_input, '-'))
-                fm.append('link', this.onCheckValue(value.link, ''))
-                fm.append('label', this.onCheckValue(value.label, '-'))
-                fm.append('placeholder', this.onCheckValue(value.placeholder, ''))
-                fm.append('description', this.onCheckValue(value.description, ''))
-                fm.append('is_required', value.is_required ? 1 : 0)
-                fm.append('image', value.image)
-                fm.append('options', JSON.stringify(value.options))
-                if(value.id != null && value.id != undefined && value.id != '') {
+                fm.append('type', this.onCheckValue(this.form_inputs[i].type_input, '-'))
+                fm.append('link', this.onCheckValue(this.form_inputs[i].link, ''))
+                fm.append('label', this.onCheckValue(this.form_inputs[i].label, '-'))
+                fm.append('placeholder', this.onCheckValue(this.form_inputs[i].placeholder, ''))
+                fm.append('description', this.onCheckValue(this.form_inputs[i].description, ''))
+                fm.append('is_required', this.form_inputs[i].is_required ? 1 : 0)
+                fm.append('image', this.form_inputs[i].image)
+                fm.append('options', JSON.stringify(this.form_inputs[i].options))
+                if(this.form_inputs[i].id != null && this.form_inputs[i].id != undefined && this.form_inputs[i].id != '') {
                     fm.append('_method', 'PATCH')
                     url = this.route('api.input-monitoring.update', {
-                        id: value.id
+                        id: this.form_inputs[i].id
                     })
                 } else {
                     fm.delete('_method')
@@ -659,21 +659,23 @@ export default defineComponent({
                         }, 2500);
                     }
                 }).catch((errors) => {
-                    if(errors.response.data.errors.image != undefined && errors.response.data.errors.image != null && errors.response.data.errors.image.length > 0) {
-                        this.errors.push(...errors.response.data.errors.image)
-                    }
-                    if(errors.response.data.errors.link != undefined && errors.response.data.errors.link != null && errors.response.data.errors.link.length > 0) {
-                        this.errors.push(...errors.response.data.errors.link)
-                    }
-                    this.exceptions = [...new Set(this.errors)]
-                    if(this.exceptions.length > 0) {
-                        this.onErrorToast(this.exceptions)
+                    if(errors.response != null && errors.response != undefined && errors.response.data != null && errors.response.data != undefined) {
+                        if(errors.response.data.errors.image != undefined && errors.response.data.errors.image != null && errors.response.data.errors.image.length > 0) {
+                            this.errors.push(...errors.response.data.errors.image)
+                        }
+                        if(errors.response.data.errors.link != undefined && errors.response.data.errors.link != null && errors.response.data.errors.link.length > 0) {
+                            this.errors.push(...errors.response.data.errors.link)
+                        }
+                        this.exceptions = [...new Set(this.errors)]
+                        if(this.exceptions.length > 0) {
+                            this.onErrorToast(this.exceptions)
+                        }
                     }
                 })
-            })
+            }
             setTimeout(() => {
                 this.goInput('changed')
-            }, 1000);
+            }, 2500);
         },
         onToast(color, message) {
             this.toast.active = true
