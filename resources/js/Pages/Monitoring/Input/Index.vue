@@ -380,7 +380,7 @@
                                 <arrow-left-icon size="18" class="inline-block mr-3"/>
                                 <span class="inline-block">Kembali</span>
                             </button>
-                            <button type="button" @click="onSubmitData()" class="fixed bottom-0 right-0 z-50 focus:outline-none mt-6 text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-16 py-2.5 mb-6 mr-6">
+                            <button type="button" @click="onSubmitData(true)" class="fixed bottom-0 right-0 z-50 focus:outline-none mt-6 text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-16 py-2.5 mb-6 mr-6">
                                 <span v-if="!loading_button">
                                     Simpan
                                 </span>
@@ -621,7 +621,7 @@ export default defineComponent({
             if(str == null || str == '' || str == undefined || str == 'null' || str == undefined) return suffix
             else return str
         },
-        onSubmitData() {
+        onSubmitData(reload_required) {
             for(let i = 0; i < this.form_inputs.length; i++) {
                 let fm = new FormData()
                 let url
@@ -651,12 +651,14 @@ export default defineComponent({
                         'content-type': 'multipart/form-data',
                     }
                 }).then((response) => {
-                    if(index == this.form_inputs.length - 1) {
-                        this.onToast('green', 'Formulir Monitoring Berhasil Disimpan')
+                    if(i == this.form_inputs.length - 1) {
                         this.loading_button = false
-                        setTimeout(() => {
-                            window.location.reload()
-                        }, 2500);
+                        if(reload_required) {
+                            this.onToast('green', 'Formulir Monitoring Berhasil Disimpan')
+                            setTimeout(() => {
+                                window.location.reload()
+                            }, 2500);
+                        }
                     }
                 }).catch((errors) => {
                     if(errors.response != null && errors.response != undefined && errors.response.data != null && errors.response.data != undefined) {
@@ -674,7 +676,7 @@ export default defineComponent({
                 })
             }
             setTimeout(() => {
-                this.goInput('changed')
+                this.goInput(reload_required ? true : false)
             }, 2500);
         },
         onToast(color, message) {
@@ -693,12 +695,15 @@ export default defineComponent({
                 this.error.active = false
             }, 5000);
         },
-        goInput(feedback) {
+        goInput(feedback, on_reload) {
             let data = {}
             if(this.datas.category != null && this.datas.category != undefined) data.categoryId = this.datas.category.id
             if(this.datas.object != null && this.datas.object != undefined) data.objectId = this.datas.object.id
             if(this.datas.monitoring != null && this.datas.monitoring != undefined) data.monitoringId = this.datas.monitoring.id
-            this.$inertia.get(this.route('app.input.index'), data)
+            this.$inertia.get(this.route('app.input.index'), data, {
+                preserveState: on_reload ? false : true,
+                preserveScroll: true,
+            })
         },
         setDescription(index, item) {
             if(this.form_inputs[index].description == null) this.form_inputs[index].description = ''
@@ -782,6 +787,9 @@ export default defineComponent({
             this.form_inputs[index].is_required = !this.form_inputs[index].is_required
         },
         setFormInput(mode) {
+            if(this.form_inputs.length > 0) {
+                this.onSubmitData(false)
+            }
             let type_input = ''
             if(mode == 'input') type_input = 'text'
             else type_input = mode

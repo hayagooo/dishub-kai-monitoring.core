@@ -16,7 +16,7 @@
             <div class="max-w-4xl mx-auto sm:px-6 lg:px-8">
                 <div class="bg-white overflow-hidden shadow-xl sm:rounded-xl">
                     <div id="information" class="col-span-2 lg:col-span-1 p-6">
-                        <button @click="goHome()" type="button" class="py-2.5 px-5 mr-2 mb-4 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-purple-700 focus:z-10 focus:ring-4 focus:ring-gray-200">
+                        <button @click="goHome()" type="button" class="hidden md:inline-block py-2.5 px-5 mr-2 mb-4 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-purple-700 focus:z-10 focus:ring-4 focus:ring-gray-200">
                             <arrow-left-icon size="18" class="inline-block mr-3"/>
                             <span class="inline-block">Kembali</span>
                         </button>
