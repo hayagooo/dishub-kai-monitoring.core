@@ -24,11 +24,11 @@
             </div>
             <div v-if="information.link != null || information.document != null" class="fixed text-right w-full bottom-0 left-0 p-5">
                 <div class="bg-white p-4 rounded-xl shadow inline-block w-56 text-center">
-                    <a v-if="information.link != null" :href="information.link" type="button" class="w-full focus:outline-none text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5">
+                    <a v-if="information.link != null" :href="information.link" type="button" class="w-full my-1 focus:outline-none text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5">
                         <file-text-icon size="18" class="inline-block"/>
                         <span class="inline-block ml-2">Buka tautan</span>
                     </a>
-                    <a v-if="information.document != null" :href="route('app.information.download', {id: information.id})" type="button" class="w-full focus:outline-none text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5">
+                    <a v-if="information.document != null" :href="route('app.information.download', {id: information.id})" type="button" class="w-full my-1 focus:outline-none text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5">
                         <file-text-icon size="18" class="inline-block"/>
                         <span class="inline-block ml-2">Unduh dokument</span>
                     </a>

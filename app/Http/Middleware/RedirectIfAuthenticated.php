@@ -27,7 +27,7 @@ class RedirectIfAuthenticated
             if (Auth::guard($guard)->check()) {
                 $user = User::query()->find(Auth::id());
                 if ($user->verified_at == null) {
-                    return redirect()->route('index.verification');
+                    return redirect()->route('index.verification', ['code' => $request->get('code'), 'menu' => $request->get('menu')]);
                 } else {
                     return redirect()->route('dashboard')->with('message', 'Verifikasi Berhasil : Selamat datang kembali')->with('status', 'success');
                     // return redirect()->route('dashboard');

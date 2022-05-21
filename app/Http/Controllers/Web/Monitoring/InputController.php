@@ -37,20 +37,20 @@ class InputController extends Controller
             ->when($request->get('categoryId') != null, function($query) use($request) {
                 $query->where('monitoring_category_id', $request->get('categoryId'));
                 $query->where('monitoring_object_id', $request->get('objectId', null));
-            })->get();
+            })->orderBy('sort_number', 'ASC')->get();
         }
         if($request->get('objectId') && $request->get('objectId')) {
             $inputs = Input::query()->with('monitoring', 'option', 'category', 'object')
             ->when($request->get('objectId') != null, function($query) use($request) {
                 $query->where('monitoring_object_id', $request->get('objectId', ObjectData::query()->first()->id));
                 $query->where('monitoring_id', $request->get('monitoringId', null));
-            })->get();
+            })->orderBy('sort_number', 'ASC')->get();
         }
         if($request->get('monitoringId') && $request->get('monitoringId')) {
             $inputs = Input::query()->with('monitoring', 'option', 'category', 'object')
             ->when($request->get('monitoringId') != null, function($query) use($request) {
                 $query->where('monitoring_id', $request->get('monitoringId', Monitoring::query()->first()->id));
-            })->get();
+            })->orderBy('sort_number', 'ASC')->get();
         }
         $token = User::find(Auth::guard('api')->id())->createToken('authentification')->plainTextToken;
         return Inertia::render('Monitoring/Input/Index', ['inputs' => $inputs, 'datas' => $datas, 'token' => $token]);

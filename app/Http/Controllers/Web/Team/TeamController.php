@@ -161,13 +161,14 @@ class TeamController extends Controller
 
     public function addEmployee(Request $request, $id)
     {
-        $rules = [
-            'employeeId' => 'required',
-        ];
-        Validator::make($request->all(), $rules)->validate();
-        Team::query()->find($id)->employee()->attach($request->employeeId);
-        Team::query()->with('employee')->find($id);
-        return redirect()->back()->with('message', 'Pegawai berhasil ditambahkan')->with('status', 'success');
+        $team = Team::query()->with('employee')->find($id);
+        $team->employee()->detach();
+        foreach (json_decode($request->data) as $item) {
+            if($item->checked) {
+                $team->employee()->attach($item->item->id);
+            }
+        }
+        return redirect()->back()->with('message', 'Pegawai berhasil disimpan')->with('status', 'success');
     }
 
     public function removeEmployee(Request $request, $id)

@@ -270,6 +270,7 @@ export default defineComponent({
         deleteData() {
             this.$inertia.delete(this.route('app.team.destroy', { id: this.teams[this.optionModal.index].id  }),
             {
+                preserveScroll: true,
                 onFinish: () => this.toggleDeleteModal(false),
                 onSuccess: (response) => {
                     this.onToast(response)

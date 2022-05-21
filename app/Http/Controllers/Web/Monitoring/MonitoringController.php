@@ -19,6 +19,7 @@ use App\Models\User;
 use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Validator;
 use Inertia\Inertia;
 use Illuminate\Support\Str;
 
@@ -36,6 +37,11 @@ class MonitoringController extends Controller
         $monitorings = Monitoring::query()
             ->when($request->get('title') != null, function($query) use($request) {
                 $query->where('title', 'LIKE', '%'.$request->get('title').'%');
+            })
+            ->when($request->get('employee') != null, function($query) use($request) {
+                $query->whereHas('employee', function($queryEmployee) use($request) {
+                    $queryEmployee->where('name', 'LIKE', '%'.$request->get('employee').'%');
+                });
             })
             ->with('category', 'object', 'team', 'employee', 'input')
             ->where('monitoring_category_id', $categoryId)
@@ -92,7 +98,15 @@ class MonitoringController extends Controller
             'title' => $request->title,
             'description' => $request->description,
         ];
-        CreateData::dispatch($data);
+        $rules = [
+            'monitoring_category_id' => 'required|exists:App\Models\Monitoring\Category,id',
+            'monitoring_object_id' => 'required|exists:App\Models\Monitoring\ObjectData,id',
+            'employee_id' => 'required|exists:App\Models\Employee,id',
+            'team_id' => 'required|exists:App\Models\Team,id',
+            'title' => 'required',
+            'description' => 'nullable',
+        ];
+        Validator::make($data, $rules)->validate();
         $monitoring = Monitoring::query()->create($data);
         return redirect()->route('app.monitoring.edit', [
             'monitoring' => $monitoring->id,

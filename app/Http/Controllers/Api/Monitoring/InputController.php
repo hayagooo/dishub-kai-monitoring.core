@@ -31,7 +31,7 @@ class InputController extends Controller
         })
         ->when($request->get('monitoring_id') != null, function($query) use($request) {
             $query->where('monitoring_id', $request->get('monitoring_id'));
-        })->get();
+        })->orderBy('sort_number', 'ASC')->get();
         return $this->jsonResponse($inputs);
     }
 
@@ -44,6 +44,7 @@ class InputController extends Controller
     public function store(Request $request)
     {
         $rules = [
+            'sort_number' => 'required',
             'monitoring_category_id' => 'required',
             'monitoring_object_id' => 'nullable',
             'monitoring_id' => 'nullable',
@@ -56,6 +57,7 @@ class InputController extends Controller
             'description' => 'nullable',
         ];
         $data = [
+            'sort_number' => $request->sort_number,
             'monitoring_category_id' => $request->category_id,
             'monitoring_object_id' => $request->object_id,
             'monitoring_id' => $request->monitoring_id,
@@ -115,6 +117,7 @@ class InputController extends Controller
     public function update(Request $request, $id)
     {
         $rules = [
+            'sort_number' => 'required',
             'monitoring_category_id' => 'required',
             'monitoring_object_id' => 'nullable',
             'monitoring_id' => 'nullable',
@@ -127,6 +130,7 @@ class InputController extends Controller
             'description' => 'nullable',
         ];
         $data = [
+            'sort_number' => $request->sort_number,
             'monitoring_category_id' => $request->category_id,
             'monitoring_object_id' => $request->object_id,
             'monitoring_id' => $request->monitoring_id,

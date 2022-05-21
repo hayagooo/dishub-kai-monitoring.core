@@ -380,7 +380,7 @@
                                 <arrow-left-icon size="18" class="inline-block mr-3"/>
                                 <span class="inline-block">Kembali</span>
                             </button>
-                            <button type="button" @click="onSubmitData(true)" class="fixed bottom-0 right-0 z-50 focus:outline-none mt-6 text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-16 py-2.5 mb-6 mr-6">
+                            <button type="button" :disabled="loading_button" @click="onSubmitData(true)" class="fixed bottom-0 right-0 z-50 focus:outline-none mt-6 text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-16 py-2.5 mb-6 mr-6">
                                 <span v-if="!loading_button">
                                     Simpan
                                 </span>
@@ -389,7 +389,7 @@
                                         <path d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z" fill="#E5E7EB"/>
                                         <path d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z" fill="currentColor"/>
                                     </svg>
-                                    Loading...
+                                    Proses...
                                 </span>
                             </button>
                         </div>
@@ -504,6 +504,7 @@ export default defineComponent({
             show_back: false,
             errors: [],
             exceptions: [],
+            disable_button: false,
             editor: InlineEditor,
             optionModal: {
                 show: false,
@@ -595,10 +596,13 @@ export default defineComponent({
         onDuplicate(index, item) {
             let newItem = item
             this.form_inputs.push(JSON.parse(JSON.stringify(newItem)))
+            this.focusOut()
             this.focus_option = null
             this.onRedirectLabel()
         },
         onRedirectLabel(index) {
+            this.focusOut()
+            this.focus_option = null
             setTimeout(() => {
                 let target = this.form_inputs.length - 1
                 window.location.href = `#input-label-${target}`
@@ -622,24 +626,30 @@ export default defineComponent({
             else return str
         },
         onSubmitData(reload_required) {
-            for(let i = 0; i < this.form_inputs.length; i++) {
+            this.focusOut()
+            this.focus_option = false
+            this.loading_button = true
+            this.form_inputs.map((value, index) => {
                 let fm = new FormData()
                 let url
+                this.focusOut()
+                this.focus_option = null
                 fm.append('category_id', this.datas.category.id)
                 if(this.datas.object != undefined && this.datas.object != null) fm.append('object_id', this.datas.object.id)
                 if(this.datas.monitoring != undefined && this.datas.monitoring != null) fm.append('monitoring_id', this.datas.monitoring.id)
-                fm.append('type', this.onCheckValue(this.form_inputs[i].type_input, '-'))
-                fm.append('link', this.onCheckValue(this.form_inputs[i].link, ''))
-                fm.append('label', this.onCheckValue(this.form_inputs[i].label, '-'))
-                fm.append('placeholder', this.onCheckValue(this.form_inputs[i].placeholder, ''))
-                fm.append('description', this.onCheckValue(this.form_inputs[i].description, ''))
-                fm.append('is_required', this.form_inputs[i].is_required ? 1 : 0)
-                fm.append('image', this.form_inputs[i].image)
-                fm.append('options', JSON.stringify(this.form_inputs[i].options))
-                if(this.form_inputs[i].id != null && this.form_inputs[i].id != undefined && this.form_inputs[i].id != '') {
+                fm.append('sort_number', index);
+                fm.append('type', this.onCheckValue(value.type_input, '-'))
+                fm.append('link', this.onCheckValue(value.link, ''))
+                fm.append('label', this.onCheckValue(value.label, '-'))
+                fm.append('placeholder', this.onCheckValue(value.placeholder, ''))
+                fm.append('description', this.onCheckValue(value.description, ''))
+                fm.append('is_required', value.is_required ? 1 : 0)
+                fm.append('image', value.image)
+                fm.append('options', JSON.stringify(value.options))
+                if(value.id != null && value.id != undefined && value.id != '') {
                     fm.append('_method', 'PATCH')
                     url = this.route('api.input-monitoring.update', {
-                        id: this.form_inputs[i].id
+                        id: value.id
                     })
                 } else {
                     fm.delete('_method')
@@ -651,8 +661,7 @@ export default defineComponent({
                         'content-type': 'multipart/form-data',
                     }
                 }).then((response) => {
-                    if(i == this.form_inputs.length - 1) {
-                        this.loading_button = false
+                    if(index == this.form_inputs.length - 1) {
                         if(reload_required) {
                             this.onToast('green', 'Formulir Monitoring Berhasil Disimpan')
                             setTimeout(() => {
@@ -674,9 +683,10 @@ export default defineComponent({
                         }
                     }
                 })
-            }
+            })
             setTimeout(() => {
                 this.goInput(reload_required ? true : false)
+                this.loading_button = false
             }, 2500);
         },
         onToast(color, message) {
@@ -709,12 +719,14 @@ export default defineComponent({
             if(this.form_inputs[index].description == null) this.form_inputs[index].description = ''
             else this.form_inputs[index].description = null
             this.form_inputs[index].option = false
+            this.focusOut()
             this.focus_option = null
         },
         setPlaceholder(index, item) {
             if(this.form_inputs[index].placeholder == null) this.form_inputs[index].placeholder = ''
             else this.form_inputs[index].placeholder = null
             this.form_inputs[index].option = false
+            this.focusOut()
             this.focus_option = null
         },
         clickFileInput(index) {
@@ -782,14 +794,13 @@ export default defineComponent({
                 })
             } else  this.form_inputs.splice(index, 1)
             this.onRedirectLabel()
+            this.focusOut()
+            this.focus_option = false
         },
         setRequired(index) {
             this.form_inputs[index].is_required = !this.form_inputs[index].is_required
         },
         setFormInput(mode) {
-            if(this.form_inputs.length > 0) {
-                this.onSubmitData(false)
-            }
             let type_input = ''
             if(mode == 'input') type_input = 'text'
             else type_input = mode

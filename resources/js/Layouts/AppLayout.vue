@@ -3,20 +3,26 @@
         <Head :title="title" />
 
         <jet-banner />
-
+        <m-toast :color="toast.color"
+            :is_active="toast.active"
+            :message="$page.props.flash.message"/>
         <div class="min-h-screen bg-gray-100">
-            <nav class="bg-white border-b border-gray-100">
+            <nav class="bg-white hidden md:inline-block w-full border-b border-gray-100 relative" style="z-index: 100 !important;">
                 <!-- Primary Navigation Menu -->
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div class="flex justify-between h-16">
                         <div class="flex">
                             <!-- Logo -->
                             <div class="shrink-0 flex items-center">
-                                <a :href="route('dashboard')" class="inline-block">
+                                <a :href="route('dashboard')" class="hidden md:inline-block">
+                                    <img src="@/Assets/logo.png"  class="inline-block h-9 w-auto" alt="Logo App">
+                                </a>
+                                <a class="inline-block md:hidden">
                                     <img src="@/Assets/logo.png"  class="inline-block h-9 w-auto" alt="Logo App">
                                 </a>
                                 <div class="inline-block max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                                    <slot name="header"></slot>
+                                    SIMPKA JABAR
+                                    <!-- <slot name="header"></slot> -->
                                 </div>
                             </div>
 
@@ -88,12 +94,7 @@
                                     </template>
 
                                     <template #content>
-                                        <!-- Account Management -->
-                                        <div class="block px-4 py-2 text-xs text-gray-400">
-                                            Manage Account
-                                        </div>
-
-                                        <jet-dropdown-link :href="route('dashboard')">
+                                        <jet-dropdown-link class="hidden md:inline-block w-full" :href="route('dashboard')">
                                             Dashboard
                                         </jet-dropdown-link>
 
@@ -120,7 +121,7 @@
                                         <div class="border-t border-gray-100"></div>
 
                                         <!-- Authentication -->
-                                        <form @submit.prevent="logout">
+                                        <form @submit.prevent="logout" class="hidden md:inline-block w-full">
                                             <jet-dropdown-link as="button">
                                                 Keluar
                                             </jet-dropdown-link>
@@ -160,16 +161,32 @@
                         </div>
 
                         <div class="mt-3 space-y-1">
-                            <jet-responsive-nav-link :href="route('profile.show')" :active="route().current('profile.show')">
+                            <jet-dropdown-link class="hidden md:inline-block w-full" :href="route('dashboard')">
+                                Dashboard
+                            </jet-dropdown-link>
+
+                            <jet-dropdown-link :href="route('app.category.index')">
+                                Monitoring
+                            </jet-dropdown-link>
+
+                            <jet-dropdown-link v-if="$page.props.user.level == 'coordinator'" :href="route('app.user.index')">
+                                Manage User
+                            </jet-dropdown-link>
+
+                            <jet-dropdown-link v-if="$page.props.user.level == 'coordinator'" :href="route('app.team.index')">
+                                Manage Tim
+                            </jet-dropdown-link>
+
+                            <jet-dropdown-link :href="route('profile.show')">
                                 Profil
-                            </jet-responsive-nav-link>
+                            </jet-dropdown-link>
 
                             <jet-responsive-nav-link :href="route('api-tokens.index')" :active="route().current('api-tokens.index')" v-if="$page.props.jetstream.hasApiFeatures">
                                 API Tokens
                             </jet-responsive-nav-link>
 
                             <!-- Authentication -->
-                            <form method="POST" @submit.prevent="logout">
+                            <form method="POST" @submit.prevent="logout" class="hidden md:inline-block w-full">
                                 <jet-responsive-nav-link as="button">
                                     Keluar
                                 </jet-responsive-nav-link>
@@ -231,17 +248,38 @@
     import JetDropdownLink from '@/Jetstream/DropdownLink.vue'
     import JetNavLink from '@/Jetstream/NavLink.vue'
     import JetResponsiveNavLink from '@/Jetstream/ResponsiveNavLink.vue'
+    import MToast from '@/Components/MToast'
     import { Head, Link } from '@inertiajs/inertia-vue3';
+    // import Echo from 'laravel-echo'
+    // import Pusher from "pusher-js"
+
+    // window.Echo.connector.pusher.connection.bind('connected', () => {
+    //   console.log('connected');
+    // });
+
+    // window.Echo.connector.pusher.connection.bind('disconnected', () => {
+    //    console.log('disconnected');
+    // });
 
     export default defineComponent({
         props: {
             title: String,
         },
-
+        created() {
+            window.addEventListener('offline', () => {
+                this.connectivityStatus = false;
+                this.connectivityText = 'You seem to be offline. Connect to see latest order status';
+            })
+            window.addEventListener('online', () => {
+                console.log('asd')
+                this.connectivityStatus = true;
+            })
+        },
         components: {
             Head,
             JetApplicationMark,
             JetBanner,
+            MToast,
             JetDropdown,
             JetDropdownLink,
             JetNavLink,
@@ -252,10 +290,23 @@
         data() {
             return {
                 showingNavigationDropdown: false,
+                toast: {
+                    color: 'purple',
+                    active: false,
+                    message: '',
+                },
             }
         },
 
         methods: {
+            onToast(color, message) {
+                this.toast.active = true
+                this.toast.message = message
+                this.toast.color = color
+                setTimeout(() => {
+                    this.toast.active = false
+                }, 5000);
+            },
             switchToTeam(team) {
                 this.$inertia.put(route('current-team.update'), {
                     'team_id': team.id

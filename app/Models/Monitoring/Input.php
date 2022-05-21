@@ -27,6 +27,7 @@ class Input extends Model
     public const TYPE_DESCRIPTION = 'description';
 
     protected $fillable = [
+        'sort_number',
         'monitoring_category_id',
         'monitoring_object_id',
         'monitoring_id',

@@ -16,7 +16,7 @@
             <div class="max-w-3xl mx-auto sm:px-6 lg:px-8">
                 <div class="bg-white overflow-hidden shadow-xl sm:rounded-xl">
                     <div class="p-7">
-                        <button @click="goHome()" type="button" class="py-2.5 px-5 mr-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-purple-700 focus:z-10 focus:ring-4 focus:ring-gray-200">
+                        <button @click="goHome()" type="button" class="hidden md:inline-block py-2.5 px-5 mr-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-purple-700 focus:z-10 focus:ring-4 focus:ring-gray-200">
                             <arrow-left-icon size="18" class="inline-block mr-3"/>
                             <span class="inline-block">Kembali</span>
                         </button>
@@ -74,8 +74,17 @@
                                                 </div>
                                             </div>
                                             <div class="flex gap-x-4 items-center flex-row-reverse p-6 space-x-2 rounded-b border-t border-gray-200 dark:border-gray-600">
-                                                <button type="submit" class="text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
-                                                    Selanjutnya
+                                                <button :disabled="loading_button" type="submit" class="text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
+                                                    <span v-if="!loading_button">
+                                                        Simpan
+                                                    </span>
+                                                    <span v-else>
+                                                        <svg role="status" class="inline mr-3 w-4 h-4 text-white animate-spin" viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z" fill="#E5E7EB"/>
+                                                            <path d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z" fill="currentColor"/>
+                                                        </svg>
+                                                        Proses...
+                                                    </span>
                                                 </button>
                                                 <button @click="toggleFormModal(false, 'create')" type="button" class="text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-purple-300 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10">
                                                     Batal
@@ -129,8 +138,17 @@
                                                 </div>
                                             </div>
                                             <div class="flex gap-x-4 items-center flex-row-reverse p-6 space-x-2 rounded-b border-t border-gray-200 dark:border-gray-600">
-                                                <button type="submit" class="text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
-                                                    Simpan
+                                                <button :disabled="loading_button" type="submit" class="text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
+                                                    <span v-if="!loading_button">
+                                                        Simpan
+                                                    </span>
+                                                    <span v-else>
+                                                        <svg role="status" class="inline mr-3 w-4 h-4 text-white animate-spin" viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z" fill="#E5E7EB"/>
+                                                            <path d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z" fill="currentColor"/>
+                                                        </svg>
+                                                        Proses...
+                                                    </span>
                                                 </button>
                                                 <button @click="toggleImportModal(false)" type="button" class="text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-purple-300 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10">
                                                     Batal
@@ -238,8 +256,17 @@
                                             </h3>
                                             <div class="flex justify-between">
                                                 <button @click="toggleDeleteModal(false)" type="button" class="text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-200 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10">Batal</button>
-                                                <button @click="deleteData()" type="button" class="text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center mr-2">
-                                                    Hapus
+                                                <button :disabled="loading_button" @click="deleteData()" type="button" class="text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center mr-2">
+                                                    <span v-if="!loading_button">
+                                                        Hapus
+                                                    </span>
+                                                    <span v-else>
+                                                        <svg role="status" class="inline mr-3 w-4 h-4 text-white animate-spin" viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z" fill="#E5E7EB"/>
+                                                            <path d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z" fill="currentColor"/>
+                                                        </svg>
+                                                        Proses...
+                                                    </span>
                                                 </button>
                                             </div>
                                         </div>
@@ -292,8 +319,17 @@
                                                 </div>
                                             </div>
                                             <div class="flex gap-x-4 items-center flex-row-reverse p-6 space-x-2 rounded-b border-t border-gray-200 dark:border-gray-600">
-                                                <button @click="toggleEmployeeModal(false, 'create')" type="button" class="text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
-                                                    Simpan
+                                                <button :disabled="loading_button" @click="onSubmitEmployee()" type="button" class="text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
+                                                    <span v-if="!loading_button">
+                                                        Simpan
+                                                    </span>
+                                                    <span v-else>
+                                                        <svg role="status" class="inline mr-3 w-4 h-4 text-white animate-spin" viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z" fill="#E5E7EB"/>
+                                                            <path d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z" fill="currentColor"/>
+                                                        </svg>
+                                                        Proses...
+                                                    </span>
                                                 </button>
                                                 <button @click="toggleEmployeeModal(false, 'create')" type="button" class="text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-purple-300 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10">
                                                     Tutup
@@ -429,6 +465,7 @@ export default defineComponent({
                 index: null,
                 item: null,
             },
+            loading_button: false,
             importModal: {
                 show: false,
                 document: null,
@@ -482,10 +519,14 @@ export default defineComponent({
             }, 5000);
         },
         onImport() {
+            this.loading_button = true
             let fm = new FormData()
             fm.append('document', this.importModal.document)
             fm.append('is_reset', this.importModal.reset == true ? 1 : 0)
             this.$inertia.post(this.route('app.team.import-excel'), fm, {
+                onFinish: (response) => {
+                    this.loading_button = false
+                },
                 onSuccess: () => {
                     this.toggleImportModal(false)
                     this.importModal.document = null
@@ -590,35 +631,26 @@ export default defineComponent({
         goHome() {
             this.$inertia.get(this.route('dashboard'))
         },
+        onSubmitEmployee() {
+            this.loading_button = true
+            let formData = new FormData()
+            formData.append('data', JSON.stringify(this.checkboxes))
+            this.$inertia.post(this.route('app.team.add.employee', {
+                id: this.teams.data[this.optionModal.index].id
+            }), formData, {
+                preserveScroll: true,
+                onFinish: (response) => {
+                    this.loading_button = false
+                },
+                onSuccess: () => {
+                    this.onToast('green', 'Data berhasil disimpan')
+                    this.input.reset()
+                    this.toggleEmployeeModal(false, 'create')
+                }
+            })
+        },
         toggleCheckbox(index) {
             this.checkboxes[index].checked = !this.checkboxes[index].checked
-            document.getElementById(`checkbox-employee-${index}`).checked = !document.getElementById(`checkbox-employee-${index}`).checked
-            if(this.checkboxes[index].checked) {
-                this.$inertia.post(this.route('app.team.add.employee', {
-                    id: this.teams.data[this.optionModal.index].id
-                }), {
-                    employeeId: this.employees[index].id
-                }, {
-                    preserveScroll: true,
-                    onSuccess: () => {
-                        this.input.reset()
-                        this.onSearchEmployee()
-                    }
-                })
-            } else {
-                this.$inertia.post(this.route('app.team.remove.employee', {
-                    id: this.teams.data[this.optionModal.index].id
-                }), {
-                    employeeId: this.employees[index].id
-                }, {
-                    preserveState: true,
-                    preserveScroll: true,
-                    onSuccess: () => {
-                        this.input.reset()
-                        this.onSearchEmployee()
-                    }
-                })
-            }
         },
         gotoShowByIndex() {
             this.toggleOptionModal(false, this.optionModal.index)
@@ -650,12 +682,16 @@ export default defineComponent({
             else body.remove('overflow-hidden')
         },
         store() {
+            this.loading_button = true
             if(this.formModal.mode == 'create') {
                 this.form.transform(data => ({
                     ... data,
                     _method: 'POST'
                 })).post(this.route('app.team.store'),
                 {
+                    onFinish: (response) => {
+                        this.loading_button = false
+                    },
                     onSuccess: (response) => {
                         this.onToast('green', 'Data tim berhasil disimpan')
                         this.toggleFormModal(false)
@@ -668,6 +704,9 @@ export default defineComponent({
                     _method: 'PATCH'
                 })).post(this.route('app.team.update', { id: this.teams.data[this.optionModal.index].id }),
                 {
+                    onFinish: (response) => {
+                        this.loading_button = false
+                    },
                     onSuccess: (response) => {
                         this.onToast('green', 'Data tim berhasil diedit')
                         this.toggleFormModal(false)
@@ -702,9 +741,13 @@ export default defineComponent({
             this.optionModal.item = item
         },
         deleteData() {
+            this.loading_button = true
             if(this.optionModal.index != null) {
                 this.$inertia.delete(this.route('app.team.destroy', { id: this.teams.data[this.optionModal.index].id  }),
                 {
+                    onFinish: (response) => {
+                        this.loading_button = false
+                    },
                     onSuccess: (response) => {
                         this.toggleDeleteModal(false),
                         this.onToast('green', 'Data tim berhasil dihapus')
@@ -713,6 +756,9 @@ export default defineComponent({
             } else {
                 this.$inertia.delete(this.route('app.team.delete-all'),
                 {
+                    onFinish: (response) => {
+                        this.loading_button = false
+                    },
                     onSuccess: (response) => {
                         this.toggleDeleteModal(false),
                         this.onToast('green', 'Data tim berhasil dihapus')

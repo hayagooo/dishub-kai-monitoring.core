@@ -52,11 +52,14 @@
                             </button>
                         </div>
                         <h2 class="text-xl text-gray-700 my-2 font-semibold">Daftar Monitoring</h2>
-                        <div class="grid grid-cols-3 gap-x-4 mt-3">
-                            <div class="col-span-2">
+                        <div class="grid grid-cols-5 gap-x-4 mt-3">
+                            <div class="col-span-5 my-1 md:my-0 md:col-span-2">
                                 <input @keyup="onSearch()" placeholder="Cari berdasarkan judul monitoring" v-model="dataNeed.title" type="text" id="title-input" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
                             </div>
-                            <div class="col-span-1">
+                            <div class="col-span-3 my-1 md:my-0 md:col-span-2">
+                                <input @keyup="onSearch()" placeholder="Cari berdasarkan subjek / pegawai" v-model="dataNeed.employee" type="text" id="title-input" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                            </div>
+                            <div class="col-span-2 my-1 md:my-0 md:col-span-1">
                                 <select @change="onSearch()" id="sort-select" v-model="dataNeed.sort" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
                                     <option v-for="(item, index) in sorts" :key="`value-sort-${index}`" :value="item.value">{{ item.label }}</option>
                                 </select>
@@ -222,6 +225,7 @@ export default defineComponent({
             dataNeed: {
                 categoryId: this.category.id ,
                 objectId: this.object.id,
+                employee: '',
                 title: '',
                 sort: 'desc'
             },
@@ -287,6 +291,7 @@ export default defineComponent({
                 categoryId: this.dataNeed.categoryId,
                 objectId: this.dataNeed.objectId,
                 title: this.dataNeed.title,
+                employee: this.dataNeed.employee,
                 sort: this.dataNeed.sort,
             }, {
                 preserveState: true

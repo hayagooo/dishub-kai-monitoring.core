@@ -172,6 +172,11 @@ return [
         'file_value' => 'Input file upload',
         'date_value' => 'Input tanggal',
         'time_value' => 'Input waktu',
+        'monitoring_category_id' => 'Kategori Monitoring',
+        'monitoring_object_id' => 'Objek Monitoring',
+        'employee_id' => 'Subjek Monitoring',
+        'team_id' => 'Team Monitoring',
+        'title' => 'Judul Monitoring',
         'string_value' => 'Input jawaban singkat',
     ],
 ];

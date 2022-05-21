@@ -9,7 +9,7 @@
                     <div>
                         <div class="image-brand">
                             <img src="@/Assets/logo.png" class="w-14 inline-block" alt="Logo Aplikasi Monitoring">
-                            <p class="text-xl font-semibold ml-4 hidden md:inline-block">Monitoring</p>
+                            <p class="text-xl font-semibold ml-4 hidden md:inline-block">SIMPKA</p>
                         </div>
                     </div>
                     <div class="justify-self-end">

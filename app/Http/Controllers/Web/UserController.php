@@ -95,9 +95,22 @@ class UserController extends Controller
             'email' => $request->get('email'),
             'password' => $request->get('password'),
             'code' => $request->get('code'),
-            'remember' => $request->get('remember', 'off'),
+            'remember' => $request->get('remember', 'on'),
             'menu' => $request->get('menu'),
         ];
+        if($data['email'] != null && $data['password'] != null) {
+            $data_login = [
+                'email' => $data['email'],
+                'password' => $data['password'],
+            ];
+            if(Auth::attempt($data_login, $data['remember'])) {
+                $user = User::query()->find(Auth::id());
+                return redirect()->route('index.verification', ['code' => $request->code, 'menu' => $request->menu])->with('message', 'Login berhasil: Verifikasi dahulu')
+                    ->with('status', 'success');;
+            }
+        }
+            // return redirect()->action([UserController::class, 'login'], ['email' => $data['email'], 'password' => $data['password'], 'code' => $data['code'], 'remember' => $data['remember'], 'menu' => $data['menu']]);
+
         return Inertia::render('Auth/Login', ['data_login' => $data]);
     }
 
@@ -140,6 +153,14 @@ class UserController extends Controller
             'menu' => $request->get('menu'),
         ];
         $user = User::query()->find(Auth::id());
+        if($data['code'] != null) {
+            $user = User::query()->find(Auth::id());
+            if($user->code == $data['code']) {
+                return redirect()->route('dashboard', ['menu' => $data['menu']])->with('message', 'Verifikasi Berhasil : Selamat datang kembali')->with('status', 'success');
+                } else {
+                return redirect()->route('index.verification')->with('message', 'Kode verifikasi tidak sesuai')->with('status', 'failed');
+            }
+        }
         return Inertia::render('Auth/Verify', ['user' => $user, 'data_login' => $data]);
     }
 
@@ -154,8 +175,6 @@ class UserController extends Controller
         ]);
         $user = User::query()->find(Auth::id());
         if($user->code == $request->code) {
-            // $user->verified_at = Carbon::now();
-            // $user->save();
             return redirect()->route('dashboard', ['menu' => $data['menu']])->with('message', 'Verifikasi Berhasil : Selamat datang kembali')->with('status', 'success');
             } else {
             return redirect()->route('index.verification')->with('message', 'Kode verifikasi tidak sesuai')->with('status', 'failed');
