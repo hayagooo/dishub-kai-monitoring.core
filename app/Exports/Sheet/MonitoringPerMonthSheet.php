@@ -34,7 +34,9 @@ class MonitoringPerMonthSheet implements FromCollection, WithTitle, WithHeadings
     */
     public function collection()
     {
-        return Monitoring::query()->with('input', 'input.option', 'input.option.optionValue', 'input.valueData', 'team', 'employee', 'object', 'category')
+        return Monitoring::query()->with(['input' => function($query) {
+            $query->orderBy('sort_number', 'ASC');
+        }, 'input.option', 'input.option.optionValue', 'input.valueData', 'team', 'employee', 'object', 'category'])
         ->where('monitoring_category_id', $this->category_id)
         ->where('monitoring_object_id', $this->object_id)
         ->whereYear('created_at', $this->year)
@@ -56,7 +58,8 @@ class MonitoringPerMonthSheet implements FromCollection, WithTitle, WithHeadings
         $nonInputValue = ['image', 'description', 'media-youtube', 'file'];
         $category = Category::with(['input' => function($query) {
             $query->where('monitoring_category_id', $this->category_id)
-                ->where('monitoring_object_id', null);
+                ->where('monitoring_object_id', null)
+                ->orderBy('sort_number', 'ASC');
         }, 'input.valueData' => function($query) use($monitoring) {
             $query->where('monitoring_id', $monitoring->id);
         }, 'monitoring', 'input.option', 'input.option.optionValue'])->whereHas('monitoring', function($query) use($monitoring) {
@@ -134,7 +137,8 @@ class MonitoringPerMonthSheet implements FromCollection, WithTitle, WithHeadings
         $object_data = ObjectData::with(['input' => function($query) {
             $query->where('monitoring_category_id', $this->category_id)
                 ->where('monitoring_object_id', $this->object_id)
-                ->where('monitoring_id', null);
+                ->where('monitoring_id', null)
+                ->orderBy('sort_number', 'ASC');
         }, 'input.valueData' => function($query) use($monitoring) {
             $query->where('monitoring_id', $monitoring->id);
         }, 'monitoring'])->whereHas('monitoring', function($query) use($monitoring) {
@@ -209,12 +213,16 @@ class MonitoringPerMonthSheet implements FromCollection, WithTitle, WithHeadings
         $monitoring_data = Monitoring::with(['input' => function($query) use($monitoring) {
             $query->where('monitoring_id', $monitoring->id)
                 ->where('monitoring_category_id', $this->category_id)
-                ->where('monitoring_object_id', $this->object_id);
+                ->where('monitoring_object_id', $this->object_id)
+                ->orderBy('sort_number', 'ASC');
         }, 'input.valueData' => function($query) use($monitoring) {
             $query->where('monitoring_id', $monitoring->id);
         }])->where('id', $monitoring->id)->first();
 
-        $monitorings_header = Monitoring::with('input')->get();
+        $monitorings_header = Monitoring::with('input')
+            ->where('monitoring_category_id', $this->category_id)
+            ->where('monitoring_object_id', $this->object_id)
+            ->get();
         foreach($monitorings_header as $monitoring_header) {
             $inputs = $monitoring_header->input;
             foreach($inputs as $input_header) {
@@ -283,7 +291,7 @@ class MonitoringPerMonthSheet implements FromCollection, WithTitle, WithHeadings
                             }
                         }
                     }
-                    else $inputs_arr[] = '-';
+                    // else $inputs_arr[] = '';
                 }
             }
         }
@@ -314,7 +322,7 @@ class MonitoringPerMonthSheet implements FromCollection, WithTitle, WithHeadings
             $inputs = $category->input;
             foreach($inputs as $input) {
                 if(!in_array($input->type, $nonInputValue, true)) {
-                    $inputs_arr[] = $input->label;
+                    $inputs_arr[] = $input->label.'-kategori';
                 }
             }
         }
@@ -328,7 +336,7 @@ class MonitoringPerMonthSheet implements FromCollection, WithTitle, WithHeadings
             $inputs = $object->input;
             foreach($inputs as $input) {
                 if(!in_array($input->type, $nonInputValue, true)) {
-                    $inputs_arr[] = $input->label;
+                    $inputs_arr[] = $input->label.'-objek';
                 }
             }
         }
@@ -337,7 +345,7 @@ class MonitoringPerMonthSheet implements FromCollection, WithTitle, WithHeadings
             $inputs = $monitoring->input;
             foreach($inputs as $input) {
                 if(!in_array($input->type, $nonInputValue, true)) {
-                    $inputs_arr[] = $input->label;
+                    $inputs_arr[] = $input->label.'-monitoring';
                 }
             }
         }

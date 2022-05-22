@@ -43,7 +43,9 @@ class MonitoringController extends Controller
                     $queryEmployee->where('name', 'LIKE', '%'.$request->get('employee').'%');
                 });
             })
-            ->with('category', 'object', 'team', 'employee', 'input')
+            ->with(['category', 'object', 'team', 'employee', 'input' => function($query) {
+                $query->orderBy('sort_number', 'ASC');
+            }])
             ->where('monitoring_category_id', $categoryId)
             ->where('monitoring_object_id', $objectId)
             ->orderBy('created_at', $request->get('sort', 'DESC'))
@@ -140,6 +142,7 @@ class MonitoringController extends Controller
         }])
             ->where('monitoring_category_id', $categoryId)
             ->where('monitoring_object_id', null)
+            ->orderBy('sort_number', 'ASC')
             ->get();
         $inputs['object'] = Input::query()->with(['option',
         'option.optionValue' => function($query) use($id) {
@@ -149,6 +152,7 @@ class MonitoringController extends Controller
         }])
             ->where('monitoring_object_id', $objectId)
             ->where('monitoring_id', null)
+            ->orderBy('sort_number', 'ASC')
             ->get();
         $inputs['monitoring'] = Input::query()->with(['option',
         'option.optionValue' => function($query) use($id) {
@@ -157,6 +161,7 @@ class MonitoringController extends Controller
             $query->where('monitoring_id', $id);
         }])
             ->where('monitoring_id', $id)
+            ->orderBy('sort_number', 'ASC')
             ->get();
         // return response()->json($inputs);
         $monitoring = Monitoring::query()->find($id);
@@ -203,6 +208,7 @@ class MonitoringController extends Controller
         }])
             ->where('monitoring_category_id', $categoryId)
             ->where('monitoring_object_id', null)
+            ->orderBy('sort_number', 'ASC')
             ->get();
         $inputs['object'] = Input::query()->with(['option',
         'option.optionValue' => function($query) use($id) {
@@ -213,6 +219,7 @@ class MonitoringController extends Controller
             ->where('monitoring_category_id', $categoryId)
             ->where('monitoring_object_id', $objectId)
             ->where('monitoring_id', null)
+            ->orderBy('sort_number', 'ASC')
             ->get();
         $inputs['monitoring'] = Input::query()->with(['option',
         'option.optionValue' => function($query) use($id) {
@@ -223,6 +230,7 @@ class MonitoringController extends Controller
             ->where('monitoring_category_id', $categoryId)
             ->where('monitoring_object_id', $objectId)
             ->where('monitoring_id', $id)
+            ->orderBy('sort_number', 'ASC')
             ->get();
         // return response()->json($inputs);
         $monitoring = Monitoring::query()->find($id);
@@ -316,16 +324,19 @@ class MonitoringController extends Controller
         }])
             ->where('monitoring_category_id', $categoryId)
             ->where('monitoring_object_id', null)
+            ->orderBy('sort_number', 'ASC')
             ->get();
         $inputs['object'] = Input::query()->with('option',  'option.optionValue', 'valueData')
             ->where('monitoring_category_id', $categoryId)
             ->where('monitoring_object_id', $objectId)
             ->where('monitoring_id', null)
+            ->orderBy('sort_number', 'ASC')
             ->get();
         $inputs['monitoring'] = Input::query()->with('option',  'option.optionValue', 'valueData')
             ->where('monitoring_category_id', $categoryId)
             ->where('monitoring_object_id', $objectId)
             ->where('monitoring_id', $id)
+            ->orderBy('sort_number', 'ASC')
             ->get();
         // return response()->json($inputs);
         $monitoring = Monitoring::query()->find($id);

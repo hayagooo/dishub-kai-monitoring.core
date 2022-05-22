@@ -20,7 +20,7 @@
                                 <a class="inline-block md:hidden">
                                     <img src="@/Assets/logo.png"  class="inline-block h-9 w-auto" alt="Logo App">
                                 </a>
-                                <div class="inline-block max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+                                <div class="inline-block font-bold max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
                                     SIMPKA JABAR
                                     <!-- <slot name="header"></slot> -->
                                 </div>
