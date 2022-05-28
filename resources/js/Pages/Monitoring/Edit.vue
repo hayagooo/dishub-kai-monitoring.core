@@ -99,7 +99,7 @@
                                         <ckeditor placeholder="e.g. Tujuan monitoring ini adalah untuk kepentingan bersama" :editor="editor" v-model="form.general.description"></ckeditor>
                                     </div>
                                     <div class="rounded mt-3 block md:hidden">
-                                        <textarea required name="title" v-model="form.general.description" type="text" placeholder="e.g. Deskripsi Monitoring Jembatan Bandung" class="mt-3 focus:ring-purple-500 focus:border-purple-500 block w-full pl-4 sm:text-sm border-gray-300 rounded-md"></textarea>
+                                        <ckeditor id="editor" placeholder="e.g. Tujuan monitoring ini adalah untuk kepentingan bersama" :editor="editor" v-model="form.general.description"></ckeditor>
                                     </div>
                                 </div>
                                 <div class="mt-6">

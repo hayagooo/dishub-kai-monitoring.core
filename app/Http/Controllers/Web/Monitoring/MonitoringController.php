@@ -308,6 +308,8 @@ class MonitoringController extends Controller
 
     public function export_pdf(Request $request, $id)
     {
+        ini_set('max_execution_time', 300);
+        ini_set("memory_limit","512M");
         setlocale(LC_TIME, 'id_ID');
         \Carbon\Carbon::setLocale('id');
         $categoryId = $request->get('categoryId', Category::query()->first()->id);

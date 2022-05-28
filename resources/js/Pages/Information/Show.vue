@@ -65,7 +65,7 @@ export default defineComponent({
             return moment(timestamp).format('dddd, DD MMMM YYYY, HH:SS')
         },
         goHome() {
-            this.$inertia.get(this.route('dashboard'))
+            this.$inertia.get(this.route('app.information.index'))
         },
         onViewFile() {
             if(this.information.document == null) window.open(this.information.link)
