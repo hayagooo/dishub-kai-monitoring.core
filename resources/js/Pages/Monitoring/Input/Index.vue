@@ -12,52 +12,6 @@
             </h2>
         </template>
 
-        <div class="fixed bottom-0 md:inset-y-0 right-0 p-8 w-full md:w-40 flex z-40 pb-20 md:pb-0">
-            <div class="self-center inline-block w-full text-center md:w-auto bg-white shadow p-4 text-sm rounded-lg">
-                <div class="relative inline-block">
-                    <button @click="setFormInput('input')" @mouseover="toggleTooltip('plus-circle')" @mouseleave="toggleTooltip()" type="button" class="py-2.5 mx-1 md:mx-0 mb-0 md:mb-3 px-3 md:px-5 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200">
-                        <plus-circle-icon size="20"/>
-                    </button>
-                    <div role="tooltip" :class="{'opacity-0 invisible absolute': tooltip.show != 'plus-circle', 'left-1/2 transform -translate-x-1/2 -top-16': tooltip.show == 'plus-circle'}"
-                        class="inline-block absolute z-10 py-2 px-3 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-sm transition-opacity duration-300 tooltip">
-                        Input Baru
-                        <div class="tooltip-arrow scale-110 text-center inline-block w-full inset-x-0 -bottom-px mt-1" data-popper-arrow></div>
-                    </div>
-                </div>
-                <div class="relative inline-block">
-                    <button @click="setFormInput('image')" @mouseover="toggleTooltip('image')" @mouseleave="toggleTooltip()" type="button" class="py-2.5 mx-1 md:mx-0 mb-0 md:mb-3 px-3 md:px-5 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200">
-                        <image-icon size="20"/>
-                    </button>
-                    <div role="tooltip" :class="{'opacity-0 invisible absolute': tooltip.show != 'image', 'left-1/2 transform -translate-x-1/2 -top-16': tooltip.show == 'image'}"
-                        class="inline-block absolute z-10 py-2 px-3 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-sm transition-opacity duration-300 tooltip">
-                        Gambar Baru
-                        <div class="tooltip-arrow scale-110 text-center inline-block w-full inset-x-0 -bottom-px mt-1" data-popper-arrow></div>
-                    </div>
-                </div>
-                <div class="relative inline-block">
-                    <button @click="setFormInput('description')" @mouseover="toggleTooltip('description')" @mouseleave="toggleTooltip()" type="button" class="py-2.5 mx-1 md:mx-0 mb-0 md:mb-3 px-3 md:px-5 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200">
-                        <type-icon size="20"/>
-                    </button>
-                    <div role="tooltip" :class="{'opacity-0 invisible absolute': tooltip.show != 'description', 'left-1/2 transform -translate-x-1/2 -top-16': tooltip.show == 'description'}"
-                        class="inline-block absolute z-10 py-2 px-3 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-sm transition-opacity duration-300 tooltip">
-                        Deskripsi & Judul
-                        <div class="tooltip-arrow scale-110 text-center inline-block w-full inset-x-0 -bottom-px mt-1" data-popper-arrow></div>
-                    </div>
-                </div>
-                <div class="relative inline-block">
-                    <button @click="setFormInput('media-youtube')" @mouseover="toggleTooltip('media-youtube')" @mouseleave="toggleTooltip()" type="button" class="py-2.5 mx-1 md:mx-0 px-3 md:px-5 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200">
-                        <youtube-icon size="20"/>
-                    </button>
-                    <div role="tooltip" :class="{'opacity-0 invisible absolute': tooltip.show != 'media-youtube', 'left-1/2 transform -translate-x-1/2 -top-16': tooltip.show == 'media-youtube'}"
-                        class="inline-block absolute z-10 py-2 px-3 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-sm transition-opacity duration-300 tooltip">
-                        Media Youtube
-                        <div class="tooltip-arrow scale-110 text-center inline-block w-full inset-x-0 -bottom-px mt-1" data-popper-arrow></div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-
         <div class="py-12">
             <div class="max-w-3xl mx-auto sm:px-6 lg:px-8 mb-40 md:mb-0">
                 <div class="bg-white overflow-hidden shadow-xl sm:rounded-xl">
@@ -92,6 +46,51 @@
                         <div class="my-2">
                             <h2 class="text-xl text-gray-700 font-semibold">Data Formulir</h2>
                             <p class="text-base text-gray-600">Formulir berdasarkan kebutuhan {{ setModelByData() }}.</p>
+                        </div>
+                        <div class="fixed bottom-0 md:inset-y-0 right-0 p-8 w-full md:w-40 flex z-40 pb-20 md:pb-0">
+                            <div class="self-center inline-block w-full text-center md:w-auto bg-white shadow p-4 text-sm rounded-lg">
+                                <div class="relative inline-block">
+                                    <button @click="setFormInput('input')" @mouseover="toggleTooltip('plus-circle')" @mouseleave="toggleTooltip()" type="button" class="py-2.5 mx-1 md:mx-0 mb-0 md:mb-3 px-3 md:px-5 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200">
+                                        <plus-circle-icon size="20"/>
+                                    </button>
+                                    <div role="tooltip" :class="{'opacity-0 invisible absolute': tooltip.show != 'plus-circle', 'left-1/2 transform -translate-x-1/2 -top-16': tooltip.show == 'plus-circle'}"
+                                        class="inline-block absolute z-10 py-2 px-3 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-sm transition-opacity duration-300 tooltip">
+                                        Input Baru
+                                        <div class="tooltip-arrow scale-110 text-center inline-block w-full inset-x-0 -bottom-px mt-1" data-popper-arrow></div>
+                                    </div>
+                                </div>
+                                <div class="relative inline-block">
+                                    <button @click="setFormInput('image')" @mouseover="toggleTooltip('image')" @mouseleave="toggleTooltip()" type="button" class="py-2.5 mx-1 md:mx-0 mb-0 md:mb-3 px-3 md:px-5 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200">
+                                        <image-icon size="20"/>
+                                    </button>
+                                    <div role="tooltip" :class="{'opacity-0 invisible absolute': tooltip.show != 'image', 'left-1/2 transform -translate-x-1/2 -top-16': tooltip.show == 'image'}"
+                                        class="inline-block absolute z-10 py-2 px-3 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-sm transition-opacity duration-300 tooltip">
+                                        Gambar Baru
+                                        <div class="tooltip-arrow scale-110 text-center inline-block w-full inset-x-0 -bottom-px mt-1" data-popper-arrow></div>
+                                    </div>
+                                </div>
+                                <div class="relative inline-block">
+                                    <button @click="setFormInput('description')" @mouseover="toggleTooltip('description')" @mouseleave="toggleTooltip()" type="button" class="py-2.5 mx-1 md:mx-0 mb-0 md:mb-3 px-3 md:px-5 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200">
+                                        <type-icon size="20"/>
+                                    </button>
+                                    <div role="tooltip" :class="{'opacity-0 invisible absolute': tooltip.show != 'description', 'left-1/2 transform -translate-x-1/2 -top-16': tooltip.show == 'description'}"
+                                        class="inline-block absolute z-10 py-2 px-3 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-sm transition-opacity duration-300 tooltip">
+                                        Deskripsi & Judul
+                                        <div class="tooltip-arrow scale-110 text-center inline-block w-full inset-x-0 -bottom-px mt-1" data-popper-arrow></div>
+                                    </div>
+                                </div>
+                                <div class="relative inline-block">
+                                    <button @click="setFormInput('media-youtube')" @mouseover="toggleTooltip('media-youtube')" @mouseleave="toggleTooltip()" type="button" class="py-2.5 mx-1 md:mx-0 px-3 md:px-5 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200">
+                                        <youtube-icon size="20"/>
+                                    </button>
+                                    <div role="tooltip" :class="{'opacity-0 invisible absolute': tooltip.show != 'media-youtube', 'left-1/2 transform -translate-x-1/2 -top-16': tooltip.show == 'media-youtube'}"
+                                        class="inline-block absolute z-10 py-2 px-3 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-sm transition-opacity duration-300 tooltip">
+                                        Media Youtube
+                                        <div class="tooltip-arrow scale-110 text-center inline-block w-full inset-x-0 -bottom-px mt-1" data-popper-arrow></div>
+                                    </div>
+                                </div>
+
+                            </div>
                         </div>
                         <div v-if="form_inputs.length > 0">
                             <div class="grid grid-cols-4 md:grid-cols-3 gap-6 mt-3">
@@ -376,11 +375,11 @@
 
                                 </div>
                             </div>
-                            <button v-if="show_back" @click="goBack()" type="button" class="fixed bottom-0 mb-6 left-6 z-50 py-2.5 mx-2 md:mx-0 px-8 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-purple-600 hover:bg-gray-100 hover:text-purple-700 focus:z-10 focus:ring-4 focus:ring-gray-200">
+                            <button @click="goBack()" type="button" style="z-index: 100 !important" :class="{'hidden': !show_back}" class="fixed bottom-0 mb-6 left-6 py-2.5 mx-2 md:mx-0 px-8 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-purple-600 hover:bg-gray-100 hover:text-purple-700 focus:z-10 focus:ring-4 focus:ring-gray-200">
                                 <arrow-left-icon size="18" class="inline-block mr-3"/>
                                 <span class="inline-block">Kembali</span>
                             </button>
-                            <button type="button" :disabled="loading_button" @click="onSubmitData(true)" class="fixed bottom-0 right-0 z-50 focus:outline-none mt-6 text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-16 py-2.5 mb-6 mr-6">
+                            <button type="button" :disabled="loading_button" style="z-index: 100 !important" @click="onSubmitData(true)" class="fixed bottom-0 right-0 focus:outline-none mt-6 text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-16 py-2.5 mb-6 mr-6">
                                 <span v-if="!loading_button">
                                     Simpan
                                 </span>
