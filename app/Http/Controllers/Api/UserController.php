@@ -85,7 +85,7 @@ class UserController extends Controller
             'code' => 'required',
             'name' => 'required',
             'email' => 'required',
-            'password' => 'required',
+            'password' => 'nullable',
             'level' => 'required',
         ];
         $data = [
@@ -95,6 +95,9 @@ class UserController extends Controller
             'password' => $request->password,
             'level' => $request->level,
         ];
+        if($request->password == null || $request->password == '')
+            unset($data['password']);
+
         $validator = Validator::make($data, $rules);
         if($validator->fails()) {
             return $this->jsonResponse([
